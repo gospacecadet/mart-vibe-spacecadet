@@ -5,10 +5,10 @@
 .space-tabs {
   min-width: 100%
 }
-//
-// .space-tab {
-//   min-width: 100%
-// }
+
+.space-tab-link {
+  min-height: 5rem;
+}
 
 #space-tabs-heading {
   background-color: white;
@@ -19,8 +19,14 @@
   background-color: #fff;
 }
 
+.btn-wrap {
+  white-space: normal;
+}
+
 .unit-price-btn {
   border-width: 0.2rem;
+  white-space: normal;
+  min-height: 7.5rem;
 }
 
 .unit-active {

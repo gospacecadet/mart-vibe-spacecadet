@@ -28,18 +28,23 @@
 </template>
 
 <template name="spaceDetailDetails">
-  <p>{{description}}
-  </p>
+  <div class='row'>
+    <div class='col-md-9'>
+      <p>{{description}}</p>
+      <p><strong>About the property:</strong> {{propertyDescription}}</p>
+    </div>
 
-  <p><strong>About the property:</strong> {{propertyDescription}}</p>
+    <div class='col-md-3'>
+      <dl class="dl-horizontal">
+        <dt class="col-sm-3">Occupancy</dt>
+        <dd class="col-sm-9">{{occupancy}}</dd>
 
-  <dl class="dl-horizontal">
-    <dt class="col-sm-3">Occupancy</dt>
-    <dd class="col-sm-9">{{occupancy}}</dd>
+        <dt class="col-sm-3">Size</dt>
+        <dd class="col-sm-9">{{size}}</dd>
+      </dl>
+    </div>
+  </div>
 
-    <dt class="col-sm-3">Size</dt>
-    <dd class="col-sm-9">{{size}}</dd>
-  </dl>
 </template>
 
 <template name="spaceDetailLocation">

@@ -1,5 +1,4 @@
 <template name="spaceTabs">
-
   <div id='space-tabs-heading' class="row p-t-1">
     <div class='col-md-2'>
       <span class='text-xs-center'>
@@ -13,18 +12,24 @@
   </div>
 
   <ul class="nav nav-pills nav-stacked space-tabs">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="#">Another link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
-    </li>
+    {{#each otherSpaces}}
+    <!-- <div class="media">
+      <a class="media-left" href="{{spacePath _id propertyId}}">
+        <img class="media-object" data-src="{{previewImage}}" alt="{{name}}">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading text-truncate">{{name}}</h4>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+      </div>
+    </div> -->
+      <li class="nav-item space-tab">
+        <a class="nav-link space-tab-link" href="{{spacePath _id propertyId}}">
+          <img src="{{previewImage}}" alt="{{name}}" class="img img-fluid img-rounded"/>
+          <strong>{{name}}</strong> - {{money hourlyPrice}}
+        </a>
+      </li>
+    {{/each}}
   </ul>
-
-
 </template>
 
 <template name="space">

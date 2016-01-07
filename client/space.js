@@ -26,3 +26,36 @@ Template.spaceDetailDetails.helpers({
   occupancy: "30 people",
   size: "20x20"
 });
+
+Template.spaceTabs.helpers({
+  otherSpaces: [
+    {
+      _id: "asdfdasdf",
+      propertyId: "asdfasd",
+      name: "Other cool space",
+      previewImage: "https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg",
+      hourlyPrice: 1500,
+    },
+    {
+      _id: "asdfdadddsdf",
+      propertyId: "asdfasd",
+      name: "Another nice spot",
+      previewImage: "https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg",
+      hourlyPrice: 2500,
+    },
+    {
+      _id: "assssdfdadddsdf",
+      propertyId: "asdfasd",
+      name: "Some people like to give very long names",
+      previewImage: "https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg",
+      hourlyPrice: 500,
+    },
+    {
+      _id: "asdfdadddddsdf",
+      propertyId: "asdfasd",
+      name: "Wow tell me more",
+      previewImage: "https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg",
+      hourlyPrice: 42352,
+    },
+  ]
+})

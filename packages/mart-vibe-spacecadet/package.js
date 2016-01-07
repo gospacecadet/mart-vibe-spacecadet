@@ -51,6 +51,8 @@ Package.onUse(function(api) {
     'routes/pages-router.js',
     'routes/router.js',
     'routes/router-helpers.js',
+    'routes/spaces-router.js',
+    'routes/spaces-route-helpers.js',
     'routes/properties-router.js',
     'routes/properties-router-helpers.js'
   ], 'client')
