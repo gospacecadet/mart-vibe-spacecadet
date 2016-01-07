@@ -1,22 +1,32 @@
 <template name="spaceTopUnitSelection">
-  <ul class="nav nav-pills text-xs-center m-t-2">
-    <li class="nav-item">
-      <a class="nav-link btn-info-outline btn" id="hourly-price" href="#">
-        <h5>Hourly Price</h5>
-        <h6>{{money hourlyPrice}}</h6>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link btn-info-outline btn" id="daily-price" href="#">
-        <h5>Daily Price</h5>
-        <h6>{{money dailyPrice}}</h6>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link btn-info-outline btn" id="monthly-price" href="#">
-        <h5>Monthly Price</h5>
-        <h6>{{money monthlyPrice}}</h6>
-      </a>
-    </li>
-  </ul>
+      <ul class="nav nav-pills text-xs-center m-t-2">
+  <div class='row'>
+
+      <div class="col-md-4 {{activeUnitClass 'hour'}}">
+        <button class="btn-gray-outline btn btn-block p-y-1 unit-price-btn" id="hourly-price">
+          <h5>Hourly Price</h5>
+          <h6><strong>{{money hourlyPrice}}</strong></h6>
+        </button>
+      </div>
+      <div class="col-md-4 {{activeUnitClass 'day'}}">
+        <button class="btn-gray-outline btn btn-block p-y-1 unit-price-btn" id="daily-price">
+          <h5>Daily Price</h5>
+          <h6><strong>{{money dailyPrice}}</strong></h6>
+        </button>
+        <p class="text-xs-center text-muted">
+          Good Price
+        </p>
+      </div>
+      <div class="col-md-4 {{activeUnitClass 'month'}}">
+        <button class="btn-gray-outline btn btn-block p-y-1 unit-price-btn" id="monthly-price">
+          <h5>Monthly Price</h5>
+          <h6><strong>{{money monthlyPrice}}</strong></h6>
+        </button>
+        <p class="text-xs-center text-muted">
+          Best Price
+        </p>
+      </div>
+
+  </div>
+      </ul>
 </template>

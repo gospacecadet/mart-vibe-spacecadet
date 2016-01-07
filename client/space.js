@@ -16,13 +16,13 @@ Template.spaceTopUnitSelection.helpers({
 });
 
 Template.spaceDetails.helpers({
-  detailsSelected: true,
-  locationSelected: false,
-  reviewsSelected: false,
+  propertyId: "test"
 });
 
 Template.spaceDetailDetails.helpers({
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   propertyName: "Great Property Name",
-  propertyDescription: "Vestibulum ut justo vel sapien venenatis tincidunt. Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus."
+  propertyDescription: "Vestibulum ut justo vel sapien venenatis tincidunt. Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus.",
+  occupancy: "30 people",
+  size: "20x20"
 });

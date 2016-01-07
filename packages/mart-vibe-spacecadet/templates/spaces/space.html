@@ -1,7 +1,30 @@
 <template name="spaceTabs">
-  <div class="row">
-    <h1>SPACE TABS HERE</h1>
+
+  <div id='space-tabs-heading' class="row p-t-1">
+    <div class='col-md-2'>
+      <span class='text-xs-center'>
+        <i class="fa fa-chevron-circle-down fa-2x text-xs-center"></i>
+      </span>
+    </div>
+    <div class='col-md-10'>
+      <p class='lead m-b-0'><strong>Other Spaces</strong></p>
+      <p>available at this property</p>
+    </div>
   </div>
+
+  <ul class="nav nav-pills nav-stacked space-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Another link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
+
+
 </template>
 
 <template name="space">

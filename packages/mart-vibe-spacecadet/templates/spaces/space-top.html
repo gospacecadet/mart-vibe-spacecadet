@@ -26,16 +26,16 @@
         {{> afQuickField name='productId' type='hidden' value=_id}}
       </fieldset>
       <button type="submit" class="btn btn-primary m-t-1 btn-block btn-lg">Make a booking</button>
-      <button class="btn btn-info-outline m-t-1 btn-block">Direct message landlord</button>
+      <button class="btn btn-gray-light m-t-1 btn-block p-y-1">Direct message landlord</button>
     {{/autoForm}}
   {{else}}
     <button class="btn btn-primary m-t-1 btn-block btn-lg logged-out">Make a booking</button>
-    <button class="btn btn-info-outline m-t-1 btn-block logged-out">Direct message landlord</button>
+    <button class="btn btn-gray-light m-t-1 btn-block logged-out p-y-1">Direct message landlord</button>
   {{/if}}
 </template>
 
 <template name="spaceTopName">
-  <h2>{{propertyName}}</h2>
-  <h3>{{name}}</h3>
-  <h4 class='text-muted'>{{propertyAddress}}</h4>
+  <h4>{{propertyName}}</h4>
+  <h5>{{name}}</h5>
+  <h6 class='text-muted'>{{propertyAddress}}</h6>
 </template>

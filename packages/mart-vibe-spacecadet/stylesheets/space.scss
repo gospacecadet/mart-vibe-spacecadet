@@ -1,3 +1,54 @@
 .space-thumbnail {
   min-width: 100%
 }
+
+.space-tabs {
+  min-width: 100%
+}
+//
+// .space-tab {
+//   min-width: 100%
+// }
+
+#space-tabs-heading {
+  background-color: white;
+  color: #f9a108;
+}
+
+#space {
+  background-color: #fff;
+}
+
+.unit-price-btn {
+  border-width: 0.2rem;
+}
+
+.unit-active {
+  button.unit-price-btn:hover {
+    background-color: #797979;
+    h5 {
+      color: #fff;
+    }
+
+    h6 {
+      color: #fff;
+    }
+  }
+
+  button.unit-price-btn, button.unit-price-btn:active {
+    border-color: #ffbc00;
+    background-color: #fff;
+    h5 {
+      color: #000;
+    }
+
+    h6 {
+      color: #009987;
+    }
+
+  }
+
+  p.text-muted {
+    color: #009987;
+  }
+}

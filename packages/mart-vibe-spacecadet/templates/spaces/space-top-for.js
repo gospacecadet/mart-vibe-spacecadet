@@ -12,12 +12,12 @@ Template.spaceTopForUnit.events({
 
 Template.spaceTopForUnit.helpers({
   hourlySelected: function() {
-    return Session.get(unitSessionId(FlowRouter.getParam('propertyId'))) === HOUR
+    return Session.get(unitSessionId(this.propertyId)) === HOUR
   },
   dailySelected: function() {
-    return Session.get(unitSessionId(FlowRouter.getParam('propertyId'))) === DAY
+    return Session.get(unitSessionId(this.propertyId)) === DAY
   },
   monthlySelected: function() {
-    return Session.get(unitSessionId(FlowRouter.getParam('propertyId'))) === MONTH
+    return Session.get(unitSessionId(this.propertyId)) === MONTH
   }
 });

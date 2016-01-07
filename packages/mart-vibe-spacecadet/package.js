@@ -15,7 +15,8 @@ Package.onUse(function(api) {
   api.use([
     'ecmascript',
     'templating',
-    'session'
+    'session',
+    'underscore'
   ], 'client');
 
   api.use([
@@ -75,6 +76,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/spaces/space-top-unit-selection.js',
     'templates/spaces/space-top-for.js',
+    'templates/spaces/space-details.js'
     // 'templates/spaces/space-top.js',
   ], 'client')
 
