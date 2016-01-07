@@ -27,7 +27,12 @@ Package.onUse(function(api) {
     'aldeed:collection2@2.5.0',
     'aldeed:simple-schema@1.4.0',
     'mizzao:jquery-ui@1.11.4',
-    'lepozepo:accounting@1.0.0'
+    'lepozepo:accounting@1.0.0',
+    'fortawesome:fontawesome@4.5.0'
+  ])
+
+  api.imply([
+    'kadira:flow-router'
   ])
 
   api.use('twbs:bootstrap@4.0.0-spacecadet', 'client');
@@ -61,7 +66,7 @@ Package.onUse(function(api) {
     'templates/property.html',
     'templates/spaces/space.html',
     'templates/spaces/space-top.html',
-
+    'templates/spaces/space-details.html',
     'templates/spaces/space-top-unit-selection.html',
     'templates/spaces/space-top-for.html',
   ], 'client')
@@ -70,7 +75,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/spaces/space-top-unit-selection.js',
     'templates/spaces/space-top-for.js',
-    'templates/spaces/space-top.js',
+    // 'templates/spaces/space-top.js',
   ], 'client')
 
 

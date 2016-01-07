@@ -1,5 +1,5 @@
 <template name="spaceTopForUnit">
-  <div class="row m-t-2">
+  <div class="m-t-2">
     {{#if hourlySelected}}
       {{> spaceTopForHourly}}
     {{/if}}
@@ -16,76 +16,110 @@
   <p class='lead'>
     Select a start month and number of months.
   </p>
-  <div class="clearfix"></div>
-  <form class="form">
-    <div class="form-group">
-      <label for="monthly-start-date">Start date</label>
-      <input type="text" class="form-control" id="monthly-start-date">
+  <form class="form-inline">
+    <div class='row'>
+      <div class="form-group">
+        <label for="monthly-start-date">Start date</label>
+        <input type="text" class="form-control" id="monthly-start-date">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="monthly-num">Number of months</label>
-      <input type="number" class="form-control" id="monthly-num">
+
+    <div class='row m-t-1'>
+      <div class="form-group">
+        <label for="monthly-num">Number of months</label>
+        <select class="form-control" id="monthly-num">
+          {{#each monthlyNums}}
+            <option>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Update search</button>
+
+    <div class="row m-t-1">
+      <button type="submit" class="btn btn-primary btn-sm">Update search</button>
+    </div>
   </form>
 </template>
 
 <template name="spaceTopForDaily">
-  <p>
+  <p class="lead">
     Select a start day and number of day.
   </p>
-    <form class="form-inline">
+  <form class="form-inline">
+    <div class='row'>
       <div class="form-group">
-        <label for="daily-start-date">Start date</label>
-        <input type="datetime" class="form-control" id="daily-start-date">
+        <label for="monthly-start-date">Start date</label>
+        <input type="text" class="form-control" id="monthly-start-date">
       </div>
+    </div>
+
+    <div class='row m-t-1'>
       <div class="form-group">
-        <label for="hourly-num">Number days</label>
-        <select class="form-control" id="hourly-num">
+        <label for="monthly-num">Number of months</label>
+        <select class="form-control" id="monthly-num">
           {{#each dailyNums}}
             <option>{{this}}</option>
           {{/each}}
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Update search</button>
-    </form>
+    </div>
+
+    <div class="row m-t-1">
+      <button type="submit" class="btn btn-primary btn-sm">Update search</button>
+    </div>
+  </form>
 </template>
 
 <template name="spaceTopForHourly">
   <div class="row">
-    <p>
+    <p class='lead'>
       Select a start day, start time, and number of hours.
     </p>
   </div>
   <form class="form-inline">
-    <div class="form-group">
-      <label for="hourly-start-date">Start date</label>
-      <input type="date" class="form-control" id="hourly-start-date">
+    <div class='row'>
+      <div class="form-group">
+        <label for="hourly-start-date">Start date</label>
+        <input type="date" class="form-control" id="hourly-start-date">
+      </div>
     </div>
-    <div class="form-group">
-      <label for="hourly-start-hour">Start hour</label>
-      <select class="form-control" id="hourly-start-hour">
-        {{#each hours}}
-          <option value="{{value}}">{{name}}</option>
-        {{/each}}
-      </select>
+    <div class='row m-t-1'>
+      <div class="form-group">
+        <label for="hourly-start-hour">Start Time</label>
+        <select class="form-control" id="hourly-start-hour">
+          {{#each hours}}
+            <option value="{{value}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <span class='lead p-x-1'>:</span>
+      <div class="form-group">
+        <select class="form-control" id="hourly-start-minute">
+          {{#each minutes}}
+            <option value="{{value}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="hourly-start-ampm">
+          {{#each ampm}}
+            <option value="{{value}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="hourly-start-minute">Start minute</label>
-      <select class="form-control" id="hourly-start-minute">
-        {{#each minutes}}
-          <option value="{{value}}">{{name}}</option>
-        {{/each}}
-      </select>
+    <div class="row m-t-1">
+      <div class="form-group">
+        <label for="hourly-num">Number hours</label>
+        <select class="form-control" id="hourly-num">
+          {{#each hourlyNums}}
+            <option>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="hourly-num">Number hours</label>
-      <select class="form-control" id="hourly-num">
-        {{#each hourlyNums}}
-          <option>{{this}}</option>
-        {{/each}}
-      </select>
+    <div class="row m-t-1">
+      <button type="submit" class="btn btn-primary btn-sm">Update search</button>
     </div>
-    <button type="submit" class="btn btn-primary">Update search</button>
   </form>
 </template>
