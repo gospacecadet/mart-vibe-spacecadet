@@ -25,3 +25,10 @@ FlowRouter.route('/:propertyId', {
     BlazeLayout.render("mainLayout", {content: "property"});
   }
 });
+
+FlowRouter.route('/', {
+  name: "homepage",
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "property"});
+  }
+});

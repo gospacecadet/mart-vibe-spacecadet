@@ -1,7 +1,4 @@
-Mart = {
-  LineItems: new Mongo.Collection("line-items")
-}
-
+Mart.LineItems = new Mongo.Collection("line-items")
 Mart.LineItems.attachSchema(new SimpleSchema({
   cartId: {
     type: String,
