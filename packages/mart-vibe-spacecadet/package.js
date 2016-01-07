@@ -41,9 +41,12 @@ Package.onUse(function(api) {
 
   // Routes
   api.addFiles([
+    'routes/pages-route-helpers.js',
+    'routes/pages-router.js',
     'routes/router.js',
     'routes/router-helpers.js',
-    'routes/properties-router.js'
+    'routes/properties-router.js',
+    'routes/properties-router-helpers.js'
   ], 'client')
 
   // Layouts
@@ -53,6 +56,7 @@ Package.onUse(function(api) {
 
   // Templates
   api.addFiles([
+    'templates/footers.html',
     'templates/navbar.html',
     'templates/property.html',
     'templates/spaces/space.html',
@@ -72,6 +76,10 @@ Package.onUse(function(api) {
 
   // Stylesheets
   api.addFiles([
-    'stylesheets/property.scss'
+    'stylesheets/footers.scss',
+    'stylesheets/navbar.scss',
+    'stylesheets/property.scss',
+    'stylesheets/space.scss',
+    'stylesheets/spacecadet.scss'
   ], 'client')
 });
