@@ -1,6 +1,9 @@
-
 Template.registerHelper("money", function (priceInCents) {
   return accounting.formatMoney(priceInCents/100)
+})
+
+Template.registerHelper("dollars", function (priceInCents) {
+  return accounting.formatMoney(priceInCents/100, "$", 0)
 })
 
 Template.registerHelper("hours", function () {

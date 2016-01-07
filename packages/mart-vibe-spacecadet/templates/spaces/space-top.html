@@ -12,7 +12,7 @@
 </template>
 
 <template name="spaceTopImageAndButtons">
-  <img src="{{thumbnailUrl}}" alt="{{name}}" class='img img-fluid space-thumbnail img-rounded'/>
+  <img src="{{thumbnailUrl}}" alt="{{name}}" class='img img-fluid space-thumbnail img-rounded m-t-1'/>
   {{#if loggedIn}}
     {{#autoForm collection="Mart.LineItems" id="insertLineItemForm" type="insert"}}
       <fieldset>
@@ -25,17 +25,17 @@
         {{> afQuickField name='cartId' type='hidden' value="cartId"}}
         {{> afQuickField name='productId' type='hidden' value=_id}}
       </fieldset>
-      <button type="submit" class="btn btn-primary m-t-1 btn-block btn-lg btn-wrap">Make a booking</button>
+      <button type="submit" class="btn btn-primary m-t-1 btn-block btn-lg btn-wrap">Book this space</button>
       <button class="btn btn-gray-light m-t-1 btn-block p-y-1 btn-wrap">Direct message landlord</button>
     {{/autoForm}}
   {{else}}
-    <button class="btn btn-primary m-t-1 btn-block btn-lg logged-out btn-wrap">Make a booking</button>
+    <button class="btn btn-primary m-t-1 btn-block btn-lg logged-out btn-wrap">Book this space</button>
     <button class="btn btn-gray-light m-t-1 btn-block logged-out p-y-1 btn-wrap">Direct message landlord</button>
   {{/if}}
 </template>
 
 <template name="spaceTopName">
-  <h4>{{propertyName}}</h4>
+  <h4 class="m-t-2">{{propertyName}}</h4>
   <h5>{{name}}</h5>
   <h6 class='text-muted'>{{propertyAddress}}</h6>
 </template>
