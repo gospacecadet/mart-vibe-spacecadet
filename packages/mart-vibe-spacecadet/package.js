@@ -33,7 +33,9 @@ Package.onUse(function(api) {
   ])
 
   api.imply([
-    'kadira:flow-router'
+    'kadira:flow-router',
+    'aldeed:autoform',
+    'juliancwirko:s-alert',
   ])
 
   api.use('twbs:bootstrap@4.0.0-spacecadet', 'client');
@@ -45,10 +47,14 @@ Package.onUse(function(api) {
     'lib/helpers.js',
     'lib/docking-schema.js',
     'lib/credit-card-schema.js',
+    'lib/shopper-sign-up-schema.js',
+    'lib/merchant-sign-up-schema.js'
   ], 'client')
 
   api.export("DockingSchema", "client")
   api.export("CreditCardSchema", "client")
+  api.export("ShopperSignUpSchema", "client")
+  api.export("MerchantSignUpSchema", "client")
 
   // Routes
   api.addFiles([
@@ -69,14 +75,19 @@ Package.onUse(function(api) {
 
   // Templates
   api.addFiles([
-    'templates/footers.html',
-    'templates/navbar.html',
-    'templates/property.html',
+    'templates/accounts/shopper-sign-up.html',
+    'templates/accounts/merchant-sign-up.html',
     'templates/dockings/dock.html',
     'templates/dockings/dock-form-billing.html',
     'templates/dockings/dock-form-contact.html',
     'templates/dockings/dock-details.html',
     'templates/messages/thread.html',
+    'templates/pages/homepage.html',
+    'templates/pages/list-space.html',
+    'templates/properties/properties.html',
+    'templates/properties/property.html',
+    'templates/shared/footers.html',
+    'templates/shared/navbar.html',
     'templates/spaces/space.html',
     'templates/spaces/space-top.html',
     'templates/spaces/space-details.html',

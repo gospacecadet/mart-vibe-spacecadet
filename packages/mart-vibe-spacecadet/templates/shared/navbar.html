@@ -8,9 +8,8 @@
  {{#if loggedIn}}
    {{> navbarLoggedInLinks}}
  {{else}}
- <h1>not logged in</h1>
-   <!-- {{> navbarLoggedOutLinks}}
-   {{> navbarLogin}} -->
+   {{> navbarLoggedOutLinks}}
+   {{> navbarLogin}}
  {{/if}}
 
 </nav>
@@ -55,7 +54,7 @@
   <form class="form-inline pull-xs-right" id='navbar-login'>
     <input class="form-control" name="email" type="email" placeholder="Email">
     <input class="form-control" name="password" type="password" placeholder="Password">
-    <button class="btn btn-primary-outline" type="submit">Log In</button>
-    <a href="/" class="btn btn-info-outline">Sign Up</a>
+    <button class="btn btn-outline-primary" type="submit">Log In</button>
+    <a href="/" class="btn btn-outline-info">Sign Up</a>
   </form>
 </template>
