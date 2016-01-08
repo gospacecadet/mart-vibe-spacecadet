@@ -63,6 +63,6 @@ DockingSchema = new SimpleSchema({
   contactZIP: {
     type: String,
     optional: true,
-    label: "ZIP/Postal code"
+    label: "ZIP"
   },
 })

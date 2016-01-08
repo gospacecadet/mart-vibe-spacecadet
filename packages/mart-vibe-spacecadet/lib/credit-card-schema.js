@@ -11,13 +11,13 @@ CreditCardSchema = new SimpleSchema({
   },
   expMonth: {
     type: Number,
-    label: "Expiration month",
+    label: "Exp month",
     min: 0,
     max: 12
   },
   expYear: {
     type: Number,
-    label: "Expiration year",
+    label: "Exp year",
     min: new Date().getFullYear(),
     max: new Date().getFullYear() + 100
   },
