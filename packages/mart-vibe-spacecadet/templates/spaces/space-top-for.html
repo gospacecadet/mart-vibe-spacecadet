@@ -1,17 +1,16 @@
 <template name="spaceTopForUnit">
-  <div class="m-t-2">
-    <p class='lead text-muted'>
-      Enter details for the duration of desired rental
-    </p>
-    {{#if hourlySelected}}
-      {{> spaceTopForHourly}}
-    {{/if}}
-    {{#if dailySelected}}
-      {{> spaceTopForDaily}}
-    {{/if}}
-    {{#if monthlySelected}}
-      {{>spaceTopForMonthly}}
-    {{/if}}
+  <div class="m-t-1 row">
+    <div class="col-md-10 col-md-offset-2">
+      {{#if hourlySelected}}
+        {{> spaceTopForHourly}}
+      {{/if}}
+      {{#if dailySelected}}
+        {{> spaceTopForDaily}}
+      {{/if}}
+      {{#if monthlySelected}}
+        {{>spaceTopForMonthly}}
+      {{/if}}
+    </div>
   </div>
 </template>
 

@@ -76,6 +76,7 @@ Package.onUse(function(api) {
     'templates/dockings/dock-form-billing.html',
     'templates/dockings/dock-form-contact.html',
     'templates/dockings/dock-details.html',
+    'templates/messages/thread.html',
     'templates/spaces/space.html',
     'templates/spaces/space-top.html',
     'templates/spaces/space-details.html',
@@ -95,6 +96,7 @@ Package.onUse(function(api) {
   // Stylesheets
   api.addFiles([
     'stylesheets/footers.scss',
+    'stylesheets/messages.scss',
     'stylesheets/navbar.scss',
     'stylesheets/property.scss',
     'stylesheets/space.scss',

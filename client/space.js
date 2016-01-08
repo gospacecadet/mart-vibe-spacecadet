@@ -1,6 +1,8 @@
 Template.spaceTopImageAndButtons.helpers({
   thumbnailUrl: 'https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg',
-  name: "some space"
+  name: "some space",
+  userId: "theshopperId",
+  propertyOwnerId: "propertyOwnerId"
 });
 
 Template.spaceTopName.helpers({

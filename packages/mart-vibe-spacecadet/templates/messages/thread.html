@@ -1,0 +1,74 @@
+<template name="thread">
+  <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridModalLabel">Chat with {{recipientName}}</h4>
+        </div>
+        <div class="modal-body">
+          {{> threadHistory}}
+        </div>
+        <div class="modal-footer">
+          {{> threadSendMessage}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="threadHistory">
+  <div class="container-fluid">
+    {{#each messages}}
+      <div class="row">
+        <div class="{{messageClass}}" role="alert">
+          {{#if isFile}}
+            {{> threadFile}}
+          {{else}}
+            {{> threadMessage}}
+          {{/if}}
+          <p class='text-sm text-muted'>
+            {{timestamp}}
+          </p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="threadMessage">
+  <p>
+    {{body}}
+  </p>
+</template>
+
+<template name="threadFile">
+  <p>
+    File attached: <a href="{{body}}">{{filename}}</a>
+  </p>
+</template>
+
+<template name="threadSendMessage">
+<div class='container-fluid'>
+  <form>
+    <div class="row">
+      <div class="col-md-9">
+        <fieldset class="form-group">
+          <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Send a message..."></textarea>
+        </fieldset>
+      </div>
+      <div class='col-md-3'>
+        <button type="button" id="send-mesages-button" class="btn btn-primary btn-wrap btn-block btn-lg p-y-2"><i class="fa fa-paper-plane-o fa-2x"></i></button>
+      </div>
+      <div class="clearfix">
+
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+
+
+</template>
