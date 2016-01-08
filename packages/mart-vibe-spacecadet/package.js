@@ -69,6 +69,8 @@ Package.onUse(function(api) {
     'templates/property.html',
     'templates/dockings/dock.html',
     'templates/dockings/dock-credit-cards.html',
+    'templates/dockings/dock-form.html',
+    'templates/dockings/dock-details.html',
     'templates/spaces/space.html',
     'templates/spaces/space-top.html',
     'templates/spaces/space-details.html',
@@ -80,8 +82,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/spaces/space-top-unit-selection.js',
     'templates/spaces/space-top-for.js',
-    'templates/spaces/space-details.js'
-    // 'templates/spaces/space-top.js',
+    'templates/spaces/space-details.js',
+    'templates/dockings/dock.js',
   ], 'client')
 
 
@@ -91,6 +93,7 @@ Package.onUse(function(api) {
     'stylesheets/navbar.scss',
     'stylesheets/property.scss',
     'stylesheets/space.scss',
-    'stylesheets/spacecadet.scss'
+    'stylesheets/docking.scss',
+    'stylesheets/spacecadet.scss',
   ], 'client')
 });

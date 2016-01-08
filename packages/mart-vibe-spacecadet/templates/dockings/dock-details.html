@@ -1,0 +1,76 @@
+
+<template name="reserveDockingDetails">
+  <div class="docking-details p-t-1 p-b-2 p-x-1">
+    <h4>Docking details</h4>
+
+    {{#each carts}}
+      {{> reserveDockingDetailsCart}}
+    {{/each}}
+
+    {{> reserveDockingDetailsAddOns}}
+    <button id="dock-now-button" class='btn btn-lg btn-block btn-primary'>Submit Docking</button>
+  </div>
+</template>
+
+<template name="reserveDockingDetailsLine">
+  <tr>
+    <td>{{spaceName}}</td>
+    <td>{{quantity}} {{unit}}s</td>
+    <td>{{money unitPrice}} / {{unit}}</td>
+    <td><button class="btn btn-outline-danger btn-sm">X</button></td>
+  </tr>
+</template>
+
+<template name="reserveDockingDetailsCart">
+  <hr>
+  <h5>{{propertyName}}</h5>
+  <p class='text-muted m-b-0'>{{address}}</p>
+  <p class='text-muted'>{{address2}}</p>
+  <div class='table-responsive'>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Space name</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each lineItems}}
+          {{> reserveDockingDetailsLine}}
+        {{/each}}
+        <td colspan="4"><em>Property subtotal: {{money subtotal}}</em></td>
+      </tbody>
+    </table>
+  </div>
+</template>
+
+<template name="reserveDockingDetailsAddOns">
+  <hr>
+  <h5>Taxes &amp; Fees</h5>
+  <div class='table-responsive'>
+    <table class="table table-sm">
+      <tr>
+        <td>Subtotal</td>
+        <td></td>
+        <td>{{money cartsSubtotal}}</td>
+      </tr>
+      <tr>
+        <td>Service Fee</td>
+        <td></td>
+        <td>{{money serviceFee}}</td>
+      </tr>
+      <tr>
+        <td>Tax</td>
+        <td></td>
+        <td>{{money tax}}</td>
+      </tr>
+      <tr>
+        <td><h5><strong>Amount Due</strong></h5></td>
+        <td></td>
+        <td><h5><strong>{{money total}}</strong></h5></td>
+      </tr>
+    </table>
+  </div>
+</template>

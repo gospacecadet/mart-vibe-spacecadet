@@ -1,0 +1,70 @@
+<template name="reserveDockingFormBilling">
+  <h4>Billing Information</h4>
+</template>
+
+<template name="reserveDockingFormContact">
+<h4>Contact Details</h4>
+{{#with cart}}
+  {{#autoForm collection="Mart.Carts" id="updateCartForm" type="update" doc=this}}
+    <!-- {{#if afFieldIsInvalid name='cardId'}}
+      <p>
+        Must select a credit card
+      </p>
+    {{/if}} -->
+    <fieldset>
+      <div class='row'>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactFirstName'}}
+        </div>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactLastName'}}
+        </div>
+      </div>
+
+      {{> afQuickField name='contactRentingOnBehalfBiz'}}
+
+      {{#if isRentingOnBehalfBiz}}
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='contactEntity'}}
+          </div>
+          <div class='col-md-6'>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class='row'>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactEmail'}}
+        </div>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactPhone'}}
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactAddress'}}
+        </div>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactAddress2'}}
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactCity'}}
+        </div>
+        <div class='col-md-6'>
+          {{> afQuickField name='contactZIP'}}
+        </div>
+      </div>
+
+      {{> afQuickField name='cardId' type='hidden' id="updateCartFormCardId"}}
+      {{> afQuickField name='state' type='hidden' value=awaitingPaymentState}}
+    </fieldset>
+    <!-- <button type="submit" class="btn btn-primary">Checkout now</button> -->
+  {{/autoForm}}
+{{/with}}
+ <!-- {{> dockCreditCards}} -->
+</template>

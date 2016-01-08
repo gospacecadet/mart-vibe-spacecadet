@@ -1,12 +1,12 @@
 <template name="dock">
-  <div class='container-fluid'>
+  <div class='container-fluid dock'>
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <div class="row">
+        <div class="row m-t-2">
           <div class="col-md-7">
             {{> reserveDockingForm}}
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5 p-y-3">
             {{> reserveDockingDetails}}
           </div>
         </div>
@@ -16,78 +16,7 @@
 </template>
 
 <template name="reserveDockingForm">
-{{#with cart}}
-  {{#autoForm collection="Mart.Carts" id="updateCartForm" type="update" doc=this}}
-    {{#if afFieldIsInvalid name='cardId'}}
-      <p>
-        Must select a credit card
-      </p>
-    {{/if}}
-    <fieldset>
-      <legend>Contact Details</legend>
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactFirstName'}}
-        </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactLastName'}}
-        </div>
-      </div>
-
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactEntity'}}
-        </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactAddress2'}}
-        </div>
-      </div>
-
-
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactEmail'}}
-        </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactPhone'}}
-        </div>
-      </div>
-
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactAddress'}}
-        </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactAddress2'}}
-        </div>
-      </div>
-
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactCity'}}
-        </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='contactZIP'}}
-        </div>
-      </div>
-
-
-      {{> afQuickField name='cardId' type='hidden' id="updateCartFormCardId"}}
-      {{> afQuickField name='state' type='hidden' value=awaitingPaymentState}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Checkout now</button>
-  {{/autoForm}}
-{{/with}}
- <!-- {{> dockCreditCards}} -->
-</template>
-
-<template name="reserveDockingDetails">
-<h2>Cart</h2>
-<!-- {{#each lineItems}}
-  <p>
-    <strong><a href="{{stationPath stationId}}">{{storefrontName}}</a></strong> @{{productName}} X{{quantity}}
-    <button class="removeBooking btn btn-danger btn-sm">Remove Booking</button>
-  </p>
-{{/each}}
-<h3>Subtotal: {{cartSubtotal}}</h3> -->
+  {{> reserveDockingFormContact}}
+  <hr>
+  {{> reserveDockingFormBilling}}
 </template>
