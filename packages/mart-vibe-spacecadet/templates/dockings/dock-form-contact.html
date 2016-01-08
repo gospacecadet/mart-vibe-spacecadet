@@ -1,16 +1,12 @@
-<template name="reserveDockingFormBilling">
-  <h4>Billing Information</h4>
-</template>
-
 <template name="reserveDockingFormContact">
 <h4>Contact Details</h4>
-{{#with cart}}
-  {{#autoForm collection="Mart.Carts" id="updateCartForm" type="update" doc=this}}
-    <!-- {{#if afFieldIsInvalid name='cardId'}}
+{{#with docking}}
+  {{#autoForm schema="DockingSchema" id="submitDockingForm" type="normal"}}
+    {{#if afFieldIsInvalid name='cardId'}}
       <p>
         Must select a credit card
       </p>
-    {{/if}} -->
+    {{/if}}
     <fieldset>
       <div class='row'>
         <div class='col-md-6'>
@@ -52,19 +48,17 @@
       </div>
 
       <div class='row'>
-        <div class='col-md-6'>
+        <div class='col-md-3'>
           {{> afQuickField name='contactCity'}}
         </div>
-        <div class='col-md-6'>
+        <div class='col-md-3'>
           {{> afQuickField name='contactZIP'}}
         </div>
       </div>
 
       {{> afQuickField name='cardId' type='hidden' id="updateCartFormCardId"}}
-      {{> afQuickField name='state' type='hidden' value=awaitingPaymentState}}
+    <!--   {{> afQuickField name='cartIds' type='hidden' value=cartIds}} -->
     </fieldset>
-    <!-- <button type="submit" class="btn btn-primary">Checkout now</button> -->
   {{/autoForm}}
 {{/with}}
- <!-- {{> dockCreditCards}} -->
 </template>

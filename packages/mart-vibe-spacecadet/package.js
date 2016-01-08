@@ -43,7 +43,12 @@ Package.onUse(function(api) {
   // lib
   api.addFiles([
     'lib/helpers.js',
+    'lib/docking-schema.js',
+    'lib/credit-card-schema.js',
   ], 'client')
+
+  api.export("DockingSchema", "client")
+  api.export("CreditCardSchema", "client")
 
   // Routes
   api.addFiles([
@@ -68,8 +73,8 @@ Package.onUse(function(api) {
     'templates/navbar.html',
     'templates/property.html',
     'templates/dockings/dock.html',
-    'templates/dockings/dock-credit-cards.html',
-    'templates/dockings/dock-form.html',
+    'templates/dockings/dock-form-billing.html',
+    'templates/dockings/dock-form-contact.html',
     'templates/dockings/dock-details.html',
     'templates/spaces/space.html',
     'templates/spaces/space-top.html',

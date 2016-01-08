@@ -1,0 +1,64 @@
+<template name="reserveDockingFormBilling">
+  <h4>Billing Information</h4>
+  {{> reserveDockingFormBillingCards}}
+
+  {{#if addingCreditCard}}
+    {{> reserveDockingFormBillingCard}}
+  {{/if}}
+</template>
+
+ <template name="reserveDockingFormBillingCard">
+  {{#autoForm schema="CreditCardSchema" id="createCardForm" type="normal"}}
+    <fieldset>
+      <div class="row">
+        <div class='col-md-6'>
+          {{> afQuickField name='nameOnCard'}}
+        </div>
+        <div class='col-md-6'>
+          {{> afQuickField name='number' type='text'}}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class='col-md-3'>
+          {{> afQuickField name='expMonth' type='select' options=expMonthOptions}}
+        </div>
+        <div class='col-md-3'>
+          {{> afQuickField name='expYear' type='select' options=expYearOptions}}
+        </div>
+        <div class='col-md-6'>
+          {{> afQuickField name='cvc' type='text'}}
+        </div>
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-outline-primary">Add card to account</button>
+  {{/autoForm}}
+</template>
+
+<template name="reserveDockingFormBillingCards">
+  <p class="text-muted lead">
+    Select a saved credit card or add a new one
+  </p>
+  <form id="creditCardSelection" class="form">
+    <div class="row">
+      <div class="radio col-md-4">
+        <label>
+          <input type="radio" name="creditCardRadio" id="add-new-card" checked>
+          Add a new card
+        </label>
+      </div>
+      {{#each creditCards}}
+        {{> creditCardRadio}}
+      {{/each}}
+    </div>
+  </form>
+</template>
+
+<template name="creditCardRadio">
+  <div class="radio col-md-4">
+    <label>
+      <input type="radio" class="creditCardRadio" name="creditCardRadio" id="{{_id}}">
+      {{label}}
+    </label>
+  </div>
+</template>

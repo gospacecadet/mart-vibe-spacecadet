@@ -1,18 +1,25 @@
-Template.dockCreditCards.helpers({
-  hasCreditCards: false,
+Template.reserveDockingFormBillingCards.helpers({
   creditCards: [
-    {_id: "aasdfasdf", label: "Visa *4913"}
+    {_id: "aasdfasdf", label: "Visa **4913"},
+    {_id: "ytsdf", label: "MasterCard **4913"},
   ],
 })
 
+Template.reserveDockingFormBilling.helpers({
+  hasCreditCards: true
+});
+
 Template.reserveDockingFormContact.helpers({
-  cart: {
+  docking: {
     contactFirstName: "Robleh",
     contactLastName: "Esa",
     contactEmail: "example@riseup.net",
     contactPhone: "3015551139",
-
-  }
+    contactAddress: "123 Fake St",
+    contactCity: "New Orleans",
+    contactZIP: "70113",
+    cartIds: ["asdf", "asdfasd"]
+  },
 });
 
 Template.reserveDockingDetailsAddOns.helpers({
