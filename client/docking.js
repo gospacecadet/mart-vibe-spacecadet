@@ -48,7 +48,7 @@ Template.reserveDockingDetails.helpers({
         {
           spaceName: 'THIS Space',
           quantity: '4',
-          unit: 'month',
+          unit: 'month*',
           unitPrice: 53456,
           spaceId: 'asdsadffasdf',
           propertyId: 'asdfsadfslkj',

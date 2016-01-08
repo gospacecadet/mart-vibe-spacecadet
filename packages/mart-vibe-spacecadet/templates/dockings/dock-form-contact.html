@@ -1,5 +1,8 @@
 <template name="reserveDockingFormContact">
 <h4>Contact Details</h4>
+<p class='lead text-muted'>
+  Enter the details for the primary point of contact
+</p>
 {{#with docking}}
   {{#autoForm schema="DockingSchema" id="submitDockingForm" type="normal"}}
     {{#if afFieldIsInvalid name='cardId'}}
