@@ -90,6 +90,7 @@ Package.onUse(function(api) {
     'templates/spaces/space-top-for.js',
     'templates/spaces/space-details.js',
     'templates/dockings/dock.js',
+    'templates/messages/thread.js',
   ], 'client')
 
 
