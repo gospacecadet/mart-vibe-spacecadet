@@ -109,6 +109,7 @@ Package.onUse(function(api) {
 
   // Stylesheets
   api.addFiles([
+    'stylesheets/_variables.scss',
     'stylesheets/footers.scss',
     'stylesheets/messages.scss',
     'stylesheets/navbar.scss',

@@ -114,9 +114,11 @@
   <h4>Existing Spaces</h4>
   <ul>
     {{#each spaces}}
-      <li><a href="{{manageSpacePath _id propertyId}}" class="btn btn-link">
-        {{name}}
-      </a></li>
+      <li>
+        <a href="{{manageSpacePath _id propertyId}}" class="btn btn-link">
+          {{name}}
+        </a>
+      </li>
     {{/each}}
   </ul>
 

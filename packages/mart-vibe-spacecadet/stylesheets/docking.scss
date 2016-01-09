@@ -1,10 +1,4 @@
+@import "variables";
 .dock {
-  color: #818181;
-}
-
-.docking-details {
-  background-color: #fff;
-  border-style: solid;
-  border-color: #C0C3C4;
-  border-width: 0.25rem;
+  color: $gray-text;
 }

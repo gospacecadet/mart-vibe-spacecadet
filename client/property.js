@@ -66,3 +66,7 @@ Template.uploadPropertyImage.helpers({
 Template.manageSpaces.helpers({
   propertyId: 'lflaksjfdlsakdjn'
 });
+
+Template.manageSpacePreview.helpers({
+  propertyId: 'lflaksjfdlsakdjn'
+});
