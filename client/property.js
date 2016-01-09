@@ -39,7 +39,7 @@ var properties = [
     spaces: [
       {
         _id: 'asdfasdfasdfasdf',
-        name: "Go space",
+        name: "He said go there",
         description: "Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes",
         thumbnailUrl: "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",
       }
@@ -53,4 +53,12 @@ Template.properties.helpers({
 
 Template.manageProperties.helpers({
   properties: properties
+});
+
+Template.manageProperty.helpers({
+  property: properties[0]
+});
+
+Template.uploadPropertyImage.helpers({
+  url:  "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",
 });

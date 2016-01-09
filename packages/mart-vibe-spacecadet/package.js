@@ -62,8 +62,6 @@ Package.onUse(function(api) {
     'routes/pages-router.js',
     'routes/docking-router.js',
     'routes/dockings-route-helpers.js',
-    'routes/spaces-router.js',
-    'routes/spaces-route-helpers.js',
     'routes/properties-router.js',
     'routes/properties-router-helpers.js'
   ], 'client')
@@ -85,6 +83,7 @@ Package.onUse(function(api) {
     'templates/pages/homepage.html',
     'templates/pages/list-space.html',
     'templates/properties/manage-properties.html',
+    'templates/properties/manage-property.html',
     'templates/properties/new-property.html',
     'templates/properties/properties.html',
     'templates/properties/property.html',
@@ -104,6 +103,7 @@ Package.onUse(function(api) {
     'templates/spaces/space-details.js',
     'templates/dockings/dock.js',
     'templates/messages/thread.js',
+    'templates/properties/manage-property.js',
   ], 'client')
 
 

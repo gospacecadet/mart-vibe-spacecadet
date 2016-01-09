@@ -13,3 +13,7 @@ Template.registerHelper("managePropertiesPath", function () {
 Template.registerHelper("newPropertyPath", function () {
   return FlowRouter.path('newProperty')
 })
+
+Template.registerHelper("spacePath", function (spaceId, propertyId) {
+  return FlowRouter.path('space', {spaceId: spaceId, propertyId: propertyId})
+})

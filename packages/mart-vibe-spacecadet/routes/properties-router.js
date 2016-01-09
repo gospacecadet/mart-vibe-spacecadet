@@ -5,6 +5,13 @@ FlowRouter.route('/new-property', {
   }
 });
 
+FlowRouter.route('/', {
+  name: "homepage",
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "homepage"});
+  }
+});
+
 FlowRouter.route('/properties', {
   name: "manageProperties",
   action: function() {
@@ -26,9 +33,9 @@ FlowRouter.route('/:propertyId', {
   }
 });
 
-FlowRouter.route('/', {
-  name: "homepage",
+FlowRouter.route('/:propertyId/:spaceId', {
+  name: "space",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "homepage"});
+    BlazeLayout.render("mainLayout", {content: "property"});
   }
 });
