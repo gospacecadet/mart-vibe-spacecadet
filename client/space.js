@@ -93,3 +93,7 @@ var monthlyPrice = {
 Template.manageSpacePrices.helpers({
   prices: [hourlyPrice, dailyPrice, monthlyPrice]
 });
+
+Template.uploadSpaceImage.helpers({
+  url:  "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",    
+});

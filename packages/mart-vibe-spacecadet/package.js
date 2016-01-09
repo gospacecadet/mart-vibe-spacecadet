@@ -108,6 +108,7 @@ Package.onUse(function(api) {
     'templates/dockings/dock.js',
     'templates/messages/thread.js',
     'templates/spaces/manage-space.js',
+    'templates/properties/manage-properties.js',
     // 'templates/properties/manage-property.js',
   ], 'client')
 

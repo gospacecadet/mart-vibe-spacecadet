@@ -63,10 +63,6 @@ Template.uploadPropertyImage.helpers({
   url:  "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",
 });
 
-Template.manageSpaces.helpers({
-  propertyId: 'lflaksjfdlsakdjn'
-});
-
 Template.manageSpacePreview.helpers({
   propertyId: 'lflaksjfdlsakdjn'
 });

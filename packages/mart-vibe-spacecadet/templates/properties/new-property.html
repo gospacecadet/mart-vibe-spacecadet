@@ -2,20 +2,29 @@
 <div class="container-fluid">
   <div class="row m-a-2 p-a-2">
     <div class="col-md-10 col-md-offset-1 white-box p-t-2">
-      {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="insert"}}
-        <fieldset>
-          <legend>Add a Property</legend>
-          <hr>
-          {{> newPropertyFields}}
-        </fieldset>
-        <div class="m-t-2">
-          <button type="submit" class="btn btn-primary btn-lg m-t-2">Create Property</button>
-          <p class="text-muted m-a-1">
-            You will be able to continue editing before the property is made visible to the public.
-          </p>
-        </div>
 
-      {{/autoForm}}
+        {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="insert"}}
+          <fieldset>
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <h3><strong>Create a Property</strong></h3>
+              </div>
+            </div>
+            <hr>
+            {{> newPropertyFields}}
+          </fieldset>
+          {{> newPropertyImages}}
+          <div class="row m-t-2">
+            <div class="col-md-8 col-md-offset-2">
+              <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">Create Property</button>
+
+            </div>
+          </div>
+
+        {{/autoForm}}
+        <p class="text-muted m-a-1 text-xs-center">
+          You will be able to continue editing before the property is made visible to the public.
+        </p>
     </div>
   </div>
 </div>
@@ -23,34 +32,84 @@
 
 <template name="newPropertyFields">
 
-  <div class='row'>
-    <div class='col-md-6'>
-      <h4>Name &amp; Description</h4>
-      {{> afQuickField name='name'}}
-      {{> afQuickField name='description' type='textarea' rows=4}}
+    <div class="row m-t-2">
+      <div class="col-md-2">
+        <h4 class='text-xs-right'><strong>Step 1</strong></h4>
+      </div>
+      <div class="col-md-8">
+        <h4 class='m-b-2'>Name &amp; Description</h4>
+        {{> afQuickField name='name'}}
+        {{> afQuickField name='description' type='textarea' rows=4}}
+      </div>
     </div>
-    <div class='col-md-6'>
-      <h4>Location Details</h4>
-      {{> afQuickField name='address'}}
-      {{> afQuickField name='address2'}}
 
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='city'}}
+    <div class="row m-t-3">
+      <div class="col-md-2">
+        <h4 class='text-xs-right'><strong>Step 2</strong></h4>
+      </div>
+      <div class="col-md-8">
+        <h4 class='m-b-2'>Location Details</h4>
+        {{> afQuickField name='address'}}
+        {{> afQuickField name='address2'}}
+
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='city'}}
+          </div>
+          <div class='col-md-6'>
+            {{> afQuickField name='state'}}
+          </div>
         </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='state'}}
+
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='zip'}}
+          </div>
+          <div class='col-md-6'>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='zip'}}
-        </div>
-        <div class='col-md-6'>
-        </div>
+</template>
+
+<template name="newPropertyImages">
+  <div class="row m-t-2">
+    <div class="col-md-2">
+      <h4 class='text-xs-right'><strong>Step 3</strong></h4>
+    </div>
+    <div class="col-md-8">
+      <h4 class='m-b-2'>Upload Property Images</h4>
+      <p class='text-muted'>
+        You may upload up to four photos.
+        They will appear to the public in clockwise order.
+      </p>
+      <div class="row">
+        {{#each numImagesAllowed}}
+          <div class="col-md-6">
+            {{> uploadPropertyImage index=index propertyId=_id }}
+          </div>
+        {{/each}}
       </div>
     </div>
   </div>
+  <hr>
 
+
+</template>
+
+<template name="newPropertyImage">
+  <img src={{url}} class="img-rounded img-fluid m-t-2"/>
+
+  {{#if uploading}}
+    <progress class="progress progress-striped progress-success" value="{{progress}}" max="100">{{progress}}%</progress>
+  {{/if}}
+
+  <form>
+      <label class="file">
+        <input type="file" id="property-image-{{index}}">
+        <span class="file-custom"></span>
+      </label>
+    <button type="submit" class="btn btn-outline-primary btn-upload btn-block btn-sm">Upload</button>
+  </form>
 </template>
