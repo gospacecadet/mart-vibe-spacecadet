@@ -1,28 +1,29 @@
 <template name="manageProperty">
   <div class="container-fluid">
     <div class="row m-a-2 p-a-2">
-      <div class="col-md-10 col-md-offset-1 white-box p-y-2">
+      <div class="col-md-5 col-md-offset-1 white-box p-y-2">
         {{#with property}}
-          <div class='row'>
-            <div class='col-md-6'>
-              <h3>Edit Property</h3>
-              <hr>
-              {{> mangePropertyImages}}
-              <hr>
-              {{> managePropertyDetails}}
-            </div>
-            <div class='col-md-6'>
-              <h3>Create &amp; manage Rentable Spaces</h3>
-              <hr>
-            </div>
-          </div>
+          <h3>Edit Property</h3>
+          <hr>
+          {{> managePropertyImages}}
+          <hr>
+          {{> managePropertyDetails}}
+        {{/with}}
+      </div>
+      <div class="col-md-5 white-box p-y-2">
+        {{#with property}}
+          <h3>Manage rentable Spaces</h3>
+          <hr>
+          {{> manageSpaces}}
+          <hr>
+          {{> newSpace}}
         {{/with}}
       </div>
     </div>
   </div>
 </template>
 
-<template name="mangePropertyImages">
+<template name="managePropertyImages">
   <h4>Upload Property images</h4>
   <p>
     You may upload up to four photos.
@@ -93,5 +94,30 @@
       </label>
     <button type="submit" class="btn btn-success btn-upload btn-block btn-sm">Upload</button>
   </form>
+</template>
+
+<template name="newSpace">
+  <h4>Create a new Space for rent</h4>
+  {{#autoForm collection="Mart.Products" id="new-space-form" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='name'}}
+      {{> afQuickField name='description' type='textarea' rows=4}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Create Space</button>
+    <p class="text-muted m-a-1">
+      You will be able to continue editing before the Space is made visible to the public.
+    </p>
+  {{/autoForm}}
+</template>
+
+<template name="manageSpaces">
+  <h4>Existing Spaces</h4>
+  <ul>
+    {{#each spaces}}
+      <li><a href="{{manageSpacePath _id propertyId}}" class="btn btn-link">
+        {{name}}
+      </a></li>
+    {{/each}}
+  </ul>
 
 </template>
