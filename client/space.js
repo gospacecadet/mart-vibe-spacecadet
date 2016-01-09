@@ -61,3 +61,35 @@ Template.spaceTabs.helpers({
     },
   ]
 })
+
+Template.manageSpace.helpers({
+  space: {
+    _id: "assssdfdadddsdf",
+    propertyId: "asdfasd",
+    name: "Some people like to give very long names",
+    previewImage: "https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg",
+    hourlyPrice: 500,
+  },
+});
+
+HOUR = "hour"
+DAY = "day"
+MONTH = "month"
+
+var hourlyPrice = {
+  priceInCents: 3166,
+  unit: DAY,
+  productId: "asdfasldfj"
+}
+
+var dailyPrice = null
+
+var monthlyPrice = {
+  priceInCents: 42339,
+  unit: MONTH,
+  productId: "asdfaslasdfdfj"
+}
+
+Template.manageSpacePrices.helpers({
+  prices: [hourlyPrice, dailyPrice, monthlyPrice]
+});

@@ -39,7 +39,7 @@
 </template>
 
 <template name="managePropertyDetails">
-  {{#autoForm collection="Mart.Storefronts" id="updateStationForm" type="update" doc=this}}
+  {{#autoForm collection="Mart.Storefronts" id="updatePropertyForm" type="update" doc=this}}
 
     <fieldset>
       {{> managePropertyFields}}
@@ -92,7 +92,7 @@
         <input type="file" id="property-image-{{index}}">
         <span class="file-custom"></span>
       </label>
-    <button type="submit" class="btn btn-success btn-upload btn-block btn-sm">Upload</button>
+    <button type="submit" class="btn btn-primary btn-upload btn-block btn-sm">Upload</button>
   </form>
 </template>
 

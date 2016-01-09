@@ -43,12 +43,15 @@ Package.onUse(function(api) {
   api.addFiles('mart-template-spacecadet.js', 'client');
 
   // lib
+  api.addFiles(['lib/globals.js'], 'client')
+
   api.addFiles([
-    'lib/helpers.js',
-    'lib/docking-schema.js',
-    'lib/credit-card-schema.js',
-    'lib/shopper-sign-up-schema.js',
-    'lib/merchant-sign-up-schema.js'
+    'lib/helpers/helpers.js',
+    'lib/helpers/time-helpers.js',
+    'lib/schemas/docking-schema.js',
+    'lib/schemas/credit-card-schema.js',
+    'lib/schemas/shopper-sign-up-schema.js',
+    'lib/schemas/merchant-sign-up-schema.js'
   ], 'client')
 
   api.export("DockingSchema", "client")
@@ -89,6 +92,7 @@ Package.onUse(function(api) {
     'templates/properties/property.html',
     'templates/shared/footers.html',
     'templates/shared/navbar.html',
+    'templates/spaces/manage-space.html',
     'templates/spaces/space.html',
     'templates/spaces/space-top.html',
     'templates/spaces/space-details.html',
@@ -103,7 +107,8 @@ Package.onUse(function(api) {
     'templates/spaces/space-details.js',
     'templates/dockings/dock.js',
     'templates/messages/thread.js',
-    'templates/properties/manage-property.js',
+    'templates/spaces/manage-space.js',
+    // 'templates/properties/manage-property.js',
   ], 'client')
 
 

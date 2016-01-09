@@ -1,0 +1,7 @@
+{
+  "public": {
+    "serviceFeePct": 0.10,
+    "connectionFeePct": 0.20,
+    "taxPct": 0.1
+  }
+}

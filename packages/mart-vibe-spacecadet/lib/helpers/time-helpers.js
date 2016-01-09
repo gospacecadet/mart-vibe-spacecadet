@@ -1,9 +1,13 @@
-Template.registerHelper("money", function (priceInCents) {
-  return accounting.formatMoney(priceInCents/100)
+Template.registerHelper("HOUR", function () {
+  return HOUR
 })
 
-Template.registerHelper("dollars", function (priceInCents) {
-  return accounting.formatMoney(priceInCents/100, "$", 0)
+Template.registerHelper("DAY", function () {
+  return DAY
+})
+
+Template.registerHelper("MONTH", function () {
+  return MONTH
 })
 
 Template.registerHelper("hours", function () {
@@ -50,12 +54,3 @@ Template.registerHelper("dailyNums", function () {
 Template.registerHelper("monthlyNums", function () {
   return [1,2,3,4,5,6,7,8,9,10,11,12]
 })
-
-HOUR = "hour"
-DAY = "day"
-MONTH = "month"
-
-const UNIT_SESSION_PREFIX = "unit-selected-"
-unitSessionId = function(propertyId) {
-  return UNIT_SESSION_PREFIX + propertyId
-}
