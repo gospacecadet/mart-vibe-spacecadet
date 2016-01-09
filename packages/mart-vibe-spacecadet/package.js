@@ -84,6 +84,7 @@ Package.onUse(function(api) {
     'templates/messages/thread.html',
     'templates/pages/homepage.html',
     'templates/pages/list-space.html',
+    'templates/properties/manage-properties.html',
     'templates/properties/new-property.html',
     'templates/properties/properties.html',
     'templates/properties/property.html',

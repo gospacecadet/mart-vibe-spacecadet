@@ -1,0 +1,55 @@
+<template name="manageProperties">
+<div class="container-fluid">
+  <div class="row m-a-2 p-a-2">
+    <div class="col-md-10 col-md-offset-1 white-box p-y-2">
+      <h2>Manage a Property or Space</h2>
+      {{#each properties}}
+        {{> managePropertyPreview}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+</template>
+
+<template name="managePropertyPreview">
+  <hr>
+  <div class="row m-t-2">
+    <div class="col-md-4">
+      <a href="{{managePropertyPath _id}}">
+        <img class="img-fluid" src="{{thumbnailUrl}}" alt="{{name}}">
+      </a>
+    </div>
+    <div class='col-md-8'>
+      <a href="{{managePropertyPath _id}}">
+        <h4 class="media-heading">{{name}}</h4>
+        {{description}}
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class='col-md-8 col-md-offset-4'>
+      {{#each spaces}}
+        {{> manageSpacePreview}}
+      {{/each}}
+    </div>
+  </div>
+</template>
+
+
+<template name="manageSpacePreview">
+  <hr>
+  <div class="row m-t-1">
+    <div class="col-md-4">
+      <a href="#">
+        <img class="img-fluid" src="{{thumbnailUrl}}" alt="{{name}}">
+      </a>
+    </div>
+    <div class='col-md-8'>
+      <a href="#">
+        <h4 class="media-heading">{{name}}</h4>
+        {{description}}
+      </a>
+    </div>
+  </div>
+</template>

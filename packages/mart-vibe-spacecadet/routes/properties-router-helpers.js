@@ -2,8 +2,8 @@ Template.registerHelper("propertyPath", function (propertyId) {
   return FlowRouter.path('property', {propertyId: propertyId})
 })
 
-Template.registerHelper("editPropertyPath", function (propertyId) {
-  return FlowRouter.path('editProperty', {propertyId: propertyId})
+Template.registerHelper("managePropertyPath", function (propertyId) {
+  return FlowRouter.path('manageProperty', {propertyId: propertyId})
 })
 
 Template.registerHelper("managePropertiesPath", function () {

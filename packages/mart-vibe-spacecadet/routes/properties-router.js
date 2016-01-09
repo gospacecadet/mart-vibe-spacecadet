@@ -12,10 +12,10 @@ FlowRouter.route('/properties', {
   }
 });
 
-FlowRouter.route('/:propertyId/edit', {
-  name: "editProperty",
+FlowRouter.route('/:propertyId/manage', {
+  name: "manageProperty",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "editProperty"});
+    BlazeLayout.render("mainLayout", {content: "manageProperty"});
   }
 });
 
