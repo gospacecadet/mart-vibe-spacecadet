@@ -7,6 +7,6 @@ Template.navbarLoggedInLinks.helpers({
     return true;
   },
   canActAsMerchant: function() {
-    return false;
+    return true;
   }
 });

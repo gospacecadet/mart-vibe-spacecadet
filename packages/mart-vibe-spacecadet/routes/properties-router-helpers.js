@@ -9,3 +9,7 @@ Template.registerHelper("editPropertyPath", function (propertyId) {
 Template.registerHelper("managePropertiesPath", function () {
   return FlowRouter.path('manageProperties')
 })
+
+Template.registerHelper("newPropertyPath", function () {
+  return FlowRouter.path('newProperty')
+})
