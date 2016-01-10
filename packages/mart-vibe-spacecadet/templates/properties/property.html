@@ -4,6 +4,48 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 property">
+        <div class="row m-t-2">
+          <div class="col-md-8">
+            {{> spaces}}
+          </div>
+          <div class='col-md-4 text-xs-center'>
+            <div class='property-details p-a-1 m-b-1'>
+              {{> propertyDetails}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/with}}
+</template>
+
+<template name="spaces">
+  <div class='m-t-1'>
+    <h4 class="text-muted"><strong>Select A Space To Continue</strong></h4>
+    <div class="row m-t-2">
+    {{#each spaces}}
+      <div class="col-md-6">
+        {{> spaceCard}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+</template>
+
+<template name="propertyDetails">
+  <h5>{{name}}</h5>
+  <h6 class='text-muted'>{{address}}</h6>
+  <img src="{{thumbnailUrl}}" alt="{{name}}" class="img-fluid img-rounded center-block m-t-1"/>
+  <p class="m-t-1">{{description}}</p>
+</template>
+
+<!-- <template name="property">
+{{#with property}}
+  <img src="{{currentImageUrl}}" alt="{{name}}" class="img img-fluid property-banner"/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 property">
         {{#each spaces}}
         <div class="row">
           <div class="col-md-3">
@@ -18,4 +60,4 @@
     </div>
   </div>
 {{/with}}
-</template>
+</template> -->

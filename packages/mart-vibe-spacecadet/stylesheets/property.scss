@@ -4,6 +4,7 @@
 }
 
 .property {
+  background-color: #fff;
   border-style: solid;
   border-color: $gray-border-color;
   border-width: 0 $gray-border-thickness 0 $gray-border-thickness;
@@ -15,4 +16,9 @@
 
 #space {
   color: black;
+}
+
+.property-details {
+  background-color: #f6f6f6;
+  border-radius: 0.9rem;
 }

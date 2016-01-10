@@ -21,7 +21,7 @@ Template.spaceTopUnitSelection.events({
 });
 
 Template.spaceTopUnitSelection.onCreated(function() {
-  Session.setDefault(unitSessionId(this.propertyId), DAY)
+  Session.setDefault(unitSessionId(Template.currentData().propertyId), DAY)
 })
 
 Template.spaceTopUnitSelection.helpers({

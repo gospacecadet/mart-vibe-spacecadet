@@ -43,6 +43,6 @@ FlowRouter.route('/:propertyId/manage/:spaceId', {
 FlowRouter.route('/:propertyId/:spaceId', {
   name: "space",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "property"});
+    BlazeLayout.render("mainLayout", {content: "space"});
   }
 });

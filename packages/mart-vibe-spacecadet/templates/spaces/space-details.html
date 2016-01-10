@@ -13,7 +13,13 @@
     </ul>
     <div class='m-t-1'> -->
       <!-- {{#if detailsSelected}} -->
-        <h5>Space details</h5>
+        <h4>{{propertyName}}
+         <a href="{{propertyPath propertyId}}">
+           <small>return to property</small>
+          </a>
+        </h4>
+        <h5>{{name}}</h5>
+        <h6 class="text-muted">{{propertyAddress}}</h6>
         <hr>
         {{> spaceDetailDetails}}
       <!-- {{/if}}
@@ -28,13 +34,14 @@
 </template>
 
 <template name="spaceDetailDetails">
-  <div class='row'>
-    <div class='col-md-9'>
-      <p>{{description}}</p>
+  <div class='row m-t-1'>
+    <div class='col-md-8'>
+      <img src="{{thumbnailUrl}}" alt="{{name}}" class="img-fluid center-block space-details-img img-rounded"/>
+      <p class='m-t-1'>{{description}}</p>
       <p><strong>About the property:</strong> {{propertyDescription}}</p>
     </div>
 
-    <div class='col-md-3'>
+    <div class='col-md-4'>
       <dl class="dl-horizontal">
         <dt class="col-sm-3">Occupancy</dt>
         <dd class="col-sm-9">{{occupancy}}</dd>
@@ -44,12 +51,8 @@
       </dl>
     </div>
   </div>
-  <p class='text-muted m-t-1'>
-    <small>
-      * Month dockings will be automatically billed each month.
-       <a href="#" id="monthly-billing-warning">Learn more.</a>
-    </small>
-  </p>
+
+
 </template>
 
 <template name="spaceDetailLocation">

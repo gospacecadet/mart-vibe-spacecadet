@@ -1,18 +1,26 @@
 <template name="spaceTopForUnit">
-  <h4><strong>Step 2: </strong>Select date &amp; time</h4><br/>
+  <div class='m-t-2'>
+    <h4><strong>Step 2: </strong>Select date &amp; time</h4><br/>
 
-  <div class="m-t-1 row">
-    <div class="col-md-10 col-md-offset-2">
-      {{#if hourlySelected}}
-        {{> spaceTopForHourly}}
-      {{/if}}
-      {{#if dailySelected}}
-        {{> spaceTopForDaily}}
-      {{/if}}
-      {{#if monthlySelected}}
-        {{>spaceTopForMonthly}}
-      {{/if}}
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        {{#if hourlySelected}}
+          {{> spaceTopForHourly}}
+        {{/if}}
+        {{#if dailySelected}}
+          {{> spaceTopForDaily}}
+        {{/if}}
+        {{#if monthlySelected}}
+          {{>spaceTopForMonthly}}
+        {{/if}}
+      </div>
     </div>
+    <p class='text-muted m-t-1'>
+      <small>
+        * Month dockings will be automatically billed each month.
+         <a href="#" id="monthly-billing-warning">Learn more.</a>
+      </small>
+    </p>
   </div>
 </template>
 

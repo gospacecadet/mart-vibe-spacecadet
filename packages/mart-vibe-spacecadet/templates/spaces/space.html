@@ -1,31 +1,36 @@
-<template name="spaceTabs">
-  <div id='space-tabs-heading' class="row p-t-1">
-    <div class='col-md-2'>
-      <span class='text-xs-center'>
-        <i class="fa fa-chevron-circle-down fa-2x text-xs-center"></i>
-      </span>
-    </div>
-    <div class='col-md-10'>
-      <p class='lead m-b-0'><strong>Other Spaces</strong></p>
-      <p>available at this property</p>
-    </div>
+<template name="spaceCard">
+  <div class="card">
+  <div class="card-block">
+    <h4 class="card-title">{{name}}</h4>
+    <h6 class="card-subtitle text-muted">Starting at {{dollars priceInCents}} / hour</h6>
   </div>
-
-  <ul class="nav nav-pills nav-stacked space-tabs">
-    <div class='m-t-1'></div>
-    {{#each otherSpaces}}
-      <li class="nav-item space-tab">
-        <a class="nav-link space-tab-link" href="{{spacePath _id propertyId}}">
-          <img src="{{previewImage}}" alt="{{name}}" class="img img-fluid img-rounded"/>
-          <strong>{{name}}</strong> - {{dollars hourlyPrice}} / hour
-        </a>
-      </li>
-      <hr>
-    {{/each}}
-  </ul>
+  <img class="card-img-top img-fluid center-block select-space" src="{{thumbnailUrl}}" alt="{{name}}">
+  <div class="card-block">
+    <p class="card-text">{{description}}</p>
+    <a href="{{spacePath _id propertyId}}" class="btn btn-primary btn-lg btn-block">View Space</a>
+  </div>
+</div>
 </template>
 
 <template name="space">
-  {{> spaceTop}}
-  {{> spaceDetails}}
+  {{#with space}}
+    <img src="{{currentImageUrl}}" alt="{{name}}" class="img img-fluid property-banner"/>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 property">
+          <div class="row m-t-2">
+            <div class='col-md-4 col-md-offset-1'>
+              {{> spaceTopUnitSelection}}
+              {{> spaceTopForUnit}}
+              {{> spaceTopImageAndButtons}}
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+              {{> spaceDetails}}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
 </template>
