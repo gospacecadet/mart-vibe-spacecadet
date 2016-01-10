@@ -20,19 +20,19 @@
   {{#autoForm collection="Mart.Storefronts" id="updatePropertyForm" type="update" doc=this}}
 
     <fieldset>
-      {{> managePropertyFields}}
+      {{> propertyFields}}
     </fieldset>
 
     {{> managePropertyImages}}
 
-    <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">Save changes</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Save changes</button>
     <button id="publish-property" class='btn btn-primary-outline btn-lg btn-block m-t-1'>Publish</button>
 
   {{/autoForm}}
 </template>
 
 <template name="managePropertyImages">
-  <div class="row m-t-2">
+  <div class="row m-t-2 p-b-2">
     <div class="col-md-2">
       <h4 class='text-xs-right'><strong>Step 3</strong></h4>
     </div>
@@ -54,48 +54,6 @@
   <hr>
 
 
-</template>
-
-
-<template name="managePropertyFields">
-  <div class="row m-t-2">
-    <div class="col-md-2">
-      <h4 class='text-xs-right'><strong>Step 1</strong></h4>
-    </div>
-    <div class="col-md-8">
-      <h4 class='m-b-2'>Name &amp; Description</h4>
-      {{> afQuickField name='name'}}
-      {{> afQuickField name='description' type='textarea' rows=4}}
-    </div>
-  </div>
-
-  <div class="row m-t-3">
-    <div class="col-md-2">
-      <h4 class='text-xs-right'><strong>Step 2</strong></h4>
-    </div>
-    <div class="col-md-8">
-      <h4 class='m-b-2'>Location Details</h4>
-      {{> afQuickField name='address'}}
-      {{> afQuickField name='address2'}}
-
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='city'}}
-        </div>
-        <div class='col-md-6'>
-          {{> afQuickField name='state'}}
-        </div>
-      </div>
-
-      <div class='row'>
-        <div class='col-md-6'>
-          {{> afQuickField name='zip'}}
-        </div>
-        <div class='col-md-6'>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <template name="uploadPropertyImage">

@@ -11,7 +11,7 @@
               </div>
             </div>
             <hr>
-            {{> newPropertyFields}}
+            {{> propertyFields}}
           </fieldset>
           {{> newPropertyImages}}
           <div class="row m-t-2">
@@ -30,7 +30,7 @@
 </div>
 </template>
 
-<template name="newPropertyFields">
+<template name="propertyFields">
 
     <div class="row m-t-2">
       <div class="col-md-2">
@@ -49,8 +49,15 @@
       </div>
       <div class="col-md-8">
         <h4 class='m-b-2'>Location Details</h4>
-        {{> afQuickField name='address'}}
-        {{> afQuickField name='address2'}}
+
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='address'}}
+          </div>
+          <div class='col-md-6'>
+            {{> afQuickField name='address2'}}
+          </div>
+        </div>
 
         <div class='row'>
           <div class='col-md-6'>
@@ -74,7 +81,7 @@
 </template>
 
 <template name="newPropertyImages">
-  <div class="row m-t-2">
+  <div class="row m-t-2 p-b-2">
     <div class="col-md-2">
       <h4 class='text-xs-right'><strong>Step 3</strong></h4>
     </div>

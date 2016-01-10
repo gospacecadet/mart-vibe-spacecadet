@@ -1,10 +1,17 @@
 <template name="spaceTop">
   <div class='row'>
     <div class="col-sm-4">
-      {{> spaceTopImageAndButtons}}
+      <img src="{{thumbnailUrl}}" alt="{{name}}" class='img img-fluid space-thumbnail img-rounded m-t-1'/>
+
     </div>
     <div class="col-md-8">
       {{> spaceTopName}}
+      <!-- {{> spaceTopImageAndButtons}} -->
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class="col-md-10 col-md-offset-1">
       {{> spaceTopUnitSelection}}
       {{> spaceTopForUnit}}
     </div>
@@ -12,7 +19,7 @@
 </template>
 
 <template name="spaceTopImageAndButtons">
-  <img src="{{thumbnailUrl}}" alt="{{name}}" class='img img-fluid space-thumbnail img-rounded m-t-1'/>
+
   {{#if loggedIn}}
     {{#autoForm collection="Mart.LineItems" id="insertLineItemForm" type="insert"}}
       <fieldset>

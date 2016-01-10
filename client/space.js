@@ -4,7 +4,9 @@ Template.spaceTopImageAndButtons.helpers({
   userId: "theshopperId",
   propertyOwnerId: "propertyOwnerId"
 });
-
+Template.spaceTop.helpers({
+  thumbnailUrl: 'https://s3.amazonaws.com/local.beta.spacecadet.io/stations/wcaZQQqwZ2njWkvD9/thumbnail/1.jpg',
+});
 Template.spaceTopName.helpers({
   propertyName: "Great Property Name",
   name: "Name of space",
@@ -95,5 +97,5 @@ Template.manageSpacePrices.helpers({
 });
 
 Template.uploadSpaceImage.helpers({
-  url:  "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",    
+  url:  "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",
 });

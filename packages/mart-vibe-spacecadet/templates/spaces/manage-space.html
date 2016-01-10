@@ -15,7 +15,7 @@
           {{> manageSpaceDetails}}
           {{> manageSpaceImages}}
           <hr>
-          <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">Save changes</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Save changes</button>
           <button id="publish-space" class='btn btn-primary-outline btn-lg btn-block m-t-1'>Publish</button>
         {{/autoForm}}
 
@@ -27,11 +27,12 @@
 
 
 <template name="manageSpaceImages">
-  <div class="row m-t-2">
+  <div class="row m-t-2 p-b-1">
     <div class="col-md-2">
-      <h4 class="text-xs-right"><strong>Images</strong></h4>
+      <h4 class="text-xs-right"><strong>Step 3</strong></h4>
     </div>
     <div class="col-md-8">
+      <h4>Upload Station Images</h4>
       <p class="text-muted">
         You may upload up to four photos.
         They will appear to the public in clockwise order.
@@ -49,7 +50,7 @@
 </template>
 
 <template name="uploadSpaceImage">
-  <img src={{url}} class="img-rounded img-fluid m-t-2"/>
+  <img src={{url}} class="img-rounded img-fluid m-t-1"/>
 
   {{#if uploading}}
     <progress class="progress progress-striped progress-success" value="{{progress}}" max="100">{{progress}}%</progress>
@@ -60,18 +61,18 @@
         <input type="file" id="property-image-{{index}}">
         <span class="file-custom"></span>
       </label>
-    <button type="submit" class="btn btn-outline-primary btn-upload btn-block btn-sm">Upload</button>
+    <button type="submit" class="btn btn-outline-primary btn-upload btn-block btn-sm m-b-2">Upload</button>
   </form>
 </template>
 
 <template name="manageSpaceDetails">
-  <div class="row m-t-2">
+  <div class="row m-t-3">
     <div class="col-md-2">
-      <h4 class="text-xs-right"><strong>Name &amp; Description</strong></h4>
+      <h4 class="text-xs-right"><strong>Step 2</strong></h4>
     </div>
     <div class="col-md-8">
-
-      <fieldset>
+      <h4>Name &amp; Description</h4>
+      <fieldset class="m-t-1">
         {{> afQuickField name='name'}}
         {{> afQuickField name='description' type='textarea' rows=4}}
       </fieldset>
@@ -83,9 +84,11 @@
 <template name="manageSpacePrices">
   <div class="row">
     <div class="col-md-2">
-      <h4 class="text-xs-right"><strong>Pricing</strong></h4>
+      <h4 class="text-xs-right"><strong>Step 1</strong></h4>
     </div>
     <div class="col-md-8">
+      <h4 class="m-b-2">Pricing</h4>
+
       {{#each prices}}
         {{#if this}}
           {{> editPrice}}
@@ -102,7 +105,7 @@
   <div class="row m-t-1">
     <div class="col-md-3">
       <h4 class="text-capitalize">
-        <span class="label label-pill label-primary p-a-1">{{unit}} Price*</span>
+        <span class="label label-pill label-primary p-a-1">{{unit}}ly Price*</span>
       </h4>
     </div>
     <div class="col-md-6">
@@ -117,12 +120,22 @@
       </fieldset>
     </div>
     <div class='col-md-3'>
-      <button type="submit" class="btn btn-outline-primary btn-sm">Update price</button>
+      <button type="submit" class="btn btn-outline-primary btn-sm">Update {{unit}}ly price</button>
     </div>
   </div>
   {{/autoForm}}
   <div class="row">
-    {{> priceExplanation connectionCharge=connectionCharge landlordCut=landlordCut}}
+    {{#if connectionCharge}}
+      <p class='text-muted'>
+        <small>
+          This is the price the renters will see.
+          The SpaceCadet connection charge will be
+          <strong>{{money connectionCharge}}</strong>
+          and you will receive
+          <strong>{{money landlordCut}}</strong>
+        </small>
+      </p>
+    {{/if}}
   </div>
 </template>
 
@@ -134,7 +147,7 @@
         The SpaceCadet connection charge will be
         <strong>{{money connectionCharge}}</strong>
         and you will receive
-        <strong>{{money landlordCut}}</strong>
+        <strong>{{money landlordCut}}</strong>{{landlordCut}}
       </small>
     </p>
   {{/if}}
@@ -145,7 +158,7 @@
   <div class="row m-t-1">
     <div class="col-md-3">
       <h4 class="text-capitalize">
-        <span class="label label-pill label-primary p-a-1">{{unit}} Price*</span>
+        <span class="label label-pill label-primary p-a-1">{{unit}}ly Price*</span>
       </h4>
     </div>
     <div class="col-md-6">
@@ -162,7 +175,7 @@
       </fieldset>
     </div>
     <div class='col-md-3'>
-      <button type="submit" class="btn btn-outline-primary btn-sm">Set price</button>
+      <button type="submit" class="btn btn-outline-primary btn-sm">Set {{unit}}ly price</button>
     </div>
   </div>
   {{/autoForm}}
