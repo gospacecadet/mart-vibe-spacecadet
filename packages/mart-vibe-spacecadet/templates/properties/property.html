@@ -4,18 +4,24 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 property">
-        {{#each spaces}}
         <div class="row">
-          <div class="col-md-3">
-            {{> spaceTabs}}
+          <div class="col-md-7">
+            {{> spaces}}
           </div>
-          <div class="col-md-9 m-t-0" id="space">
-            {{> space}}
+          <div class="col-md-5">
+            {{> propertyDetails}}
           </div>
         </div>
-        {{/each}}
       </div>
     </div>
   </div>
 {{/with}}
+</template>
+
+<template name='spaces'>
+  <h1>Spaces</h1>
+</template>
+
+<template name='propertyDetails'>
+<h1>Property Details</h1>
 </template>

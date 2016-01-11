@@ -38,7 +38,7 @@ Package.onUse(function(api) {
     'juliancwirko:s-alert',
   ])
 
-  api.use('twbs:bootstrap@4.0.0-spacecadet', 'client');
+  api.use('twbs:bootstrap@4.0.0-alpha.2', 'client');
 
   api.addFiles('mart-template-spacecadet.js', 'client');
 
