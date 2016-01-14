@@ -8,5 +8,8 @@ Template.navbarLoggedInLinks.helpers({
   },
   canActAsMerchant: function() {
     return true;
+  },
+  isMerchant: function() {
+    return true;
   }
 });

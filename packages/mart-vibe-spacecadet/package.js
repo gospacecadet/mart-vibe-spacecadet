@@ -29,7 +29,8 @@ Package.onUse(function(api) {
     'aldeed:simple-schema@1.4.0',
     'mizzao:jquery-ui@1.11.4',
     'lepozepo:accounting@1.0.0',
-    'fortawesome:fontawesome@4.5.0'
+    'fortawesome:fontawesome@4.5.0',
+    'momentjs:moment@2.10.6'
   ])
 
   api.imply([
@@ -59,6 +60,9 @@ Package.onUse(function(api) {
   api.export("ShopperSignUpSchema", "client")
   api.export("MerchantSignUpSchema", "client")
 
+  // Assets
+  api.addAssets("assets/avatar.png", "client")
+
   // Routes
   api.addFiles([
     'routes/pages-route-helpers.js',
@@ -78,16 +82,23 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/accounts/shopper-sign-up.html',
     'templates/accounts/merchant-sign-up.html',
-    'templates/dockings/dock.html',
-    'templates/dockings/dock-form-billing.html',
-    'templates/dockings/dock-form-contact.html',
-    'templates/dockings/dock-details.html',
     'templates/messages/thread.html',
     'templates/pages/homepage.html',
     'templates/pages/list-space.html',
     'templates/shared/footers.html',
     'templates/shared/navbar.html',
-    'templates/spaces/manage-space.html',
+  ], 'client')
+
+  // Dockings
+  api.addFiles([
+    'templates/dockings/dock.html',
+    'templates/dockings/dock-form-billing.html',
+    'templates/dockings/dock-form-contact.html',
+    'templates/dockings/dock-details.html',
+    'templates/dockings/manage/manage-dockings.html',
+    'templates/dockings/manage/manage-dockings-approval.html',
+    'templates/dockings/manage/manage-dockings-upcoming.html',
+    'templates/dockings/manage/manage-dockings-approval.js'
   ], 'client')
 
   // Spaces
@@ -97,7 +108,7 @@ Package.onUse(function(api) {
     'templates/spaces/space/space-top.html',
     'templates/spaces/shared/space-card-buttons.html',
     'templates/spaces/shared/space-booking.html',
-
+    'templates/spaces/manage-space.html',
     'templates/spaces/space/space-details.html',
     'templates/spaces/space/space-top-unit-selection.html',
     'templates/spaces/space/space-top-for.html',
@@ -107,7 +118,6 @@ Package.onUse(function(api) {
     'templates/spaces/shared/space-card.js',
     'templates/spaces/shared/space-card-buttons.js',
     'templates/spaces/shared/space-booking.js',
-
   ], 'client')
 
   // Properties

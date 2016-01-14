@@ -1,0 +1,49 @@
+<template name="manageDockingsApproval">
+<h4>Approval Required</h4>
+
+<div id="manage-dockings-accordion" role="tablist" aria-multiselectable="true">
+  {{#each dockingsRequiringApproval}}
+    {{> _manageDockingsApproval}}
+  {{/each}}
+</div>
+</template>
+
+<template name="_manageDockingsApproval">
+  <div class="panel panel-default m-a-2 m-t-3">
+    <div class="panel-heading" role="tab" id="{{manageDockingsHeadingId}}">
+      <div class='row'>
+        <div class='col-md-4'>
+          <img src="{{contactAvatar}}" alt="{{contactName}}" class='img-fluid'/>
+        </div>
+        <div class='col-md-8'>
+          <h4>{{contactName}} <small class='text-muted'>{{dateAgo submittedAt}}</small></h4>
+          <hr>
+          <h5>You earn: <strong><span class='text-primary'>{{money merchantCut}}</span></strong></h5>
+          <h5>From total: <span>{{money total}}</span></h5>
+
+          <div class='row'>
+            <a data-toggle="collapse" data-parent="#manage-dockings-accordion" class='btn m-t-1 btn-link btn-lg pull-right'
+              href="#{{manageDockingsCollapseId}}" aria-expanded="true" aria-controls="collapseOne">
+                See details
+            </a>
+          </div>
+
+          <hr>
+          <div class='row'>
+            <div class='col-md-7'>
+              <button class='btn btn-primary btn-lg btn-block'>Accept</button>
+            </div>
+            <div class='col-md-5'>
+              <button class='btn btn-danger btn-lg btn-block'>Reject</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div id="{{manageDockingsCollapseId}}" class="panel-collapse collapse in m-t-1" role="tabpanel" aria-labelledby="{{manageDockingsHeadingId}}">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    </div>
+  </div>
+</template>

@@ -1,3 +1,48 @@
+Template.manageDockingsApproval.helpers({
+  dockingsRequiringApproval: [
+    {
+      contactRentingOnBehalfBiz: true,
+      contactFirstName: "Marvin",
+      contactLastName: "Arnold",
+      contactEmail: "marvin@spacecadet.io",
+      contactPhone: "3015551234",
+      contactBusiness: "Unplugged",
+      serviceFee: 1242,
+      connectionFee: 4523,
+      merchantCut: 53474,
+      total: 341323,
+      tax: 0,
+      submittedAt: new Date(),
+    },
+    {
+      contactRentingOnBehalfBiz: false,
+      contactFirstName: "Jus",
+      contactLastName: "Blaze",
+      contactEmail: "jus@spacecadet.io",
+      contactPhone: "3015551234",
+      serviceFee: 32,
+      connectionFee: 453,
+      merchantCut: 2345,
+      total: 2452,
+      tax: 0,
+      submittedAt: new Date(),
+    },
+    {
+      contactRentingOnBehalfBiz: false,
+      contactFirstName: "True",
+      contactLastName: "Dat",
+      contactEmail: "details-details@spacecadet.io",
+      contactPhone: "3015551234",
+      serviceFee: 4523,
+      connectionFee: 56236,
+      merchantCut: 2346523,
+      total: 8354625,
+      tax: 0,
+      submittedAt: new Date(),
+    }
+  ]
+});
+
 Template.reserveDockingFormBillingCards.helpers({
   creditCards: [
     {_id: "aasdfasdf", label: "Visa **4913"},

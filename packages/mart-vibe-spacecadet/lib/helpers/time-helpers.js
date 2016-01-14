@@ -54,3 +54,11 @@ Template.registerHelper("dailyNums", function () {
 Template.registerHelper("monthlyNums", function () {
   return [1,2,3,4,5,6,7,8,9,10,11,12]
 })
+
+Template.registerHelper("dateSlashed", function () {
+  return [1,2,3,4,5,6,7,8,9,10,11,12]
+})
+
+Template.registerHelper("dateAgo", function (date) {
+  return moment(date).fromNow()
+})
