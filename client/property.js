@@ -7,7 +7,11 @@ var spaces = [
     priceInCents: 575443,
     description: "et, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed",
     occupancy: '20 people',
-    size: '20x20'
+    size: '20x20',
+    propertyDescription: "Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices",
+    propertyName: "Great Property Name",
+    address: "123 Canal St, New Orleans, LA 70113",
+
   },
   {
     _id: "asdfdadddsdf",
@@ -17,7 +21,11 @@ var spaces = [
     priceInCents: 428,
     description: "Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.",
     occupancy: '2 people',
-    size: '30x4'
+    size: '30x4',
+    propertyDescription: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In euismod ultrices facilisis. ",
+    propertyName: "Wow tell me more",
+    address: "123 Canal St, New Orleans, LA 70113",
+
   },
   {
     _id: "assssdfdadddsdf",
@@ -27,7 +35,11 @@ var spaces = [
     priceInCents: 79453,
     description: "Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices",
     occupancy: '100 people',
-    size: '200x20'
+    size: '200x20',
+    propertyDescription: "Vestibulum ut justo vel sapien venenatis tincidunt. Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus.",
+    propertyName: "Wow tell me more",
+    address: "123 Canal St, New Orleans, LA 70113",
+
   },
   {
     _id: "asdfdadddddsdf",
@@ -35,9 +47,13 @@ var spaces = [
     name: "Wow tell me more",
     currentImageUrl: "https://s3.amazonaws.com/spacecadet-staging.beta.spacecadet.io/stations/o9YFDut8QoCScvENA/thumbnail/1.jpg",
     priceInCents: 2365,
-    description: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In euismod ultrices facilisis. ",
+    description: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In euismod ultrices facilisis.",
     occupancy: '1 people',
-    size: '2x2'
+    size: '2x2',
+    propertyDescription: "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In euismod ultrices facilisis.",
+    propertyName: "Some people like to give very long names",
+    address: "123 Canal St, New Orleans, LA 70113",
+
   },
 ]
 

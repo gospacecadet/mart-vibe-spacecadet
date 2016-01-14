@@ -1,0 +1,48 @@
+<template name="spaceBooking">
+  <div id="{{spaceBookingModal}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridModalLabel">Dock at {{name}}</h4>
+          <h5><strong>{{propertyName}}</strong></h5>
+          <h6 class='text-muted'>{{address}}</h6>
+        </div>
+
+        <div class="modal-body m-b-1">
+          <h5 class='m-b-2'><strong>Step 1: </strong>Confirm duration</h5>
+          {{> spaceTopUnitSelection}}
+
+          <h5 class='m-t-2 m-b-2'><strong>Step 2: </strong>Select date &amp; time</h5>
+          {{> spaceTopForUnit}}
+        </div>
+
+        <div class="modal-footer">
+          {{> spaceBookingForm}}
+          <p class='text-muted m-t-1 text-xs-right'>
+            <small>
+              * Month dockings will be automatically billed each month.
+               <a href="#" id="monthly-billing-warning">Learn more.</a>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="spaceBookingForm">
+  {{#autoForm collection="Mart.LineItems" id="insertLineItemForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='unit' type='hidden' value=currentUnit}}
+      {{> afQuickField name='quantity' type='hidden' value=currentQuantity}}
+      {{> afQuickField name='startAtDate' type='hidden' value=currentDate}}
+      {{> afQuickField name='startAtHour' type='hidden' value=currentHour}}
+      {{> afQuickField name='startAtMinute' type='hidden' value=currentMinute}}
+
+      {{> afQuickField name='cartId' type='hidden' value="cartId"}}
+      {{> afQuickField name='productId' type='hidden' value=_id}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary btn-block btn-lg btn-wrap">Checkout</button>
+  {{/autoForm}}
+</template>

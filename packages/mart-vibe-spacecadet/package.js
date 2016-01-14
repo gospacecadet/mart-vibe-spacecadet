@@ -95,12 +95,19 @@ Package.onUse(function(api) {
     'templates/spaces/space/space.html',
     'templates/spaces/shared/space-card.html',
     'templates/spaces/space/space-top.html',
+    'templates/spaces/shared/space-card-buttons.html',
+    'templates/spaces/shared/space-booking.html',
+
     'templates/spaces/space/space-details.html',
     'templates/spaces/space/space-top-unit-selection.html',
     'templates/spaces/space/space-top-for.html',
     'templates/spaces/space/space-top-unit-selection.js',
     'templates/spaces/space/space-details.js',
     'templates/spaces/space/space-top-for.js',
+    'templates/spaces/shared/space-card.js',
+    'templates/spaces/shared/space-card-buttons.js',
+    'templates/spaces/shared/space-booking.js',
+
   ], 'client')
 
   // Properties
