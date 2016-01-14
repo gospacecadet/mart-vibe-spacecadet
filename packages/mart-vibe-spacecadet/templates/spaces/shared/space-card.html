@@ -1,0 +1,34 @@
+<template name="spaceCard">
+  <div class="card space-card">
+    <div class="card-block">
+      <div class='row'>
+        <div class='col-xs-7 col-md-8'>
+          <h4 class="card-title">{{name}}</h4>
+          <h6 class="card-subtitle text-muted">Starting at {{dollars priceInCents}} / hour</h6>
+        </div>
+        <div class='col-xs-5 col-md-4 text-xs-right'>
+          <p>
+            {{occupancy}}&nbsp;&nbsp;<i class='fa fa-users fa-lg'></i>
+          </p>
+          <p>
+            {{size}}&nbsp;&nbsp;<i class='fa fa-building fa-lg'></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <img class="card-img-top img-fluid center-block select-space" src="{{currentImageUrl}}" alt="{{name}}">
+    <div class="card-block card-block-bottom">
+      <p class="card-text">{{truncateText description 161}}</p>
+      {{> spaceTopUnitSelection}}
+      <hr>
+      <div class="row">
+        <div class="col-xs-7">
+          <button class="btn btn-primary btn-lg btn-block">Book Now</button>
+        </div>
+        <div class="col-xs-5">
+          <button class="btn btn-secondary btn-lg btn-block">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

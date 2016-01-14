@@ -1,0 +1,60 @@
+<template name="spaceTopUnitSelection">
+  <div class="m-t-2">
+    <div class='row text-xs-center'>
+      {{#if hourlyPrice}}
+        <div class="col-xs-4 {{activeUnitClass 'hour'}}">
+          <button class="btn-gray-outline btn btn-block unit-price-btn" id="hourly-price">
+            <h6><strong>Hourly<br/>Price</strong></h6>
+            <h5><strong>{{money hourlyPrice}}</strong></h5>
+          </button>
+        </div>
+      {{else}}
+        <div class="col-xs-4">
+          <button class="btn-gray-outline btn btn-block unit-price-btn" disabled>
+            <h6><strong>Hourly<br/>Price</strong></h6>
+            <p class='text-muted'><small>UNAVAILABLE</small></p>
+          </button>
+        </div>
+      {{/if}}
+
+      {{#if dailyPrice}}
+        <div class="col-xs-4 {{activeUnitClass 'day'}}">
+          <button class="btn-gray-outline btn btn-block unit-price-btn" id="daily-price">
+            <h6><strong>Daily<br/>Price</strong></h6>
+            <h5><strong>{{money dailyPrice}}</strong></h5>
+          </button>
+          <p class="text-xs-center text-muted">
+            Great Price
+          </p>
+        </div>
+      {{else}}
+        <div class="col-xs-4">
+          <button class="btn-gray-outline btn btn-block unit-price-btn" disabled>
+            <h6><strong>Daily<br/>Price</strong></h6>
+            <p class='text-muted'><small>UNAVAILABLE</small></p>
+          </button>
+        </div>
+      {{/if}}
+
+      {{#if monthlyPrice}}
+        <div class="col-xs-4 {{activeUnitClass 'month'}}">
+          <button class="btn-gray-outline btn btn-block unit-price-btn" id="monthly-price">
+            <h6><strong>Monthly<br/>Price</strong></h6>
+            <h5><strong>{{money monthlyPrice}}</strong></h5>
+          </button>
+          <p class="text-xs-center text-muted">
+            Best Price*
+          </p>
+        </div>
+      {{else}}
+        <div class="col-xs-4">
+          <button class="btn-gray-outline btn btn-block unit-price-btn" disabled>
+            <h6><strong>Monthly<br/>Price</strong></h6>
+            <p class='text-muted'><small>UNAVAILABLE</small></p>
+          </button>
+        </div>
+      {{/if}}
+
+  </div>
+</div>
+</template>

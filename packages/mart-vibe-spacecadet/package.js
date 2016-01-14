@@ -85,26 +85,37 @@ Package.onUse(function(api) {
     'templates/messages/thread.html',
     'templates/pages/homepage.html',
     'templates/pages/list-space.html',
+    'templates/shared/footers.html',
+    'templates/shared/navbar.html',
+    'templates/spaces/manage-space.html',
+  ], 'client')
+
+  // Spaces
+  api.addFiles([
+    'templates/spaces/space/space.html',
+    'templates/spaces/shared/space-card.html',
+    'templates/spaces/space/space-top.html',
+    'templates/spaces/space/space-details.html',
+    'templates/spaces/space/space-top-unit-selection.html',
+    'templates/spaces/space/space-top-for.html',
+    'templates/spaces/space/space-top-unit-selection.js',
+    'templates/spaces/space/space-details.js',
+    'templates/spaces/space/space-top-for.js',
+  ], 'client')
+
+  // Properties
+  api.addFiles([
     'templates/properties/manage-properties.html',
     'templates/properties/manage-property.html',
     'templates/properties/new-property.html',
     'templates/properties/properties.html',
-    'templates/properties/property.html',
-    'templates/shared/footers.html',
-    'templates/shared/navbar.html',
-    'templates/spaces/manage-space.html',
-    'templates/spaces/space.html',
-    'templates/spaces/space-top.html',
-    'templates/spaces/space-details.html',
-    'templates/spaces/space-top-unit-selection.html',
-    'templates/spaces/space-top-for.html',
+    'templates/properties/property/property.html',
+    'templates/properties/property/property-details.html',
+    'templates/properties/property/property-spaces.html',
   ], 'client')
 
   // JS
   api.addFiles([
-    'templates/spaces/space-top-unit-selection.js',
-    'templates/spaces/space-top-for.js',
-    'templates/spaces/space-details.js',
     'templates/dockings/dock.js',
     'templates/messages/thread.js',
     'templates/spaces/manage-space.js',

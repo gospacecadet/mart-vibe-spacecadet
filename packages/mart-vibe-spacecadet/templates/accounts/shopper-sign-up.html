@@ -1,11 +1,10 @@
 <template name="shopperSignUp">
   <div class="m-b-3">
     <h2>Create an account</h2>
-    {{#autoForm schema="ShopperSignUpSchema" id="shopperSignUpForm"
+    {{#autoForm schema="ShopperSignUpSchema" id="shopper-sign-up-homepage"
       resetOnSuccess=true preserveForm=false type="normal"}}
 
       <fieldset>
-        {{> afQuickField name='phoneNumber'}}
         {{> afQuickField name='email' type='email'}}
         {{> afQuickField name='password' type='password'}}
 
@@ -16,7 +15,7 @@
             </div>
           </div>
           {{#if afFieldIsInvalid name='termsAccepted'}}
-            <span class="help-block">{{afFieldMessage name='termsAccepted'}}</span>
+            <span class="help-block">You must accept the terms to sign up.</span>
           {{/if}}
         </div>
       </fieldset>

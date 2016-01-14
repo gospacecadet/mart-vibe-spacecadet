@@ -10,7 +10,4 @@ ShopperSignUpSchema = new SimpleSchema({
     type: Boolean,
     allowedValues: [true]
   },
-  phoneNumber: {
-    type: String
-  }
 })
