@@ -22,7 +22,6 @@ Template.spaceTopUnitSelection.events({
 
 // Set to daily price by default if it exist. Otherwise set to first available price
 Template.spaceTopUnitSelection.onCreated(function() {
-  console.log('spaceTopUnitSelection');
   var template = this
   Tracker.autorun(function(){
     var spaceId = template.data._id

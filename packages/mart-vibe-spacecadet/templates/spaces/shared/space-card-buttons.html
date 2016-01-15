@@ -4,9 +4,14 @@
       {{#if loggedIn}}
         {{> spaceBooking}}
         <button type="button" class="btn btn-primary btn-block btn-lg logged-out btn-wrap"
-          data-toggle="modal" data-target="{{spaceBookingModal}}">Book this space</button>
+          data-toggle="modal" data-target="{{spaceBookingModal}}">
+
+          Book this space
+        </button>
       {{else}}
-        <button class="btn btn-primary btn-block btn-lg logged-out btn-wrap">Book this space</button>
+        <button class="btn btn-primary btn-block btn-lg logged-out btn-wrap must-log-in">
+          Book this space
+        </button>
       {{/if}}
     </div>
     <div class="col-xs-5">
@@ -15,8 +20,14 @@
   </div>
   {{#if loggedIn}}
     {{> thread senderId=userId recipientId=propertyOwnerId}}
-    <button type="button" class="btn btn-link btn-block btn-wrap text-xs-left" data-toggle="modal" data-target="#gridSystemModal">Direct message landlord</button>
+    <button type="button" class="btn btn-link btn-block btn-wrap text-xs-left"
+      data-toggle="modal" data-target="#gridSystemModal">
+
+      Direct message landlord
+    </button>
   {{else}}
-    <button class="btn btn-link btn-block logged-outbtn-wrap text-xs-left">Direct message landlord</button>
+    <button class="btn btn-link btn-block logged-outbtn-wrap text-xs-left must-log-in">
+      Direct message landlord
+    </button>
   {{/if}}
 </template>
