@@ -11,6 +11,7 @@ Template.registerHelper("numImagesAllowed", function() {
 });
 
 Template.registerHelper("truncateText", function(text, length) {
+  text = text || "Loading..."
   if(text.length > length) {
     text = text.substring(0, length);
     text = text.replace(/\w+$/, '');

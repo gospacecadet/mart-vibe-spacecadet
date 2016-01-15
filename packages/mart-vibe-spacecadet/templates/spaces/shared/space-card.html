@@ -23,12 +23,6 @@
       <h1>test</h1>
       {{#if showSpaceDetails}}
         <p class="card-text">{{description}}</p>
-
-        <p class="card-text">
-          <strong>About the property</strong><br/>
-          {{propertyDescription}}
-        </p>
-
       {{else}}
         <p class="card-text">{{truncateText description 161}}</p>
       {{/if}}
