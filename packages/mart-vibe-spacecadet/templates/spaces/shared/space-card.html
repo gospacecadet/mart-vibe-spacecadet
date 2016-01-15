@@ -1,5 +1,5 @@
 <template name="spaceCard">
-  <div class="card space-card">
+  <div class="card">
     <div class="card-block">
       <div class='row'>
         <div class='col-xs-7'>
@@ -16,8 +16,11 @@
         </div>
       </div>
     </div>
-    <img class="card-img-top img-fluid center-block select-space" src="{{currentImageUrl}}" alt="{{name}}">
-    <div class="card-block card-block-bottom">
+
+    <img class="img-fluid space-card-img center-block" src="{{currentImageUrl}}" alt="{{name}}">
+
+    <div class="card-block">
+      <h1>test</h1>
       {{#if showSpaceDetails}}
         <p class="card-text">{{description}}</p>
 

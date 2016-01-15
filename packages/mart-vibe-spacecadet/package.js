@@ -62,6 +62,7 @@ Package.onUse(function(api) {
 
   // Assets
   api.addAssets("assets/avatar.png", "client")
+  api.addAssets("assets/space.jpg", "client")
 
   // Routes
   api.addFiles([
@@ -86,7 +87,9 @@ Package.onUse(function(api) {
     'templates/pages/homepage.html',
     'templates/pages/list-space.html',
     'templates/shared/footers.html',
+    'templates/pages/not-found.html',
     'templates/shared/navbar.html',
+    'templates/pages/loading.html',
   ], 'client')
 
   // Dockings
@@ -150,6 +153,7 @@ Package.onUse(function(api) {
     'stylesheets/property.scss',
     'stylesheets/space.scss',
     'stylesheets/docking.scss',
+    'stylesheets/not-found.scss',
     'stylesheets/spacecadet.scss',
   ], 'client')
 });

@@ -1,26 +1,32 @@
 <template name="property">
-{{#with property}}
-  <img src="{{currentImageUrl}}" alt="{{name}}" class="img img-fluid property-banner"/>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-10 col-lg-offset-1 walled col-md-12">
-        <div class='row m-t-2'>
-          <div class='col-md-10 col-md-offset-1'>
-            <div class='m-b-1'>
-              {{> propertyDetails}}
-            </div>
 
-            <div class='hide-sm-down'>
-              <hr>
-            </div>
+{{#if property}}
+  {{#with property}}
+    <img src="{{currentImageUrl}}" alt="{{name}}" class="img img-fluid property-banner"/>
 
-            <div class="row">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 walled col-md-12">
+          <div class='row m-t-2'>
+            <div class='col-md-10 col-md-offset-1'>
+              <div class='m-b-1'>
+                {{> propertyDetails}}
+              </div>
+
+              <div class='hide-sm-down'>
+                <hr>
+              </div>
+
               {{> propertySpaces}}
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-{{/with}}
+  {{/with}}
+{{else}}
+  {{> notFound}}
+{{/if}}
+  
 </template>

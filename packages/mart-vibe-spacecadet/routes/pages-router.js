@@ -25,3 +25,9 @@ FlowRouter.route('/privacy', {
     BlazeLayout.render("mainLayout", {content: "privacy"});
   }
 });
+
+FlowRouter.notFound = {
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: 'notFound'})
+  }
+}

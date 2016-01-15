@@ -3,7 +3,11 @@
   <div class="clearfix"></div>
   <div class="m-t-3">
     {{> sAlert}}
-    {{> Template.dynamic template=content}}
+    {{#if Template.subscriptionsReady}}
+      {{> Template.dynamic template=content}}
+    {{else}}
+      {{> loading}}
+    {{/if}}
   </div>
   {{> footers}}
 </template>

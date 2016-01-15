@@ -1,5 +1,13 @@
 @import "variables";
 
+.homepage-space-img, .space-card-img {
+  max-height: 20rem;
+}
+
+.homepage-space-card {
+  height: 31rem;
+}
+
 .space-thumbnail {
   min-width: 100%
 }
@@ -19,10 +27,6 @@
 
 #space {
   background-color: #fff;
-}
-
-.select-space {
-  min-width: 100%;
 }
 
 .space-details-img {
