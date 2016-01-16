@@ -30,8 +30,6 @@ Template.spaceTopUnitSelection.onCreated(function() {
     if(!price)
       price = Mart.Prices.findOne({productId: spaceId})
 
-    console.log(price);
-
     if(price)
       Session.setDefault(unitSessionId(spaceId), price.unit)
   });

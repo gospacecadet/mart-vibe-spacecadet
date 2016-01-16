@@ -38,7 +38,7 @@
 <template name="threadMessage">
   <div class="{{messageClass}}" role="alert">
     {{#if isFile}}
-      <p>File attached: <a href="{{body}}">{{filename}}</a></p>
+      <p>File attached: <a href="{{fileUrl}}">{{filename}}</a></p>
     {{else}}
       <p>{{body}}</p>
     {{/if}}
@@ -53,11 +53,11 @@
     <div class="row">
       <div class="col-md-9">
         <fieldset class="form-group">
-          <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Send a message..."></textarea>
+          <textarea class="form-control" id="send-message-body" rows="3" placeholder="Send a message..."></textarea>
         </fieldset>
       </div>
       <div class='col-md-3'>
-        <button type="button" id="send-message-button" class="btn btn-primary btn-wrap btn-block btn-lg p-y-2"><i class="fa fa-paper-plane-o fa-2x"></i></button>
+        <button type="submit" id="send-message-button" class="btn btn-primary btn-wrap btn-block btn-lg p-y-2"><i class="fa fa-paper-plane-o fa-2x"></i></button>
       </div>
     </div>
     <button type="button" id="attach-file-instead-button" class="m-y-0 btn btn-link btn-wrap pull-left">Attach file instead...</button>
