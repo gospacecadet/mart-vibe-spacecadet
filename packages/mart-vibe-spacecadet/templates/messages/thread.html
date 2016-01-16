@@ -43,7 +43,7 @@
       <p>{{body}}</p>
     {{/if}}
 
-    <p class='text-sm text-muted'>{{timestamp}}</p>
+    <p class='text-sm text-muted'>{{dateAgo createdAt}}</p>
   </div>
 </template>
 
@@ -57,7 +57,7 @@
         </fieldset>
       </div>
       <div class='col-md-3'>
-        <button type="submit" id="send-message-button" class="btn btn-primary btn-wrap btn-block btn-lg p-y-2"><i class="fa fa-paper-plane-o fa-2x"></i></button>
+        <a href="#" id="send-message-button" class="btn btn-outline-primary btn-wrap btn-block btn-lg p-y-1"><i class="fa fa-paper-plane-o fa-2x fa-border"></i></a>
       </div>
     </div>
     <button type="button" id="attach-file-instead-button" class="m-y-0 btn btn-link btn-wrap pull-left">Attach file instead...</button>

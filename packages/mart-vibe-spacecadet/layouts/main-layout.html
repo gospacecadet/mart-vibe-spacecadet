@@ -4,7 +4,17 @@
   <div class="m-t-3">
     {{> sAlert}}
     {{#if Template.subscriptionsReady}}
-      {{> Template.dynamic template=content}}
+      {{#if wBoxedStyle}}
+        {{> _boxedStyle}}
+      {{/if}}
+
+      {{#if wSettingsStyle}}
+        {{> _settingsStyle}}
+      {{/if}}
+
+      {{#if wDefaultStyle}}
+        {{> Template.dynamic template=content}}
+      {{/if}}
     {{else}}
       {{> loading}}
     {{/if}}

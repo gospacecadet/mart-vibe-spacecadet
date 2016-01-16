@@ -2,7 +2,7 @@ Package.describe({
   name: 'marvin:mart-vibe-spacecadet',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'A Vibe for Mart, built for SpaceCadet.',
   // URL to the Git repository containing the source code for this package.
   git: '',
   // By default, Meteor will default to using README.md for documentation.
@@ -64,8 +64,18 @@ Package.onUse(function(api) {
   api.addAssets("assets/avatar.png", "client")
   api.addAssets("assets/space.jpg", "client")
 
+  // Layouts
+  api.addFiles([
+    'layouts/main-layout.html',
+    'layouts/_boxed-style.html',
+    'layouts/_settings-style.html',
+    'layouts/main-layout.js',
+  ], 'client')
+
   // Routes
   api.addFiles([
+    'routes/accounts-router.js',
+    'routes/accounts-router-helpers.js',
     'routes/pages-route-helpers.js',
     'routes/pages-router.js',
     'routes/docking-router.js',
@@ -74,22 +84,29 @@ Package.onUse(function(api) {
     'routes/properties-router-helpers.js'
   ], 'client')
 
-  // Layouts
-  api.addFiles([
-    'layouts/layouts.html',
-  ], 'client')
+
 
   // Templates
   api.addFiles([
-    'templates/accounts/shopper-sign-up.html',
-    'templates/accounts/merchant-sign-up.html',
     'templates/messages/thread.html',
     'templates/pages/homepage.html',
     'templates/pages/list-space.html',
-    'templates/shared/footers.html',
     'templates/pages/not-found.html',
-    'templates/shared/navbar.html',
     'templates/pages/loading.html',
+  ], 'client')
+
+  // Shared
+  api.addFiles([
+    'templates/shared/footers.html',
+    'templates/shared/navbar.html',
+    'templates/shared/general-settings-menu.html',
+  ], 'client')
+
+  // Accounts
+  api.addFiles([
+    'templates/accounts/merchant-sign-up.html',
+    'templates/accounts/my-profile.html',
+    'templates/accounts/shopper-sign-up.html',
   ], 'client')
 
   // Dockings
