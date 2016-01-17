@@ -19,7 +19,16 @@
     </div>
   </div>
   {{#if loggedIn}}
-    {{> thread senderId=userId recipientId=propertyOwnerId}}
+    {{#if landlordThread}}
+      {{#with landlordThread}}
+        {{> threadModal}}
+      {{/with}}
+    {{else}}
+      {{#with tempThread}}
+        {{> threadModal}}
+      {{/with}}
+    {{/if}}
+
     <button type="button" class="btn btn-link btn-block btn-wrap text-xs-left"
       data-toggle="modal" data-target="#gridSystemModal">
 

@@ -1,4 +1,4 @@
-Template.thread.helpers({
+Template.threadButtons.helpers({
   isSendingMessage: function() {
     return Session.get(IS_SENDING_MESSAGE)
   }

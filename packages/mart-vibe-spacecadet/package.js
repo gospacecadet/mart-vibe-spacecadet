@@ -76,23 +76,14 @@ Package.onUse(function(api) {
   api.addFiles([
     'routes/accounts-router.js',
     'routes/accounts-router-helpers.js',
+    'routes/messages-router.js',
+    'routes/messages-router-helpers.js',
     'routes/pages-route-helpers.js',
     'routes/pages-router.js',
     'routes/docking-router.js',
     'routes/dockings-route-helpers.js',
     'routes/properties-router.js',
     'routes/properties-router-helpers.js'
-  ], 'client')
-
-
-
-  // Templates
-  api.addFiles([
-    'templates/messages/thread.html',
-    'templates/pages/homepage.html',
-    'templates/pages/list-space.html',
-    'templates/pages/not-found.html',
-    'templates/pages/loading.html',
   ], 'client')
 
   // Shared
@@ -119,6 +110,23 @@ Package.onUse(function(api) {
     'templates/dockings/manage/manage-dockings-approval.html',
     'templates/dockings/manage/manage-dockings-upcoming.html',
     'templates/dockings/manage/manage-dockings-approval.js'
+  ], 'client')
+
+  // Messages
+  api.addFiles([
+    'templates/messages/thread.html',
+    'templates/messages/inbox.html',
+    'templates/messages/threads.html',
+    'templates/messages/thread-modal.html',
+    'templates/messages/thread-buttons.html',
+  ], 'client')
+
+  // Pages
+  api.addFiles([
+    'templates/pages/homepage.html',
+    'templates/pages/list-space.html',
+    'templates/pages/not-found.html',
+    'templates/pages/loading.html',
   ], 'client')
 
   // Spaces

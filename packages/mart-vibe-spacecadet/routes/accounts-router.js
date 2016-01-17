@@ -16,7 +16,7 @@ FlowRouter.route('/profile', {
     BlazeLayout.render("mainLayout", {
       contentLeft: "myProfile",
       contentRight: "generalSettingsMenu",
-      style: "SETTINGS",
+      style: STYLES.SETTINGS,
       title: "My Profile",
       subtitle: "Edit your personal details, update your email & password.",
     });

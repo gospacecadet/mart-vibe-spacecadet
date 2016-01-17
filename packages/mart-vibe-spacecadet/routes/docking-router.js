@@ -21,8 +21,9 @@ FlowRouter.route('/dockings', {
   name: "dockings",
   action: function() {
     BlazeLayout.render("mainLayout", {
-      content: "dockings",
-      style: "boxed",
+      contentLeft: "dockings",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
       title: "Docking Information",
       subtitle: "Review upcoming dockings and get order history.",
     });

@@ -9,3 +9,7 @@ Template.registerHelper("dockPath", function () {
 Template.registerHelper('manageDockingsPath', function() {
   return FlowRouter.path('manageDockings')
 })
+
+Template.registerHelper('dockingsPath', function() {
+  return FlowRouter.path('dockings')
+})

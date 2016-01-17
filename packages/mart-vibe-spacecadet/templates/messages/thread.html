@@ -1,28 +1,13 @@
 <template name="thread">
-  <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="gridModalLabel">Chat with {{recipientName}}</h4>
-        </div>
-        {{#if messages}}
-          {{#with messages}}
-            <div class="modal-body">
-              {{> threadHistory}}
-            </div>
-          {{/with}}
-        {{/if}}
-        <div class="modal-footer">
-          {{#if isSendingMessage}}
-            {{> threadSendMessage}}
-          {{else}}
-            {{> threadAttachFile}}
-          {{/if}}
-        </div>
+  {{#if messages}}
+    {{#with messages}}
+      <div class="modal-body">
+        {{> threadHistory}}
       </div>
-    </div>
-  </div>
+    {{/with}}
+  {{else}}
+    <!-- <h4>To start a conversation, send a message below.</h4> -->
+  {{/if}}
 </template>
 
 <template name="threadHistory">
@@ -44,42 +29,5 @@
     {{/if}}
 
     <p class='text-sm text-muted'>{{dateAgo createdAt}}</p>
-  </div>
-</template>
-
-<template name="threadSendMessage">
-<div class='container-fluid'>
-  <form id="send-message-form">
-    <div class="row">
-      <div class="col-md-9">
-        <fieldset class="form-group">
-          <textarea class="form-control" id="send-message-body" rows="3" placeholder="Send a message..."></textarea>
-        </fieldset>
-      </div>
-      <div class='col-md-3'>
-        <a href="#" id="send-message-button" class="btn btn-outline-primary btn-wrap btn-block btn-lg p-y-1"><i class="fa fa-paper-plane-o fa-2x fa-border"></i></a>
-      </div>
-    </div>
-    <button type="button" id="attach-file-instead-button" class="m-y-0 btn btn-link btn-wrap pull-left">Attach file instead...</button>
-  </form>
-</div>
-</template>
-
-<template name="threadAttachFile">
-  <div class='container-fluid'>
-    <form id='attach-file-form'>
-      <div class="row">
-        <div class="col-md-9">
-          <label class="file">
-            <input type="file" id="file">
-            <span class="file-custom"></span>
-          </label>
-        </div>
-        <div class='col-md-3'>
-          <button type="button" id="attach-file-button" class="btn btn-primary btn-wrap btn-block btn-lg p-y-2"><i class="fa fa-paperclip fa-2x"></i></button>
-        </div>
-      </div>
-      <button type="button" id="send-message-instead-button" class="m-y-0 btn btn-link btn-wrap pull-left">Send message instead...</button>
-    </form>
   </div>
 </template>
