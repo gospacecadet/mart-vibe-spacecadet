@@ -3,7 +3,7 @@ Template.registerHelper("checkoutPath", function () {
 })
 
 Template.registerHelper("dockPath", function () {
-  return FlowRouter.path('dock')
+  return dockPath()
 })
 
 Template.registerHelper('manageDockingsPath', function() {
@@ -13,3 +13,7 @@ Template.registerHelper('manageDockingsPath', function() {
 Template.registerHelper('dockingsPath', function() {
   return FlowRouter.path('dockings')
 })
+
+dockPath = function() {
+  return FlowRouter.path('dock')
+}

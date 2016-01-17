@@ -36,10 +36,12 @@ Template.registerHelper("minutes", function () {
   ]
 })
 
+AM = "AM"
+PM = "PM"
 Template.registerHelper("ampm", function () {
   return [
-    {name: "AM", value: "am"},
-    {name: "PM", value: "pm"},
+    {name: AM, value: AM},
+    {name: PM, value: PM},
   ]
 })
 

@@ -12,7 +12,6 @@ Template.spaceTopUnitSelection.events({
   "click #daily-price": function(event, template) {
      event.preventDefault()
      Session.set(unitSessionId(this._id), DAY)
-
   },
   "click #monthly-price": function(event, template) {
      event.preventDefault()

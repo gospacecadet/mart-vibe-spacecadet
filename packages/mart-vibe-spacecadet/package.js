@@ -52,7 +52,9 @@ Package.onUse(function(api) {
     'lib/schemas/docking-schema.js',
     'lib/schemas/credit-card-schema.js',
     'lib/schemas/shopper-sign-up-schema.js',
-    'lib/schemas/merchant-sign-up-schema.js'
+    'lib/schemas/merchant-sign-up-schema.js',
+    'lib/errors.html',
+    'lib/errors.js',
   ], 'client')
 
   api.export("DockingSchema", "client")

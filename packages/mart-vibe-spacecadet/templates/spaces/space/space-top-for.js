@@ -1,23 +1,29 @@
 Template.spaceTopForUnit.events({
-  "focus #hourly-start-date": function(event, template) {
-    $("#hourly-start-date").datepicker();
+  "focus .start-date": function(event, template) {
+    var space = this;
+    $(event.target).datepicker({
+      onSelect: function(dateText, inst) {
+        Session.set(spaceDateId(space._id), new Date(dateText))
+      }
+    });
   },
-  "focus #daily-start-date": function(event, template) {
-    $("#daily-start-date").datepicker();
-  },
-  "focus #monthly-start-date": function(event, template) {
-    $("#monthly-start-date").datepicker();
-  }
 });
 
+Template.spaceTopForDaily.events({
+  "change .daily-num": function(event, template) {
+    var numDays = $(event.target).val()
+
+    Session.set(spaceNumDaysId(this._id), numDays)
+  },
+});
 Template.spaceTopForUnit.helpers({
   hourlySelected: function() {
-    return Session.get(unitSessionId(this.propertyId)) === HOUR
+    return Session.get(unitSessionId(this._id)) === HOUR
   },
   dailySelected: function() {
-    return Session.get(unitSessionId(this.propertyId)) === DAY
+    return Session.get(unitSessionId(this._id)) === DAY
   },
   monthlySelected: function() {
-    return Session.get(unitSessionId(this.propertyId)) === MONTH
+    return Session.get(unitSessionId(this._id)) === MONTH
   }
 });

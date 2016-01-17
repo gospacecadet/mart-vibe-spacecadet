@@ -19,12 +19,6 @@
 
         <div class="modal-footer">
           {{> spaceBookingForm}}
-          <p class='text-muted m-t-1 text-xs-right'>
-            <small>
-              * Month dockings will be automatically billed each month.
-               <a href="#" id="monthly-billing-warning">Learn more.</a>
-            </small>
-          </p>
         </div>
       </div>
     </div>
@@ -32,7 +26,7 @@
 </template>
 
 <template name="spaceBookingForm">
-  {{#autoForm collection="Mart.LineItems" id="insertLineItemForm" type="insert"}}
+  {{#autoForm collection="Mart.LineItems" id=spaceBookingFormId type="insert"}}
     <fieldset>
       {{> afQuickField name='unit' type='hidden' value=currentUnit}}
       {{> afQuickField name='quantity' type='hidden' value=currentQuantity}}
@@ -40,9 +34,12 @@
       {{> afQuickField name='startAtHour' type='hidden' value=currentHour}}
       {{> afQuickField name='startAtMinute' type='hidden' value=currentMinute}}
 
-      {{> afQuickField name='cartId' type='hidden' value="cartId"}}
+      {{> afQuickField name='cartId' type='hidden' value="required-for-autoform"}}
       {{> afQuickField name='productId' type='hidden' value=_id}}
     </fieldset>
-    <button type="submit" class="btn btn-primary btn-block btn-lg btn-wrap">Checkout</button>
+    <button type="submit" class="btn btn-primary btn-block btn-lg btn-wrap" id="space-booking-form-submit-{{_id}}">
+      Checkout
+    </button>
+    {{> errors}}
   {{/autoForm}}
 </template>
