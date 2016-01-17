@@ -6,10 +6,10 @@ MerchantSignUpSchema = new SimpleSchema({
     type: String,
     min: 8,
   },
-  contactFirstName: {
+  firstName: {
     type: String
   },
-  contactLastName: {
+  lastName: {
     type: String,
   },
   phoneNumber: {

@@ -1,10 +1,22 @@
 <template name="inbox">
-<div class="row">
-  <div class='col-lg-8'>
-    {{> thread recipientId=selectedRecipientId}}
+<div class="row m-t-2">
+  <div class='col-lg-9'>
+    {{#if currentThread}}
+      {{#with currentThread}}
+        <h4 class='text-xs-center'>Conversation with {{recipientName}}</h4>
+        {{> thread}}
+        {{> threadButtons}}
+      {{/with}}
+    {{else}}
+      {{> emptyInbox}}
+    {{/if}}
   </div>
-  <div class="col-lg-4">
+  <div class="col-lg-3">
     {{> threads}}
   </div>
 </div>
+</template>
+
+<template name="emptyInbox">
+  <h4>Empty Inbox</h4>
 </template>
