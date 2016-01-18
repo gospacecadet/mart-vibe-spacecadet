@@ -17,37 +17,31 @@ DockingSchema = new SimpleSchema({
   },
   contactRentingOnBehalfBiz: {
     type: Boolean,
-    optional: true,
     label: "Renting on behalf of business"
   },
   contactFirstName: {
     type: String,
-    optional: true,
     label: "First name"
   },
   contactLastName: {
     type: String,
-    optional: true,
     label: "Last name"
   },
   contactEmail: {
     type: String,
-    optional: true,
     label: "Email"
   },
   contactPhone: {
     type: String,
-    optional: true,
     label: "Phone number"
   },
-  contactEntity: {
+  contactBusiness: {
     type: String,
     optional: true,
     label: 'Business name'
   },
   contactAddress: {
     type: String,
-    optional: true,
     label: "Address"
   },
   contactAddress2: {
@@ -57,12 +51,14 @@ DockingSchema = new SimpleSchema({
   },
   contactCity: {
     type: String,
-    optional: true,
     label: "City"
+  },
+  contactState: {
+    type: String,
+    label: "State"
   },
   contactZIP: {
     type: String,
-    optional: true,
     label: "ZIP"
   },
 })
