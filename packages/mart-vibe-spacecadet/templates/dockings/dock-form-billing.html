@@ -12,22 +12,22 @@
     <fieldset>
       <div class="row">
         <div class='col-md-4'>
-          {{> afQuickField name='nameOnCard'}}
+          {{> afQuickField name='nameOnCard' value="Space Cadet"}}
         </div>
         <div class='col-md-4'>
-          {{> afQuickField name='number' type='text'}}
+          {{> afQuickField name='number' type='text' value="4242424242424242"}}
         </div>
         <div class='col-md-4'>
-          {{> afQuickField name='cvc' type='text'}}
+          {{> afQuickField name='cvc' type='text' value="123"}}
         </div>
       </div>
 
       <div class="row">
         <div class='col-md-4'>
-          {{> afQuickField name='expMonth' type='select' options=expMonthOptions}}
+          {{> afQuickField name='expMonth' type='select' options=expMonthOptions value='1'}}
         </div>
         <div class='col-md-4'>
-          {{> afQuickField name='expYear' type='select' options=expYearOptions}}
+          {{> afQuickField name='expYear' type='select' options=expYearOptions value="2016"}}
         </div>
 
       </div>
