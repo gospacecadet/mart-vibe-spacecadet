@@ -67,6 +67,7 @@ Template.spaceBookingForm.onCreated(function() {
   var spaceId = Template.currentData()._id
   var hooksObject = {
     onSubmit: function(insertDoc, updateDoc, currentDoc) {
+      console.log(insertDoc);
     },
     onError: function(operation, error) {
       var autoform = this
@@ -79,8 +80,10 @@ Template.spaceBookingForm.onCreated(function() {
     },
     after: {
       insert: function(error, lineItemId) {
-        $(".modal").modal('hide')
+        if(error)
+          return
 
+        $(".modal").modal('hide')
         Meteor.setTimeout(function(){
           FlowRouter.go(dockPath())
         }, 7 * 100);

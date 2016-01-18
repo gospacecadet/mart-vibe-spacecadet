@@ -1,13 +1,22 @@
 <template name="myProfile">
-  <h1>My Profile</h1>
-  <!-- {{#autoForm schema="ProfileSchema" id="update-profile-form" type="normal"}}
-    <fieldset>
-      {{> afQuickField name='businessName'}}
-      {{> afQuickField name='firstName'}}
-      {{> afQuickField name='lastName'}}
-      {{> afQuickField name='phoneNumber'}}
-      {{> afQuickField name='email' type='email'}}
-    </fieldset>
-    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up as Merchant</button>
-  {{/autoForm}} -->
+  <div class='p-a-3'>
+    <div class="col-sm-6 col-sm-offset-3">
+      {{#autoForm schema="ProfileSchema" id="updateProfileForm" type="normal"
+          resetOnSuccess=false}}
+        <fieldset>
+          {{> afQuickField name='username' value=username}}
+          {{> afQuickField name='email' type='email' value=email}}
+          {{> afQuickField name='firstName' value=firstName}}
+          {{> afQuickField name='lastName' value=lastName}}
+          {{> afQuickField name='phoneNumber' value=phoneNumber}}
+          {{#if canActAsMerchant}}
+            {{> afQuickField name='businessName' value=businessName}}
+          {{/if}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Update Profile</button>
+      {{/autoForm}}
+    </div>
+
+  </div>
+
 </template>

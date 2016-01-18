@@ -1,3 +1,10 @@
+Template.reserveDockingDetails.events({
+  "click #dock-now-button": function(event, template){
+     console.log('clicked');
+     $("#submitDockingForm").submit()
+  }
+});
+
 const RENTING_ON_BEHALF_BIZ = 'renting-on-behalf-biz'
 Template.reserveDockingFormContact.events({
   "click [name=contactRentingOnBehalfBiz]": function(event, template) {
@@ -58,7 +65,7 @@ Template.reserveDockingFormBillingCard.helpers({
     return _.map(makeList(start, end), function(year) { return {label: year, value: year}})
   },
   expMonthOptions: function() {
-    return _.map(makeList(0, 12), function(month) { return {label: month, value: month}})
+    return _.map(makeList(1, 12), function(month) { return {label: month, value: month}})
   }
 });
 

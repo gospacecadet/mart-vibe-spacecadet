@@ -49,6 +49,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/helpers/helpers.js',
     'lib/helpers/time-helpers.js',
+    'lib/helpers/profile-helpers.js',
     'lib/errors.html',
     'lib/errors.js',
   ], 'client')
@@ -66,6 +67,7 @@ Package.onUse(function(api) {
   api.export("CreditCardSchema", "client")
   api.export("ShopperSignUpSchema", "client")
   api.export("MerchantSignUpSchema", "client")
+  api.export("ProfileSchema", "client")
 
   // Assets
   api.addAssets("assets/avatar.png", "client")
