@@ -3,7 +3,7 @@
 <p class='lead text-muted'>
   Enter the details for the primary point of contact
 </p>
-{{#with docking}}
+
   {{#autoForm schema="DockingSchema" id="submitDockingForm" type="normal"}}
     {{#if afFieldIsInvalid name='cardId'}}
       <p>
@@ -13,7 +13,7 @@
     <fieldset>
       <div class='row'>
         <div class='col-md-6'>
-          {{> afQuickField name='contactFirstName'}}
+          {{> afQuickField name='contactFirstName' value="{{contactFirstName}}"}}
         </div>
         <div class='col-md-6'>
           {{> afQuickField name='contactLastName'}}
@@ -63,5 +63,5 @@
     <!--   {{> afQuickField name='cartIds' type='hidden' value=cartIds}} -->
     </fieldset>
   {{/autoForm}}
-{{/with}}
+
 </template>

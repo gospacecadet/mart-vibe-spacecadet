@@ -2,106 +2,95 @@
   <div class='m-t-1'>
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        {{#if hourlySelected}}
-          {{> spaceTopForHourly}}
-        {{/if}}
-        {{#if dailySelected}}
-          {{> spaceTopForDaily}}
-        {{/if}}
-        {{#if monthlySelected}}
-          {{>spaceTopForMonthly}}
-        {{/if}}
+        <form class="form-inline" id='new-docking-{{_id}}'>
+          <div class='row'>
+            <div class="form-group">
+              <label for="start-date-{{_id}}">Start date</label>
+              <input type="text" class="form-control start-date" id="start-date-{{_id}}">
+            </div>
+          </div>
+          {{#if hourlySelected}}
+            {{> spaceTopForHourly}}
+          {{/if}}
+          {{#if dailySelected}}
+            {{> spaceTopForDaily}}
+          {{/if}}
+          {{#if monthlySelected}}
+            {{> spaceTopForMonthly}}
+          {{/if}}
+        </form>
       </div>
     </div>
+    {{#if monthlySelected}}
+      {{> spaceTopForMonthlyReminder}}
+    {{/if}}
   </div>
 </template>
 
 <template name="spaceTopForMonthly">
-  <form class="form-inline">
-    <div class='row'>
-      <div class="form-groupk">
-        <label for="monthly-start-date">Start date</label>
-        <input type="text" class="form-control" id="monthly-start-date">
-      </div>
-    </div>
 
-    <div class='row m-t-1'>
-      <div class="form-group">
-        <label for="monthly-num">Number of months</label>
-        <select class="form-control" id="monthly-num">
-          {{#each monthlyNums}}
-            <option>{{this}}</option>
-          {{/each}}
-        </select>
-      </div>
-    </div>
-  </form>
+</template>
+
+<template name="spaceTopForMonthlyReminder">
+  <p class='text-muted m-t-2 text-xs-center'>
+    * Month dockings will be automatically billed each month.
+    You can cancel at any time.
+     <a href="#" id="monthly-billing-warning">Learn more.</a>
+  </p>
 </template>
 
 <template name="spaceTopForDaily">
-  <form class="form-inline">
-    <div class='row'>
-      <div class="form-group">
-        <label for="daily-start-date">Start date</label>
-        <input type="text" class="form-control" id="daily-start-date">
-      </div>
+  <div class='row m-t-1'>
+    <div class="form-group">
+      <label for="daily-num-{{_id}}">Number of days</label>
+      <select class="form-control daily-num" id="daily-num-{{_id}}">
+        <option disabled selected>--</option>
+        {{#each dailyNums}}
+          <option>{{this}}</option>
+        {{/each}}
+      </select>
     </div>
-
-    <div class='row m-t-1'>
-      <div class="form-group">
-        <label for="daily-num">Number of days</label>
-        <select class="form-control" id="daily-num">
-          {{#each dailyNums}}
-            <option>{{this}}</option>
-          {{/each}}
-        </select>
-      </div>
-    </div>
-  </form>
+  </div>
 </template>
 
 <template name="spaceTopForHourly">
-  <form class="form-inline">
-    <div class='row'>
-      <div class="form-group">
-        <label for="hourly-start-date">Start date</label>
-        <input type="date" class="form-control" id="hourly-start-date">
-      </div>
+  <div class='row m-t-1'>
+    <div class="form-group">
+      <label for="hourly-start-hour-{{_id}}">Start Time</label>
+      <select class="form-control hourly-start-hour" id="hourly-start-hour-{{_id}}" >
+        <option disabled selected>--</option>
+        {{#each hours}}
+          <option value="{{value}}">{{name}}</option>
+        {{/each}}
+      </select>
     </div>
-    <div class='row m-t-1'>
-      <div class="form-group">
-        <label for="hourly-start-hour">Start Time</label>
-        <select class="form-control" id="hourly-start-hour">
-          {{#each hours}}
-            <option value="{{value}}">{{name}}</option>
-          {{/each}}
-        </select>
-      </div>
-      <span class='lead p-x-1'>:</span>
-      <div class="form-group">
-        <select class="form-control" id="hourly-start-minute">
-          {{#each minutes}}
-            <option value="{{value}}">{{name}}</option>
-          {{/each}}
-        </select>
-      </div>
-      <div class="form-group">
-        <select class="form-control" id="hourly-start-ampm">
-          {{#each ampm}}
-            <option value="{{value}}">{{name}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <span class='lead p-x-1'>:</span>
+    <div class="form-group">
+      <select class="form-control hourly-start-minute" id="hourly-start-minute-{{_id}}">
+        <option disabled selected>--</option>
+        {{#each minutes}}
+          <option value="{{value}}">{{name}}</option>
+        {{/each}}
+      </select>
     </div>
-    <div class="row m-t-1">
-      <div class="form-group">
-        <label for="hourly-num">Number hours</label>
-        <select class="form-control" id="hourly-num">
-          {{#each hourlyNums}}
-            <option>{{this}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <div class="form-group">
+      <select class="form-control hourly-start-ampm" id="hourly-start-ampm-{{_id}}">
+        <option disabled selected>--</option>
+        {{#each ampm}}
+          <option value="{{value}}">{{name}}</option>
+        {{/each}}
+      </select>
     </div>
-  </form>
+  </div>
+  <div class="row m-t-1">
+    <div class="form-group">
+      <label for="hourly-num-{{_id}}">Number hours</label>
+      <select class="form-control hourly-num" id="hourly-num-{{_id}}">
+        <option disabled selected>--</option>
+        {{#each hourlyNums}}
+          <option>{{this}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
 </template>
