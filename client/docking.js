@@ -1,6 +1,7 @@
 Template.manageDockingsApproval.helpers({
   dockingsRequiringApproval: [
     {
+      _id: 'asdfasdfla',
       contactRentingOnBehalfBiz: true,
       contactFirstName: "Marvin",
       contactLastName: "Arnold",
@@ -13,8 +14,23 @@ Template.manageDockingsApproval.helpers({
       total: 341323,
       tax: 0,
       submittedAt: new Date(),
+      lineItems: [
+        {
+          propertyName: "Some property",
+          spaceName: "Some Space",
+          unit: "hour",
+          quantity: 4,
+          startAtDate: new Date(),
+          startAtHour: 13,
+          startAtMinute: 15,
+          productNameAtCheckout: "Some station",
+          storefrontNameAtCheckout: "This property is cool",
+          landlordCut: 7352,
+        }
+      ]
     },
     {
+      _id: 'asdfasfasdfasdfla',
       contactRentingOnBehalfBiz: false,
       contactFirstName: "Jus",
       contactLastName: "Blaze",
@@ -26,8 +42,31 @@ Template.manageDockingsApproval.helpers({
       total: 2452,
       tax: 0,
       submittedAt: new Date(),
+      lineItems: [
+        {
+          unit: "day",
+          quantity: 4,
+          startAtDate: new Date(),
+          startAtHour: "",
+          startAtMinute: "",
+          productNameAtCheckout: "Woot woot",
+          storefrontNameAtCheckout: "This property is lame",
+          landlordCut: 23623,
+        },
+        {
+          unit: "month",
+          quantity: 1,
+          startAtDate: new Date(),
+          startAtHour: "",
+          startAtMinute: "",
+          productNameAtCheckout: "Some station",
+          storefrontNameAtCheckout: "This property is cool",
+          landlordCut: 2341,
+        }
+      ]
     },
     {
+      _id: 'asdsdffasdasdfasfla',
       contactRentingOnBehalfBiz: false,
       contactFirstName: "True",
       contactLastName: "Dat",
@@ -39,6 +78,28 @@ Template.manageDockingsApproval.helpers({
       total: 8354625,
       tax: 0,
       submittedAt: new Date(),
+      lineItems: [
+        {
+          unit: "day",
+          quantity: 4,
+          startAtDate: new Date(),
+          startAtHour: "",
+          startAtMinute: "",
+          productNameAtCheckout: "Some other space",
+          storefrontNameAtCheckout: "This property is cool",
+          landlordCut: 6236,
+        },
+        {
+          unit: "month",
+          quantity: 1,
+          startAtDate: new Date(),
+          startAtHour: "",
+          startAtMinute: "",
+          productNameAtCheckout: "Some space",
+          storefrontNameAtCheckout: "This property is cool",
+          landlordCut: 72363,
+        }
+      ]
     }
   ]
 });

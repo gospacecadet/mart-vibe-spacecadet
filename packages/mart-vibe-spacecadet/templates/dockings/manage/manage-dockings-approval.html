@@ -1,5 +1,5 @@
 <template name="manageDockingsApproval">
-<h4>Approval Required</h4>
+<h4><strong>Approval Required</strong></h4>
 
 <div id="manage-dockings-accordion" role="tablist" aria-multiselectable="true">
   {{#each dockingsRequiringApproval}}
@@ -22,28 +22,53 @@
           <h5>From total: <span>{{money total}}</span></h5>
 
           <div class='row'>
-            <a data-toggle="collapse" data-parent="#manage-dockings-accordion" class='btn m-t-1 btn-link btn-lg pull-right'
-              href="#{{manageDockingsCollapseId}}" aria-expanded="true" aria-controls="collapseOne">
-                See details
+            <a data-toggle="collapse" data-parent="#manage-dockings-accordion" class='btn m-t-1 btn-link pull-right'
+              href="#{{manageDockingsCollapseId}}" aria-expanded="false" aria-controls="{{manageDockingsCollapseId}}">
+                Toggle details
             </a>
           </div>
-
-          <hr>
           <div class='row'>
             <div class='col-md-7'>
-              <button class='btn btn-primary btn-lg btn-block'>Accept</button>
+              <button class='btn btn-primary btn-block'>Accept</button>
             </div>
             <div class='col-md-5'>
-              <button class='btn btn-danger btn-lg btn-block'>Reject</button>
+              <button class='btn btn-danger btn-block'>Reject</button>
             </div>
           </div>
         </div>
       </div>
 
-
     </div>
     <div id="{{manageDockingsCollapseId}}" class="panel-collapse collapse in m-t-1" role="tabpanel" aria-labelledby="{{manageDockingsHeadingId}}">
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <h5>Docking Details</h5>
+      <div class='table-responsive'>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Space</th>
+              <th>Starts</th>
+              <th>Duration</th>
+              <th>You get</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each lineItems}}
+              {{> _manageDockingsApprovalLineItem}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+</template>
+
+<template name="_manageDockingsApprovalLineItem">
+  <tr>
+    <td>{{storefrontNameAtCheckout}}</td>
+    <td>{{productNameAtCheckout}}</td>
+    <td>{{dateSlashed startAtDate}}</td>
+    <td>{{duration}}</td>
+    <td>{{money landlordCut}}</td>
+  </tr>
 </template>
