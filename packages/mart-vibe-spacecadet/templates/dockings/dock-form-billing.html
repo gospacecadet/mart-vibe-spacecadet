@@ -11,11 +11,14 @@
   {{#autoForm schema="CreditCardSchema" id="createCardForm" type="normal"}}
     <fieldset>
       <div class="row">
-        <div class='col-md-8'>
+        <div class='col-md-4'>
           {{> afQuickField name='nameOnCard'}}
         </div>
         <div class='col-md-4'>
           {{> afQuickField name='number' type='text'}}
+        </div>
+        <div class='col-md-4'>
+          {{> afQuickField name='cvc' type='text'}}
         </div>
       </div>
 
@@ -26,9 +29,7 @@
         <div class='col-md-4'>
           {{> afQuickField name='expYear' type='select' options=expYearOptions}}
         </div>
-        <div class='col-md-4'>
-          {{> afQuickField name='cvc' type='text'}}
-        </div>
+
       </div>
     </fieldset>
     <button type="submit" class="btn btn-outline-primary">Add card to account</button>

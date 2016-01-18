@@ -1,5 +1,5 @@
 Template.registerHelper("checkoutPath", function () {
-  return FlowRouter.path('dock')
+  return dockPath()
 })
 
 Template.registerHelper("dockPath", function () {
