@@ -24,7 +24,7 @@ Package.onUse(function(api) {
     'kadira:flow-router@2.10.0',
     'juliancwirko:s-alert@3.1.3',
     'fourseven:scss@3.4.1',
-    'aldeed:autoform@5.7.1',
+    'aldeed:autoform@5.8.1',
     'aldeed:collection2@2.5.0',
     'aldeed:simple-schema@1.4.0',
     'mizzao:jquery-ui@1.11.4',
@@ -49,12 +49,17 @@ Package.onUse(function(api) {
   api.addFiles([
     'lib/helpers/helpers.js',
     'lib/helpers/time-helpers.js',
+    'lib/errors.html',
+    'lib/errors.js',
+  ], 'client')
+
+  // Schemas
+  api.addFiles([
     'lib/schemas/docking-schema.js',
     'lib/schemas/credit-card-schema.js',
     'lib/schemas/shopper-sign-up-schema.js',
     'lib/schemas/merchant-sign-up-schema.js',
-    'lib/errors.html',
-    'lib/errors.js',
+    'lib/schemas/profile-schema.js',
   ], 'client')
 
   api.export("DockingSchema", "client")
