@@ -1,30 +1,43 @@
 <template name="manageDockingsUpcoming">
+  <div class="manage-dockings-upcoming">
     <h4 class='text-xs-center'>Upcoming Dockings</h4>
+    <hr>
     {{#each upcomingDockings}}
       {{> upcomingDocking}}
     {{/each}}
+  </div>
 </template>
 
 <template name="upcomingDocking">
   <h5>{{storefrontNameAtCheckout}}</h5>
-  <p class='text-muted'>{{total}}</p>
-  <p class='text-muted'>{{dateSpecific firstBookingStarts}}</p>
+  <h6 class='text-muted'>
+    Renter: {{renterName}}
+    <small>
+      <a href="#">Send a message</a>
+    </small>
+  </h6>
   <div class='table-responsive'>
     <table class="table table-sm">
       <thead>
         <tr>
-          <th>Space name</th>
-          <th>Quantity</th>
-          <th>Unit Price</th>
-          <th></th>
+          <th>Space</th>
+          <th>Begins</th>
+          <th>Duration</th>
         </tr>
       </thead>
       <tbody>
         {{#each lineItems}}
-          {{> reserveDockingDetailsLine}}
+          {{> upcomingDockingLine}}
         {{/each}}
-        <td colspan="4"><em>Property subtotal: {{money subtotal}}*</em></td>
       </tbody>
     </table>
   </div>
+</template>
+
+<template name="upcomingDockingLine">
+  <tr>
+    <td>{{productNameAtCheckout}}</td>
+    <td>{{dateSpecific startAtDate}}</td>
+    <td>{{quantity}} {{unit}}s</td>
+  </tr>
 </template>

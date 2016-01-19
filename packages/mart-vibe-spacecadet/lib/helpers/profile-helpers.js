@@ -1,3 +1,9 @@
+Template.registerHelper("profileName", function (userId) {
+  var user = Meteor.users.findOne(userId)
+  if(user && user.profile)
+    return user.profile.firstName + " " + user.profile.lastName
+})
+
 Template.registerHelper("firstName", function () {
   return userAttr("firstName")
 })

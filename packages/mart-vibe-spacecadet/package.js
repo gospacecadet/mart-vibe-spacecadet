@@ -127,6 +127,7 @@ Package.onUse(function(api) {
     'templates/dockings/manage/manage-dockings-approval.html',
     'templates/dockings/manage/manage-dockings-upcoming.html',
     'templates/dockings/manage/manage-dockings-approval.js',
+    'templates/dockings/manage/upcoming-docking.js',
 
   ], 'client')
 
