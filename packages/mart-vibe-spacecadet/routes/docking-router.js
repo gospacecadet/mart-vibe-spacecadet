@@ -29,3 +29,16 @@ FlowRouter.route('/dockings', {
     });
   }
 });
+
+FlowRouter.route('/docking-confirmation/:cartIds', {
+  name: "dockingConfirmation",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "dockingConfirmation",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Docking Confirmation",
+      subtitle: "Review your docking details. Contact the landlord with any questions.",
+    });
+  }
+});
