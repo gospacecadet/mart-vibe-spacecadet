@@ -58,8 +58,21 @@ Template.spaceBookingForm.helpers({
       return 0 // required for autoform
     }
   },
+  currentAMPM: function() {
+    var unit = Session.get(unitSessionId(this._id))
+    if(!unit)
+      return
+
+    if(unit === HOUR) {
+      return Session.get(spaceStartAMPMId(this._id))
+    } else if(unit === DAY) {
+      return "AM" // required for autoform
+    } else if(unit === MONTH) {
+      return "AM" // required for autoform
+    }
+  },
   spaceBookingFormId: function() {
-    return "insert-line-item-" + this._id
+    return "insertLineItemForm" + this._id
   }
 });
 
@@ -67,28 +80,32 @@ Template.spaceBookingForm.onCreated(function() {
   var spaceId = Template.currentData()._id
   var hooksObject = {
     onSubmit: function(insertDoc, updateDoc, currentDoc) {
+      var hook = this
       console.log(insertDoc);
+      Mart.LineItems.insert(insertDoc, function(error, lineItemId) {
+        if(error) {
+          console.log(error);
+          throwError(error.message)
+        } else {
+          sAlert.success("Item added to cart")
+          $(".modal").modal('hide')
+          $('.modal').on('hidden.bs.modal', function (e) {
+            Meteor.setTimeout(function() {
+              FlowRouter.go(dockPath())
+            }, 10)
+          })
+
+        }
+        hook.done()
+      })
+      return false
     },
     onError: function(operation, error) {
-      var autoform = this
-      console.log('onError');
-      console.log(error);
-      console.log(error.message);
-      if(error) { // a special Meteor.error
+      // console.log(error);
+      if(error && error.message) { // a special Meteor.error
         throwError(error.message)
-      }
-    },
-    after: {
-      insert: function(error, lineItemId) {
-        if(error)
-          return
-
-        $(".modal").modal('hide')
-        Meteor.setTimeout(function(){
-          FlowRouter.go(dockPath())
-        }, 7 * 100);
       }
     }
   };
-  AutoForm.addHooks(['insert-line-item-' + spaceId], hooksObject);
+  AutoForm.addHooks(['insertLineItemForm' + spaceId], hooksObject);
 })

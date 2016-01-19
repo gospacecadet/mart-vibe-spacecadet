@@ -33,9 +33,9 @@
           {{> afQuickField name='productId' type='hidden' value=_id}}
         </fieldset>
         <button type="submit" class="btn btn-primary btn-block btn-lg btn-wrap">Book this space</button>
-        {{> thread senderId=userId recipientId=propertyOwnerId}}
         <button type="button" class="btn btn-gray-light m-t-1 btn-block p-y-1 btn-wrap" data-toggle="modal" data-target="#gridSystemModal">Direct message landlord</button>
       {{/autoForm}}
+      {{> thread senderId=userId recipientId=propertyOwnerId}}
     {{else}}
       <button class="btn btn-primary btn-block btn-lg logged-out btn-wrap">Book this space</button>
       <button class="btn btn-gray-light m-t-1 btn-block logged-out p-y-1 btn-wrap">Direct message landlord</button>

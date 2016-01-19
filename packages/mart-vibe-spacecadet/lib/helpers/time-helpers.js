@@ -12,7 +12,6 @@ Template.registerHelper("MONTH", function () {
 
 Template.registerHelper("hours", function () {
   return [
-    {name: "12", value: 0},
     {name: "1", value: 1},
     {name: "2", value: 2},
     {name: "3", value: 3},
@@ -24,6 +23,7 @@ Template.registerHelper("hours", function () {
     {name: "9", value: 9},
     {name: "10", value: 10},
     {name: "11", value: 11},
+    {name: "12", value: 0},
   ]
 })
 

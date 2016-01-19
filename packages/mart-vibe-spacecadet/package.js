@@ -16,7 +16,8 @@ Package.onUse(function(api) {
     'ecmascript',
     'templating',
     'session',
-    'underscore'
+    'underscore',
+    'jquery'
   ], 'client');
 
   api.use([
@@ -63,6 +64,7 @@ Package.onUse(function(api) {
     'lib/schemas/shopper-sign-up-schema.js',
     'lib/schemas/merchant-sign-up-schema.js',
     'lib/schemas/profile-schema.js',
+    'lib/schemas/new-line-item-schema.js',
   ], 'client')
 
   api.export("DockingSchema", "client")
@@ -70,6 +72,7 @@ Package.onUse(function(api) {
   api.export("ShopperSignUpSchema", "client")
   api.export("MerchantSignUpSchema", "client")
   api.export("ProfileSchema", "client")
+  api.export("NewLineItemSchema", "client")
 
   // Assets
   api.addAssets("assets/avatar.png", "client")

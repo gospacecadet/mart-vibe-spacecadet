@@ -26,13 +26,14 @@
 </template>
 
 <template name="spaceBookingForm">
-  {{#autoForm collection="Mart.LineItems" id=spaceBookingFormId type="insert"}}
+  {{#autoForm schema="NewLineItemSchema" id=spaceBookingFormId type="normal"}}
     <fieldset>
       {{> afQuickField name='unit' type='hidden' value=currentUnit}}
       {{> afQuickField name='quantity' type='hidden' value=currentQuantity}}
       {{> afQuickField name='startAtDate' type='hidden' value=currentDate}}
       {{> afQuickField name='startAtHour' type='hidden' value=currentHour}}
       {{> afQuickField name='startAtMinute' type='hidden' value=currentMinute}}
+      {{> afQuickField name='startAtAMPM' type='hidden' value=currentAMPM}}
 
       {{> afQuickField name='cartId' type='hidden' value="required-for-autoform"}}
       {{> afQuickField name='productId' type='hidden' value=_id}}
