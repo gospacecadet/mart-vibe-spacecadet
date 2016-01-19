@@ -9,8 +9,9 @@ FlowRouter.route('/manage', {
   name: "manageDockings",
   action: function() {
     BlazeLayout.render("mainLayout", {
-      content: "manageDockings",
-      style: "boxed",
+      contentLeft: "manageDockings",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
       title: "Docking Management",
       subtitle: "Manage new docking requests, generate reports, and get analysis on how your properties are doing.",
     });

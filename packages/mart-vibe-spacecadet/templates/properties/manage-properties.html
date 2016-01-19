@@ -16,7 +16,7 @@
   <div class="row m-t-2">
     <div class="col-md-4">
       <a href="{{managePropertyPath _id}}">
-        <img class="img-fluid" src="{{thumbnailUrl}}" alt="{{name}}">
+        <img class="img-fluid" src="{{storefrontThumbnailUrl _id}}" alt="{{name}}">
       </a>
     </div>
     <div class='col-md-8'>
@@ -64,7 +64,7 @@
         </div>
       {{/if}}
 
-      {{#each spaces}}
+      {{#each products}}
         {{> manageSpacePreview}}
       {{/each}}
     </div>
@@ -75,7 +75,7 @@
   <div class="row m-b-3">
     <div class="col-md-4">
       <a href="{{manageSpacePath _id propertyId}}">
-        <img class="img-fluid" src="{{thumbnailUrl}}" alt="{{name}}">
+        <img class="img-fluid" src="{{productThumbnailUrl _id}}" alt="{{name}}">
       </a>
     </div>
     <div class='col-md-8'>

@@ -1,19 +1,10 @@
 <template name="manageDockings">
-  <div class='container'>
-      <h3 class='text-xs-center page-top'>Docking Management</h3>
-      <h5 class='text-muted text-xs-center'>
-        Manage new docking requests, generate reports, and get analysis on how your properties are doing.
-      </h5>
-      <div class='col-lg-10 col-lg-offset-1 boxed manage-dockings m-b-2 m-t-2'>
-        <div class="row">
-          <div class='col-md-8 m-t-1'>
-            {{> manageDockingsApproval}}
-          </div>
-          <div class='col-md-4 bg-gray-lighter manage-dockings-upcoming p-a-1'>
-            {{> manageDockingsUpcoming}}
-          </div>
-        </div>
-      </div>
-
+  <div class="row">
+    <div class='col-md-8 m-t-1'>
+      {{> manageDockingsApproval}}
+    </div>
+    <div class='col-md-4 bg-gray-lighter manage-dockings-upcoming p-a-1'>
+      {{> manageDockingsUpcoming}}
+    </div>
   </div>
 </template>

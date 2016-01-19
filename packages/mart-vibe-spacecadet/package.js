@@ -46,10 +46,12 @@ Package.onUse(function(api) {
   // lib
   api.addFiles(['lib/globals.js'], 'client')
 
+  // Helpers
   api.addFiles([
     'lib/helpers/helpers.js',
     'lib/helpers/time-helpers.js',
     'lib/helpers/profile-helpers.js',
+    'lib/helpers/image-helpers.js',
     'lib/errors.html',
     'lib/errors.js',
   ], 'client')
@@ -142,6 +144,17 @@ Package.onUse(function(api) {
     'templates/pages/loading.html',
   ], 'client')
 
+  // Properties
+  api.addFiles([
+    'templates/properties/manage-properties.html',
+    'templates/properties/manage-property.html',
+    'templates/properties/new-property.html',
+    'templates/properties/properties.html',
+    'templates/properties/property/property.html',
+    'templates/properties/property/property-details.html',
+    'templates/properties/property/property-spaces.html',
+  ], 'client')
+
   // Spaces
   api.addFiles([
     'templates/spaces/space/space.html',
@@ -159,17 +172,6 @@ Package.onUse(function(api) {
     'templates/spaces/shared/space-card.js',
     'templates/spaces/shared/space-card-buttons.js',
     'templates/spaces/shared/space-booking.js',
-  ], 'client')
-
-  // Properties
-  api.addFiles([
-    'templates/properties/manage-properties.html',
-    'templates/properties/manage-property.html',
-    'templates/properties/new-property.html',
-    'templates/properties/properties.html',
-    'templates/properties/property/property.html',
-    'templates/properties/property/property-details.html',
-    'templates/properties/property/property-spaces.html',
   ], 'client')
 
   // JS

@@ -10,17 +10,22 @@
     </p>
   </div>
   <div id="pendingDockingsAccordion" role="tablist"
-    aria-multiselectable="false" class='m-t-3'>
+    aria-multiselectable="false" class='m-t-2'>
 
-    <div class='row'>
-      {{#each pendingDockings}}
-        {{> dockingCollapse docking=(docking "pendingDockingsAccordion")}}
-      {{/each}}
-    </div>
+    {{#if notEmpty pendingDockings}}
+      <div class='row'>
+        {{#each pendingDockings}}
+          {{> dockingCollapse docking=(docking "pendingDockingsAccordion")}}
+        {{/each}}
+      </div>
+    {{else}}
+      <h5 class='text-xs-center'>You have no pending Dockings.</h5>
+    {{/if}}
   </div>
-  
+
   <div class='clearfix'></div>
-  <h3 class='text-xs-center m-t-2'>Rejected Dockings</h3>
+  <hr>
+  <h3 class='text-xs-center m-t-3'>Rejected Dockings</h3>
   <div class="col-md-10 col-md-offset-1">
     <p class='text-xs-center text-muted'>
       These dockings were rejected by the landlord or due to invalid payment.
@@ -28,19 +33,42 @@
     </p>
   </div>
 
-  <!-- {{#each rejectedDockings}}
-    {{> docking}}
-  {{/each}} -->
+  <div id="rejectedDockingsAccordion" role="tablist"
+    aria-multiselectable="false" class='m-t-2'>
+
+    {{#if notEmpty rejectedDockings}}
+      <div class='row'>
+        {{#each rejectedDockings}}
+          {{> dockingCollapse docking=(docking "rejectedDockingsAccordion")}}
+        {{/each}}
+      </div>
+    {{else}}
+      <h5 class='text-xs-center'>You have no rejected Dockings.</h5>
+    {{/if}}
+
+  </div>
 
   <div class='clearfix'></div>
-  <h3 class='text-xs-center m-t-2'>Accepted Dockings</h3>
+  <hr>
+  <h3 class='text-xs-center m-t-3'>Accepted Dockings</h3>
   <div class="col-md-10 col-md-offset-1">
     <p class='text-xs-center text-muted'>
       These dockings have been accepted by the landlord and your card has been charged.
     </p>
   </div>
 
-  <!-- {{#each acceptedDockings}}
-    {{> docking}}
-  {{/each}} -->
+  <div id="acceptedDockingsAccordion" role="tablist"
+    aria-multiselectable="false" class='m-t-2'>
+
+    {{#if notEmpty acceptedDockings}}
+      <div class='row'>
+        {{#each acceptedDockings}}
+          {{> dockingCollapse docking=(docking "acceptedDockingsAccordion")}}
+        {{/each}}
+      </div>
+    {{else}}
+      <h5 class='text-xs-center'>You have no accepted Dockings.</h5>
+    {{/if}}
+
+  </div>
 </template>

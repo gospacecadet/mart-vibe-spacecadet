@@ -20,3 +20,7 @@ Template.registerHelper("truncateText", function(text, length) {
 
   return text
 });
+
+Template.registerHelper("notEmpty", function(cursor) {
+  return cursor.count() > 0
+});
