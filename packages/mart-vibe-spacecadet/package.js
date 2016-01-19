@@ -115,6 +115,7 @@ Package.onUse(function(api) {
     'templates/dockings/dock-form-billing.html',
     'templates/dockings/dock-form-contact.html',
     'templates/dockings/dock-details.html',
+    'templates/dockings/confirmation/docking-confirmation.html',
     'templates/dockings/manage/manage-dockings.html',
     'templates/dockings/manage/manage-dockings-approval.html',
     'templates/dockings/manage/manage-dockings-upcoming.html',

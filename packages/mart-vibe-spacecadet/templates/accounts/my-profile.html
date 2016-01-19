@@ -3,16 +3,29 @@
     <div class="col-sm-6 col-sm-offset-3">
       {{#autoForm schema="ProfileSchema" id="updateProfileForm" type="normal"
           resetOnSuccess=false}}
+
+          {{#if username}}
+            <fieldset disabled>
+              {{> afQuickField name='username' value=username class='m-b-0 p-b-0'}}
+            </fieldset>
+          {{else}}
+            <fieldset>
+              {{> afQuickField name='username' value=username}}
+            </fieldset>
+          {{/if}}
+
         <fieldset>
-          {{> afQuickField name='username' value=username}}
           {{> afQuickField name='email' type='email' value=email}}
+        </fieldset>
+
+        <fieldset>
           {{> afQuickField name='firstName' value=firstName}}
+        </fieldset>
           {{> afQuickField name='lastName' value=lastName}}
           {{> afQuickField name='phoneNumber' value=phoneNumber}}
           {{#if canActAsMerchant}}
             {{> afQuickField name='businessName' value=businessName}}
           {{/if}}
-        </fieldset>
         <button type="submit" class="btn btn-primary btn-lg btn-block">Update Profile</button>
       {{/autoForm}}
     </div>

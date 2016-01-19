@@ -32,20 +32,25 @@
 
       </div>
     </fieldset>
-    <button type="submit" class="btn btn-outline-primary">Add card to account</button>
+    <button type="submit" class="btn btn-outline-primary m-t-1">Add card to account*</button>
+    <div class='clearfix m-b-2'></div>
+    <small class='text-muted'>
+      *Clicking this button will save the card to your account.
+      You can click 'Submit Docking' directly if you don't want to save this card to your account.
+    </small>
   {{/autoForm}}
 </template>
 
 <template name="reserveDockingFormBillingCards">
   <p class="text-muted lead">
-    Select a saved credit card or add a new one
+    Select a saved credit card or pay with a new one
   </p>
   <form id="creditCardSelection" class="form">
     <div class="row">
       <div class="radio col-md-4">
         <label>
           <input type="radio" name="creditCardRadio" id="add-new-card" checked>
-          Add a new card
+          Pay with new card
         </label>
       </div>
       {{#each creditCards}}
