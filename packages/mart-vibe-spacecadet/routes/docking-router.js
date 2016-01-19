@@ -17,28 +17,28 @@ FlowRouter.route('/manage', {
   }
 });
 
-FlowRouter.route('/dockings', {
-  name: "dockings",
+FlowRouter.route('/docking-history', {
+  name: "dockingHistory",
   action: function() {
     BlazeLayout.render("mainLayout", {
-      contentLeft: "dockings",
+      contentLeft: "dockingHistory",
       contentRight: "TODO",
       style: STYLES.SETTINGS,
-      title: "Docking Information",
+      title: "Docking History",
       subtitle: "Review upcoming dockings and get order history.",
     });
   }
 });
 
-FlowRouter.route('/docking-confirmation/:cartIds', {
-  name: "dockingConfirmation",
-  action: function() {
-    BlazeLayout.render("mainLayout", {
-      contentLeft: "dockingConfirmation",
-      contentRight: "TODO",
-      style: STYLES.SETTINGS,
-      title: "Docking Confirmation",
-      subtitle: "Review your docking details. Contact the landlord with any questions.",
-    });
-  }
-});
+// FlowRouter.route('/docking-confirmation/:cartIds', {
+//   name: "dockingConfirmation",
+//   action: function() {
+//     BlazeLayout.render("mainLayout", {
+//       contentLeft: "dockingConfirmation",
+//       contentRight: "TODO",
+//       style: STYLES.SETTINGS,
+//       title: "Docking Confirmation",
+//       subtitle: "Review your docking details. Contact the landlord with any questions.",
+//     });
+//   }
+// });

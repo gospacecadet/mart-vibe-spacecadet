@@ -61,6 +61,11 @@ Template.registerHelper("dateSlashed", function (date) {
   return moment(date).format('ll')
 })
 
+Template.registerHelper("dateSpecific", function (date) {
+  return moment(date).format('lll')
+})
+
+
 Template.registerHelper("dateAgo", function (date) {
   return moment(date).fromNow()
 })

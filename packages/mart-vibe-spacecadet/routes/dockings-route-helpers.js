@@ -11,16 +11,16 @@ Template.registerHelper('manageDockingsPath', function() {
 })
 
 Template.registerHelper('dockingsPath', function() {
-  return FlowRouter.path('dockings')
+  return FlowRouter.path('dockingHistory')
+})
+
+Template.registerHelper('dockingHistoryPath', function() {
+  return FlowRouter.path('dockingHistory')
 })
 
 Template.registerHelper('dockingConfirmationPath', function(cartIds) {
-  return dockingConfirmationPath(cartIds)
-})
-
-dockingConfirmationPath = function(cartIds) {
   return FlowRouter.path('dockingConfirmation', {cartIds: cartIds})
-}
+})
 
 dockPath = function() {
   return FlowRouter.path('dock')

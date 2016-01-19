@@ -1,0 +1,47 @@
+<template name="dockingHistoryDetails">
+  <hr>
+  <div class='table-responsive'>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Space name</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each lineItems}}
+          {{> dockingHistoryDetailsLine}}
+        {{/each}}
+        <tr>
+          <td colspan="2"><em>Subtotal:</em></td>
+          <td><em>{{money subtotalAtCheckout}}</em></td>
+        </tr>
+        <tr>
+          <td colspan="2"><em>Service Fee:</em></td>
+          <td><em>{{money serviceFeeAtCheckout}}</em></td>
+        </tr>
+        <tr>
+          <td colspan="2"><em>Tax:</em></td>
+          <td><em>{{money taxAtCheckout}}</em></td>
+        </tr>
+        <tr>
+          <td colspan="2"><strong>Total:</strong></td>
+          <td><strong>{{money totalAtCheckout}}*</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <small>
+      * Month dockings will be automatically billed each month.
+       <a href="#" id="monthly-billing-warning">Learn more.</a>
+    </small>
+  </div>
+</template>
+
+<template name="dockingHistoryDetailsLine">
+  <tr>
+    <td>{{productNameAtCheckout}}</td>
+    <td>{{quantity}} {{unit}}s</td>
+    <td>{{money unitPriceAtCheckout}} / {{unit}}</td>
+  </tr>
+</template>

@@ -1,0 +1,46 @@
+<template name="dockingHistory">
+
+  <h3 class='text-xs-center m-t-2'>Pending Dockings</h3>
+  <div class="col-md-10 col-md-offset-1">
+    <p class='text-xs-center text-muted'>
+      Thank you for submitting your Dockings.
+      Please note that Landlords still need to approve your dockings before it can be confirmed.
+      You will receive an email if they accept or reject your request.
+      Some Landlords may message you with additional questions.
+    </p>
+  </div>
+  <div id="pendingDockingsAccordion" role="tablist"
+    aria-multiselectable="false" class='m-t-3'>
+
+    <div class='row'>
+      {{#each pendingDockings}}
+        {{> dockingCollapse docking=(docking "pendingDockingsAccordion")}}
+      {{/each}}
+    </div>
+  </div>
+  
+  <div class='clearfix'></div>
+  <h3 class='text-xs-center m-t-2'>Rejected Dockings</h3>
+  <div class="col-md-10 col-md-offset-1">
+    <p class='text-xs-center text-muted'>
+      These dockings were rejected by the landlord or due to invalid payment.
+      Click on the docking for more details and submit a new docking request.
+    </p>
+  </div>
+
+  <!-- {{#each rejectedDockings}}
+    {{> docking}}
+  {{/each}} -->
+
+  <div class='clearfix'></div>
+  <h3 class='text-xs-center m-t-2'>Accepted Dockings</h3>
+  <div class="col-md-10 col-md-offset-1">
+    <p class='text-xs-center text-muted'>
+      These dockings have been accepted by the landlord and your card has been charged.
+    </p>
+  </div>
+
+  <!-- {{#each acceptedDockings}}
+    {{> docking}}
+  {{/each}} -->
+</template>

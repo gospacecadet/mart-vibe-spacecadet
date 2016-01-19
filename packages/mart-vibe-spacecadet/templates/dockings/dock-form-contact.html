@@ -16,7 +16,7 @@
           {{> afQuickField name='contactFirstName' value=firstName}}
         </div>
         <div class='col-md-6'>
-          {{> afQuickField name='contactLastName' value=firstName}}
+          {{> afQuickField name='contactLastName' value=lastName}}
         </div>
       </div>
 
@@ -25,7 +25,7 @@
       {{#if isRentingOnBehalfBiz}}
         <div class='row'>
           <div class='col-md-6'>
-            {{> afQuickField name='contactBusiness'}}
+            {{> afQuickField name='contactBusiness' value=businessName}}
           </div>
           <div class='col-md-6'>
           </div>
