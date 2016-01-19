@@ -20,6 +20,12 @@ Template.registerHelper("username", function () {
     return me.username
 })
 
+Template.registerHelper("_username", function () {
+  var me = Meteor.user()
+  if(me)
+    return me.username || me.emails[0].address
+})
+
 Template.registerHelper("email", function () {
   var me = Meteor.user()
   if(me && me.emails[0])
