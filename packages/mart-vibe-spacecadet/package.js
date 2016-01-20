@@ -93,6 +93,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'routes/accounts-router.js',
     'routes/accounts-router-helpers.js',
+    'routes/admin-router.js',
+    'routes/admin-router-helpers.js',
     'routes/bank-accounts-router.js',
     'routes/bank-accounts-router-helpers.js',
     'routes/messages-router.js',
@@ -117,6 +119,11 @@ Package.onUse(function(api) {
     'templates/accounts/merchant-sign-up.html',
     'templates/accounts/my-profile.html',
     'templates/accounts/shopper-sign-up.html',
+  ], 'client')
+
+  // Admin
+  api.addFiles([
+    'templates/admin/transfer-funds.html',
   ], 'client')
 
   // Bank Accounts
