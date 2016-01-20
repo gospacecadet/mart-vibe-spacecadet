@@ -124,6 +124,7 @@ Package.onUse(function(api) {
   // Admin
   api.addFiles([
     'templates/admin/transfer-funds.html',
+    'templates/admin/transfer-funds.js',
   ], 'client')
 
   // Bank Accounts

@@ -1,3 +1,126 @@
 <template name="transferFunds">
+  {{#if hasDockingsWaitingTransfer}}
+    {{#each dockingsWaitingTransfer}}
+      {{> transferFundsApproval}}
+    {{/each}}
+  {{else}}
+    <h4 class='text-xs-center'>
+      There are no Dockings that are awaiting funds transfer.
+    </h4>
+  {{/if}}
 
+</template>
+
+<template name="transferFundsApproval">
+  <div class="panel panel-default m-a-2 m-t-3">
+    <div class="panel-heading" role="tab" id="{{transferFundsHeadingId}}">
+      <div class='row'>
+        <div class='col-md-4'>
+          <img src="{{dockingImageUrl}}" alt="{{storefrontNameAtCheckout}}" class='img-fluid'/>
+        </div>
+        <div class='col-md-8'>
+          <h4>{{storefrontNameAtCheckout}} <small class='text-muted'>Payout: {{money merchantCutAtCheckout}}</small></h4>
+          <hr>
+
+          <div class="row">
+            <div class="col-xs-4">
+              Subtotal
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+              {{money subtotalAtCheckout}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-xs-offset-1">
+              Merchant cut
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+              {{money merchantCutAtCheckout}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3 col-xs-offset-1">
+              SpaceCadet cut
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+              {{money connectionFeeAtCheckout}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              Service fee
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+              {{money serviceFeeAtCheckout}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              Total
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+              {{money totalAtCheckout}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <strong>SpaceCadet net</strong>
+            </div>
+            <div class="col-xs-7 col-xs-offset-1">
+              <strong>{{money netAtCheckout}}</strong>
+            </div>
+          </div>
+
+          <div class='row'>
+            <a data-toggle="collapse" data-parent="#manage-dockings-accordion" class='btn m-t-1 btn-link pull-right'
+              href="#{{transferFundsCollapseId}}" aria-expanded="false" aria-controls="{{transferFundsCollapseId}}">
+                Toggle details
+            </a>
+          </div>
+          <div class='row'>
+            <div class='col-md-7'>
+              <button class='btn btn-primary btn-block accept-transfer-button'>
+                Accept
+              </button>
+            </div>
+            <div class='col-md-5'>
+              <button class='btn btn-danger btn-block reject-transfer-button'>
+                Reject
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="{{transferFundsCollapseId}}" class="panel-collapse collapse in m-t-1" role="tabpanel" aria-labelledby="{{transferFundsHeadingId}}">
+      <h5>Docking Details</h5>
+      <div class='table-responsive'>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Space</th>
+              <th>Starts</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each lineItems}}
+              {{> transferFundsApprovalLine}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="transferFundsApprovalLine">
+  <tr>
+    <td>{{storefrontNameAtCheckout}}</td>
+    <td>{{productNameAtCheckout}}</td>
+    <td>{{dateSlashed startAtDate}}</td>
+    <td>{{duration}}</td>
+  </tr>
 </template>

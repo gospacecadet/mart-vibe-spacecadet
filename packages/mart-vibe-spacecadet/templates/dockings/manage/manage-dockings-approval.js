@@ -12,9 +12,3 @@ Template._manageDockingsApproval.helpers({
     return this.contactFirstName + " " + this.contactLastName
   }
 });
-
-Template._manageDockingsApprovalLineItem.helpers({
-  duration: function() {
-    return this.quantity + " " + this.unit + "s"
-  }
-});

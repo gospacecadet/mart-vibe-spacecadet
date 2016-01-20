@@ -69,3 +69,7 @@ Template.registerHelper("dateSpecific", function (date) {
 Template.registerHelper("dateAgo", function (date) {
   return moment(date).fromNow()
 })
+
+Template.registerHelper("duration", function(argument){
+  return this.quantity + " " + this.unit + "s"
+});
