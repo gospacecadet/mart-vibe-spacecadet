@@ -65,6 +65,7 @@ Package.onUse(function(api) {
     'lib/schemas/merchant-sign-up-schema.js',
     'lib/schemas/profile-schema.js',
     'lib/schemas/new-line-item-schema.js',
+    'lib/schemas/new-bank-account-schema.js',
   ], 'client')
 
   api.export("DockingSchema", "client")
@@ -73,6 +74,7 @@ Package.onUse(function(api) {
   api.export("MerchantSignUpSchema", "client")
   api.export("ProfileSchema", "client")
   api.export("NewLineItemSchema", "client")
+  api.export("NewBankAccountSchema", "client")
 
   // Assets
   api.addAssets("assets/avatar.png", "client")
@@ -90,6 +92,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'routes/accounts-router.js',
     'routes/accounts-router-helpers.js',
+    'routes/bank-accounts-router.js',
+    'routes/bank-accounts-router-helpers.js',
     'routes/messages-router.js',
     'routes/messages-router-helpers.js',
     'routes/pages-route-helpers.js',
@@ -112,6 +116,12 @@ Package.onUse(function(api) {
     'templates/accounts/merchant-sign-up.html',
     'templates/accounts/my-profile.html',
     'templates/accounts/shopper-sign-up.html',
+  ], 'client')
+
+  // Bank Accounts
+  api.addFiles([
+    'templates/bank-accounts/bank-accounts/bank-accounts.html',
+    'templates/bank-accounts/bank-accounts/bank-accounts.js',
   ], 'client')
 
   // Dockings
