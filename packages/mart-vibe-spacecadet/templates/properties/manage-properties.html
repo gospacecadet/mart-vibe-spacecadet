@@ -3,9 +3,13 @@
   <div class="row m-a-2 p-a-2">
     <div class="col-md-10 col-md-offset-1 white-box p-y-2">
       <h2>Manage Your Properties</h2>
-      {{#each properties}}
-        {{> managePropertyPreview}}
-      {{/each}}
+      {{#if hasProperties}}
+        {{#each properties}}
+          {{> managePropertyPreview}}
+        {{/each}}
+      {{else}}
+        <h4>You had not added any properties yet.</h4>
+      {{/if}}
     </div>
   </div>
 </div>
@@ -64,9 +68,13 @@
         </div>
       {{/if}}
 
-      {{#each products}}
-        {{> manageSpacePreview}}
-      {{/each}}
+      {{#if hasSpaces}}
+        {{#each products}}
+          {{> manageSpacePreview}}
+        {{/each}}
+      {{else}}
+        <h4>You have not added any spaces to this property yet.</h4>
+      {{/if}}
     </div>
   </div>
 </template>

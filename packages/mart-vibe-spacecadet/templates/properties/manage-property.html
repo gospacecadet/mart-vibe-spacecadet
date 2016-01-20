@@ -9,11 +9,23 @@
       </div>
       <hr>
       {{#with property}}
+        {{> managePropertyProducts}}
         {{> managePropertyDetails}}
       {{/with}}
     </div>
   </div>
 </div>
+</template>
+
+<template name="managePropertyProducts">
+  {{#if hasSpaces}}
+    <span class="text-muted">Edit a space instead: </span>
+    {{#each products}}
+      <a href="{{manageSpacePath _id storefrontId}}">{{name}}</a> |
+    {{/each}}
+    <a href="#" class='btn btn-sm btn-outline-primary'>Add new space</a>
+  {{/if}}
+  <hr>
 </template>
 
 <template name="managePropertyDetails">

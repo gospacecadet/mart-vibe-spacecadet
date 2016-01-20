@@ -3,7 +3,7 @@ Template.registerHelper("propertyPath", function (propertyId) {
 })
 
 Template.registerHelper("managePropertyPath", function (propertyId) {
-  return FlowRouter.path('manageProperty', {propertyId: propertyId})
+  return managePropertyPath(propertyId)
 })
 
 Template.registerHelper("managePropertiesPath", function () {
@@ -21,3 +21,7 @@ Template.registerHelper("spacePath", function (spaceId, propertyId) {
 Template.registerHelper("manageSpacePath", function (spaceId, propertyId) {
   return FlowRouter.path('manageSpace', {spaceId: spaceId, propertyId: propertyId})
 })
+
+managePropertyPath = function(propertyId) {
+  return FlowRouter.path('manageProperty', {propertyId: propertyId})
+}

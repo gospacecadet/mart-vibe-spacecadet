@@ -152,11 +152,13 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/properties/manage-properties.html',
     'templates/properties/manage-property.html',
-    'templates/properties/new-property.html',
+    'templates/properties/new/new-property.html',
     'templates/properties/properties.html',
     'templates/properties/property/property.html',
     'templates/properties/property/property-details.html',
     'templates/properties/property/property-spaces.html',
+    'templates/properties/new/new-property.js',
+
   ], 'client')
 
   // Spaces
