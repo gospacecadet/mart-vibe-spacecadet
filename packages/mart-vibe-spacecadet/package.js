@@ -53,6 +53,7 @@ Package.onUse(function(api) {
     'lib/helpers/time-helpers.js',
     'lib/helpers/profile-helpers.js',
     'lib/helpers/image-helpers.js',
+    'lib/helpers/bank-account-helpers.js',
     'lib/errors.html',
     'lib/errors.js',
   ], 'client')
@@ -121,7 +122,11 @@ Package.onUse(function(api) {
   // Bank Accounts
   api.addFiles([
     'templates/bank-accounts/bank-accounts/bank-accounts.html',
+    'templates/bank-accounts/bank-accounts/_default-bank-account.html',
+    'templates/bank-accounts/bank-accounts/saved-bank-account.html',
+    'templates/bank-accounts/bank-accounts/new-bank-account-form.html',
     'templates/bank-accounts/bank-accounts/bank-accounts.js',
+
   ], 'client')
 
   // Dockings

@@ -1,11 +1,26 @@
 <template name="bankAccounts">
   {{#if bankAccounts}}
     {{#with defaultBankAccount}}
+      <h4 class='text-xs-center m-t-3'>
+        <strong>Account currently accepting transfers</strong>
+      </h4>
       {{> _defaultBankAccount}}
     {{/with}}
-    {{#each savedBankAccounts}}
-      {{> savedBankAccount}}
-    {{/each}}
+
+
+    <h4 class='text-xs-center m-t-3 m-b-1'>
+      <strong>Inactive Accounts</strong>
+    </h4>
+    <div class="row">
+      <div class='col-md-6 col-md-offset-3'>
+        <div class="row">
+          {{#each savedBankAccounts}}
+            {{> savedBankAccount}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
   {{else}}
     <h4 class="m-t-3 text-xs-center">
       You don't have any bank accounts linked to your account.
@@ -20,44 +35,4 @@
       Add new bank account
     </button>
   {{/if}}
-
-</template>
-
-<template name="newBankAccountForm">
-  <div class="row m-t-3">
-    <div class='col-md-6 col-md-offset-3'>
-      {{#autoForm schema="NewBankAccountSchema" id="new-bank-account-form" type="normal"}}
-        <fieldset class="form-group">
-          {{> afQuickField name='nickname'}}
-        </fieldset>
-
-        <fieldset class="form-group">
-          {{> afQuickField name='routingNumber'}}
-        </fieldset>
-
-        <fieldset class="form-group">
-          {{> afQuickField name='accountNumber'}}
-        </fieldset>
-
-        <fieldset class="form-group">
-          {{> afQuickField name='isDefault'}}
-        </fieldset>
-
-        <div class="row">
-          <div class="col-md-9">
-            <button type="submit" class="btn btn-primary m-t-1 m-b-3 btn-block btn-lg">
-              Link bank account
-            </button>
-          </div>
-          <div class='col-md-3'>
-            <button type="button" class="btn btn-outline-danger m-t-1 m-b-3 btn-block btn-lg" id='cancel-add-bank-account-button'>
-              Cancel
-            </button>
-          </div>
-        </div>
-
-
-      {{/autoForm}}
-    </div>
-  </div>
 </template>

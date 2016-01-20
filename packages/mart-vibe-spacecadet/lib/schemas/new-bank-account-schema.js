@@ -1,6 +1,11 @@
 NewBankAccountSchema = new SimpleSchema({
-  nickname: {
+  name: {
     type: String,
+    label: "Account Nickname"
+  },
+  businessName: {
+    type: String,
+    label: "Entity name"
   },
   routingNumber: {
     type: String,
@@ -8,7 +13,8 @@ NewBankAccountSchema = new SimpleSchema({
   accountNumber: {
     type: String
   },
-  isDefault: {
-    type: Boolean,
-  },
+  accountType: {
+    type: String,
+    allowedValues: BANK_ACCOUNT_TYPES
+  }
 })
