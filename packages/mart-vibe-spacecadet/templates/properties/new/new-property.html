@@ -4,6 +4,7 @@
     <div class="col-md-10 col-md-offset-1 white-box p-t-2">
 
         {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="insert"}}
+
           <fieldset>
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
@@ -14,14 +15,17 @@
             {{> propertyFields}}
           </fieldset>
           {{> newPropertyImages}}
+
           <div class="row m-t-2">
             <div class="col-md-8 col-md-offset-2">
-              <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">Create Property</button>
-
+              <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">
+                Create Property
+              </button>
             </div>
           </div>
 
         {{/autoForm}}
+
         <p class="text-muted m-a-1 text-xs-center">
           You will be able to continue editing before the property is made visible to the public.
         </p>
@@ -94,29 +98,11 @@
       <div class="row">
         {{#each numImagesAllowed}}
           <div class="col-md-6">
-            {{> uploadPropertyImage index=index propertyId=_id }}
+            {{> newPropertyImage index=index propertyId=_id }}
           </div>
         {{/each}}
       </div>
     </div>
   </div>
   <hr>
-
-
-</template>
-
-<template name="newPropertyImage">
-  <img src={{url}} class="img-rounded img-fluid m-t-2"/>
-
-  {{#if uploading}}
-    <progress class="progress progress-striped progress-success" value="{{progress}}" max="100">{{progress}}%</progress>
-  {{/if}}
-
-  <form>
-      <label class="file">
-        <input type="file" id="property-image-{{index}}">
-        <span class="file-custom"></span>
-      </label>
-    <button type="submit" class="btn btn-outline-primary btn-upload btn-block btn-sm">Upload</button>
-  </form>
 </template>
