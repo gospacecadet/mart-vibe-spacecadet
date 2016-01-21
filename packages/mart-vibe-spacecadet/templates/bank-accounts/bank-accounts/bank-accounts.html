@@ -1,38 +1,38 @@
 <template name="bankAccounts">
-  {{#if bankAccounts}}
-    {{#with defaultBankAccount}}
-      <h4 class='text-xs-center m-t-3'>
-        <strong>Account currently accepting transfers</strong>
-      </h4>
-      {{> _defaultBankAccount}}
-    {{/with}}
+  <div class="row">
+    <div class='col-xs-12 col-md-8 col-md-offset-2'>
+      {{#if bankAccounts}}
+        {{#with defaultBankAccount}}
+          <h4 class='text-xs-center m-t-3'>
+            <strong>Account currently accepting transfers</strong>
+          </h4>
+          {{> _defaultBankAccount}}
+        {{/with}}
+        <h4 class='text-xs-center m-t-3 m-b-1'>
+          <strong>Inactive Accounts</strong>
+        </h4>
 
-
-    <h4 class='text-xs-center m-t-3 m-b-1'>
-      <strong>Inactive Accounts</strong>
-    </h4>
-    <div class="row">
-      <div class='col-md-6 col-md-offset-3'>
         <div class="row">
           {{#each savedBankAccounts}}
             {{> savedBankAccount}}
           {{/each}}
         </div>
-      </div>
+
+      {{else}}
+        <h4 class="m-t-3 text-xs-center">
+          You don't have any bank accounts linked to your account.
+          You will <strong>not be able to receive any payments</strong> until you add one.
+        </h4>
+      {{/if}}
+
+      {{#if addingBankAccount}}
+        {{> newBankAccountForm}}
+      {{else}}
+        <button type='button' class='btn btn-lg center-block btn-primary m-y-3' id='new-bank-account-button'>
+          Add new bank account
+        </button>
+      {{/if}}
     </div>
+  </div>
 
-  {{else}}
-    <h4 class="m-t-3 text-xs-center">
-      You don't have any bank accounts linked to your account.
-      You will <strong>not be able to receive any payments</strong> until you add one.
-    </h4>
-  {{/if}}
-
-  {{#if addingBankAccount}}
-    {{> newBankAccountForm}}
-  {{else}}
-    <button type='button' class='btn btn-lg center-block btn-primary m-y-3' id='new-bank-account-button'>
-      Add new bank account
-    </button>
-  {{/if}}
 </template>

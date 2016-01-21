@@ -1,19 +1,17 @@
 <template name="newBankAccountForm">
-  <div class="row m-t-3">
-    <div class='col-md-6 col-md-offset-3'>
+  <div class="m-t-3">
       {{#autoForm schema="NewBankAccountSchema" id="newBankAccountFormId" type="normal" placeholder="e.g. My Checkings or New Orleans Bank"}}
         <fieldset class="form-group">
           {{> afQuickField name='name'}}
         </fieldset>
 
         <div class='row'>
-          <div class='col-md-6'>
+          <div class='col-xs-6'>
             <fieldset class="form-group">
               {{> afQuickField name='accountType' type="select" options='allowed' capitalize=true id='bankAccountType'}}
             </fieldset>
-
           </div>
-          <div class='col-md-6'>
+          <div class='col-xs-6'>
             <fieldset class="form-group">
               {{> afQuickField name='businessName' placeholder="Business or Individual name" value=bankBusinessName}}
             </fieldset>
@@ -21,13 +19,13 @@
         </div>
 
         <div class='row'>
-          <div class='col-md-6'>
+          <div class='col-xs-6'>
             <fieldset class="form-group">
               {{> afQuickField name='routingNumber' value='110000000'}}
             </fieldset>
 
           </div>
-          <div class='col-md-6'>
+          <div class='col-xs-6'>
             <fieldset class="form-group">
               {{> afQuickField name='accountNumber' value='000123456789'}}
             </fieldset>
@@ -35,12 +33,12 @@
         </div>
 
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-xs-9">
             <button type="submit" class="btn btn-primary m-t-1 m-b-3 btn-block btn-lg">
               Link bank account
             </button>
           </div>
-          <div class='col-md-3'>
+          <div class='col-xs-3'>
             <button type="button" class="btn btn-outline-danger m-t-1 m-b-3 btn-block btn-lg"
               id='cancel-add-bank-account-button'>
               Cancel
@@ -48,6 +46,5 @@
           </div>
         </div>
       {{/autoForm}}
-    </div>
   </div>
 </template>
