@@ -6,7 +6,7 @@ var helpers = {
     return managePropertyPath(propertyId)
   },
   managePropertiesPath: function() {
-    return FlowRouter.path('manageProperties')
+    return managePropertiesPath()
   },
   newPropertyPath: function() {
     return FlowRouter.path('newProperty')
@@ -32,4 +32,8 @@ managePropertyPath = function(propertyId) {
 
 newSpacePath = function(propertyId) {
   return FlowRouter.path('newSpace', {propertyId: propertyId})
+}
+
+managePropertiesPath = function() {
+  return FlowRouter.path('manageProperties')
 }
