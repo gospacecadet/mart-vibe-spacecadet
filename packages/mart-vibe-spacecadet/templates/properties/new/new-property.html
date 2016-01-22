@@ -2,33 +2,7 @@
 <div class="container-fluid">
   <div class="row m-a-2 p-a-2">
     <div class="col-md-10 col-md-offset-1 white-box p-t-2">
-
-        {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="insert"}}
-
-          <fieldset>
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <h3><strong>Create a Property</strong></h3>
-              </div>
-            </div>
-            <hr>
-            {{> propertyFields}}
-          </fieldset>
-          {{> newPropertyImages}}
-
-          <div class="row m-t-2">
-            <div class="col-md-8 col-md-offset-2">
-              <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">
-                Create Property
-              </button>
-            </div>
-          </div>
-
-        {{/autoForm}}
-
-        <p class="text-muted m-a-1 text-xs-center">
-          You will be able to continue editing before the property is made visible to the public.
-        </p>
+      {{> newPropertyForm}}
     </div>
   </div>
 </div>
