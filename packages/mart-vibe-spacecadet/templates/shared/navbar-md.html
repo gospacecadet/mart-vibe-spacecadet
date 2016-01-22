@@ -1,0 +1,88 @@
+<template name="navbarMd">
+  {{#if loggedIn}}
+    {{> navbarLoggedInLinks}}
+  {{else}}
+  {{> navbarLoggedOutLinks}}
+    {{> navbarLoggedOutLinks}}
+    {{> navbarLogin}}
+  {{/if}}
+</template>
+
+<template name="navbarLoggedOutLinks">
+  <ul class="nav navbar-nav pull-xs-left">
+    <li class='nav-item'>
+      <a class='nav-link' href="{{aboutPath}}">About</a>
+    </li>
+    <li class='navbar-divider'>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href="{{listSpacePath}}">List Your Space</a>
+    </li>
+  </ul>
+</template>
+
+<template name="navbarLoggedInLinks">
+  <ul class="nav navbar-nav pull-xs-right">
+    {{#if cartHasItems}}
+      <li class="nav-item">
+        <a class="nav-link" href="{{checkoutPath}}">Checkout ({{cartSize}})</a>
+      </li>
+    {{/if}}
+    {{#if isAdmin}}
+      <li class="nav-item">
+        <a class="nav-link" href="{{transferFundsPath}}">Transfer Funds</a>
+      </li>
+    {{/if}}
+    {{#if canActAsMerchant}}
+      {{#if isMerchant}}
+        {{> merchantNavbarItems}}
+      {{/if}}
+      {{> propertyNavbarItems}}
+    {{/if}}
+    {{> genericNavbarItems}}
+  </ul>
+</template>
+
+<template name="propertyNavbarItems">
+  <li class="nav-item">
+    <a class="nav-link" href="{{newPropertyPath}}">New Property</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{managePropertiesPath}}">Manage Properties</a>
+  </li>
+</template>
+
+<template name="merchantNavbarItems">
+  <li class="nav-item">
+    <a class="nav-link" href="{{manageDockingsPath}}">Manage Dockings{{dockingsNotification}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{bankAccountsPath}}">Bank Accounts</a>
+  </li>
+</template>
+
+<template name="genericNavbarItems">
+  <li class="nav-item">
+    <a class="nav-link" href="{{myProfilePath}}">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{inboxPath}}">Inbox</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{dockingsPath}}">Docking History</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">{{_username}}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" id="logout-button">Logout</a>
+  </li>
+</template>
+
+<template name="navbarLogin">
+  <form class="form-inline pull-xs-right" id='navbar-login'>
+    <input class="form-control" name="email" type="email" placeholder="Email">
+    <input class="form-control" name="password" type="password" placeholder="Password">
+    <button class="btn btn-outline-primary" type="submit">Log In</button>
+  </form>
+</template>

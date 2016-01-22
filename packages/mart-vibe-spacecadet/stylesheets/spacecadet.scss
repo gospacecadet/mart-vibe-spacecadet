@@ -5,7 +5,11 @@
 }
 
 body {
-  background-color: #f6f6f6;
+  background-color: $background-color;
+}
+
+.main-content {
+  margin-top: $navbar-height;
 }
 
 .btn-wrap {

@@ -1,3 +1,35 @@
-nav.navbar.navbar-light.navbar-fixed-top {
-  // min-height: 15%;
+@import "variables";
+
+$padding: 1.65rem;
+.navbar{
+  background: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  // border: none;
+  // margin-bottom: 0px !important;
+  height: $navbar-height;
+}
+
+.nav {
+  padding-top:    $padding;
+}
+
+.navbar-logo {
+  height: $navbar-height;
+  margin-top: -1rem;
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+#navbar-login {
+  padding-top: $padding;
+}
+
+.navbar-toggler {
+  padding: $padding .75rem;
+  font-size: 2.5rem;
+}
+
+.navbar-input-sm {
+  border-color: $teal-light;
+  background-color: rgba(0, 0, 0, 0);
 }

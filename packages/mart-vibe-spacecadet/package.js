@@ -154,6 +154,8 @@ Package.onUse(function(api) {
     api.addFiles([
       'templates/shared/footers.html',
       'templates/shared/navbar.html',
+      'templates/shared/navbar-sm.html',
+      'templates/shared/navbar-md.html',
       'templates/shared/general-settings-menu.html',
     ], 'client')
 
