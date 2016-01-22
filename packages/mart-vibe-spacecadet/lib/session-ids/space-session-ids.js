@@ -32,3 +32,8 @@ const SPACE_START_AMPM_PREFIX = 'space-start-ampm-'
 spaceStartAMPMId = function(spaceId) {
   return SPACE_START_AMPM_PREFIX + spaceId
 }
+
+const SPACE_ADDING_PREFIX = 'space-new-'
+addingSpaceSession = function(propertyId) {
+  return SPACE_ADDING_PREFIX + propertyId
+}

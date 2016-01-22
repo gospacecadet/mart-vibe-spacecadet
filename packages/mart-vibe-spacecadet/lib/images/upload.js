@@ -11,18 +11,31 @@ uploadImageVersions = function(blob, objectCollection, index, callback) {
     uploaders[index] = uploader
     TMP_PROPERTY_UPLOADERS.set(uploaders)
 
-    uploader.send(blob, function(error, downloadUrl) {
-      if(error) {
-        callback(error)
-      } else {
-        var key = ending.toLowerCase() + "Url"
-        imageUrls[key] = downloadUrl
-        if(_.keys(imageUrls).length === 3) {
-          console.log(imageUrls);
-          callback(undefined, imageUrls)
-        }
-      }
-    })
+    if(ending === "Original") {
+      upload(blob, uploader, imageUrls, ending, callback)
+    } else if(ending === "Optimized") {
+      // Resize and upload as optimized
+       resizeImage(blob, {
+         maxWidth: 1000,
+         // minWidth: 1000,
+         maxHeight: 300,
+         crop: true,
+         canvas: true
+       }, function(error, blob) {
+         upload(blob, uploader, imageUrls, ending, callback)
+       })
+    } else if(ending === "Thumbnail") {
+      // Resize and upload as thumbnail
+      resizeImage(blob, {
+        maxWidth: 300,
+        // minWidth: 300,
+        maxHeight: 200,
+        crop: true,
+        canvas: true
+      }, function(error, blob) {
+        upload(blob, uploader, imageUrls, ending, callback)
+      })
+    }
   })
 }
 
@@ -56,4 +69,55 @@ attachUploadedImages = function(type, objectId) {
       }
     }
   }
+}
+
+var upload = function(blob, uploader, imageUrls, ending, callback) {
+  uploader.send(blob, function(error, downloadUrl) {
+    if(error) {
+      callback(error)
+    } else {
+      var key = ending.toLowerCase() + "Url"
+      imageUrls[key] = downloadUrl
+      if(_.keys(imageUrls).length === 3) {
+        callback(undefined, imageUrls)
+      }
+    }
+  })
+}
+
+// return blob
+var resizeImage = function(file, options, callback) {
+  var fileData = {
+    name: file.name,
+    type: file.type
+  };
+
+  // Get image metadata.
+  loadImage.parseMetaData(file, function(data) {
+    var orientation = 1;
+    if (data.exif) {
+      orientation = data.exif.get('Orientation');
+      if (orientation) {
+        options.orientation = orientation;
+      }
+    }
+
+    // Resize image with orientation metadata.
+    loadImage(file, function(canvas) {
+      console.log('LOAD IMAGE');
+      console.log(canvas);
+      canvas.toBlob(function(blob) {
+        fileData.data = blob
+        fileData.data.type = file.type;
+
+        var resizedImage = _.extend(fileData.data, {name: fileData.name}, data.exif ? data.exif.getAll() : {});
+        callback(null, resizedImage)
+      })
+    }, options);
+
+  },
+  {
+    maxMetaDataSize: 262144,
+    disableImageHead: false
+  });
 }

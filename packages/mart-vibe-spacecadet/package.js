@@ -32,8 +32,10 @@ Package.onUse(function(api) {
     'mizzao:jquery-ui@1.11.4',
     'lepozepo:accounting@1.0.0',
     'fortawesome:fontawesome@4.5.0',
-    'momentjs:moment@2.10.6'
+    'momentjs:moment@2.10.6',
+    'marvin:javascript-load-image@2.1.2'
   ])
+
 
   api.imply([
     'kadira:flow-router',
@@ -209,8 +211,8 @@ Package.onUse(function(api) {
     // Properties
     paths = ['templates', 'properties']
     api.addFiles([
-      pre(paths) + 'manage-properties.html',
-      pre(paths) + 'manage-property.html',
+      pre(paths) + 'manage/manage-properties.html',
+      pre(paths) + 'manage/manage-property.html',
       pre(paths) + 'new/new-property-form.html',
       pre(paths) + 'new/new-property-image.html',
       pre(paths) + 'new/new-property-images.html',
@@ -257,7 +259,6 @@ Package.onUse(function(api) {
     'templates/dockings/dock.js',
     'templates/messages/thread.js',
     'templates/spaces/manage-space.js',
-    'templates/properties/manage-properties.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -273,6 +274,7 @@ Package.onUse(function(api) {
   paths = ['events']
   api.addFiles([
     pre(paths) + 'properties/new/new-property-image.js',
+    pre(paths) + 'properties/manage/manage-property-preview.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -280,6 +282,7 @@ Package.onUse(function(api) {
   paths = ['helpers']
   api.addFiles([
     pre(paths) + 'properties/new/new-property-image.js',
+    pre(paths) + 'properties/manage/manage-property-preview.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
