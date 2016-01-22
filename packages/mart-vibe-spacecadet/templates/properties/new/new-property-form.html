@@ -2,18 +2,12 @@
   {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="normal"}}
 
     <fieldset>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <h3><strong>Create a Property</strong></h3>
-        </div>
-      </div>
-      <hr>
       {{> _propertyFields}}
     </fieldset>
     {{> newPropertyImages}}
 
     <div class="row m-t-2">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-8 col-md-offset-2 col-xs-12">
         <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">
           Create Property
         </button>

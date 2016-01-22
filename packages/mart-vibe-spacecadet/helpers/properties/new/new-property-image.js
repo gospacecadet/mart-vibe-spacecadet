@@ -14,7 +14,7 @@ Template.newPropertyImage.helpers({
 
 var pct = function(index) {
   if(currentUploader(index) && currentUploader(index).progress) {
-    var uploader = uploaders[index]
+    var uploader = currentUploader(index)
     var pct = Math.round(uploader.progress() * 100)
     return pct
   }

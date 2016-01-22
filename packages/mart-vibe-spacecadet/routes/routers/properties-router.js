@@ -1,7 +1,16 @@
+
 FlowRouter.route('/new-property', {
   name: "newProperty",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "newProperty"});
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "newProperty",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Create New Property",
+      subtitle: "Each Property holds many Spaces.\
+      For example, if you are a farmers market, the Property is the entire market. \
+      You will be able to add spaces next.",
+    });
   }
 });
 
