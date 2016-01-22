@@ -1,27 +1,35 @@
-Template.registerHelper("propertyPath", function (propertyId) {
-  return FlowRouter.path('property', {propertyId: propertyId})
-})
+var helpers = {
+  propertyPath: function(propertyId) {
+    return FlowRouter.path('property', {propertyId: propertyId})
+  },
+  managePropertyPath: function(propertyId) {
+    return managePropertyPath(propertyId)
+  },
+  managePropertiesPath: function() {
+    return FlowRouter.path('manageProperties')
+  },
+  newPropertyPath: function() {
+    return FlowRouter.path('newProperty')
+  },
+  spacePath: function(spaceId, propertyId) {
+    return FlowRouter.path('space', {spaceId: spaceId, propertyId: propertyId})
+  },
+  manageSpacePath: function(spaceId, propertyId) {
+    return FlowRouter.path('manageSpace', {spaceId: spaceId, propertyId: propertyId})
+  },
+  newSpacePath: function(propertyId) {
+    return newSpacePath(propertyId)
+  },
+}
 
-Template.registerHelper("managePropertyPath", function (propertyId) {
-  return managePropertyPath(propertyId)
-})
-
-Template.registerHelper("managePropertiesPath", function () {
-  return FlowRouter.path('manageProperties')
-})
-
-Template.registerHelper("newPropertyPath", function () {
-  return FlowRouter.path('newProperty')
-})
-
-Template.registerHelper("spacePath", function (spaceId, propertyId) {
-  return FlowRouter.path('space', {spaceId: spaceId, propertyId: propertyId})
-})
-
-Template.registerHelper("manageSpacePath", function (spaceId, propertyId) {
-  return FlowRouter.path('manageSpace', {spaceId: spaceId, propertyId: propertyId})
+_.each(helpers, function(helper, name) {
+  Template.registerHelper(name, helper)
 })
 
 managePropertyPath = function(propertyId) {
   return FlowRouter.path('manageProperty', {propertyId: propertyId})
+}
+
+newSpacePath = function(propertyId) {
+  return FlowRouter.path('newSpace', {propertyId: propertyId})
 }

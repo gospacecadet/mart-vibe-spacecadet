@@ -1,4 +1,3 @@
-
 FlowRouter.route('/new-property', {
   name: "newProperty",
   action: function() {
@@ -31,7 +30,28 @@ FlowRouter.route('/properties', {
 FlowRouter.route('/:propertyId/manage', {
   name: "manageProperty",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "manageProperty"});
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "manageProperty",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Edit & Publish Property",
+      subtitle: "Review property details. \
+      In order to publish your Property to the public you will need to add at least one Space and one image."
+    });
+  }
+});
+
+FlowRouter.route('/:propertyId/new-space', {
+  name: "newSpace",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "newSpace",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Add a Rentable Space",
+      subtitle: "Spaces are the units that are available for rent on your property. \
+      Be sure to upload at least one image and set at least one price in order to be able to publish the space to the public."
+    });
   }
 });
 

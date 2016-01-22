@@ -1,0 +1,12 @@
+<template name="managePropertySpaces">
+  {{#if hasSpaces}}
+    <span class="text-muted">Edit a space instead: </span>
+    {{#each products}}
+      <a href="{{manageSpacePath _id storefrontId}}">{{name}}</a> |
+    {{/each}}
+  {{/if}}
+  <button id='manage-property-add-space' class='btn btn-sm btn-outline-primary'>
+    Add new space
+  </button>
+  <hr>
+</template>

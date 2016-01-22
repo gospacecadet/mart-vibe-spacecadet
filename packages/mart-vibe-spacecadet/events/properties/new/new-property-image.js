@@ -6,7 +6,7 @@ Template.newPropertyImage.events({
       var file = inputs[0].files[0]
       var index = template.data.index
 
-      uploadImageVersions(file, "Properties", index, function(error, imageUrls) {
+      uploadImageVersions(file, "Properties", index, false, function(error, imageUrls) {
         if(error) {
           // console.log(error);
           sAlert.error(error)

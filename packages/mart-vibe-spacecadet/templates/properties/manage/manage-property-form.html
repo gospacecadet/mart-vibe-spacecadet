@@ -1,0 +1,18 @@
+<template name="managePropertyForm">
+  {{#autoForm collection="Mart.Storefronts" id="updatePropertyForm" type="update" doc=this}}
+
+    <fieldset>
+      {{> _propertyFields}}
+    </fieldset>
+
+    {{> managePropertyImages}}
+
+    <button type="submit" class="btn btn-lg btn-block m-t-3">
+      Save changes
+    </button>
+    <button id="publish-property" class='btn btn-primary btn-lg btn-block m-t-1'>
+      Publish
+    </button>
+
+  {{/autoForm}}
+</template>

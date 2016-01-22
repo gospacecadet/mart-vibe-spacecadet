@@ -7,7 +7,7 @@ IFOAR = function(selector, attribute) {
 FOAR = function(Kollection, selector, attribute) {
   var obj = Kollection.findOne(selector)
   if(obj)
-    return obj[selector]
+    return obj[attribute]
 }
 
 buildArray = function(end) {

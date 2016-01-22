@@ -213,6 +213,10 @@ Package.onUse(function(api) {
     api.addFiles([
       pre(paths) + 'manage/manage-properties.html',
       pre(paths) + 'manage/manage-property.html',
+      pre(paths) + 'manage/manage-property-form.html',
+      pre(paths) + 'manage/manage-property-images.html',
+      pre(paths) + 'manage/manage-property-spaces.html',
+      pre(paths) + 'manage/manage-property-image.html',
       pre(paths) + 'new/new-property-form.html',
       pre(paths) + 'new/new-property-image.html',
       pre(paths) + 'new/new-property-images.html',
@@ -227,20 +231,21 @@ Package.onUse(function(api) {
       paths = ['templates', 'properties', 'shared']
       api.addFiles([
         pre(paths) + '_property-fields.html',
-        pre(paths) + 'upload-property-image.html',
       ], 'client')
 
     // Spaces
+    paths = ['templates', 'spaces']
     api.addFiles([
-      'templates/spaces/space/space.html',
-      'templates/spaces/shared/space-card.html',
-      'templates/spaces/space/space-top.html',
-      'templates/spaces/shared/space-card-buttons.html',
-      'templates/spaces/shared/space-booking.html',
-      'templates/spaces/manage-space.html',
-      'templates/spaces/space/space-details.html',
-      'templates/spaces/space/space-top-unit-selection.html',
-      'templates/spaces/space/space-top-for.html',
+      pre(paths) + 'manage/manage-space.html',
+      pre(paths) + 'new/new-space.html',
+      pre(paths) + 'space/space.html',
+      pre(paths) + 'space/space-top.html',
+      pre(paths) + 'space/space-details.html',
+      pre(paths) + 'space/space-top-unit-selection.html',
+      pre(paths) + 'space/space-top-for.html',
+      pre(paths) + 'shared/space-card.html',
+      pre(paths) + 'shared/space-card-buttons.html',
+      pre(paths) + 'shared/space-booking.html',
     ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -266,7 +271,8 @@ Package.onUse(function(api) {
   paths = ['lifecycles']
   api.addFiles([
     pre(paths) + "hooks.js",
-    pre(paths) + "properties/new-property.js"
+    pre(paths) + "properties/new-property.js",
+    pre(paths) + "properties/manage-property.js",
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -274,6 +280,8 @@ Package.onUse(function(api) {
   paths = ['events']
   api.addFiles([
     pre(paths) + 'properties/new/new-property-image.js',
+    pre(paths) + 'properties/manage/manage-property-image.js',
+    pre(paths) + 'properties/manage/manage-property-spaces.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
   ], 'client')
 
@@ -282,6 +290,7 @@ Package.onUse(function(api) {
   paths = ['helpers']
   api.addFiles([
     pre(paths) + 'properties/new/new-property-image.js',
+    pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
   ], 'client')
 
