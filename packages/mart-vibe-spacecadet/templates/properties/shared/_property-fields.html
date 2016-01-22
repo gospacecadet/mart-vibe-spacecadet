@@ -1,0 +1,49 @@
+<template name="_propertyFields">
+
+    <div class="row m-t-2">
+      <div class="col-md-2">
+        <h4 class='text-xs-right'><strong>Step 1</strong></h4>
+      </div>
+      <div class="col-md-8">
+        <h4 class='m-b-2'>Name &amp; Description</h4>
+        {{> afQuickField name='name'}}
+        {{> afQuickField name='description' type='textarea' rows=4}}
+      </div>
+    </div>
+
+    <div class="row m-t-3">
+      <div class="col-md-2">
+        <h4 class='text-xs-right'><strong>Step 2</strong></h4>
+      </div>
+      <div class="col-md-8">
+        <h4 class='m-b-2'>Location Details</h4>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='address'}}
+          </div>
+          <div class='col-md-6'>
+            {{> afQuickField name='address2'}}
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='city'}}
+          </div>
+          <div class='col-md-6'>
+            {{> afQuickField name='state'}}
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-6'>
+            {{> afQuickField name='zip'}}
+          </div>
+          <div class='col-md-6'>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</template>

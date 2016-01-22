@@ -1,5 +1,5 @@
 <template name="newPropertyImage">
-  <img src={{url}} class="img-rounded img-fluid m-t-2"/>
+  <img src={{previewUrl}} class="img-rounded img-fluid m-t-2"/>
 
   {{#if uploading}}
     <progress class="progress progress-striped progress-success"
@@ -10,10 +10,10 @@
 
   <form>
       <label class="file">
-        <input type="file" id="property-image-{{index}}">
+        <input type="file" class="property-image-upload">
         <span class="file-custom"></span>
       </label>
-    <button type="submit" class="btn btn-outline-primary btn-upload btn-block btn-sm">
+    <button class="btn btn-outline-primary btn-block btn-sm upload-property-image-button">
       Upload
     </button>
   </form>

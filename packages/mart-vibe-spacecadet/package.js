@@ -17,7 +17,8 @@ Package.onUse(function(api) {
     'templating',
     'session',
     'underscore',
-    'jquery'
+    'jquery',
+    'reactive-var'
   ], 'client');
 
   api.use([
@@ -64,7 +65,6 @@ Package.onUse(function(api) {
       pre(paths) + 'errors.js',
     ], 'client')
 
-
     // Helpers
     paths = ['lib', 'helpers']
     api.addFiles([
@@ -74,6 +74,12 @@ Package.onUse(function(api) {
       pre(paths) + 'profile-helpers.js',
       pre(paths) + 'text-helpers.js',
       pre(paths) + 'time-helpers.js',
+    ], 'client')
+
+    // Images
+    paths = ['lib', 'images']
+    api.addFiles([
+      pre(paths) + 'upload.js',
     ], 'client')
 
     // Schemas
@@ -100,6 +106,7 @@ Package.onUse(function(api) {
     paths = ['lib', 'session-ids']
     api.addFiles([
       pre(paths) + 'space-session-ids.js',
+      pre(paths) + 'property-session-ids.js',
     ], 'client')
 
   /////////////////////////////////////////////////////////
@@ -200,16 +207,26 @@ Package.onUse(function(api) {
     ], 'client')
 
     // Properties
+    paths = ['templates', 'properties']
     api.addFiles([
-      'templates/properties/manage-properties.html',
-      'templates/properties/manage-property.html',
-      'templates/properties/new/new-property.html',
-      'templates/properties/properties.html',
-      'templates/properties/property/property.html',
-      'templates/properties/property/property-details.html',
-      'templates/properties/property/property-spaces.html',
-      'templates/properties/shared/upload-property-image.html',
+      pre(paths) + 'manage-properties.html',
+      pre(paths) + 'manage-property.html',
+      pre(paths) + 'new/new-property-form.html',
+      pre(paths) + 'new/new-property-image.html',
+      pre(paths) + 'new/new-property-images.html',
+      pre(paths) + 'new/new-property.html',
+      pre(paths) + 'properties.html',
+      pre(paths) + 'property/property.html',
+      pre(paths) + 'property/property-details.html',
+      pre(paths) + 'property/property-spaces.html',
     ], 'client')
+
+      // Properties Shared
+      paths = ['templates', 'properties', 'shared']
+      api.addFiles([
+        pre(paths) + '_property-fields.html',
+        pre(paths) + 'upload-property-image.html',
+      ], 'client')
 
     // Spaces
     api.addFiles([
@@ -227,7 +244,6 @@ Package.onUse(function(api) {
   ////////////////////////////////////////////////////////////////////////
   // JS
   api.addFiles([
-    'templates/properties/new/new-property.js',
     'templates/admin/transfer-funds.js',
     'templates/bank-accounts/bank-accounts/bank-accounts.js',
     'templates/dockings/manage/manage-dockings-approval.js',
@@ -242,13 +258,33 @@ Package.onUse(function(api) {
     'templates/messages/thread.js',
     'templates/spaces/manage-space.js',
     'templates/properties/manage-properties.js',
-    // 'templates/properties/manage-property.js',
   ], 'client')
 
-  /////////////////////////////////////////////
-  paths = ['stylesheets']
+  ////////////////////////////////////////////////////////////////////////
+  // Lifecycles
+  paths = ['lifecycles']
+  api.addFiles([
+    pre(paths) + "hooks.js",
+    pre(paths) + "properties/new-property.js"
+  ], 'client')
 
+  ////////////////////////////////////////////////////////////////////////
+  // Events
+  paths = ['events']
+  api.addFiles([
+    pre(paths) + 'properties/new/new-property-image.js',
+  ], 'client')
+
+  ////////////////////////////////////////////////////////////////////////
+  // Helpers
+  paths = ['helpers']
+  api.addFiles([
+    pre(paths) + 'properties/new/new-property-image.js',
+  ], 'client')
+
+  ////////////////////////////////////////////////////////////////////////
   // Stylesheets
+  paths = ['stylesheets']
   api.addFiles([
     pre(paths) + '_variables.scss',
     pre(paths) + 'dockings.scss',

@@ -1,5 +1,5 @@
 <template name="newPropertyForm">
-  {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="insert"}}
+  {{#autoForm collection="Mart.Storefronts" id="insert-property-form" type="normal"}}
 
     <fieldset>
       <div class="row">
@@ -8,7 +8,7 @@
         </div>
       </div>
       <hr>
-      {{> propertyFields}}
+      {{> _propertyFields}}
     </fieldset>
     {{> newPropertyImages}}
 
@@ -19,7 +19,7 @@
         </button>
       </div>
     </div>
-    
+
     <p class="text-muted m-a-1 text-xs-center">
       You will be able to continue editing before the property is made visible to the public.
     </p>

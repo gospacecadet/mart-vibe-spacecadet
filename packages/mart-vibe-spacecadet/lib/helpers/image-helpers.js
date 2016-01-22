@@ -9,7 +9,7 @@ var helpers = {
 
   },
   numImagesAllowed: function() {
-    return [ {index: 1}, {index: 2}, {index: 3},{index: 4} ]
+    return buildArray(NUM_IMAGES_ALLOWED)
   },
 }
 
