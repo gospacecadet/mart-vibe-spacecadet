@@ -296,6 +296,7 @@ Package.onUse(function(api) {
   api.addFiles([
     pre(paths) + 'properties/new/new-property-image.js',
     pre(paths) + 'properties/manage/manage-property-image.js',
+    pre(paths) + 'properties/manage/manage-property.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
   ], 'client')
 

@@ -6,6 +6,16 @@ MerchantSignUpSchema = new SimpleSchema({
     type: String,
     min: 8,
   },
+  passwordConfirmation: {
+    type: String,
+    min: 8,
+    label: "Password Confirmation",
+    custom: function() {
+      if (this.value !== this.field('password').value) {
+        return "passwordMissmatch";
+      }
+    }
+  },
   firstName: {
     type: String
   },

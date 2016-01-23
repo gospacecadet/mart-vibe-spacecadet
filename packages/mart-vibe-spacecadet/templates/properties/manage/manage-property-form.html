@@ -7,12 +7,39 @@
 
     {{> managePropertyImages}}
 
-    <button type="submit" class="btn btn-lg btn-block m-t-3">
-      Save changes
-    </button>
-    <button id="publish-property" class='btn btn-primary btn-lg btn-block m-t-1'>
-      Publish
-    </button>
+    <div class='row m-t-2'>
+      <div class='col-xs-12 col-sm-9 m-t-1'>
+        <button type="submit" class="btn btn-outline-primary btn-lg btn-block">
+          Save changes
+        </button>
+      </div>
+
+      <div class='col-xs-12 col-sm-3 m-t-1'>
+        <a class="btn btn-secondary btn-lg btn-block" href={{newSpacePath _id}}>
+          Add Space
+        </a>
+      </div>
+    </div>
+
+
+    {{#if canPublishProperty}}
+      <button id="publish-property" class='btn btn-primary btn-lg btn-block m-t-1'>
+        <h4><strong>Publish</strong></h4>
+        <h6 class='btn-wrap'>
+          This will make the property visible to the public and allow you to begin to accept dockings
+        </h6>
+      </button>
+    {{else}}
+      <button disabled class='btn btn-primary btn-lg btn-block m-t-1'>
+        <h4><strong>CANNOT PUBLISH</strong></h4>
+        <h6 class='btn-wrap'>
+          Property must have at least
+          <strong>one image</strong> and at least
+          <strong>one published Space</strong>
+          before it can be published
+        </h6>
+      </button>
+    {{/if}}
 
   {{/autoForm}}
 </template>

@@ -18,3 +18,7 @@ buildArray = function(end) {
 
   return a
 }
+
+SimpleSchema.messages({
+  passwordMissmatch: "Passwords do not match"
+})
