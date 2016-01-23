@@ -1,12 +1,51 @@
 <template name="listSpace">
 <div class="container-fluid">
-  <h1>List Your Space</h1>
-  <div class="row">
-    <div class="col-md-8">
-    </div>
-    <div class="col-md-4">
-      {{> merchantSignUp}}
+  <div class='col-md-10 col-md-offset-1'>
+    <div class="row">
+      <div class="col-md-7">
+        {{> listSpaceHype}}
+      </div>
+      <div class="col-md-5 m-t-1">
+        {{> merchantSignUp}}
+      </div>
     </div>
   </div>
 </div>
+</template>
+
+<template name="listSpaceHype">
+  <h1 class='m-t-3'>List Your Space</h1>
+  <p>
+    Whether you own or manage the space, SpaceCadet can help you seamlessly offset your property expense by making it easy to rent to people looking for short term leases.
+  </p>
+  <p class="m-t-1">Join the Fleet, and let the SpaceCadet Crew help you:</p>
+  <div class="row m-t-2">
+    <div class="col-md-1">
+    <i class="fa fa-tag fa-3x"></i>
+    </div>
+    <div class="col-md-5">
+      <h4>Market Your Space</h4>
+    </div>
+    <div class="col-md-1">
+    <i class="fa fa-usd fa-3x"></i>
+    </div>
+    <div class="col-md-5">
+      <h4>Manage Payment Collection</h4>
+    </div>
+  </div>
+
+  <div class="row m-t-3">
+    <div class="col-md-1">
+    <i class="fa fa-truck fa-3x"></i>
+    </div>
+    <div class="col-md-5">
+      <h4>Oversee Inventory Control</h4>
+    </div>
+    <div class="col-md-1">
+    <i class="fa fa-bolt fa-3x"></i>
+    </div>
+    <div class="col-md-5">
+      <h4>Stay Light Years Ahead</h4>
+    </div>
+  </div>
 </template>

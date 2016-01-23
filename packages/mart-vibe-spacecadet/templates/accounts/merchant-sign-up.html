@@ -1,14 +1,29 @@
 <template name="merchantSignUp">
   <div class='m-b-2'>
     {{#autoForm schema="MerchantSignUpSchema" id="merchantSignUpForm" type="normal"}}
-      <fieldset>
-        {{> afQuickField name='businessName'}}
-        {{> afQuickField name='firstName'}}
-        {{> afQuickField name='lastName'}}
-        {{> afQuickField name='phoneNumber'}}
-        {{> afQuickField name='email' type='email'}}
-        {{> afQuickField name='password' type='password'}}
-        <div class="form-group{{#if afFieldIsInvalid name='termsAccepted'}} has-error{{/if}}">
+
+        <div class='row'>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='firstName' class='form-control form-control-lg' placeholder="First Name" label=false}}
+          </div>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='lastName' class='form-control form-control-lg' placeholder="Last Name" label=false}}
+          </div>
+        </div>
+        {{> afQuickField name='businessName' class='form-control form-control-lg m-t-1' placeholder="Business Name" label=false}}
+
+        <div class='row m-t-1'>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='email' type='email' class='form-control form-control-lg' placeholder="Email" label=false}}
+          </div>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='phoneNumber' class='form-control form-control-lg' placeholder="Phone Number" label=false}}
+          </div>
+        </div>
+
+        {{> afQuickField name='password' type='password' class='form-control form-control-lg m-t-1' placeholder="Password" label=false}}
+
+        <div class="form-group{{#if afFieldIsInvalid name='termsAccepted'}} has-error{{/if}} m-t-1">
           <div class="input-group">
             <div class="checkbox">
               {{> afFieldInput name='termsAccepted'}}
@@ -18,7 +33,7 @@
           <span class="help-block">{{afFieldMessage name='termsAccepted'}}</span>
           {{/if}}
         </div>
-      </fieldset>
+
       <button type="submit" class="btn btn-primary btn-lg btn-block">Sign Up as Merchant</button>
     {{/autoForm}}
   </div>

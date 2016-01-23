@@ -4,8 +4,8 @@
       resetOnSuccess=true preserveForm=false type="normal"}}
 
       <fieldset>
-        {{> afQuickField name='email' type='email'}}
-        {{> afQuickField name='password' type='password'}}
+        {{> afQuickField name='email' type='email' class='form-control form-control-lg' label=false placeholder='email'}}
+        {{> afQuickField name='password' type='password' class='form-control form-control-lg' label=false placeholder='password'}}
 
         <div class="form-group{{#if afFieldIsInvalid name='termsAccepted'}} has-error{{/if}}">
           <div class="input-group">
