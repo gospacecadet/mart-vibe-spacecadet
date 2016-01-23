@@ -1,0 +1,16 @@
+<template name="_spaceConnectionChargeExp">
+  {{#if priceInCents}}
+    <div class="row">
+      <p class='text-muted'>
+        <small>
+          This is the price the renters will see.
+          The SpaceCadet connection charge for {{unit}}s is <strong>{{connectionChargeRate}}%</strong>. 
+          At this price, it will total
+          <strong>{{money connectionCharge}}</strong>.
+          For each {{unit}} rented, you will receive
+          <strong>{{money landlordCut}}</strong>
+        </small>
+      </p>
+    </div>
+  {{/if}}
+</template>

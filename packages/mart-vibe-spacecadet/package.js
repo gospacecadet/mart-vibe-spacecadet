@@ -242,16 +242,31 @@ Package.onUse(function(api) {
     paths = ['templates', 'spaces']
     api.addFiles([
       pre(paths) + 'manage/manage-space.html',
-      pre(paths) + 'new/new-space.html',
       pre(paths) + 'space/space.html',
       pre(paths) + 'space/space-top.html',
       pre(paths) + 'space/space-details.html',
       pre(paths) + 'space/space-top-unit-selection.html',
       pre(paths) + 'space/space-top-for.html',
-      pre(paths) + 'shared/space-card.html',
-      pre(paths) + 'shared/space-card-buttons.html',
-      pre(paths) + 'shared/space-booking.html',
     ], 'client')
+
+      // New
+      paths = ['templates', 'spaces', 'new']
+      api.addFiles([
+        pre(paths) + 'new-space.html',
+        pre(paths) + 'new-space-edit-price.html',
+        pre(paths) + 'new-space-prices.html',
+      ], 'client')
+
+      // Shared
+      paths = ['templates', 'spaces', 'shared']
+      api.addFiles([
+        pre(paths) + 'space-card.html',
+        pre(paths) + 'space-card-buttons.html',
+        pre(paths) + 'space-booking.html',
+        pre(paths) + '_space-details.html',
+        pre(paths) + '_space-price-fields.html',
+        pre(paths) + '_space-connection-charge-exp.html',
+      ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
   // JS
@@ -278,6 +293,7 @@ Package.onUse(function(api) {
     pre(paths) + "hooks.js",
     pre(paths) + "properties/new-property.js",
     pre(paths) + "properties/manage-property.js",
+    pre(paths) + "spaces/new-space.js",
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -298,6 +314,9 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'spaces/shared/_space-connection-charge-exp.js',
+    pre(paths) + 'spaces/shared/_space-price-fields.js',
+    pre(paths) + 'spaces/new/new-space-prices.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

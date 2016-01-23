@@ -1,15 +1,14 @@
-<template name="manageSpaceEditPrice">
-  {{#autoForm collection="Mart.Prices" id=id type="update" doc=this}}
+<template name="_spacePriceFields">
   <div class="row m-t-1">
     <div class="col-md-3">
       <h4 class="text-capitalize">
-        <span class="label label-pill label-primary p-a-1">{{unit}}ly Price*</span>
+        <span class="label label-pill label-primary p-a-1">{{unit}} Price*</span>
       </h4>
     </div>
     <div class="col-md-6">
       <fieldset>
         <div class="form-group">
-          <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+          <label class="sr-only" for="exampleInputAmount">Amount (in USD)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
             {{> afFieldInput name='priceInCents' class="form-control space-price" type="text" value=priceInDollars}}
@@ -18,11 +17,7 @@
       </fieldset>
     </div>
     <div class='col-md-3'>
-      <button type="submit" class="btn btn-outline-primary btn-sm">Update {{unit}}ly price</button>
+      <button type="submit" class="btn btn-outline-primary btn-sm">Update {{unit}} price</button>
     </div>
   </div>
-  {{/autoForm}}
-  
-  {{> _spaceConnectionChargeExp connectionCharge=connectionCharge landlordCut=landlordCut}}
-
 </template>

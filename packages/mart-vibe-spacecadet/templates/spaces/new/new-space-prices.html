@@ -1,0 +1,14 @@
+<template name="newSpacePrices">
+  <div class="row">
+    <div class="col-md-2">
+      <h4 class="text-xs-right"><strong>Step 1</strong></h4>
+    </div>
+    <div class="col-md-8">
+      <h4 class="m-b-2">Pricing</h4>
+
+      {{#each prices}}
+        {{> newSpaceEditPrice}}
+      {{/each}}
+    </div>
+  </div>
+</template>

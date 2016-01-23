@@ -1,0 +1,8 @@
+<template name="newSpaceEditPrice">
+  {{#autoForm collection="Mart.Prices" id=id type="normal" doc=this}}
+    {{> _spacePriceFields unit=unit priceInCents=priceInCents}}
+
+  {{/autoForm}}
+  <!-- {{> _spaceConnectionChargeExp unit=unit priceInCents=priceInCents}} -->
+
+</template>
