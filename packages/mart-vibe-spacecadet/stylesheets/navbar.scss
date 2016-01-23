@@ -1,6 +1,7 @@
 @import "variables";
 
 $padding: 1.65rem;
+
 .navbar{
   background: rgb(255, 255, 255);
   font-size: 1.2rem;
@@ -33,3 +34,7 @@ $padding: 1.65rem;
   border-color: $teal-light;
   background-color: rgba(0, 0, 0, 0);
 }
+
+// .bg-inverse > div > hr {
+//   border-color: $teal;
+// }

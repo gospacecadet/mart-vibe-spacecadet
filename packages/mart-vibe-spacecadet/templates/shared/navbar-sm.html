@@ -1,33 +1,36 @@
 <template name="navbarSm">
   <div class="collapse" id="navbarUnhide">
     <div class="bg-inverse p-a-1 main-content">
-      {{#if isGuest}}
-        <div class="list-group">
-          <a class='list-group-item' href="{{aboutPath}}">About</a>
-          <a class='list-group-item' href="{{listSpacePath}}">List Your Space</a>
-        </div>
-        <hr>
-        <form class="form-inline m-t-1">
-          <div class='row'>
-            <div class='col-xs-6'>
-              <input class="form-control navbar-input-sm" name="email" type="email" placeholder="Email">
-            </div>
-            <div class='col-xs-6'>
-              <input class="form-control navbar-input-sm" name="password" type="password" placeholder="Password">
-            </div>
+      <div class='container-fluid'>
+        {{#if isGuest}}
+          <div class="list-group">
+            <a class='list-group-item' href="{{aboutPath}}">About</a>
+            <a class='list-group-item' href="{{listSpacePath}}">List Your Space</a>
           </div>
-          <button class="btn btn-primary m-t-1 btn-block" type="submit">Log In</button>
-        </form>
-      {{/if}}
 
-      {{#if isShopper}}
-      {{/if}}
+          <form class="form m-t-2">
+            <div class='row'>
+              <div class='col-xs-6 col-sm-6'>
+                <input class="form-control navbar-input-sm" name="email" type="email" placeholder="Email">
+              </div>
+              <div class='col-xs-6 col-sm-6'>
+                <input class="form-control navbar-input-sm" name="password" type="password" placeholder="Password">
+              </div>
+            </div>
+            <button class="btn btn-primary m-t-1 btn-block" type="submit">Log In</button>
+          </form>
+        {{/if}}
 
-      {{#if isMerchant}}
-      {{/if}}
+        {{#if isShopper}}
+        {{/if}}
 
-      {{#if isAdmin}}
-      {{/if}}
+        {{#if isMerchant}}
+        {{/if}}
+
+        {{#if isAdmin}}
+        {{/if}}
+      </div>
+
     </div>
   </div>
 </template>

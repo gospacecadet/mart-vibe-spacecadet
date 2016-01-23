@@ -119,6 +119,7 @@ Package.onUse(function(api) {
     pre(paths) + '_boxed-style.html',
     pre(paths) + '_settings-style.html',
     pre(paths) + 'main-layout.js',
+    pre(paths) + 'homepage-layout.html',
   ], 'client')
 
   ////////////////////////////////////////////////////////
@@ -207,7 +208,9 @@ Package.onUse(function(api) {
       'templates/pages/homepage.html',
       'templates/pages/list-space.html',
       'templates/pages/not-found.html',
+      'templates/pages/about.html',
       'templates/pages/loading.html',
+      'templates/pages/sxsw.html',
     ], 'client')
 
     // Properties
@@ -303,6 +306,7 @@ Package.onUse(function(api) {
     pre(paths) + '_variables.scss',
     pre(paths) + 'dockings.scss',
     pre(paths) + 'footers.scss',
+    pre(paths) + 'homepage.scss',
     pre(paths) + 'messages.scss',
     pre(paths) + 'navbar.scss',
     pre(paths) + 'not-found.scss',

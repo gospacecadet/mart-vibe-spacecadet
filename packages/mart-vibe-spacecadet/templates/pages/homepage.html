@@ -1,13 +1,48 @@
 <template name="homepage">
-<div class="container-fluid">
-  <h1>SpaceCadet</h1>
-  <div class="row">
-    <div class="col-md-8">
-      {{> properties}}
-    </div>
-    <div class="col-md-4">
-      {{> shopperSignUp}}
+  <div class='homepage-banner text-xs-center'>
+    <h1>
+      Activate Space
+    </h1>
+    <h3 class='m-t-2'>
+      Rent commercial space for one month or less from local landlords and businesses
+    </h3>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class='col-md-10 col-md-offset-1'>
+        {{> homepageBody}}
+      </div>
     </div>
   </div>
-</div>
+</template>
+
+<template name="homepageBody">
+  {{> homepageSignup}}
+  {{> properties}}
+</template>
+
+<template name="homepageSignup">
+
+  <div class='hidden-sm-down'>
+    <div class='row'>
+      <div class="col-md-7 m-t-3">
+        {{> homepageSignupHyp}}
+      </div>
+      <div class="col-md-4 m-t-2">
+        <h2>Create an account</h2>
+        {{> shopperSignUp}}
+      </div>
+    </div>
+  </div>
+
+    <div class='hidden-md-up m-t-2'>
+      {{> homepageSignupHyp}}
+      {{> shopperSignUp}}
+    </div>
+
+</template>
+
+<template name="homepageSignupHyp">
+  <h4>Helpful text about signup</h4>
 </template>

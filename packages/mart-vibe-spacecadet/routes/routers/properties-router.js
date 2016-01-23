@@ -16,7 +16,7 @@ FlowRouter.route('/new-property', {
 FlowRouter.route('/', {
   name: "homepage",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "homepage"});
+    BlazeLayout.render("homepageLayout", {content: "homepage"});
   }
 });
 
