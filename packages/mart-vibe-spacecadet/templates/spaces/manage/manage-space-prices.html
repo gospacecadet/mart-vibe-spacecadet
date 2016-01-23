@@ -1,0 +1,18 @@
+<template name="manageSpacePrices">
+  <div class="row">
+    <div class="col-md-2">
+      <h4 class="text-xs-right"><strong>Step 1</strong></h4>
+    </div>
+    <div class="col-md-8">
+      <h4 class="m-b-2">Pricing</h4>
+
+      {{#each prices}}
+        {{#if this}}
+          {{> editPrice}}
+        {{else}}
+          {{> newPrice unit="hour" productId=_id}}
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</template>
