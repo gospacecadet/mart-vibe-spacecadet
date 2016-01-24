@@ -257,6 +257,8 @@ Package.onUse(function(api) {
         pre(paths) + 'new-space.html',
         pre(paths) + 'new-space-edit-price.html',
         pre(paths) + 'new-space-prices.html',
+        pre(paths) + 'new-space-image.html',
+        pre(paths) + 'new-space-images.html',
       ], 'client')
 
       // Shared
@@ -319,6 +321,7 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-preview.js',
     pre(paths) + 'spaces/shared/_space-connection-charge-exp.js',
     pre(paths) + 'spaces/shared/_space-price-fields.js',
+    pre(paths) + 'spaces/shared/_spaceDetails.js',
     pre(paths) + 'spaces/new/new-space-prices.js',
   ], 'client')
 

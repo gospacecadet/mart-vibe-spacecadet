@@ -1,23 +1,30 @@
-uploadImageVersions = function(blob, objectCollection, index, propertyExists, callback) {
+uploadImageVersions = function(blob, objectCollection, index, objectExists, callback) {
   var directiveEndings = ['Original', 'Optimized', 'Thumbnail']
   var imageUrls = {}
 
   _.each(directiveEndings, function(ending) {
     var directiveName = objectCollection + ending
     var uploader = new Slingshot.Upload(directiveName, {index: index})
-    var uploaders
+    var reactiveUploaders
 
     // Add uploader to global reactive var
-    if(propertyExists) {
-      console.log('yup property');
-      uploaders = MANAGE_PROPERTY_UPLOADERS.get()
-      uploaders[index] = uploader
-      MANAGE_PROPERTY_UPLOADERS.set(uploaders)
+    if(objectExists) {
+      if(objectCollection === "Properties") {
+        reactiveUploaders = MANAGE_PROPERTY_UPLOADERS
+      } else {
+        reactiveUploaders = MANAGE_SPACE_UPLOADERS
+      }
     } else {
-      uploaders = TMP_PROPERTY_UPLOADERS.get()
-      uploaders[index] = uploader
-      TMP_PROPERTY_UPLOADERS.set(uploaders)
+      if(objectCollection === "Properties") {
+        reactiveUploaders = TMP_PROPERTY_UPLOADERS
+      } else {
+        reactiveUploaders = NEW_SPACE_UPLOADERS
+      }
     }
+
+    uploaders = reactiveUploaders.get()
+    uploaders[index] = uploader
+    reactiveUploaders.set(uploaders)
 
     if(ending === "Original") {
       upload(blob, uploader, imageUrls, ending, callback)

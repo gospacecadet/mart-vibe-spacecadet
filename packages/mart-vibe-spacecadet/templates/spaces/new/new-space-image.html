@@ -1,0 +1,20 @@
+<template name="newSpaceImage">
+  <img src="{{previewUrl}}" class="img-rounded img-fluid m-t-2"/>
+
+  {{#if uploading}}
+    <progress class="progress progress-striped progress-success"
+      value="{{progress}}" max="100">
+        {{progress}}%
+    </progress>
+  {{/if}}
+
+  <form>
+      <label class="file">
+        <input type="file" class="space-image-upload">
+        <span class="file-custom"></span>
+      </label>
+    <button type='button' class="btn btn-outline-primary btn-block btn-sm new-space-image-button">
+      Upload #{{index}}
+    </button>
+  </form>
+</template>

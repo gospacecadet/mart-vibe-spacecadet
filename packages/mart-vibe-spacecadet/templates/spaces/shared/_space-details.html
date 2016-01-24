@@ -1,14 +1,35 @@
 <template name="_spaceDetails">
-  <div class="row m-t-3">
-    <div class="col-md-2">
-      <h4 class="text-xs-right"><strong>Step 2</strong></h4>
+  <div class='hidden-md-up'>
+    <h4 class="text-md-right"><strong>Step 1:</strong>&nbsp;&nbsp;Name &amp; Description</h4>
+  </div>
+  <div class='hidden-sm-down'>
+    <div class="row">
+      <div class="col-md-2">
+        <h4 class="text-md-right"><strong>Step 1</strong></h4>
+      </div>
+      <div class="col-md-9">
+        <h4 class="m-b-2">Name &amp; Description</h4>
+      </div>
     </div>
-    <div class="col-md-8">
-      <h4>Name &amp; Description</h4>
+  </div>
+  {{> afQuickField name='storefrontId' type='hidden' value=storefrontId}}
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12">
       <fieldset class="m-t-1">
         {{> afQuickField name='name'}}
         {{> afQuickField name='description' type='textarea' rows=4}}
-      </fieldset>_
+        <div class='row'>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='occupancy'}}
+            <span class='text-muted'>How many people can it hold?</span>
+          </div>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='size'}}
+            <span class='text-muted'>e.g. 20ft sq or 30 acres</span>
+
+          </div>
+        </div>
+      </fieldset>
     </div>
   </div>
 </template>

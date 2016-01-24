@@ -1,9 +1,9 @@
 <template name="manageSpace">
   {{#with space}}
-    <!-- {{> manageSpacePrices}} -->
 
     {{#autoForm collection="Mart.Products" id="updateSpaceForm" type="update" doc=this}}
-      <!-- {{> _spaceDetails}}
+      {{> _spaceDetails}}
+      <!-- {{> manageSpacePrices}}
       {{> manageSpaceImages}} -->
       <hr>
       <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Save changes</button>

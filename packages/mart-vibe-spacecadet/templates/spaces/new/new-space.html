@@ -1,11 +1,14 @@
 <template name="newSpace">
-  {{> newSpacePrices}}
-
-  {{#autoForm collection="Mart.Products" id="newSpaceForm" type='normal'}}
+    {{#autoForm collection="Mart.Products" id="newSpaceForm" type='normal'}}
     {{> _spaceDetails}}
-    <!-- {{> manageSpaceImages}} -->
+    {{> newSpacePrices}}
+    {{> newSpaceImages}}
     <hr>
-    <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Save changes</button>
-    <button id="publish-space" class='btn btn-primary-outline btn-lg btn-block m-t-1'>Publish</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">
+      Create Space
+    </button>
+    <p class="text-muted m-a-1 text-xs-center">
+      You will be able to continue editing before the property is made visible to the public.
+    </p>
   {{/autoForm}}
 </template>

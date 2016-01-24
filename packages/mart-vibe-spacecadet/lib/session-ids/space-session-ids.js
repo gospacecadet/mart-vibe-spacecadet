@@ -37,3 +37,8 @@ const SPACE_ADDING_PREFIX = 'space-new-'
 addingSpaceSession = function(propertyId) {
   return SPACE_ADDING_PREFIX + propertyId
 }
+
+const SPACE_UPLOADED_IMAGE_PREFIX = 'space-uploaded-image-'
+spaceUploadedImageId = function(index) {
+  return SPACE_UPLOADED_IMAGE_PREFIX + index
+}

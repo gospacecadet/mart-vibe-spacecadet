@@ -65,7 +65,14 @@ FlowRouter.route('/:propertyId', {
 FlowRouter.route('/:propertyId/manage/:spaceId', {
   name: "manageSpace",
   action: function() {
-    BlazeLayout.render("mainLayout", {content: "manageSpace"});
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "manageSpace",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Edit & Publish Space",
+      subtitle: "Spaces are the units that are available for rent on your property. \
+      Be sure to upload at least one image and set at least one price in order to be able to publish the space to the public."
+    });
   }
 });
 
