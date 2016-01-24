@@ -4,24 +4,31 @@ Template.newSpace.onCreated(function() {
     {unit: Mart.Product.UNITS.DAY},
     {unit: Mart.Product.UNITS.MONTH}
   ])
-  // var hooksObject = {
-  //   // Insert storefront,
-  //   // link preloaded images to storefont,
-  //   // redirect to manage page
-  //   onSubmit: function(insertDoc) {
-  //     var hook = this
-  //     Mart.Storefronts.insert(insertDoc, function(error, storefrontId) {
-  //       if(error) {
-  //         hook.done(error)
-  //       } else {
-  //         attachUploadedImages("Properties", storefrontId);
-  //         FlowRouter.go(managePropertyPath(storefrontId))
-  //       }
-  //     })
-  //
-  //     return false
-  //   },
-  // };
-  // AutoForm.addHooks(['insert-property-form'], hooksObject);
-  // AutoForm.addHooks('insert-property-form', MeteorErrorHook, true);
+})
+
+
+Template.newSpaceEditPrice.onCreated(function() {
+  console.log('newSpaceEditPrice');
+  var unit = Template.currentData().unit
+  var id = 'newSpaceEditPrice' + unit
+  console.log(id);
+
+  var hooksObject = {
+    onSubmit: function(insertDoc) {
+      var hook = this
+
+      var prices = NEW_SPACE_PRICES.get()
+      _.each(prices, function(price) {
+        if(price.unit === unit)
+          price.priceInDollars = insertDoc.priceInDollars
+      })
+      NEW_SPACE_PRICES.set(prices)
+      console.log(prices);
+
+      this.done()
+      return false
+    },
+  };
+  AutoForm.addHooks([id], hooksObject);
+  AutoForm.addHooks(id, MeteorErrorHook, true);
 })

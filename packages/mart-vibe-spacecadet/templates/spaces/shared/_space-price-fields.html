@@ -1,23 +1,29 @@
 <template name="_spacePriceFields">
-  <div class="row m-t-1">
-    <div class="col-md-3">
-      <h4 class="text-capitalize">
-        <span class="label label-pill label-primary p-a-1">{{unit}} Price*</span>
-      </h4>
+  <div class="row m-t-2">
+    <div class="col-xs-3 col-md-2">
+      <h5 class="text-capitalize p-a-1 label label-pill label-primary">
+        {{unit}} Price
+      </h5>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-xs-8 col-xs-offset-1 col-md-offset-0">
       <fieldset>
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputAmount">Amount (in USD)</label>
+        <div class="form-group{{#if afFieldIsInvalid name='priceInCents'}} has-error{{/if}}">
+          <label class="sr-only" for="priceInDollars">Amount (in USD)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
-            {{> afFieldInput name='priceInCents' class="form-control space-price" type="text" value=priceInDollars}}
+            {{> afFieldInput name='priceInDollars' class="form-control space-price"
+              type="text" value=priceInDollars placeholder="Set price"}}
           </div>
+          {{#if afFieldIsInvalid name='priceInDollars'}}
+          <span class="help-block">{{afFieldMessage name='priceInDollars'}}</span>
+          {{/if}}
         </div>
       </fieldset>
     </div>
-    <div class='col-md-3'>
-      <button type="submit" class="btn btn-outline-primary btn-sm">Update {{unit}} price</button>
+    <div class='col-md-4 col-xs-12'>
+      <button type="submit" class="btn btn-outline-primary btn-sm btn-block btn-wrap">
+        Set {{unit}} price
+      </button>
     </div>
   </div>
 </template>

@@ -1,11 +1,11 @@
 <template name="newSpace">
   {{> newSpacePrices}}
 
-    <!-- {{#autoForm collection="Mart.Products" id="updateSpaceForm" type="update" doc=this}}
-      {{> _spaceDetails}}
-      {{> manageSpaceImages}}
-      <hr>
-      <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Save changes</button>
-      <button id="publish-space" class='btn btn-primary-outline btn-lg btn-block m-t-1'>Publish</button>
-    {{/autoForm}} -->
+  {{#autoForm collection="Mart.Products" id="newSpaceForm" type='normal'}}
+    {{> _spaceDetails}}
+    <!-- {{> manageSpaceImages}} -->
+    <hr>
+    <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Save changes</button>
+    <button id="publish-space" class='btn btn-primary-outline btn-lg btn-block m-t-1'>Publish</button>
+  {{/autoForm}}
 </template>

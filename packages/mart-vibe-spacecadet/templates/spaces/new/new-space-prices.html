@@ -1,11 +1,23 @@
 <template name="newSpacePrices">
-  <div class="row">
-    <div class="col-md-2">
-      <h4 class="text-xs-right"><strong>Step 1</strong></h4>
+  <div class='hidden-md-up'>
+    <h4 class="text-md-right"><strong>Step 1:</strong>&nbsp;&nbsp;Pricing</h4>
+  </div>
+  <div class='hidden-sm-down'>
+    <div class="row">
+      <div class="col-md-2">
+        <h4 class="text-md-right"><strong>Step 1</strong></h4>
+      </div>
+      <div class="col-md-9">
+        <h4 class="m-b-2">Pricing</h4>
+      </div>
     </div>
-    <div class="col-md-8">
-      <h4 class="m-b-2">Pricing</h4>
+  </div>
 
+  <div class="row">
+    <div class="col-md-9 col-md-offset-2 col-xs-12">
+      <p class='text-muted'>
+        Set at least one price for this space.
+      </p>
       {{#each prices}}
         {{> newSpaceEditPrice}}
       {{/each}}

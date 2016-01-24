@@ -10,7 +10,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class='col-md-10 col-md-offset-1'>
+      <div class='col-md-10 col-md-offset-1 col-xs-12'>
         {{> homepageBody}}
       </div>
     </div>
@@ -27,23 +27,26 @@
   <div class='hidden-sm-down'>
     <div class='row'>
       <div class="col-md-7 m-t-3">
-        {{> homepageSignupHyp}}
+        {{> homepageSignupHype}}
       </div>
       <div class="col-md-5 m-t-2">
+
         <h1>Create an account</h1>
-         <h1><small class='text-muted'>and save time finding your next space</small></h1>
+        <h1><small class='text-muted'>and save time finding your next space</small></h1>
         {{> shopperSignUp}}
       </div>
     </div>
   </div>
 
     <div class='hidden-md-up m-t-2'>
-      {{> homepageSignupHyp}}
+      <h1>Create an account</h1>
+      <h1><small class='text-muted'>save time finding your next space</small></h1>
       {{> shopperSignUp}}
+      {{> homepageSignupHype}}
     </div>
 
 </template>
 
-<template name="homepageSignupHyp">
+<template name="homepageSignupHype">
   <h4>Helpful text about signup</h4>
 </template>

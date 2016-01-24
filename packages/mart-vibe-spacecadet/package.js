@@ -92,6 +92,7 @@ Package.onUse(function(api) {
       pre(paths) + 'merchant-sign-up-schema.js',
       pre(paths) + 'new-bank-account-schema.js',
       pre(paths) + 'new-line-item-schema.js',
+      pre(paths) + 'price-schema.js',
       pre(paths) + 'profile-schema.js',
       pre(paths) + 'shopper-sign-up-schema.js',
     ], 'client')
@@ -101,6 +102,7 @@ Package.onUse(function(api) {
     api.export("MerchantSignUpSchema", "client")
     api.export("NewBankAccountSchema", "client")
     api.export("NewLineItemSchema", "client")
+    api.export("PriceSchema", "client")
     api.export("ProfileSchema", "client")
     api.export("ShopperSignUpSchema", "client")
 
@@ -300,6 +302,7 @@ Package.onUse(function(api) {
   // Events
   paths = ['events']
   api.addFiles([
+    pre(paths) + 'shared/navbar.js',
     pre(paths) + 'properties/new/new-property-image.js',
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property-spaces.js',
