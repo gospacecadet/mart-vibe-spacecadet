@@ -9,15 +9,9 @@ Template.newSpace.onCreated(function() {
   var hooksObject = {
     onSubmit: function(insertDoc) {
       var hook = this
-      console.log('onSubmit');
-      console.log(insertDoc);
 
       var prices = NEW_SPACE_PRICES.get()
-      console.log('prices');
-      console.log(prices);
       Mart.Products.insert(insertDoc, function(error, spaceId) {
-        console.log('inserted');
-        console.log(spaceId);
 
         if(error) {
           this.done(error)

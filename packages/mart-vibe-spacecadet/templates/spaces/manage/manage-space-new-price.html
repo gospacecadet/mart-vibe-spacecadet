@@ -1,27 +1,6 @@
 <template name="manageSpaceNewPrice">
-  {{#autoForm collection="Mart.Prices" id=id type="update" doc=this}}
-  <div class="row m-t-1">
-    <div class="col-md-3">
-      <h4 class="text-capitalize">
-        <span class="label label-pill label-primary p-a-1">{{unit}}ly Price*</span>
-      </h4>
-    </div>
-    <div class="col-md-6">
-      <fieldset>
-        <div class="form-group">
-          <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-          <div class="input-group">
-            <div class="input-group-addon">$</div>
-            {{> afFieldInput name='priceInCents' class="form-control space-price" type="text" value="Price not set"}}
-            {{> afQuickField name='unit' type="hidden" value=unit}}
-            {{> afQuickField name='productId' type="hidden" value=productId}}
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class='col-md-3'>
-      <button type="submit" class="btn btn-outline-primary btn-sm">Set {{unit}}ly price</button>
-    </div>
-  </div>
+  {{#autoForm collection="Mart.Prices" id=id type="insert"}}
+    {{> _spacePriceFields}}
+    {{> afQuickField name='productId' type='hidden' value=productId}}
   {{/autoForm}}
 </template>

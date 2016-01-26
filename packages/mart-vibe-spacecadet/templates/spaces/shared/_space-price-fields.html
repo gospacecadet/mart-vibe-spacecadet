@@ -5,25 +5,27 @@
         {{unit}} Price
       </h5>
     </div>
-    <div class="col-md-6 col-xs-8 col-xs-offset-1 col-md-offset-0">
+    <div class="col-md-6 col-xs-8 col-xs-offset-1">
       <fieldset>
-        <div class="form-group{{#if afFieldIsInvalid name='priceInCents'}} has-error{{/if}}">
+        <div class="form-group{{#if afFieldIsInvalid name='priceInDollars'}} has-error{{/if}}">
           <label class="sr-only" for="priceInDollars">Amount (in USD)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
             {{> afFieldInput name='priceInDollars' class="form-control space-price"
               type="text" value=priceInDollars placeholder="Set price"}}
           </div>
+
           {{#if afFieldIsInvalid name='priceInDollars'}}
-          <span class="help-block">{{afFieldMessage name='priceInDollars'}}</span>
+            <span class="help-block">{{afFieldMessage name='priceInDollars'}}</span>
           {{/if}}
         </div>
       </fieldset>
     </div>
-    <div class='col-md-4 col-xs-12'>
+    <div class='col-md-3 col-xs-12'>
       <button type="submit" class="btn btn-outline-primary btn-sm btn-block btn-wrap">
         Set {{unit}} price
       </button>
     </div>
   </div>
+  {{> afQuickField name='unit' type='hidden' value=unit}}
 </template>

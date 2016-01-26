@@ -156,6 +156,7 @@ Package.onUse(function(api) {
     // Shared
     api.addFiles([
       'templates/shared/footers.html',
+      'templates/shared/split-title.html',
       'templates/shared/navbar.html',
       'templates/shared/navbar-sm.html',
       'templates/shared/navbar-md.html',
@@ -243,13 +244,23 @@ Package.onUse(function(api) {
     // Spaces
     paths = ['templates', 'spaces']
     api.addFiles([
-      pre(paths) + 'manage/manage-space.html',
       pre(paths) + 'space/space.html',
       pre(paths) + 'space/space-top.html',
       pre(paths) + 'space/space-details.html',
       pre(paths) + 'space/space-top-unit-selection.html',
       pre(paths) + 'space/space-top-for.html',
     ], 'client')
+
+      // Manage
+      paths = ['templates', 'spaces', 'manage']
+      api.addFiles([
+        pre(paths) + 'manage-space.html',
+        pre(paths) + 'manage-space-edit-price.html',
+        pre(paths) + 'manage-space-image.html',
+        pre(paths) + 'manage-space-images.html',
+        pre(paths) + 'manage-space-new-price.html',
+        pre(paths) + 'manage-space-prices.html',
+      ], 'client')
 
       // New
       paths = ['templates', 'spaces', 'new']
@@ -298,6 +309,7 @@ Package.onUse(function(api) {
     pre(paths) + "properties/new-property.js",
     pre(paths) + "properties/manage-property.js",
     pre(paths) + "spaces/new-space.js",
+    pre(paths) + "spaces/manage-space.js",
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -305,6 +317,7 @@ Package.onUse(function(api) {
   paths = ['events']
   api.addFiles([
     pre(paths) + 'shared/navbar.js',
+    pre(paths) + 'spaces/new/new-space-image.js',
     pre(paths) + 'properties/new/new-property-image.js',
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property-spaces.js',
@@ -319,10 +332,13 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'spaces/manage/manage-space-prices.js',
+    pre(paths) + 'spaces/new/new-space-prices.js',
+    pre(paths) + 'spaces/new/new-space-image.js',
     pre(paths) + 'spaces/shared/_space-connection-charge-exp.js',
     pre(paths) + 'spaces/shared/_space-price-fields.js',
     pre(paths) + 'spaces/shared/_spaceDetails.js',
-    pre(paths) + 'spaces/new/new-space-prices.js',
+
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

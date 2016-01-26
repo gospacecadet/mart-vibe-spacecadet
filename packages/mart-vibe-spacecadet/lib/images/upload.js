@@ -8,6 +8,7 @@ uploadImageVersions = function(blob, objectCollection, index, objectExists, call
     var reactiveUploaders
 
     // Add uploader to global reactive var
+    // objectExist=true if edit form, false if new form
     if(objectExists) {
       if(objectCollection === "Properties") {
         reactiveUploaders = MANAGE_PROPERTY_UPLOADERS

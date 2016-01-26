@@ -42,3 +42,8 @@ const SPACE_UPLOADED_IMAGE_PREFIX = 'space-uploaded-image-'
 spaceUploadedImageId = function(index) {
   return SPACE_UPLOADED_IMAGE_PREFIX + index
 }
+
+const SPACE_MANAGE_PRICE_UNIT_PREFIX = 'space-manage-price-'
+spaceManagePriceId = function(unit) {
+  return SPACE_MANAGE_PRICE_UNIT_PREFIX + unit
+}

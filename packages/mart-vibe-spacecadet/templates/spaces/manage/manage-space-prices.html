@@ -1,17 +1,10 @@
 <template name="manageSpacePrices">
+  {{> splitTitle stepNum=2 stepTitle="Pricing"}}
   <div class="row">
-    <div class="col-md-2">
-      <h4 class="text-xs-right"><strong>Step 1</strong></h4>
-    </div>
-    <div class="col-md-8">
-      <h4 class="m-b-2">Pricing</h4>
+    <div class="col-md-9 col-md-offset-2 col-xs-12 col-sm-8 col-sm-offset-2">
 
       {{#each prices}}
-        {{#if this}}
-          {{> editPrice}}
-        {{else}}
-          {{> newPrice unit="hour" productId=_id}}
-        {{/if}}
+        {{> manageSpaceEditPrice}}
       {{/each}}
     </div>
   </div>
