@@ -1,23 +1,17 @@
 <template name="_propertyFields">
+    {{> splitTitle stepNum=1 stepTitle="Name & Description"}}
 
     <div class="row">
-      <div class="col-md-2 col-xs-12">
-        <h4 class='text-md-right'><strong>Step 1</strong></h4>
-      </div>
-      <div class="col-md-9 col-xs-12">
-        <h4 class='m-b-2'>Name &amp; Description</h4>
+      <div class="col-md-9 col-md-offset-2 col-xs-12 col-sm-8 col-sm-offset-2">
         {{> afQuickField name='name'}}
         {{> afQuickField name='description' type='textarea' rows=4}}
       </div>
     </div>
 
-    <div class="row m-t-2">
-      <div class="col-md-2 col-xs-12">
-        <h4 class='text-md-right'><strong>Step 2</strong></h4>
-      </div>
-      <div class="col-md-9 col-xs-12">
-        <h4 class='m-b-2'>Location Details</h4>
+    {{> splitTitle stepNum=2 stepTitle="Location Details"}}
 
+    <div class="row m-t-2">
+      <div class="col-md-9 col-md-offset-2 col-xs-12 col-sm-8 col-sm-offset-2">
         <div class='row'>
           <div class='col-md-6 col-xs-12'>
             {{> afQuickField name='address'}}

@@ -1,10 +1,13 @@
-uploadImageVersions = function(blob, objectCollection, index, objectExists, callback) {
+uploadImageVersions = function(blob, objectCollection, objectId, index, objectExists, callback) {
   var directiveEndings = ['Original', 'Optimized', 'Thumbnail']
   var imageUrls = {}
 
   _.each(directiveEndings, function(ending) {
     var directiveName = objectCollection + ending
-    var uploader = new Slingshot.Upload(directiveName, {index: index})
+    var uploader = new Slingshot.Upload(directiveName, {
+      index: index, objectId: objectId
+    })
+
     var reactiveUploaders
 
     // Add uploader to global reactive var
@@ -88,6 +91,7 @@ attachUploadedImages = function(type, objectId) {
 
 var upload = function(blob, uploader, imageUrls, ending, callback) {
   uploader.send(blob, function(error, downloadUrl) {
+    console.log(downloadUrl);
     if(error) {
       callback(error)
     } else {

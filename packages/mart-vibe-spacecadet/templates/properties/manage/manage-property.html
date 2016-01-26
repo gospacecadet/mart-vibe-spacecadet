@@ -1,6 +1,10 @@
 <template name="manageProperty">
-  {{#with property}}
-    {{> managePropertySpaces}}
-    {{> managePropertyForm}}
-  {{/with}}
+  {{#if Template.subscriptionsReady}}
+    {{#with property}}
+      {{> managePropertySpaces}}
+      {{> managePropertyForm}}
+    {{/with}}
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>

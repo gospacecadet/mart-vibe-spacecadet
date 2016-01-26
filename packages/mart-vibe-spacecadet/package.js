@@ -317,6 +317,8 @@ Package.onUse(function(api) {
   paths = ['events']
   api.addFiles([
     pre(paths) + 'shared/navbar.js',
+    pre(paths) + 'spaces/manage/manage-space.js',
+    pre(paths) + 'spaces/manage/manage-space-image.js',
     pre(paths) + 'spaces/new/new-space-image.js',
     pre(paths) + 'properties/new/new-property-image.js',
     pre(paths) + 'properties/manage/manage-property-image.js',
@@ -328,16 +330,21 @@ Package.onUse(function(api) {
   // Helpers
   paths = ['helpers']
   api.addFiles([
-    pre(paths) + 'properties/new/new-property-image.js',
-    pre(paths) + 'properties/manage/manage-property-image.js',
-    pre(paths) + 'properties/manage/manage-property.js',
-    pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'shared/loading.js',
+
+    pre(paths) + 'spaces/manage/manage-space.js',
+    pre(paths) + 'spaces/manage/manage-space-image.js',
     pre(paths) + 'spaces/manage/manage-space-prices.js',
     pre(paths) + 'spaces/new/new-space-prices.js',
     pre(paths) + 'spaces/new/new-space-image.js',
     pre(paths) + 'spaces/shared/_space-connection-charge-exp.js',
     pre(paths) + 'spaces/shared/_space-price-fields.js',
     pre(paths) + 'spaces/shared/_spaceDetails.js',
+    pre(paths) + 'properties/new/new-property-image.js',
+    pre(paths) + 'properties/manage/manage-property-image.js',
+    pre(paths) + 'properties/manage/manage-property.js',
+    pre(paths) + 'properties/manage/manage-property-preview.js',
+
 
   ], 'client')
 

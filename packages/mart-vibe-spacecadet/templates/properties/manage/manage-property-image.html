@@ -1,5 +1,5 @@
 <template name="managePropertyImage">
-  <img src="{{previewUrl}}" class="img-rounded img-fluid m-t-2"/>
+  <img src="{{previewUrl}}" class="img-rounded img-fluid m-t-2 center-block"/>
 
   {{#if uploading}}
     <progress class="progress progress-striped progress-success"
@@ -9,11 +9,12 @@
   {{/if}}
 
   <form>
-      <label class="file">
-        <input type="file" class='property-image-upload'>
-        <span class="file-custom"></span>
-      </label>
-    <button type='button' class="btn btn-outline-primary btn-block btn-sm manage-property-image-button">
+    <label class="file">
+      <input type="file" class='property-image-upload'>
+      <span class="file-custom"></span>
+    </label>
+    <button type='button'
+      class="btn btn-outline-primary btn-block btn-sm manage-property-image-button">
       Upload #{{index}}
     </button>
   </form>

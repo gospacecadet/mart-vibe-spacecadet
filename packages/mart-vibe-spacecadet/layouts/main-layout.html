@@ -3,20 +3,16 @@
   <div class='clearfix'></div>
   <div class="main-content">
     {{> sAlert}}
-    {{#if Template.subscriptionsReady}}
-      {{#if wBoxedStyle}}
-        {{> _boxedStyle}}
-      {{/if}}
+    {{#if wBoxedStyle}}
+      {{> _boxedStyle}}
+    {{/if}}
 
-      {{#if wSettingsStyle}}
-        {{> _settingsStyle}}
-      {{/if}}
+    {{#if wSettingsStyle}}
+      {{> _settingsStyle}}
+    {{/if}}
 
-      {{#if wDefaultStyle}}
-        {{> Template.dynamic template=content}}
-      {{/if}}
-    {{else}}
-      {{> loading}}
+    {{#if wDefaultStyle}}
+      {{> Template.dynamic template=content}}
     {{/if}}
   </div>
   {{> footers}}

@@ -1,17 +1,22 @@
 <template name="manageSpaceImage">
-  <img src={{url}} class="img-rounded img-fluid m-t-1"/>
+  <img src="{{previewUrl}}" class="img-rounded img-fluid m-t-2 center-block"/>
 
   {{#if uploading}}
-    <progress class="progress progress-striped progress-success" value="{{progress}}" max="100">{{progress}}%</progress>
+    <progress class="progress progress-striped progress-success"
+      value="{{progress}}" max="100">
+        {{progress}}%
+    </progress>
   {{/if}}
 
   <form>
-      <label class="file">
-        <input type="file" id="property-image-{{index}}">
-        <span class="file-custom"></span>
-      </label>
-    <button type="submit" class="btn btn-outline-primary btn-upload btn-block btn-sm m-b-2">
-      Upload
+    <label class="file">
+      <input type="file" class='space-image-upload'>
+      <span class="file-custom"></span>
+    </label>
+    <button type='button'
+      class="btn btn-outline-primary btn-block btn-sm manage-space-image-button">
+
+      Upload #{{index}}
     </button>
   </form>
 </template>

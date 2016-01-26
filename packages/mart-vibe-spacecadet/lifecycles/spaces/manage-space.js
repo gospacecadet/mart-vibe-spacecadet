@@ -1,6 +1,5 @@
-Template.manageSpaceEditPrice.onRendered(function() {
+Template.manageSpaceEditPrice.onCreated(function() {
   var unit = Template.currentData().unit
-
     var hooksObject = {
       onSubmit: function(insertDoc) {
         var hook = this
@@ -42,27 +41,11 @@ Template.manageSpaceEditPrice.onRendered(function() {
     AutoForm.addHooks(spaceManagePriceId(unit), MeteorErrorHook, true);
 })
 
-
-// Template.newSpaceEditPrice.onCreated(function() {
-//   var unit = Template.currentData().unit
-//   var id = 'newSpaceEditPrice' + unit
-//
-//   var hooksObject = {
-//     onSubmit: function(insertDoc) {
-//       var hook = this
-//
-//       var prices = NEW_SPACE_PRICES.get()
-//       _.each(prices, function(price) {
-//         if(price.unit === unit)
-//           price.priceInDollars = insertDoc.priceInDollars
-//       })
-//       NEW_SPACE_PRICES.set(prices)
-//       console.log(prices);
-//
-//       this.done()
-//       return false
-//     },
-//   };
-//   AutoForm.addHooks([id], hooksObject);
-//   AutoForm.addHooks(id, MeteorErrorHook, true);
-// })
+Template.manageSpace.onCreated(function() {
+  MANAGE_SPACE_UPLOADERS = new ReactiveVar({})
+  var template = this
+  Tracker.autorun(function() {
+    var spaceId = FlowRouter.getParam('spaceId')
+    template.subscribe("mart/product", spaceId);
+  });
+})

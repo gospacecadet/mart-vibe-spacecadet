@@ -11,7 +11,6 @@ Template.manageSpacePrices.helpers({
       if(product)
         selector.priceInDollars = product.priceInCents / 100
 
-      console.log(selector);
       return selector
     })
   }
@@ -19,8 +18,6 @@ Template.manageSpacePrices.helpers({
 
 Template.manageSpaceEditPrice.helpers({
   id: function() {
-    console.log('id');
-    console.log(spaceManagePriceId(this.unit));
     return spaceManagePriceId(this.unit)
   }
 });

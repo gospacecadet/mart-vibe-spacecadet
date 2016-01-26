@@ -1,31 +1,48 @@
 <template name="manageSpace">
-  {{#with space}}
-    {{#autoForm collection="Mart.Products" id="updateSpaceForm" type="update" doc=this}}
-      {{> _spaceDetails}}
-    {{/autoForm}}
+  {{#if Template.subscriptionsReady}}
+    {{#with space}}
+      {{#autoForm collection="Mart.Products" id="updateSpaceForm" type="update" doc=this}}
+        {{> _spaceDetails}}
+      {{/autoForm}}
 
-    {{> manageSpacePrices}}
+      {{> manageSpacePrices}}
 
-    {{> manageSpaceImages}}
+      {{> manageSpaceImages}}
+      <hr class='m-y-2'>
 
-    <button type="submit" class="btn btn-outline-primary btn-lg btn-block m-t-3">Save changes</button>
-    {{#if canPublishSpace}}
-      <button id="publish-space" class='btn btn-primary btn-lg btn-block m-t-1'>
-        <h4><strong>Publish</strong></h4>
-        <h6 class='btn-wrap'>
-          This will make the space visible to the public and allow you to begin to accept dockings
-        </h6>
+      <button type="submit" class="btn btn-outline-primary btn-lg btn-block">
+        Save changes
       </button>
-    {{else}}
-      <button disabled class='btn btn-primary btn-lg btn-block m-t-1'>
-        <h4><strong>CANNOT PUBLISH</strong></h4>
-        <h6 class='btn-wrap'>
-          Space must have at least
-          <strong>one price</strong> and at least
-          <strong>one image</strong>
-          before it can be published
-        </h6>
-      </button>
-    {{/if}}
-  {{/with}}
+
+      {{#if isPublished}}
+        <button disabled class='btn btn-primary btn-lg btn-block m-t-1'>
+          <h4><strong>SPACE PUBLISHED</strong></h4>
+          <h6 class='btn-wrap'>
+            This space is published and visible to the public.
+          </h6>
+        </button>
+      {{else}}
+        {{#if canPublishSpace}}
+          <button id="publish-space" class='btn btn-primary btn-lg btn-block m-t-1'>
+            <h4><strong>Publish</strong></h4>
+            <h6 class='btn-wrap'>
+              This will make the space visible to the public and allow you to start accepting dockings
+            </h6>
+          </button>
+        {{else}}
+          <button disabled class='btn btn-primary btn-lg btn-block m-t-1'>
+            <h4><strong>CANNOT PUBLISH</strong></h4>
+            <h6 class='btn-wrap'>
+              Space must have at least
+              <strong>one price</strong> and at least
+              <strong>one image</strong>
+              before it can be published
+            </h6>
+          </button>
+        {{/if}}
+      {{/if}}
+    {{/with}}
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>

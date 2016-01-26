@@ -1,19 +1,23 @@
-Template.managePropertyImage.events({
-  "click .manage-property-image-button": function(event, template) {
-    var inputs = template.$('.property-image-upload')
+Template.manageSpaceImage.events({
+  "click .manage-space-image-button": function(event, template) {
+    var inputs = template.$('.space-image-upload')
+    console.log('upload');
 
     if(inputs && inputs[0] && inputs[0].files && inputs[0].files[0]) {
       var file = inputs[0].files[0]
       var index = template.data.index
-      var propertyId = template.data.propertyId
-
-      uploadImageVersions(file, "Properties", propertyId, index, true, function(error, imageUrls) {
+      var spaceId = template.data.spaceId
+      console.log(spaceId);
+      console.log(index);
+      uploadImageVersions(file, "Spaces", spaceId, index, true, function(error, imageUrls) {
+        console.log('uploadImageVersions');
+        console.log(imageUrls);
         if(error) {
           sAlert.error(error)
         } else {
           var selector = {
-            objectCollection: "Storefronts",
-            objectId: template.data.propertyId,
+            objectCollection: "Products",
+            objectId: spaceId,
             index: template.data.index
           }
 
