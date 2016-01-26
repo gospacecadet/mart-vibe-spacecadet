@@ -1,13 +1,27 @@
 .footer1 {
   color: white;
+  display: flex;
+  vertical-align: center;
+  align-items: center;
   font-size: 1.2rem;
-
+  vertical-align: center;
+  min-height: 10rem;
+  hr {
+    border-color: #fff;
+  }
   a {
     color: white;
   }
+
+  ul {
+    vertical-align: center;
+    align-items: center;
+  }
+
 }
 
 .footer2 {
+  min-height: 5.5rem;
   ul {
     color: #798989;
   }

@@ -1,50 +1,75 @@
 <template name="footers">
-  <div class="footers">
+  <div class="container-fluid">
     {{> footer1}}
     {{> footer2}}
   </div>
 </template>
 
 <template name="footer1">
-  <div class="footer1 bg-teal p-a-3 row m-a-0">
-    <div class="col-md-6">
-      <ul class="list-inline">
-        <li class="list-inline-item m-x-0"><a href="{{aboutPath}}">About SpaceCadet</a></li> |
-        <li class="list-inline-item m-x-0"><a href="{{listSpacePath}}">List Your Space</a></li>
-      </ul>
+  <div class="footer1 bg-teal row">
+    {{> footer1SocialIcons}}
+    <div class='col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1'>
+      <hr>
     </div>
-    <div class="col-md-6 text-xs-right">
-      {{> footer1SocialIcons}}
+
+    <div class='clearfix'></div>
+
+    <div class='col-xs-12'>
+      <ul class="list-inline text-xs-center">
+        <li class="list-inline-item">
+          <a href="{{aboutPath}}">About SpaceCadet</a>
+        </li>
+        <li class="list-inline-item m-l-2">
+          <a href="{{listSpacePath}}">List Your Space</a>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <template name="footer1SocialIcons">
-  <ul class="list-inline">
+  <div class='col-xs-12 m-t-2'>
+    <p class="text-xs-center">
+      Find us on
+    </p>
+  </div>
+<div class='col-xs-12'>
+  <ul class="list-inline text-xs-center">
     <li class="list-inline-item">
       <a href="http://facebook.com/spacecadet.io">
-        <i class="fa fa-facebook-square fa-lg"></i>
+        <i class="fa fa-facebook-square fa-3x"></i>
       </a>
     </li>
     <li class="list-inline-item m-l-1">
       <a href="http://instagram.com/gospacecadet">
-        <i class="fa fa-instagram fa-lg"></i>
+        <i class="fa fa-instagram fa-3x"></i>
       </a>
     </li>
     <li class="list-inline-item m-l-1">
       <a href="http://twitter.com/gospacecadet">
-        <i class="fa fa-twitter fa-lg"></i>
+        <i class="fa fa-twitter fa-3x"></i>
       </a>
     </li>
   </ul>
+</div>
 </template>
 
 <template name="footer2">
-  <div class="footer2 bg-teal-dark p-l-3 p-y-1 m-a-0">
-    <p class="m-b-0">SpaceCadet &copy; 2016</p>
-    <ul class="list-inline">
-      <li class="list-inline-item m-x-0"><a href="{{privacyPath}}">Privacy Policy</a></li> |
-      <li class="list-inline-item m-x-0"><a href="{{termsPath}}">Terms of Service</a></li>
-    </ul>
+  <div class="footer2 bg-teal-dark row p-t-1">
+    <div class='col-xs-12'>
+      <p class="m-b-0 text-xs-center">SpaceCadet &copy; 2016</p>
+    </div>
+
+    <div class='col-xs-12'>
+      <ul class="list-inline text-xs-center">
+        <li class="list-inline-item m-r-1">
+          <a href="{{privacyPath}}">Privacy Policy</a>
+        </li>|
+        <li class="list-inline-item m-l-1">
+          <a href="{{termsPath}}">Terms of Service</a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </template>
