@@ -1,5 +1,14 @@
 Template.manageProperty.onCreated(function() {
   MANAGE_PROPERTY_UPLOADERS = new ReactiveVar({})
+
+  var template = this
+  Tracker.autorun(function(){
+    var propertyId = FlowRouter.getParam('propertyId')
+    console.log('propertyId');
+    console.log(propertyId);
+    template.subscribe("mart/storefront", propertyId);
+  });
+
   var hooksObject = {
     onSubmit: function(insertDoc) {
       var hook = this

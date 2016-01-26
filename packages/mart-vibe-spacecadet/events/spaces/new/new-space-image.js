@@ -6,7 +6,7 @@ Template.newSpaceImage.events({
       var file = inputs[0].files[0]
       var index = template.data.index
 
-      uploadImageVersions(file, "Spaces", index, false, function(error, imageUrls) {
+      uploadImageVersions(file, "Spaces", undefined, index, false, function(error, imageUrls) {
         if(error) {
           // console.log(error);
           sAlert.error(error)

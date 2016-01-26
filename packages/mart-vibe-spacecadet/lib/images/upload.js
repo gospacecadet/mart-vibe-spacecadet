@@ -1,6 +1,10 @@
 uploadImageVersions = function(blob, objectCollection, objectId, index, objectExists, callback) {
   var directiveEndings = ['Original', 'Optimized', 'Thumbnail']
   var imageUrls = {}
+  console.log(objectId);
+  // TODO possible collisions. Ideally copy images over once a property is created.
+  if(!objectId)
+    objectId = Random.id()
 
   _.each(directiveEndings, function(ending) {
     var directiveName = objectCollection + ending

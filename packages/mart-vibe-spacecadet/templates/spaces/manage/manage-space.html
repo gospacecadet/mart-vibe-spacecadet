@@ -1,6 +1,7 @@
 <template name="manageSpace">
   {{#if Template.subscriptionsReady}}
     {{#with space}}
+      <a href="{{managePropertyPath storefrontId}}" class='btn btn-link'>&lt;&lt; Edit {{propertyName}}</a>
       {{#autoForm collection="Mart.Products" id="updateSpaceForm" type="update" doc=this}}
         {{> _spaceDetails}}
       {{/autoForm}}
@@ -10,7 +11,7 @@
       {{> manageSpaceImages}}
       <hr class='m-y-2'>
 
-      <button type="submit" class="btn btn-outline-primary btn-lg btn-block">
+      <button type="button" id="save-space" class="btn btn-outline-primary btn-lg btn-block">
         Save changes
       </button>
 
@@ -18,7 +19,7 @@
         <button disabled class='btn btn-primary btn-lg btn-block m-t-1'>
           <h4><strong>SPACE PUBLISHED</strong></h4>
           <h6 class='btn-wrap'>
-            This space is published and visible to the public.
+            This space is published. Make sure that the property it belongs to is also published to start accepting bookings.
           </h6>
         </button>
       {{else}}
@@ -41,6 +42,9 @@
           </button>
         {{/if}}
       {{/if}}
+
+      <a href="{{managePropertyPath storefrontId}}" class='btn btn-link'>&lt;&lt; Edit {{propertyName}}</a>
+
     {{/with}}
   {{else}}
     {{> loading}}

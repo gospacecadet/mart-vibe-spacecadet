@@ -13,8 +13,6 @@ Template.newSpaceImage.helpers({
 });
 
 var pct = function(index) {
-  console.log('pct');
-  console.log(index);
   if(currentUploader(index) && currentUploader(index).progress) {
     var uploader = currentUploader(index)
     var pct = Math.round(uploader.progress() * 100)

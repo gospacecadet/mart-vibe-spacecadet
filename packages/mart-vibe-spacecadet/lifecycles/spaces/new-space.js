@@ -18,7 +18,6 @@ Template.newSpace.onCreated(function() {
         } else {
           attachUploadedImages("Spaces", spaceId);
           _.each(prices, function(price) {
-            console.log(price);
             if(price.unit && price.priceInDollars && price.productId) {
               var insertPrice = {
                 unit: price.unit,

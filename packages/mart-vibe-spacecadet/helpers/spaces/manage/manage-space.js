@@ -10,5 +10,8 @@ Template.manageSpace.helpers({
     })
 
     return onePrice && oneImage
+  },
+  propertyName: function() {
+    return PFOAR({_id: this.storefrontId}, "name")
   }
 });

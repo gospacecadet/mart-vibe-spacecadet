@@ -1,6 +1,5 @@
 Template.reserveDockingDetails.events({
   "click #dock-now-button": function(event, template){
-     console.log('clicked');
      $("#submitDockingForm").submit()
   }
 });

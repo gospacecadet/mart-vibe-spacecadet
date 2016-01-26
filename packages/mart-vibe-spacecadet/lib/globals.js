@@ -4,6 +4,11 @@ IFOAR = function(selector, attribute) {
   return FOAR(Mart.Images, selector, attribute)
 }
 
+PFOAR = function(selector, attribute) {
+  return FOAR(Mart.Storefronts, selector, attribute)
+}
+
+
 FOAR = function(Kollection, selector, attribute) {
   var obj = Kollection.findOne(selector)
   if(obj)
