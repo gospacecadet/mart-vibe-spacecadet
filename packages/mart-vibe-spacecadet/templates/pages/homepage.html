@@ -18,7 +18,10 @@
 </template>
 
 <template name="homepageBody">
-  {{> homepageSignup}}
+  {{#if currentUser}}
+  {{else}}
+    {{> homepageSignup}}
+  {{/if}}
   {{> properties}}
 </template>
 

@@ -1,35 +1,55 @@
 var helpers = {
   username: function() {
-    var me = Meteor.user()
-    if(me)
-      return me.username
+    return username()
   },
   username_: function() {
-    return this.username() || this.email()
+    return username() || email()
   },
   email: function() {
-    var me = Meteor.user()
-    if(me && me.emails[0])
-      return me.emails[0].address
+    return email()
   },
-  profileAttr: function(cursor) {
-    var user = Meteor.user()
-
-    if(user && user.profile) {
-      return user.profile[attr]
-    }
+  profileAttr: function(attr) {
+    return profileAttr(attr)
   },
   fullName: function() {
-    return this._fullName(Meteor.userId())
+    return _fullName(Meteor.userId())
   },
   hasSetBizName: function() {
-    return this.profileAttr("businessName")
+    return profileAttr("businessName")
   },
   _fullName: function(userId) {
-    this.profileAttr("firstName") + " " + this.profileAttr("lastName")
+    return _fullName(userId)
   },
 }
 
 _.each(helpers, function(helper, name) {
   Template.registerHelper(name, helper)
 })
+
+var username = function() {
+  var me = Meteor.user()
+  if(me && me.username)
+    return me.username
+}
+
+var email = function() {
+  var me = Meteor.user()
+  if(me && me.emails && me.emails[0])
+    return me.emails[0].address
+}
+
+var profileAttr = function(attr) {
+  return _profileAttr(Meteor.userId(), attr)
+}
+
+var _profileAttr = function(userId, attr) {
+  var user = Meteor.users.findOne(userId)
+
+  if(user && user.profile) {
+    return user.profile[attr]
+  }
+}
+
+var _fullName = function(userId) {
+  profileAttr(userId, "firstName") + " " + profileAttr(userId, "lastName")
+}

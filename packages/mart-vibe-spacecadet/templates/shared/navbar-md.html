@@ -1,6 +1,22 @@
 <template name="navbarMd">
   {{#if loggedIn}}
-    {{> navbarLoggedInLinks}}
+    <ul class="nav navbar-nav pull-xs-right">
+      {{#if isMerchant}}
+        {{> merchantNavbar}}
+      {{/if}}
+
+      {{#if isAdmin}}
+        <!-- {{> merchantNavbar}} -->
+      {{/if}}
+
+      {{#if isShopper}}
+        <!-- {{> merchantNavbar}} -->
+      {{/if}}
+
+      {{#if isRep}}
+        <!-- {{> merchantNavbar}} -->
+      {{/if}}
+    </ul>
   {{else}}
     {{> navbarLoggedOutLinks}}
     {{> navbarLogin}}
@@ -20,62 +36,42 @@
   </ul>
 </template>
 
-<template name="navbarLoggedInLinks">
-  <ul class="nav navbar-nav pull-xs-right">
-    {{#if cartHasItems}}
-      <li class="nav-item">
-        <a class="nav-link" href="{{checkoutPath}}">Checkout ({{cartSize}})</a>
-      </li>
-    {{/if}}
-    {{#if isAdmin}}
-      <li class="nav-item">
-        <a class="nav-link" href="{{transferFundsPath}}">Transfer Funds</a>
-      </li>
-    {{/if}}
-    {{#if canActAsMerchant}}
-      {{#if isMerchant}}
-        {{> merchantNavbarItems}}
-      {{/if}}
-      {{> propertyNavbarItems}}
-    {{/if}}
-    {{> genericNavbarItems}}
-  </ul>
-</template>
+        <!-- <a class="nav-link" href="{{transferFundsPath}}">Transfer Funds</a> -->
 
-<template name="propertyNavbarItems">
+<template name="merchantNavbar">
+  {{#if cartHasItems}}
+    <li class="nav-item">
+      <a class="nav-link" href="{{checkoutPath}}">
+        <i class='fa fa-shopping-cart'></i> Checkout ({{cartSize}})
+      </a>
+    </li>
+  {{/if}}
   <li class="nav-item">
-    <a class="nav-link" href="{{newPropertyPath}}">New Property</a>
+    <a class="nav-link" href="{{manageDockingsPath}}">
+      <i class='fa fa-building-o'></i> Manage Dockings{{dockingsNotification}}
+    </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="{{managePropertiesPath}}">Manage Properties</a>
+    <a class="nav-link" href="{{inboxPath}}">
+      <i class='fa fa-comments-o'></i> Inbox
+    </a>
   </li>
-</template>
+  <li class="nav-item">
+    <div class="dropdown open">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="settings-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{username_}}
+      </button>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="settings-dropdown">
+        <a class="dropdown-item" href="{{myProfilePath}}">Profile</a>
+        <a class="dropdown-item" href="{{managePropertiesPath}}">Manage Property</a>
+        <a class="dropdown-item" href="{{bankAccountsPath}}">Bank Accounts</a>
+        <a class="dropdown-item" href="{{dockingsPath}}">Docking History</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" id="logout-button">Sign Out</a>
+      </div>
+    </div>
+  </li>
 
-<template name="merchantNavbarItems">
-  <li class="nav-item">
-    <a class="nav-link" href="{{manageDockingsPath}}">Manage Dockings{{dockingsNotification}}</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{bankAccountsPath}}">Bank Accounts</a>
-  </li>
-</template>
-
-<template name="genericNavbarItems">
-  <li class="nav-item">
-    <a class="nav-link" href="{{myProfilePath}}">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{inboxPath}}">Inbox</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{dockingsPath}}">Docking History</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">{{_username}}</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#" id="logout-button">Logout</a>
-  </li>
 </template>
 
 <template name="navbarLogin">
