@@ -109,6 +109,7 @@ Package.onUse(function(api) {
     // Session IDs
     paths = ['lib', 'session-ids']
     api.addFiles([
+      pre(paths) + 'shared-session-ids.js',
       pre(paths) + 'space-session-ids.js',
       pre(paths) + 'property-session-ids.js',
     ], 'client')
@@ -156,11 +157,11 @@ Package.onUse(function(api) {
     // Shared
     api.addFiles([
       'templates/shared/footers.html',
+      'templates/shared/login-modal.html',
       'templates/shared/split-title.html',
       'templates/shared/navbar.html',
       'templates/shared/navbar-sm.html',
       'templates/shared/navbar-md.html',
-      'templates/shared/general-settings-menu.html',
     ], 'client')
 
     // Accounts
@@ -316,6 +317,7 @@ Package.onUse(function(api) {
   // Events
   paths = ['events']
   api.addFiles([
+    pre(paths) + 'shared/login-modal.js',
     pre(paths) + 'shared/navbar.js',
     pre(paths) + 'spaces/manage/manage-space.js',
     pre(paths) + 'spaces/manage/manage-space-image.js',
@@ -333,7 +335,7 @@ Package.onUse(function(api) {
   paths = ['helpers']
   api.addFiles([
     pre(paths) + 'shared/loading.js',
-
+    pre(paths) + 'shared/login-modal.js',
     pre(paths) + 'spaces/manage/manage-space.js',
     pre(paths) + 'spaces/manage/manage-space-image.js',
     pre(paths) + 'spaces/manage/manage-space-prices.js',

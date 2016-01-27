@@ -5,12 +5,12 @@ var helpers = {
   US_STATES: function() {
     return _.map(US_STATES, function(state) {return {label: state, value: state}})
   },
-  address: function(storefrontId) {
+  address_: function(storefrontId) {
     var storefront = Mart.Storefronts.findOne(storefrontId)
     if(storefront)
       return storefront.address
   },
-  region: function(storefrontId) {
+  region_: function(storefrontId) {
     var storefront = Mart.Storefronts.findOne(storefrontId)
     if(storefront)
       return storefront.city + ", " + storefront.state

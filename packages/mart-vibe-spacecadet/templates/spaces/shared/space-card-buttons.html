@@ -15,7 +15,15 @@
       {{/if}}
     </div>
     <div class="col-xs-5">
-      <button class="btn btn-outline-primary btn-lg btn-block space-details-button">Details</button>
+      {{#if moreDetails}}
+        <button class="btn btn-outline-primary btn-lg btn-block space-details-button">
+          Details
+        </button>
+      <!-- {{else}}
+        <button disabled class="btn btn-outline-primary btn-lg btn-block space-details-button">
+          Details
+        </button> -->
+      {{/if}}
     </div>
   </div>
   {{#if loggedIn}}

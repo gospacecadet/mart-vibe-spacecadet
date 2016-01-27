@@ -1,32 +1,24 @@
 <template name="property">
 
-{{#if property}}
-  {{#with property}}
-    <img src="{{currentImageUrl}}" alt="{{name}}" class="img img-fluid property-banner"/>
+  {{#if Template.subscriptionsReady}}
+    {{#if property}}
+      {{#with property}}
+        {{> loginModal}}
+        <img src="{{currentImageUrl}}" alt="{{name}}" class="img img-fluid property-banner"/>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 walled col-md-12">
-          <div class='row m-t-2'>
-            <div class='col-md-10 col-md-offset-1'>
-              <div class='m-b-1'>
-                {{> propertyDetails}}
-              </div>
-
-              <div class='hide-sm-down'>
-                <hr>
-              </div>
-
-              {{> propertySpaces}}
-
-            </div>
+        <div class='container-fluid'>
+          {{> propertyDetails}}
+          <div class='col-lg-10 col-lg-offset-1 boxed m-t-1 m-b-3'>
+            {{> propertySpaces}}
           </div>
         </div>
-      </div>
-    </div>
-  {{/with}}
-{{else}}
-  {{> notFound}}
-{{/if}}
+
+      {{/with}}
+    {{else}}
+      {{> notFound}}
+    {{/if}}
+  {{else}}
+    {{> loading}}
+  {{/if}}
 
 </template>

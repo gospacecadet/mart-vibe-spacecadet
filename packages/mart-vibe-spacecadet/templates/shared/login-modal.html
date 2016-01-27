@@ -1,0 +1,33 @@
+<template name="loginModal">
+  <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="loginModalLabel">Sign Up or Login</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            {{#if loginModalLogin}}
+              <button type="button" id="loginModalSignUpInstead" class="btn btn-outline-primary">
+                Sign Up Instead
+              </button>
+            {{else}}
+              <p>
+                SpaceCadet is just about the coolest thing around.
+                Save time and money on your next space and sign up now.
+              </p>
+              {{> shopperSignUp}}
+
+              <button type="button" id="loginModalLoginInstead" class="btn btn-outline-primary">
+                Login Instead
+              </button>
+            {{/if}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</template>

@@ -3,7 +3,7 @@ var helpers = {
     text = text || "Loading..."
     if(text.length > length) {
       text = text.substring(0, length);
-      text = text.replace(/\w+$/, '');
+      text = text.replace(/\w+$/, '').replace(/^\s+|\s+$/g, '');
       text = text + "..."
     }
 
