@@ -1,19 +1,30 @@
 <template name="properties">
+  <h2 class='text-xs-center m-t-2 m-b-3'>Browse Properties</h2>
+  {{#if Template.subscriptionsReady}}
+    <div class="row">
+      {{#each properties}}
+      <div class="col-sm-6 m-b-2 col-xs-12">
+        <a href="{{propertyPath _id}}" class='discrete-link'>
+        <div class="card homepage-space-card">
+          <img class="img-fluid center-block space-details-img" src="{{thumbnailUrl}}" alt="{{name}}">
 
-<h2>Dock at a property</h2>
-<div class="row">
-  {{#each properties}}
-  <div class="col-md-6 m-b-2">
-    <div class="card homepage-space-card">
-      <img class="img-fluid center-block space-details-img" src="{{thumbnailUrl}}" alt="{{name}}">
-
-      <div class="card-block">
-        <a href="{{propertyPath _id}}"><h4 class="card-title">{{name}}</h4></a>
-        <a href="{{propertyPath _id}}"><p class="card-text">{{truncateText description 161}}</p></a>
+          <div class="card-block">
+            <h4 class="card-title">{{name}}</h4>
+            <h6 class="card-title text-muted">{{region _id}}</h6>
+            <p class="card-text">{{truncateText description 80}}...</p>
+            <h1 class='m-t-3 text-xs-right homepage-space-card-price'>
+              <small class='text-muted'>starting at</small>
+              <span class="label label-primary p-a-1">
+                {{dollars lowestPriceCents}} / {{lowestPriceUnit}}
+              </span>
+            </h1>
+          </div>
+        </div>
+        </a>
       </div>
+      {{/each}}
     </div>
-  </div>
-  {{/each}}
-</div>
-
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>
