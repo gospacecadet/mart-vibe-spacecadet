@@ -1,0 +1,37 @@
+<template name="navbarMdCart">
+  {{#if cartHasItems}}
+    <li class="nav-item">
+      <a class="nav-link" href="{{checkoutPath}}">
+        <i class='fa fa-shopping-cart'></i> Checkout ( {{cartSize}} )
+      </a>
+    </li>
+  {{/if}}
+</template>
+
+<template name="navbarMdInbox">
+  <li class="nav-item">
+    <a class="nav-link" href="{{inboxPath}}">
+      <i class='fa fa-comments-o'></i> Inbox
+    </a>
+  </li>
+</template>
+
+<template name="navbarMdDropdownProfile">
+  <a class="dropdown-item" href="{{myProfilePath}}">Profile</a>
+</template>
+
+<template name="navbarMdDropdownManageProperty">
+  <a class="dropdown-item" href="{{managePropertiesPath}}">Manage Property</a>
+</template>
+
+<template name="navbarMdDropdownBank">
+  <a class="dropdown-item" href="{{bankAccountsPath}}">Bank Accounts</a>
+</template>
+
+<template name="navbarMdDropdownDockingHistory">
+  <a class="dropdown-item" href="{{dockingsPath}}">Docking History</a>
+</template>
+
+<template name="navbarMdDropdownLogout">
+  <button class="dropdown-item" id="logout-button">Log Out</button>
+</template>

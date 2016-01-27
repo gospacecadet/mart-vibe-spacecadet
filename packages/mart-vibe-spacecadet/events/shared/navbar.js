@@ -1,4 +1,10 @@
 Template.navbar.events({
+  "click #navbar-toggler": function(event, template) {
+    template.$("#navbar-padding-toggler").click()
+  }
+});
+
+Template.navbarMdDropdownLogout.events({
   "click #logout-button": function(event, template) {
     Meteor.logout()
   }

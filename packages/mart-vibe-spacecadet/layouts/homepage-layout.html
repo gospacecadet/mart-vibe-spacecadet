@@ -1,13 +1,11 @@
 <template name="homepageLayout">
   {{> navbar}}
   <div class='clearfix'></div>
-  <div class="main-content">
-    {{> sAlert}}
-    {{#if Template.subscriptionsReady}}
-      {{> Template.dynamic template=content}}
-    {{else}}
-      {{> loading}}
-    {{/if}}
-  </div>
+  {{> sAlert}}
+  {{#if Template.subscriptionsReady}}
+    {{> Template.dynamic template=content}}
+  {{else}}
+    {{> loading}}
+  {{/if}}
   {{> footers}}
 </template>

@@ -154,27 +154,41 @@ Package.onUse(function(api) {
 
   /////////////////////////////////////////////////////////////
   // Templates
-    // Shared
+  // Shared
+  api.addFiles([
+    'templates/shared/footers.html',
+    'templates/shared/login-modal.html',
+    'templates/shared/split-title.html',
+  ], 'client')
+
+    // Navbar
+    paths = ['templates', 'shared', 'navbar']
     api.addFiles([
-      'templates/shared/footers.html',
-      'templates/shared/login-modal.html',
-      'templates/shared/split-title.html',
-      'templates/shared/navbar.html',
-      'templates/shared/navbar-sm.html',
-      'templates/shared/navbar-md.html',
+      pre(paths) + 'navbar.html',
+      pre(paths) + 'navbar-md/_navbar-md-components.html',
+      pre(paths) + 'navbar-md/navbar-md.html',
+      pre(paths) + 'navbar-md/navbar-md-admin.html',
+      pre(paths) + 'navbar-md/navbar-md-merchant.html',
+      pre(paths) + 'navbar-md/navbar-md-shopper.html',
+      pre(paths) + 'navbar-sm/_navbar-sm-components.html',
+      pre(paths) + 'navbar-sm/navbar-sm.html',
+      pre(paths) + 'navbar-sm/navbar-sm-admin.html',
+      pre(paths) + 'navbar-sm/navbar-sm-merchant.html',
+      pre(paths) + 'navbar-sm/navbar-sm-shopper.html',
     ], 'client')
 
-    // Accounts
-    api.addFiles([
-      'templates/accounts/merchant-sign-up.html',
-      'templates/accounts/my-profile.html',
-      'templates/accounts/shopper-sign-up.html',
-    ], 'client')
 
-    // Admin
-    api.addFiles([
-      'templates/admin/transfer-funds.html',
-    ], 'client')
+  // Accounts
+  api.addFiles([
+    'templates/accounts/merchant-sign-up.html',
+    'templates/accounts/my-profile.html',
+    'templates/accounts/shopper-sign-up.html',
+  ], 'client')
+
+  // Admin
+  api.addFiles([
+    'templates/admin/transfer-funds.html',
+  ], 'client')
 
     // Bank Accounts
     api.addFiles([
@@ -357,6 +371,7 @@ Package.onUse(function(api) {
   paths = ['stylesheets']
   api.addFiles([
     pre(paths) + '_variables.scss',
+    pre(paths) + 'accounts.scss',
     pre(paths) + 'dockings.scss',
     pre(paths) + 'footers.scss',
     pre(paths) + 'homepage.scss',

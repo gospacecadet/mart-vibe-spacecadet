@@ -10,6 +10,10 @@ $padding: 1.65rem;
   height: $navbar-height;
 }
 
+#navbar-padding-toggler {
+  visibility: hidden;
+}
+
 .nav {
   padding-top:    $padding;
 }

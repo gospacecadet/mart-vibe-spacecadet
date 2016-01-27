@@ -1,6 +1,6 @@
 <template name="myProfile">
-  <div class='p-a-3'>
-    <div class="col-sm-6 col-sm-offset-3">
+  <div class='m-y-2'>
+    <div class="col-sm-8 col-sm-offset-2 col-xs-12">
       {{#autoForm schema="ProfileSchema" id="updateProfileForm" type="normal"
           resetOnSuccess=false}}
 
@@ -9,8 +9,9 @@
               {{> afQuickField name='username' value=username class='m-b-0 p-b-0'}}
             </fieldset>
           {{else}}
-            <fieldset>
+            <fieldset class='my-profile-username p-a-1 m-b-2'>
               {{> afQuickField name='username' value=username}}
+              <span>This will be your permanent username. You will not be able to reset it.</span>
             </fieldset>
           {{/if}}
 

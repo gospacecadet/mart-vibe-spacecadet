@@ -10,10 +10,10 @@
 
           <form class="form m-t-2" id='navbar-sm-login'>
             <div class='row'>
-              <div class='col-xs-6 col-sm-6'>
+              <div class='col-xs-6'>
                 <input class="form-control navbar-input-sm" name="email" type="email" placeholder="Email">
               </div>
-              <div class='col-xs-6 col-sm-6'>
+              <div class='col-xs-6'>
                 <input class="form-control navbar-input-sm" name="password" type="password" placeholder="Password">
               </div>
             </div>
@@ -21,14 +21,23 @@
           </form>
         {{/if}}
 
-        {{#if isShopper}}
-        {{/if}}
+        <div class="list-group">
+          {{#if isShopper}}
+            {{> navbarSmCart}}
+            {{> navbarSmInbox}}
+            {{> navbarSmProfile}}
+            {{> navbarSmDockingHistory}}
+            {{> navbarSmLogout}}
+          {{/if}}
 
-        {{#if isMerchant}}
-        {{/if}}
+          {{#if isMerchant}}
 
-        {{#if isAdmin}}
-        {{/if}}
+          {{/if}}
+
+          {{#if isAdmin}}
+
+          {{/if}}
+        </div>
       </div>
 
     </div>

@@ -1,0 +1,48 @@
+<template name="navbarMd">
+  {{#if loggedIn}}
+    <ul class="nav navbar-nav pull-xs-right">
+      {{#if isMerchant}}
+        {{> navbarMdMerchant}}
+      {{/if}}
+
+      {{#if isAdmin}}
+        {{> navbarMdAdmin}}
+      {{/if}}
+
+      {{#if isShopper}}
+        {{> navbarMdShopper}}
+      {{/if}}
+
+      {{#if isRep}}
+        <!-- {{> merchantNavbar}} -->
+      {{/if}}
+    </ul>
+  {{else}}
+    {{> navbarLoggedOutLinks}}
+    {{> navbarLogin}}
+  {{/if}}
+</template>
+
+<template name="navbarLoggedOutLinks">
+  <ul class="nav navbar-nav pull-xs-left">
+    <li class='nav-item'>
+      <a class='nav-link' href="{{aboutPath}}">About</a>
+    </li>
+    <li class='navbar-divider'>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href="{{listSpacePath}}">List Your Space</a>
+    </li>
+  </ul>
+</template>
+
+        <!-- <a class="nav-link" href="{{transferFundsPath}}">Transfer Funds</a> -->
+
+
+<template name="navbarLogin">
+  <form class="form-inline pull-xs-right" id='navbar-login'>
+    <input class="form-control" name="email" type="email" placeholder="Email">
+    <input class="form-control" name="password" type="password" placeholder="Password">
+    <button class="btn btn-outline-primary" type="submit">Log In</button>
+  </form>
+</template>

@@ -1,0 +1,44 @@
+<template name="navbarSmCart">
+  {{#if cartHasItems}}
+    <a class="list-group-item" href="{{checkoutPath}}">
+      <span class="label label-primary label-pill pull-xs-right lead">{{cartSize}}</span>
+      <i class='fa fa-shopping-cart'></i>&nbsp;&nbsp;Checkout
+    </a>
+  {{/if}}
+</template>
+
+<template name="navbarSmInbox">
+  <a class="list-group-item" href="{{inboxPath}}">
+    <i class='fa fa-comments-o'></i>&nbsp;&nbsp;Inbox
+  </a>
+</template>
+
+<template name="navbarSmProfile">
+  <a class="list-group-item" href="{{myProfilePath}}">
+   <i class="fa fa-transgender-alt"></i>&nbsp;&nbsp;Profile
+  </a>
+</template>
+
+<template name="navbarSmManageProperty">
+  <a class="list-group-item" href="{{managePropertiesPath}}">
+    Manage Property
+  </a>
+</template>
+
+<template name="navbarSmBank">
+  <a class="list-group-item" href="{{bankAccountsPath}}">
+    Bank Accounts
+  </a>
+</template>
+
+<template name="navbarSmDockingHistory">
+  <a class="list-group-item" href="{{dockingsPath}}">
+    <i class="fa fa-rocket"></i>&nbsp;&nbsp;Docking History
+  </a>
+</template>
+
+<template name="navbarSmLogout">
+  <button class="list-group-item" id="logout-button">
+    <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Log Out
+  </button>
+</template>

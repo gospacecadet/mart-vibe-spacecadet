@@ -1,19 +1,19 @@
 <template name="mainLayout">
   {{> navbar}}
   <div class='clearfix'></div>
-  <div class="main-content">
-    {{> sAlert}}
-    {{#if wBoxedStyle}}
-      {{> _boxedStyle}}
-    {{/if}}
 
-    {{#if wSettingsStyle}}
-      {{> _settingsStyle}}
-    {{/if}}
+  {{> sAlert}}
+  {{#if wBoxedStyle}}
+    {{> _boxedStyle}}
+  {{/if}}
 
-    {{#if wDefaultStyle}}
-      {{> Template.dynamic template=content}}
-    {{/if}}
-  </div>
+  {{#if wSettingsStyle}}
+    {{> _settingsStyle}}
+  {{/if}}
+
+  {{#if wDefaultStyle}}
+    {{> Template.dynamic template=content}}
+  {{/if}}
+
   {{> footers}}
 </template>
