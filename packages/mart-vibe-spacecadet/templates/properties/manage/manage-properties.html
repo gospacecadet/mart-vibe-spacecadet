@@ -4,7 +4,11 @@
     <div class="col-md-10 col-md-offset-1 white-box p-y-2">
       <h2>
         Manage Your Properties
-        <a href="{{newPropertyPath}}" class="btn btn-secondary pull-right">New Property</a>
+        {{#if hasProperties}}
+          <a href="{{newPropertyPath}}" class="btn btn-secondary pull-right">
+            New Property
+          </a>
+        {{/if}}
       </h2>
       {{#if Template.subscriptionsReady}}
         <div class='manage-properties'>
@@ -13,7 +17,7 @@
               {{> managePropertyPreview}}
             {{/each}}
           {{else}}
-            <h4>
+            <h4 class='m-t-1'>
               You are not managing any properties yet,
               <a href="{{newPropertyPath}}"> add one.</a>
             </h4>
@@ -60,7 +64,7 @@
               <h5>Rentable Spaces
                 <a type="button" nclass="btn btn-secondary pull-right"
                   href="{{newSpacePath _id}}">
-                  
+
                   Add A New Space
                 </a>
               </h5>

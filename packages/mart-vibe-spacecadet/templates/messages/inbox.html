@@ -1,22 +1,34 @@
 <template name="inbox">
-<div class="row m-t-2">
-  <div class='col-lg-9'>
-    {{#if currentThread}}
-      {{#with currentThread}}
-        <h4 class='text-xs-center'>Conversation with {{recipientName}}</h4>
-        {{> thread}}
-        {{> threadButtons}}
-      {{/with}}
+  {{#if Template.subscriptionsReady}}
+    {{#if threads}}
+      <div class="row m-t-2">
+        <div class='col-lg-9'>
+          {{#with currentThread}}
+            <h4 class='text-xs-center'>Conversation with {{recipientName}}</h4>
+            {{> thread}}
+            {{> threadButtons}}
+          {{/with}}
+        </div>
+        <div class="col-lg-3">
+          {{> threads}}
+        </div>
+      </div>
     {{else}}
       {{> emptyInbox}}
     {{/if}}
-  </div>
-  <div class="col-lg-3">
-    {{> threads}}
-  </div>
-</div>
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>
 
 <template name="emptyInbox">
-  <h4>Empty Inbox</h4>
+  <h4 class='m-t-3 m-x-3 text-xs-center'>
+    Your inbox is empty.
+    You will be notified by email if somebody sends you a message.
+  </h4>
+  <h4 class='m-t-1 m-b-3 m-x-3 text-xs-center'>
+    To start something yourself, go to one of your
+    <a href="{{manageDockingsPath}}">past dockings</a> or go to a
+    <a href="/">property</a> and send a message from there.
+  </h4>
 </template>
