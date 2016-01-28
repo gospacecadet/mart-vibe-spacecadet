@@ -1,10 +1,14 @@
 Template.navbar.events({
   "click #navbar-toggler": function(event, template) {
     Meteor.setTimeout(function () {
-      var navHeight = $("#navbarUnhide").height()
+      var mainNavHeight = $("#spacecadet-navabar").height()
+      var smNavHeight = $("#navbarUnhide").height()
 
-      console.log($("#navbarUnhide").height())
-    }, 750);
+      var totalHeight = parseInt(mainNavHeight) + parseInt(smNavHeight)
+      totalHeight = totalHeight.toString() + "px"
+
+      $("#navbar-sm-padding").css('margin-top', totalHeight)
+    }, 650);
 
   }
 });
@@ -31,6 +35,7 @@ Template.navbarLogin.events({
      })
   }
 });
+
 Template.navbarSm.events({
   "submit #navbar-sm-login": function(event, template) {
      event.preventDefault();
