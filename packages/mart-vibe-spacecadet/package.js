@@ -373,6 +373,8 @@ Package.onUse(function(api) {
     pre(paths) + 'manage-property-form.js',
     pre(paths) + 'merchant-sign-up.js',
     pre(paths) + 'new-property-form.js',
+    pre(paths) + 'new-space-edit-price.js',
+    pre(paths) + 'new-space.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

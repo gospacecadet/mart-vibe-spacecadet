@@ -2,7 +2,10 @@
 <div class="container-fluid">
   <div class="row m-a-2 p-a-2">
     <div class="col-md-10 col-md-offset-1 white-box p-y-2">
-      <h2>Manage Your Properties</h2>
+      <h2>
+        Manage Your Properties
+        <a href="{{newPropertyPath}}" class="btn btn-secondary pull-right">New Property</a>
+      </h2>
       {{#if Template.subscriptionsReady}}
         <div class='manage-properties'>
           {{#if hasProperties}}
@@ -11,8 +14,8 @@
             {{/each}}
           {{else}}
             <h4>
-              You had not added any properties yet,
-              <a href="{{newPropertyPath}}"> add one!</a>
+              You are not managing any properties yet,
+              <a href="{{newPropertyPath}}"> add one.</a>
             </h4>
           {{/if}}
         </div>
@@ -36,7 +39,9 @@
       <h4 class="media-heading">{{name}}</h4>
       {{description}}
       <br>
-      <a href="{{managePropertyPath _id}}" class="btn btn-outline-primary m-t-2">Edit {{name}}</a>
+      <a href="{{managePropertyPath _id}}" class="btn btn-outline-primary m-t-2">
+        Edit {{name}}
+      </a>
     </div>
   </div>
 
@@ -53,9 +58,11 @@
           <div class="row">
             <div class='col-md-8 col-md-offset-4'>
               <h5>Rentable Spaces
-                <button type="button" name="button" class="btn btn-secondary pull-right add-space-button">
+                <a type="button" nclass="btn btn-secondary pull-right"
+                  href="{{newSpacePath _id}}">
+                  
                   Add A New Space
-                </button>
+                </a>
               </h5>
             </div>
           </div>

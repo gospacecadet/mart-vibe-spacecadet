@@ -24,7 +24,7 @@ uploadImageVersions = function(blob, objectCollection, objectId, index, objectEx
       }
     } else {
       if(objectCollection === "Properties") {
-        reactiveUploaders = TMP_PROPERTY_UPLOADERS
+        reactiveUploaders = NEW_PROPERTY_UPLOADERS
       } else {
         reactiveUploaders = NEW_SPACE_UPLOADERS
       }
@@ -77,18 +77,13 @@ attachUploadedImages = function(type, objectId) {
 
     var imageUrls = Session.get(sessionIdLookup(i))
     if(imageUrls) {
-      var selector = {
+      var image = _.extend(imageUrls, {
         objectCollection: objectCollection,
         objectId: objectId,
         index: i
-      }
+      })
 
-      var image = Mart.Images.findOne(selector)
-      if(image) {
-        Mart.Images.update(image._id, {$set: imageUrls})
-      } else {
-        Mart.Images.insert(_.extend(imageUrls, selector))
-      }
+      Mart.Images.insert(image)
     }
   }
 }

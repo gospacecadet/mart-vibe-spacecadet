@@ -21,7 +21,7 @@ var pct = function(index) {
 }
 
 var currentUploader = function(index) {
-  var uploaders = TMP_PROPERTY_UPLOADERS.get()
+  var uploaders = NEW_PROPERTY_UPLOADERS.get()
   if(!!uploaders && !!uploaders[index])
     return uploaders[index]
 }

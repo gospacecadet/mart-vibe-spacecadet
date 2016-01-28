@@ -11,6 +11,8 @@ Template.newPropertyImage.events({
           // console.log(error);
           sAlert.error(error)
         } else {
+          console.log('setting ' + index);
+          console.log(imageUrls);
           Session.set(propertyUploadedImageId(index), imageUrls)
         }
       })

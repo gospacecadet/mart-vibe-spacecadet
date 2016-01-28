@@ -8,6 +8,8 @@ HOUR = "hour"
 DAY = "day"
 MONTH = "month"
 
+UNITS = [HOUR, DAY, MONTH]
+
 // Images
 NUM_IMAGES_ALLOWED = 4
 

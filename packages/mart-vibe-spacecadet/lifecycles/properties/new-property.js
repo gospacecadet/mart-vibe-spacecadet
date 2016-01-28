@@ -1,3 +1,3 @@
 Template.newProperty.onCreated(function() {
-  TMP_PROPERTY_UPLOADERS = new ReactiveVar({})
+  NEW_PROPERTY_UPLOADERS = new ReactiveVar({})
 })

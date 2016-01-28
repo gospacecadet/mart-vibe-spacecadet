@@ -17,11 +17,18 @@ Template.managePropertyImage.events({
             index: template.data.index
           }
 
+          console.log('goint to upload');
+          console.log(selector);
           var existingImage = Mart.Images.findOne(selector)
           if(existingImage) {
+            console.log('existing image'); 
+            console.log(imageUrls);
             Mart.Images.update(existingImage._id, {$set: imageUrls})
           } else {
-            Mart.Images.insert(_.extend(selector, imageUrls))
+            var image = _.extend(selector, imageUrls)
+            console.log('new image');
+            console.log(image);
+            Mart.Images.insert(_.extend(selector, image))
           }
         }
       })
