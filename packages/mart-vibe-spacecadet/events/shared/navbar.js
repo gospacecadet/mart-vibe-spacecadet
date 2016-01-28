@@ -1,6 +1,11 @@
 Template.navbar.events({
   "click #navbar-toggler": function(event, template) {
-    template.$("#navbar-padding-toggler").click()
+    Meteor.setTimeout(function () {
+      var navHeight = $("#navbarUnhide").height()
+
+      console.log($("#navbarUnhide").height())
+    }, 750);
+
   }
 });
 

@@ -11,22 +11,22 @@
   {{#autoForm schema="CreditCardSchema" id="create-card-form" type="normal" }}
     <fieldset>
       <div class="row">
-        <div class='col-md-4'>
+        <div class='col-sm-4 col-xs-12'>
           {{> afQuickField name='nameOnCard' value="Space Cadet"}}
         </div>
-        <div class='col-md-4'>
+        <div class='col-sm-4 col-xs-12'>
           {{> afQuickField name='number' type='text' value="4242424242424242"}}
         </div>
-        <div class='col-md-4'>
+        <div class='col-sm-4 col-xs-12'>
           {{> afQuickField name='cvc' type='text' value="123"}}
         </div>
       </div>
 
       <div class="row">
-        <div class='col-md-4'>
+        <div class='col-sm-4 col-xs-12'>
           {{> afQuickField name='expMonth' type='select' options=expMonthOptions value='1'}}
         </div>
-        <div class='col-md-4'>
+        <div class='col-sm-4 col-xs-12'>
           {{> afQuickField name='expYear' type='select' options=expYearOptions value="2016"}}
         </div>
 
@@ -47,7 +47,7 @@
   </p>
   <form id="creditCardSelection" class="form">
     <div class="row">
-      <div class="radio col-md-4">
+      <div class="radio col-sm-4 col-xs-12">
         <label>
           <input type="radio" name="creditCardRadio" id="add-new-card" checked>
           Pay with new card
@@ -61,7 +61,7 @@
 </template>
 
 <template name="creditCardRadio">
-  <div class="radio col-md-4">
+  <div class="radio col-sm-4 col-xs-12">
     <label>
       <input type="radio" class="creditCardRadio" name="creditCardRadio" id="{{_id}}">
       {{label}}

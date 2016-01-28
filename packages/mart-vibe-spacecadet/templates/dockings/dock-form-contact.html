@@ -12,10 +12,10 @@
     {{/if}}
     <fieldset>
       <div class='row'>
-        <div class='col-md-6'>
+        <div class='col-sm-6 col-xs-12'>
           {{> afQuickField name='contactFirstName' value=firstName}}
         </div>
-        <div class='col-md-6'>
+        <div class='col-sm-6 col-xs-12'>
           {{> afQuickField name='contactLastName' value=lastName}}
         </div>
       </div>
@@ -24,40 +24,40 @@
 
       {{#if isRentingOnBehalfBiz}}
         <div class='row'>
-          <div class='col-md-6'>
+          <div class='col-sm-6 col-xs-12'>
             {{> afQuickField name='contactBusiness' value=businessName}}
           </div>
-          <div class='col-md-6'>
+          <div class='col-sm-6 col-xs-12'>
           </div>
         </div>
       {{/if}}
 
       <div class='row'>
-        <div class='col-md-6'>
+        <div class='col-sm-6 col-xs-12'>
           {{> afQuickField name='contactEmail' value=email}}
         </div>
-        <div class='col-md-6'>
+        <div class='col-sm-6 col-xs-12'>
           {{> afQuickField name='contactPhone' value=phoneNumber}}
         </div>
       </div>
 
       <div class='row'>
-        <div class='col-md-6'>
+        <div class='col-sm-6 col-xs-12'>
           {{> afQuickField name='contactAddress'}}
         </div>
-        <div class='col-md-6'>
+        <div class='col-sm-6 col-xs-12'>
           {{> afQuickField name='contactAddress2'}}
         </div>
       </div>
 
       <div class='row'>
-        <div class='col-md-3'>
+        <div class='col-sm-3 col-xs-6'>
           {{> afQuickField name='contactCity'}}
         </div>
-        <div class='col-md-3'>
+        <div class='col-sm-3 col-xs-6'>
           {{> afQuickField name='contactState' type='select' options=US_STATES}}
         </div>
-        <div class='col-md-3'>
+        <div class='col-sm-3 col-xs-6'>
           {{> afQuickField name='contactZIP'}}
         </div>
       </div>
