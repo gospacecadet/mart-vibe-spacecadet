@@ -1,17 +1,31 @@
 <template name="listSpace">
-<div class="container-fluid">
-  <div class='col-sm-10 col-sm-offset-1'>
-    <div class="row">
-      <div class="col-sm-7">
-        {{> listSpaceHype}}
-      </div>
-      <div class="col-sm-5 m-t-1">
-        <h1>Create a Landlord account</h1>
-        {{> merchantSignUp}}
+  <div class="container-fluid">
+    <div class='col-sm-10 col-sm-offset-1'>
+      <div class="row">
+        <div class="col-sm-7">
+          {{> listSpaceHype}}
+        </div>
+        <div class="col-sm-5 m-t-1">
+          {{#if currentUser}}
+            {{#if isMerchant}}
+              <h2 class='m-t-2 text-xs-center'>
+                You are already logged in.
+                Go to your <a href="{{managePropertyPath}}">Property Management Page</a> to start accepting dockings.
+              </h2>
+            {{else}}
+              <h2 class='m-t-2 text-xs-center'>
+                We are working on a feature to allow users with existing accounts to become Landlords.
+                For the moment, please email <a href="mailto:hello@spacecadet.io?subject=Becoming a Landlord">hello@spacecadet.io</a> if you would like to upgrade your account.
+              </h2>
+            {{/if}}
+          {{else}}
+            <h1>Become a Landlord</h1>
+            {{> merchantSignUp}}
+          {{/if}}
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <template name="listSpaceHype">

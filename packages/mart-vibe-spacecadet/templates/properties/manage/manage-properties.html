@@ -3,12 +3,21 @@
   <div class="row m-a-2 p-a-2">
     <div class="col-md-10 col-md-offset-1 white-box p-y-2">
       <h2>Manage Your Properties</h2>
-      {{#if hasProperties}}
-        {{#each properties}}
-          {{> managePropertyPreview}}
-        {{/each}}
+      {{#if Template.subscriptionsReady}}
+        <div class='manage-properties'>
+          {{#if hasProperties}}
+            {{#each properties}}
+              {{> managePropertyPreview}}
+            {{/each}}
+          {{else}}
+            <h4>
+              You had not added any properties yet,
+              <a href="{{newPropertyPath}}"> add one!</a>
+            </h4>
+          {{/if}}
+        </div>
       {{else}}
-        <h4>You had not added any properties yet.</h4>
+        {{> loading}}
       {{/if}}
     </div>
   </div>

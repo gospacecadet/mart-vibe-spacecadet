@@ -13,6 +13,12 @@ Template.navbar.events({
   }
 });
 
+Template.navbarSmLogout.events({
+  "click #logout-button": function(event, template){
+    Meteor.logout()
+  }
+});
+
 Template.navbarMdDropdownLogout.events({
   "click #logout-button": function(event, template) {
     Meteor.logout()

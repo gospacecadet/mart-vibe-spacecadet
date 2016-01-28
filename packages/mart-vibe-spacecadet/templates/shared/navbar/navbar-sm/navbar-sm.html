@@ -22,21 +22,24 @@
         {{/if}}
 
         <div class="list-group">
+          {{> navbarSmCart}}
+          {{> navbarSmInbox}}
+          {{> navbarSmProfile}}
+
           {{#if isShopper}}
-            {{> navbarSmCart}}
-            {{> navbarSmInbox}}
-            {{> navbarSmProfile}}
             {{> navbarSmDockingHistory}}
-            {{> navbarSmLogout}}
           {{/if}}
 
           {{#if isMerchant}}
-
+            {{> navbarSmManageProperty}}
+            {{> navbarSmBank}}
           {{/if}}
 
           {{#if isAdmin}}
-
+            {{> navbarSmTransfer}}
           {{/if}}
+
+          {{> navbarSmLogout}}
         </div>
       </div>
 

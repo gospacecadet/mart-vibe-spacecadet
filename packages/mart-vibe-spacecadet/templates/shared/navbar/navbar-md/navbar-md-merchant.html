@@ -1,11 +1,14 @@
 <template name="navbarMdMerchant">
   {{> navbarMdCart}}
+
   <li class="nav-item">
     <a class="nav-link" href="{{manageDockingsPath}}">
       <i class='fa fa-building-o'></i> Manage Dockings{{dockingsNotification}}
     </a>
   </li>
+
   {{> navbarMdInbox}}
+
   <li class="nav-item">
     <div class="dropdown open">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="settings-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

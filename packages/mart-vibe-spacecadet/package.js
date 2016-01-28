@@ -367,6 +367,13 @@ Package.onUse(function(api) {
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
+  // AutoForm
+  paths = ['autoform']
+  api.addFiles([
+    pre(paths) + 'merchant-sign-up.js',
+  ], 'client')
+
+  ////////////////////////////////////////////////////////////////////////
   // Stylesheets
   paths = ['stylesheets']
   api.addFiles([
