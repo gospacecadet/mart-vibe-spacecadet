@@ -370,7 +370,9 @@ Package.onUse(function(api) {
   // AutoForm
   paths = ['autoform']
   api.addFiles([
+    pre(paths) + 'manage-property-form.js',
     pre(paths) + 'merchant-sign-up.js',
+    pre(paths) + 'new-property-form.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
