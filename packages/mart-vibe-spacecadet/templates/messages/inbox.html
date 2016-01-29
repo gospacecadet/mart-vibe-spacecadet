@@ -1,11 +1,12 @@
 <template name="inbox">
   {{#if Template.subscriptionsReady}}
-    {{#if threads}}
+    {{#if hasThreads}}
       <div class="row m-t-2">
         <div class='col-lg-9'>
           {{#with currentThread}}
             <h4 class='text-xs-center'>Conversation with {{recipientName}}</h4>
             {{> thread}}
+            <hr>
             {{> threadButtons}}
           {{/with}}
         </div>

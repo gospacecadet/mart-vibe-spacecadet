@@ -1,6 +1,13 @@
 <template name="threads">
 <h4 class='text-xs-center'>Threads</h4>
 {{#each threads}}
+  {{#with thread}}
+    {{> threadPreview}}
+  {{/with}}
+{{/each}}
+</template>
+
+<template name="threadPreview">
   <a href="{{threadPath recipientId}}" class="btn btn-link tab-box">
     <div class="row">
       <div class="col-lg-4">
@@ -8,10 +15,8 @@
         <!-- <img src="{{avatarUrl}}" alt="{{name}}" class="img-responsive img-circle"/> -->
       </div>
       <div class="col-lg-8">
-        <!-- {{name}} -->
-        NAME HERE
+        {{recipientName}}
       </div>
     </div>
   </a>
-{{/each}}
 </template>
