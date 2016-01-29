@@ -1,3 +1,20 @@
 #send-message-button {
-  min-height: 100%
+  // min-height: 100%;
+  // border-color: #fff;
+}
+
+.send-message-div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.attach-file-div {
+  align-items: center;
+  display: flex;
+  // justify-content: center;
+}
+
+.empty-modal-footer {
+  border-top-style: none;;
 }

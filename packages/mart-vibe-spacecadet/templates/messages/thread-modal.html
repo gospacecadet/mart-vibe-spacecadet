@@ -6,10 +6,34 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="gridModalLabel">Chat with {{recipientName}}</h4>
         </div>
-        {{> thread}}
-        <div class="modal-footer">
-          {{> threadButtons}}
+
+        <div class="modal-body">
+          {{#if Template.subscriptionsReady}}
+            {{#if isEmpty}}
+              <p class='text-muted'>
+                Ask the landlord any question you have.
+                You can use the upload feature to provide any additional documentation she may ask for.
+
+              </p>
+            {{else}}
+              {{> thread}}
+            {{/if}}
+          {{else}}
+            {{> loading}}
+          {{/if}}
         </div>
+
+        {{#if isEmpty}}
+          <div class="modal-footer empty-modal-footer">
+            {{> threadButtons}}
+          </div>
+        {{else}}
+
+          <div class="modal-footer">
+            {{> threadButtons}}
+          </div>
+        {{/if}}
+
       </div>
     </div>
   </div>

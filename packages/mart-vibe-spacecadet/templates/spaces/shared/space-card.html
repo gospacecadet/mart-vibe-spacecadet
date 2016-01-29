@@ -3,8 +3,8 @@
     <div class="card-block">
       <div class='row'>
         <div class='col-xs-7'>
-          <h4 class="card-title">{{name}}</h4>
-          <h6 class="card-subtitle text-muted">Starting at {{dollars priceInCents}} / hour</h6>
+          <h3 class="card-title">{{name}}</h3>
+          <!-- <h6 class="card-subtitle text-muted">Avg. response time: {{}}</h6> -->
         </div>
         <div class='col-xs-5 text-xs-right'>
           <p>
@@ -20,7 +20,6 @@
     <img class="img-fluid space-card-img center-block" src="{{currentImageUrl}}" alt="{{name}}">
 
     <div class="card-block">
-      <h1>test</h1>
       {{#if showSpaceDetails}}
         <p class="card-text">{{description}}</p>
       {{else}}

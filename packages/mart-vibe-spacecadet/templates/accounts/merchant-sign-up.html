@@ -10,20 +10,21 @@
             {{> afQuickField name='lastName' class='form-control form-control-lg' placeholder="Last Name" label=false}}
           </div>
         </div>
+
         {{> afQuickField name='businessName' class='form-control form-control-lg m-t-1' placeholder="Business Name" label=false}}
+        {{> afQuickField name='email' type='email' class='form-control form-control-lg' placeholder="Email" label=false}}
+        {{> afQuickField name='phoneNumber' class='form-control form-control-lg' placeholder="Phone Number" label=false}}
 
         <div class='row m-t-1'>
           <div class='col-xs-6'>
-            {{> afQuickField name='email' type='email' class='form-control form-control-lg' placeholder="Email" label=false}}
+            {{> afQuickField name='password' type='password' class='form-control form-control-lg m-t-1' placeholder="Password" label=false}}
           </div>
           <div class='col-xs-6'>
-            {{> afQuickField name='phoneNumber' class='form-control form-control-lg' placeholder="Phone Number" label=false}}
+            {{> afQuickField name='passwordConfirmation' type='password' class='form-control form-control-lg m-t-1' placeholder="Password Confirmation" label=false}}
           </div>
         </div>
 
-        {{> afQuickField name='password' type='password' class='form-control form-control-lg m-t-1' placeholder="Password" label=false}}
 
-        {{> afQuickField name='passwordConfirmation' type='password' class='form-control form-control-lg m-t-1' placeholder="Password Confirmation" label=false}}
 
         <div class="form-group{{#if afFieldIsInvalid name='termsAccepted'}} has-error{{/if}} m-t-1">
           <div class="input-group">

@@ -41,7 +41,9 @@
             {{> navbarSmTransfer}}
           {{/if}}
 
-          {{> navbarSmLogout}}
+          {{#if currentUser}}
+            {{> navbarSmLogout}}
+          {{/if}}
         </div>
       </div>
 
