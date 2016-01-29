@@ -20,6 +20,18 @@ var helpers = {
   _fullName: function(userId) {
     return _fullName(userId)
   },
+  firstName: function() {
+    return profileAttr("firstName")
+  },
+  lastName: function() {
+    return profileAttr("lastName")
+  },
+  phoneNumber: function() {
+    return profileAttr("phoneNumber")
+  },
+  businessName: function() {
+    return profileAttr("businessName")
+  }
 }
 
 _.each(helpers, function(helper, name) {

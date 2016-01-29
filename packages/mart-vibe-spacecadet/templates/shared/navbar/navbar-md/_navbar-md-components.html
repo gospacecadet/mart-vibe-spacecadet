@@ -41,3 +41,15 @@
     Transfer Funds
   </a>
 </template>
+
+<template name="navbarMdDropdownSecurity">
+  <a class="dropdown-item" href="{{securityPath}}">
+    Password &amp; Security
+  </a>
+</template>
+
+<template name="navbarMdSharedBottom">
+  <div class="dropdown-divider"></div>
+  {{> navbarMdDropdownSecurity}}
+  {{> navbarMdDropdownLogout}}
+</template>

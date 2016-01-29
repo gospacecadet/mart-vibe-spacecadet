@@ -1,0 +1,23 @@
+<template name="security">
+  <div class='m-y-2'>
+    <div class="col-lg-6 col-lg-offset-3 col-xs-12 col-md-8 col-md-offset-2">
+      {{#autoForm schema="PasswordUpdateSchema" id="passwordUpdateForm" type="normal"}}
+
+        <fieldset>
+          {{> afQuickField name='oldPassword' type='password'}}
+        </fieldset>
+
+        <fieldset>
+          {{> afQuickField name='newPassword' type='password'}}
+        </fieldset>
+
+        <fieldset>
+          {{> afQuickField name='newPasswordConfirmation' type='password'}}
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block m-t-2">Update Password</button>
+      {{/autoForm}}
+    </div>
+  </div>
+
+</template>

@@ -18,7 +18,8 @@ Package.onUse(function(api) {
     'session',
     'underscore',
     'jquery',
-    'reactive-var'
+    'reactive-var',
+    'accounts-password'
   ], 'client');
 
   api.use([
@@ -92,6 +93,7 @@ Package.onUse(function(api) {
       pre(paths) + 'merchant-sign-up-schema.js',
       pre(paths) + 'new-bank-account-schema.js',
       pre(paths) + 'new-line-item-schema.js',
+      pre(paths) + 'password-update-schema.js',
       pre(paths) + 'price-schema.js',
       pre(paths) + 'profile-schema.js',
       pre(paths) + 'shopper-sign-up-schema.js',
@@ -102,6 +104,7 @@ Package.onUse(function(api) {
     api.export("MerchantSignUpSchema", "client")
     api.export("NewBankAccountSchema", "client")
     api.export("NewLineItemSchema", "client")
+    api.export("PasswordUpdateSchema", "client")
     api.export("PriceSchema", "client")
     api.export("ProfileSchema", "client")
     api.export("ShopperSignUpSchema", "client")
@@ -182,6 +185,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/accounts/merchant-sign-up.html',
     'templates/accounts/my-profile.html',
+    'templates/accounts/security.html',
     'templates/accounts/shopper-sign-up.html',
   ], 'client')
 
@@ -375,6 +379,7 @@ Package.onUse(function(api) {
     pre(paths) + 'new-property-form.js',
     pre(paths) + 'new-space-edit-price.js',
     pre(paths) + 'new-space.js',
+    pre(paths) + 'password-update-form.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

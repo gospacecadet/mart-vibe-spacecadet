@@ -1,8 +1,8 @@
 <template name="myProfile">
-  <div class='m-y-2'>
-    <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-      {{#autoForm schema="ProfileSchema" id="updateProfileForm" type="normal"
-          resetOnSuccess=false}}
+  <div class='m-y-2 row'>
+    <div class="col-lg-8 col-lg-offset-2 col-xs-12">
+      {{#if currentUser}}
+      {{#autoForm schema="ProfileSchema" id="updateProfileForm" type="normal" resetOnSuccess=false}}
 
           {{#if username}}
             <fieldset disabled>
@@ -15,22 +15,33 @@
             </fieldset>
           {{/if}}
 
-        <fieldset>
-          {{> afQuickField name='email' type='email' value=email}}
-        </fieldset>
 
-        <fieldset>
-          {{> afQuickField name='firstName' value=firstName}}
-        </fieldset>
-          {{> afQuickField name='lastName' value=lastName}}
-          {{> afQuickField name='phoneNumber' value=phoneNumber}}
-          {{#if canActAsMerchant}}
-            {{> afQuickField name='businessName' value=businessName}}
-          {{/if}}
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Update Profile</button>
+        <div class='row'>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='email' type='email' value=email}}
+          </div>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='phoneNumber' value=phoneNumber}}
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='firstName' value=firstName}}
+          </div>
+          <div class='col-sm-6 col-xs-12'>
+            {{> afQuickField name='lastName' value=lastName}}
+          </div>
+        </div>
+
+        {{#if canActAsMerchant}}
+          {{> afQuickField name='businessName' value=businessName}}
+        {{/if}}
+        <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Update Profile</button>
       {{/autoForm}}
+      {{else}}
+        {{> loading}}
+      {{/if}}
     </div>
-
   </div>
-
 </template>
