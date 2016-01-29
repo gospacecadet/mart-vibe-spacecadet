@@ -22,9 +22,11 @@
         {{/if}}
 
         <div class="list-group">
-          {{> navbarSmCart}}
-          {{> navbarSmInbox}}
-          {{> navbarSmProfile}}
+          {{#if currentUser}}
+            {{> navbarSmCart}}
+            {{> navbarSmInbox}}
+            {{> navbarSmProfile}}
+          {{/if}}
 
           {{#if isShopper}}
             {{> navbarSmDockingHistory}}
