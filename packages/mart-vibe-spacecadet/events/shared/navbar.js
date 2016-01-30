@@ -53,6 +53,7 @@ Template.navbarSm.events({
        if(error) {
          sAlert.error("You could not be logged in: " + error.reason)
        } else {
+         Meteor._reload.reload()
         //  sAlert.success("Logged in successfully!")
        }
      })
