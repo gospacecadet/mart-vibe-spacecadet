@@ -6,3 +6,10 @@ Template.newSpace.onCreated(function() {
     {unit: Mart.Product.UNITS.MONTH}
   ])
 })
+
+Template.newSpaceForbid.onCreated(function() {
+  var property = Mart.Storefronts.findOne(this.data.storefrontId);
+  var permitted = canManageProperty(property)
+  if(!permitted)
+    forbid()
+})

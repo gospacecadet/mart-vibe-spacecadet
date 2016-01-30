@@ -325,6 +325,16 @@ Package.onUse(function(api) {
 
   ////////////////////////////////////////////////////////////////////////
   // Lifecycles
+  paths = ['forbiddens']
+  api.addFiles([
+    pre(paths) + "bank-accounts/bank-accounts-forbid.js",
+    pre(paths) + "dockings/manage-dockings-forbid.js",
+    pre(paths) + "properties/manage-properties-forbid.js",
+    pre(paths) + "properties/new-property-forbid.js",
+  ], 'client')
+
+  ////////////////////////////////////////////////////////////////////////
+  // Lifecycles
   paths = ['lifecycles']
   api.addFiles([
     pre(paths) + "hooks.js",

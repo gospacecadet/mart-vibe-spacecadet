@@ -39,8 +39,8 @@ var helpers = {
     return _avatarUrl(userId)
   },
   loggingIn: function() {
-    return Meteor.loggingIn();
-  }
+    return Meteor.loggingIn() || !Roles.subscription.ready()
+  },
 }
 
 _.each(helpers, function(helper, name) {

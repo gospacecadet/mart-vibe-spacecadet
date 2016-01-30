@@ -51,7 +51,6 @@ Template.manageSpace.onCreated(function() {
 })
 
 Template.manageSpaceForbid.onCreated(function() {
-
   var property = Mart.Storefronts.findOne(this.data.storefrontId);
   var permitted = canManageProperty(property)
   if(!permitted)

@@ -6,3 +6,9 @@ MeteorErrorHook = {
     }
   }
 }
+
+function startPermitted(context) {
+  permit()
+}
+
+FlowRouter.triggers.enter([startPermitted]);

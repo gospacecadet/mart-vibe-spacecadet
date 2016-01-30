@@ -11,7 +11,7 @@
         {{/if}}
       </h2>
       {{#if Template.subscriptionsReady}}
-        {{> _managePropertiesForbid}}
+        {{> managePropertiesForbid}}
         <div class='manage-properties'>
           {{#if hasProperties}}
             {{#each properties}}
@@ -53,41 +53,19 @@
   <div class="row p-t-2">
     <div class='col-md-8 col-md-offset-4'>
 
-        {{#if addingSpace}}
+      <div class="row">
+        <div class='col-md-8 col-md-offset-4'>
           <h5>Rentable Spaces
-            <button type="button" name="button" class="btn btn-outline-danger pull-right cancel-space-button">
-              Cancel Space
-            </button>
-          </h5>
-        {{else}}
-          <div class="row">
-            <div class='col-md-8 col-md-offset-4'>
-              <h5>Rentable Spaces
-                <a type="button" nclass="btn btn-secondary pull-right"
-                  href="{{newSpacePath _id}}">
+            <a type="button" nclass="btn btn-secondary pull-right"
+              href="{{newSpacePath _id}}">
 
-                  Add A New Space
-                </a>
-              </h5>
-            </div>
-          </div>
-        {{/if}}
+              Add A New Space
+            </a>
+          </h5>
+        </div>
+      </div>
 
       <hr class="m-b-2">
-      {{#if addingSpace}}
-        <div class="row m-b-2">
-          {{#autoForm collection="Mart.Products" id="new-space-form" type="insert"}}
-            <fieldset>
-              {{> afQuickField name='name'}}
-              {{> afQuickField name='description' type='textarea' rows=4}}
-            </fieldset>
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Create Space</button>
-            <p class="text-muted m-a-1">
-              You will be able to continue editing before the Space is made visible to the public.
-            </p>
-          {{/autoForm}}
-        </div>
-      {{/if}}
 
       {{#if hasSpaces}}
         {{#each products}}
@@ -111,12 +89,12 @@
       <h6 class="media-heading"><strong>{{name}}</strong></h6>
       {{description}}
       <br>
-      <a href="{{manageSpacePath _id propertyId}}" class="btn btn-outline-primary m-t-2">
+      <a href="{{manageSpacePath _id storefrontId}}" class="btn btn-outline-primary m-t-2">
         Edit {{name}}
       </a>
     </div>
   </div>
 </template>
 
-<template name="_managePropertiesForbid">
+<template name="managePropertiesForbid">
 </template>

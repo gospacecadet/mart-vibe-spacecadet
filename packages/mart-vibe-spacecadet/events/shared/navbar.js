@@ -32,10 +32,10 @@ Template.navbarLogin.events({
      var email = $(event.target).find('[name=email]').val()
      var password = $(event.target).find('[name=password]').val()
      Meteor.loginWithPassword(email, password, function(error, response) {
-       console.log(error);
        if(error) {
          sAlert.error("You could not be logged in: " + error.reason)
        } else {
+         Meteor._reload.reload()
         //  sAlert.success("Logged in successfully!")
        }
      })
