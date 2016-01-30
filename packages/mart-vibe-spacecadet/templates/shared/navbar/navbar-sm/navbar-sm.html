@@ -25,7 +25,6 @@
           {{#if currentUser}}
             {{> navbarSmCart}}
             {{> navbarSmInbox}}
-            {{> navbarSmProfile}}
           {{/if}}
 
           {{#if isShopper}}
@@ -33,12 +32,15 @@
           {{/if}}
 
           {{#if isMerchant}}
+            {{> navbarSmManageDockings}}
             {{> navbarSmManageProperty}}
             {{> navbarSmBank}}
+            {{> navbarSmDockingHistory}}
           {{/if}}
 
           {{#if isAdmin}}
             {{> navbarSmTransfer}}
+            {{> navbarSmDockingHistory}}
           {{/if}}
 
           {{#if currentUser}}

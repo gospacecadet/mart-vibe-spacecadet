@@ -4,7 +4,7 @@ Template.threadButtons.helpers({
   }
 });
 
-Template.thread.onCreated(function() {
+Template.threadButtons.onCreated(function() {
   Session.setDefault(IS_SENDING_MESSAGE, true)
 })
 

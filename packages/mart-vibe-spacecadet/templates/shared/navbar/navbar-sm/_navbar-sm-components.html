@@ -50,6 +50,7 @@
 </template>
 
 <template name="navbarSmCommonBottom">
+  {{> navbarSmProfile}}
   {{> navbarSmSecurity}}
   {{> navbarSmLogout}}
 </template>
@@ -57,5 +58,11 @@
 <template name="navbarSmTransfer">
   <a class="list-group-item" href="{{transferFundsPath}}">
     <i class="fa fa-exchange"></i>&nbsp;&nbsp;Transfer Funds
+  </a>
+</template>
+
+<template name="navbarSmManageDockings">
+  <a class="list-group-item" href="{{manageDockingsPath}}">
+    <i class='fa fa-calendar'></i> Manage Dockings{{dockingsNotification}}
   </a>
 </template>
