@@ -1,10 +1,20 @@
 <template name="manageProperty">
   {{#if Template.subscriptionsReady}}
-    {{#with property}}
-      {{> managePropertySpaces}}
-      {{> managePropertyForm}}
-    {{/with}}
+    {{#if logginIn}}
+      {{> loading}}
+    {{else}}
+      {{#with property}}
+        {{> _manageProperty}}
+      {{/with}}
+    {{/if}}
   {{else}}
     {{> loading}}
   {{/if}}
+</template>
+
+<template name="_manageProperty">
+  <div class='m-t-2'>
+    {{> managePropertySpaces}}
+    {{> managePropertyForm}}
+  </div>
 </template>

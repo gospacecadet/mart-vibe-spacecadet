@@ -49,3 +49,11 @@ Template.manageSpace.onCreated(function() {
     template.subscribe("mart/product", spaceId);
   });
 })
+
+Template.manageSpaceForbid.onCreated(function() {
+
+  var property = Mart.Storefronts.findOne(this.data.storefrontId);
+  var permitted = canManageProperty(property)
+  if(!permitted)
+    forbid()
+})

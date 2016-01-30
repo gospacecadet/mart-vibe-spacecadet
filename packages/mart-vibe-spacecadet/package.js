@@ -52,6 +52,7 @@ Package.onUse(function(api) {
   paths = ['assets']
   api.addAssets(pre(paths) + "avatar.png", "client")
   api.addAssets(pre(paths) + "space.jpg", "client")
+  api.addAssets(pre(paths) + "forbidden.jpg", "client")
 
   ////////////////////////////////////////////////////
   // Lib
@@ -74,6 +75,7 @@ Package.onUse(function(api) {
       pre(paths) + 'collection-helpers.js',
       pre(paths) + 'image-helpers.js',
       pre(paths) + 'money-helpers.js',
+      pre(paths) + 'permission-helpers.js',
       pre(paths) + 'profile-helpers.js',
       pre(paths) + 'text-helpers.js',
       pre(paths) + 'time-helpers.js',
@@ -227,10 +229,11 @@ Package.onUse(function(api) {
 
     // Pages
     api.addFiles([
+      'templates/pages/about.html',
+      'templates/pages/forbidden.html',
       'templates/pages/homepage.html',
       'templates/pages/list-space.html',
       'templates/pages/not-found.html',
-      'templates/pages/about.html',
       'templates/pages/loading.html',
       'templates/pages/sxsw.html',
     ], 'client')
@@ -326,6 +329,7 @@ Package.onUse(function(api) {
   api.addFiles([
     pre(paths) + "hooks.js",
     pre(paths) + "properties/new-property.js",
+    pre(paths) + "properties/manage-properties.js",
     pre(paths) + "properties/manage-property.js",
     pre(paths) + "spaces/new-space.js",
     pre(paths) + "spaces/manage-space.js",
@@ -390,6 +394,7 @@ Package.onUse(function(api) {
     pre(paths) + 'accounts.scss',
     pre(paths) + 'dockings.scss',
     pre(paths) + 'footers.scss',
+    pre(paths) + 'forbidden.scss',
     pre(paths) + 'homepage.scss',
     pre(paths) + 'messages.scss',
     pre(paths) + 'navbar.scss',

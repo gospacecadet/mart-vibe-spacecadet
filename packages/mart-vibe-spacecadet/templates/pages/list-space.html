@@ -6,21 +6,25 @@
           {{> listSpaceHype}}
         </div>
         <div class="col-md-6 col-xs-12 m-t-1 col-xl-5">
-          {{#if currentUser}}
-            {{#if isMerchant}}
-              <h2 class='m-t-2 text-xs-center'>
-                You are already logged in.
-                Go to your <a href="{{managePropertyPath}}">Property Management Page</a> to start accepting dockings.
-              </h2>
-            {{else}}
-              <h2 class='m-t-2 text-xs-center'>
-                We are working on a feature to allow users with existing accounts to become Landlords.
-                For the moment, please email <a href="mailto:hello@spacecadet.io?subject=Becoming a Landlord">hello@spacecadet.io</a> if you would like to upgrade your account.
-              </h2>
-            {{/if}}
+          {{#if loggingIn}}
+            {{> loading}}
           {{else}}
-            <h1>Become a Landlord</h1>
-            {{> merchantSignUp}}
+            {{#if currentUser}}
+              {{#if isMerchant}}
+                <h2 class='m-t-2 text-xs-center'>
+                  You are already logged in.
+                  Go to your <a href="{{managePropertyPath}}">Property Management Page</a> to start accepting dockings.
+                </h2>
+              {{else}}
+                <h2 class='m-t-2 text-xs-center'>
+                  We are working on a feature to allow users with existing accounts to become Landlords.
+                  For the moment, please email <a href="mailto:hello@spacecadet.io?subject=Becoming a Landlord">hello@spacecadet.io</a> if you would like to upgrade your account.
+                </h2>
+              {{/if}}
+            {{else}}
+              <h1>Become a Landlord</h1>
+              {{> merchantSignUp}}
+            {{/if}}
           {{/if}}
         </div>
       </div>

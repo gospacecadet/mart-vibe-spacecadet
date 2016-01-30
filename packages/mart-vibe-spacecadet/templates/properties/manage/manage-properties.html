@@ -1,7 +1,7 @@
 <template name="manageProperties">
 <div class="container-fluid">
-  <div class="row m-a-2 p-a-2">
-    <div class="col-md-10 col-md-offset-1 white-box p-y-2">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 p-y-2">
       <h2>
         Manage Your Properties
         {{#if hasProperties}}
@@ -11,6 +11,7 @@
         {{/if}}
       </h2>
       {{#if Template.subscriptionsReady}}
+        {{> _managePropertiesForbid}}
         <div class='manage-properties'>
           {{#if hasProperties}}
             {{#each properties}}
@@ -115,4 +116,7 @@
       </a>
     </div>
   </div>
+</template>
+
+<template name="_managePropertiesForbid">
 </template>

@@ -3,16 +3,25 @@
   <div class='clearfix'></div>
 
   {{> sAlert}}
-  {{#if wBoxedStyle}}
-    {{> _boxedStyle}}
-  {{/if}}
 
-  {{#if wSettingsStyle}}
-    {{> _settingsStyle}}
-  {{/if}}
+  {{#if loggingIn}}
+    {{> loading}}
+  {{else}}
+    {{#if isForbbiden}}
+      {{> forbidden}}
+    {{else}}
+      {{#if wBoxedStyle}}
+        {{> _boxedStyle}}
+      {{/if}}
 
-  {{#if wDefaultStyle}}
-    {{> Template.dynamic template=content}}
+      {{#if wSettingsStyle}}
+        {{> _settingsStyle}}
+      {{/if}}
+
+      {{#if wDefaultStyle}}
+        {{> Template.dynamic template=content}}
+      {{/if}}
+    {{/if}}
   {{/if}}
 
   {{> footers}}

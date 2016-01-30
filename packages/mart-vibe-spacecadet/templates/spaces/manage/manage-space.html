@@ -1,6 +1,7 @@
 <template name="manageSpace">
   {{#if Template.subscriptionsReady}}
     {{#with space}}
+      {{> manageSpaceForbid}}
       <a href="{{managePropertyPath storefrontId}}" class='btn btn-link'>&lt;&lt; Edit {{propertyName}}</a>
       {{#autoForm collection="Mart.Products" id="updateSpaceForm" type="update" doc=this}}
         {{> _spaceDetails}}
@@ -49,4 +50,8 @@
   {{else}}
     {{> loading}}
   {{/if}}
+</template>
+
+<template name="manageSpaceForbid">
+
 </template>

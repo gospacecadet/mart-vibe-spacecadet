@@ -16,3 +16,7 @@ Template.mainLayout.helpers({
     return !this.style
   }
 });
+
+Template.mainLayout.onCreated(function() {
+  permit()
+});
