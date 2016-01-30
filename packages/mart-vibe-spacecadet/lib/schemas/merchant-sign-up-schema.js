@@ -29,8 +29,4 @@ MerchantSignUpSchema = new SimpleSchema({
     type: String,
     optional: true,
   },
-  termsAccepted: {
-    type: Boolean,
-    allowedValues: [true]
-  }
 })

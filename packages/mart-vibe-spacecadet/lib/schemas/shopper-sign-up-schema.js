@@ -22,8 +22,4 @@ ShopperSignUpSchema = new SimpleSchema({
       }
     }
   },
-  termsAccepted: {
-    type: Boolean,
-    allowedValues: [true]
-  },
 })
