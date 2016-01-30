@@ -31,12 +31,26 @@ var helpers = {
   },
   businessName: function() {
     return profileAttr("businessName")
+  },
+  avatarUrl: function() {
+    return _avatarUrl(Meteor.userId())
+  },
+  _avatarUrl: function(userId) {
+    return _avatarUrl(userId)
   }
 }
 
 _.each(helpers, function(helper, name) {
   Template.registerHelper(name, helper)
 })
+
+var _avatarUrl = function(userId) {
+  return _profileAttr(userId, "avatarUrl") || defaultAvatarUrl()
+}
+
+var defaultAvatarUrl = function() {
+  return "/packages/marvin_mart-vibe-spacecadet/assets/avatar.png"
+}
 
 var username = function() {
   var me = Meteor.user()

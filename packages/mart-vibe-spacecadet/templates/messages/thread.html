@@ -2,9 +2,7 @@
   {{#if Template.subscriptionsReady}}
     {{#if messages}}
       {{#with messages}}
-        <div class="modal-body">
-          {{> threadHistory}}
-        </div>
+        {{> threadHistory}}
       {{/with}}
     {{else}}
       <h4>To start a conversation, send a message below.</h4>
@@ -15,33 +13,68 @@
 </template>
 
 <template name="threadHistory">
-  <div class="container-fluid">
-    {{#each this}}
-      <div class="row">
-        {{> threadMessage}}
-      </div>
-    {{/each}}
-  </div>
+  {{#each this}}
+    {{> threadMessage}}
+  {{/each}}
 </template>
 
 <template name="threadMessage">
-  <div class="col-lg-2">
-    {{yourName}}
+  <div class="hidden-lg-down">
+    {{> threadMessageXL}}
   </div>
-  <div class='col-lg-8'>
-    <div class='row'>
-      <div class="{{messageClass}}" role="alert">
-        {{#if isAttachment}}
-          <p>File attached: <a href="{{attachmentUrl}}">{{attachmentName}}</a></p>
-        {{else}}
-          <p>{{body}}</p>
-        {{/if}}
 
-        <p class='text-sm text-muted'>{{dateAgo createdAt}}</p>
+  <div class="hidden-xl-up">
+    {{> messageContentMD}}
+  </div>
+</template>
+
+<template name="messageContentXL">
+  <div class="row">
+    <div class="{{messageColClass}}">
+      <div class="{{messageAlertClass}}" role="alert">
+        {{> threadCommonContent}}
       </div>
     </div>
   </div>
-  <div class="col-lg-2">
-    {{otherName}}
+</template>
+
+<template name="messageContentMD">
+  <div class="row">
+    <div class="{{messageColClass}}">
+      <div class="{{messageAlertClass}}" role="alert">
+        <p>
+          <strong>{{otherFirstName}}{{yourName}}</strong>
+        </p>
+        {{> threadCommonContent}}
+      </div>
+    </div>
   </div>
+</template>
+
+<template name="threadMessageXL">
+  <div class='row'>
+    <div class="col-lg-2 text-xs-right">
+      <span class="wordwrap">{{otherFirstName}}</span>
+    </div>
+
+    <div class='col-lg-8'>
+      {{> messageContentXL}}
+    </div>
+
+    <div class="col-lg-2 text-xs-left">
+      <span class='wordwrap'>{{yourName}}</span>
+    </div>
+  </div>
+</template>
+
+<template name="threadCommonContent">
+  {{#if isAttachment}}
+    <p>
+      File attached:&nbsp;&nbsp;
+      <a href="{{attachmentUrl}}" class='attached-file'>{{attachmentName}}</a>
+    </p>
+  {{else}}
+    <p>{{body}}</p>
+  {{/if}}
+  <p class='text-sm text-muted'>{{dateAgo createdAt}}</p>
 </template>

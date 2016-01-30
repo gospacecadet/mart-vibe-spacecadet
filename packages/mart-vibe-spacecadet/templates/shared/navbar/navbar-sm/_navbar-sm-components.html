@@ -21,13 +21,13 @@
 
 <template name="navbarSmManageProperty">
   <a class="list-group-item" href="{{managePropertiesPath}}">
-    Manage Property
+    <i class="fa fa-building-o"></i>&nbsp;&nbsp;Manage Property
   </a>
 </template>
 
 <template name="navbarSmBank">
   <a class="list-group-item" href="{{bankAccountsPath}}">
-    Bank Accounts
+    <i class="fa fa-bank"></i>&nbsp;&nbsp;Bank Accounts
   </a>
 </template>
 
@@ -41,6 +41,17 @@
   <button class="list-group-item" id="logout-button">
     <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Log Out
   </button>
+</template>
+
+<template name="navbarSmSecurity">
+  <a class="list-group-item" href="{{securityPath}}">
+    <i class="fa fa-key"></i>&nbsp;&nbsp;Password &amp; Security
+  </a>
+</template>
+
+<template name="navbarSmCommonBottom">
+  {{> navbarSmSecurity}}
+  {{> navbarSmLogout}}
 </template>
 
 <template name="navbarSmTransfer">

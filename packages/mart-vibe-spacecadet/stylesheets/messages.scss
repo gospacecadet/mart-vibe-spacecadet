@@ -1,8 +1,3 @@
-#send-message-button {
-  // min-height: 100%;
-  // border-color: #fff;
-}
-
 .send-message-div {
   align-items: center;
   display: flex;
@@ -12,7 +7,6 @@
 .attach-file-div {
   align-items: center;
   display: flex;
-  // justify-content: center;
 }
 
 .empty-modal-footer {
@@ -21,4 +15,10 @@
 
 .alert.bg-teal-light > .text-muted {
   color: rgb(192, 193, 191);
+}
+
+.bg-teal-light {
+  a.attached-file {
+    color: rgb(162, 45, 204);
+  }
 }

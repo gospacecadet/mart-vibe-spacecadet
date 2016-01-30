@@ -1,21 +1,21 @@
 <template name="threads">
-<h4 class='text-xs-center'>Threads</h4>
 {{#each threads}}
   {{#with thread}}
     {{> threadPreview}}
+    <hr>
   {{/with}}
 {{/each}}
 </template>
 
 <template name="threadPreview">
-  <a href="{{threadPath recipientId}}" class="btn btn-link tab-box">
+  <a href="{{threadPath recipientId}}">
     <div class="row">
-      <div class="col-lg-4">
-        PIC
-        <!-- <img src="{{avatarUrl}}" alt="{{name}}" class="img-responsive img-circle"/> -->
+      <div class="col-xs-2 col-sm-4 p-r-0">
+        <img src="{{avatarUrl recipientId}}" alt="{{reicipientName}}"
+          class="img-fluid img-circle"/>
       </div>
-      <div class="col-lg-8">
-        {{recipientName}}
+      <div class="col-xs-10 col-sm-8 text-xs-left">
+        <span class='wordwrap'>{{recipientFirstName}}{{prettyUnreadCount}}</span>
       </div>
     </div>
   </a>
