@@ -1,7 +1,9 @@
 var hooksObject = {
   onSubmit: function(insertDoc) {
+    console.log(insertDoc);
     var hook = this
-    Mart.Storefronts.insert(insertDoc, function(error, storefrontId) {
+    var storefrontId = FlowRouter.getParam('propertyId')
+    Mart.Storefronts.update(storefrontId, {$set: insertDoc}, function(error, storefrontId) {
       if(error) {
         hook.done(error)
       } else {
