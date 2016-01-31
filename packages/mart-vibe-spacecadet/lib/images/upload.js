@@ -1,7 +1,7 @@
 uploadImageVersions = function(blob, objectCollection, objectId, index, objectExists, callback) {
   var directiveEndings = ['Original', 'Optimized', 'Thumbnail']
   var imageUrls = {}
-  console.log(objectId);
+
   // TODO possible collisions. Ideally copy images over once a property is created.
   if(!objectId)
     objectId = Random.id()
@@ -90,7 +90,6 @@ attachUploadedImages = function(type, objectId) {
 
 var upload = function(blob, uploader, imageUrls, ending, callback) {
   uploader.send(blob, function(error, downloadUrl) {
-    console.log(downloadUrl);
     if(error) {
       callback(error)
     } else {
@@ -104,7 +103,7 @@ var upload = function(blob, uploader, imageUrls, ending, callback) {
 }
 
 // return blob
-var resizeImage = function(file, options, callback) {
+resizeImage = function(file, options, callback) {
   var fileData = {
     name: file.name,
     type: file.type
@@ -122,8 +121,6 @@ var resizeImage = function(file, options, callback) {
 
     // Resize image with orientation metadata.
     loadImage(file, function(canvas) {
-      console.log('LOAD IMAGE');
-      console.log(canvas);
       canvas.toBlob(function(blob) {
         fileData.data = blob
         fileData.data.type = file.type;

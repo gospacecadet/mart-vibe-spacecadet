@@ -7,7 +7,10 @@
         </div>
         <div class='col-lg-9 col-sm-8 col-xs-12 p-t-2'>
           {{#with currentThread}}
-            <h4 class='text-xs-center m-b-2'>Conversation with {{recipientName}}</h4>
+            <h4 class='text-xs-center m-b-2'>
+              Conversation with {{recipientName}}&nbsp;&nbsp;
+              <img src="{{_avatarUrl recipientId}}" alt="{{recipientName}} Picture" class='img-fluid thread-recipient-img img-circle'/>
+            </h4>
             {{> thread}}
             <hr>
             {{> threadButtons}}

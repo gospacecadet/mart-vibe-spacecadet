@@ -47,7 +47,7 @@ _.each(helpers, function(helper, name) {
   Template.registerHelper(name, helper)
 })
 
-var _avatarUrl = function(userId) {
+ _avatarUrl = function(userId) {
   return _profileAttr(userId, "avatarUrl") || defaultAvatarUrl()
 }
 

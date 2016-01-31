@@ -197,6 +197,7 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/accounts/merchant-sign-up.html',
     'templates/accounts/my-profile.html',
+    'templates/accounts/my-profile-avatar.html',
     'templates/accounts/security.html',
     'templates/accounts/shopper-sign-up.html',
   ], 'client')
@@ -349,6 +350,7 @@ Package.onUse(function(api) {
   paths = ['lifecycles']
   api.addFiles([
     pre(paths) + "hooks.js",
+    pre(paths) + "accounts/my-profile-avatar.js",
     pre(paths) + "properties/new-property.js",
     pre(paths) + "properties/manage-properties.js",
     pre(paths) + "properties/manage-property.js",
@@ -360,6 +362,7 @@ Package.onUse(function(api) {
   // Events
   paths = ['events']
   api.addFiles([
+    pre(paths) + 'accounts/my-profile-avatar.js',
     pre(paths) + 'shared/login-modal.js',
     pre(paths) + 'shared/navbar.js',
     pre(paths) + 'spaces/manage/manage-space.js',
@@ -378,6 +381,7 @@ Package.onUse(function(api) {
   // Helpers
   paths = ['helpers']
   api.addFiles([
+    pre(paths) + 'accounts/my-profile-avatar.js',
     pre(paths) + 'shared/loading.js',
     pre(paths) + 'shared/login-modal.js',
     pre(paths) + 'spaces/manage/manage-space.js',
