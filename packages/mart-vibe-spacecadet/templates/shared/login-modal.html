@@ -9,9 +9,14 @@
         <div class="modal-body">
           <div class="container-fluid">
             {{#if loginModalLogin}}
-              <button type="button" id="loginModalSignUpInstead" class="btn btn-outline-primary">
+              {{> userLogin}}
+
+              <button type="button" id="loginModalSignUpInstead"
+                class="btn btn-outline-primary m-t-2">
+
                 Sign Up Instead
               </button>
+
             {{else}}
               <p>
                 SpaceCadet is just about the coolest thing around.
@@ -19,7 +24,9 @@
               </p>
               {{> shopperSignUp}}
 
-              <button type="button" id="loginModalLoginInstead" class="btn btn-outline-primary">
+              <button type="button" id="loginModalLoginInstead"
+                class="btn btn-outline-primary">
+
                 Login Instead
               </button>
             {{/if}}

@@ -106,6 +106,7 @@ Package.onUse(function(api) {
       pre(paths) + 'price-schema.js',
       pre(paths) + 'profile-schema.js',
       pre(paths) + 'shopper-sign-up-schema.js',
+      pre(paths) + 'user-login-schema.js',
     ], 'client')
 
     api.export("CreditCardSchema", "client")
@@ -117,6 +118,7 @@ Package.onUse(function(api) {
     api.export("PriceSchema", "client")
     api.export("ProfileSchema", "client")
     api.export("ShopperSignUpSchema", "client")
+    api.export("UserLoginSchema", "client")
 
     // Session IDs
     paths = ['lib', 'session-ids']
@@ -171,6 +173,7 @@ Package.onUse(function(api) {
     'templates/shared/footers.html',
     'templates/shared/login-modal.html',
     'templates/shared/split-title.html',
+    'templates/shared/user-login.html',
   ], 'client')
 
     // Navbar
@@ -403,6 +406,7 @@ Package.onUse(function(api) {
     pre(paths) + 'new-space-edit-price.js',
     pre(paths) + 'new-space.js',
     pre(paths) + 'password-update-form.js',
+    pre(paths) + 'user-login-form.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

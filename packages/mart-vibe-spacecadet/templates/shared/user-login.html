@@ -1,0 +1,18 @@
+<template name="userLogin">
+  {{#autoForm schema="UserLoginSchema" id="userLoginForm" type="normal"}}
+
+  {{> afQuickField name='email' type='email' class='form-control form-control-lg'
+    placeholder="Email" label=false}}
+
+  {{> afQuickField name='password' type='password' class='form-control form-control-lg'
+    placeholder="Password" label=false}}
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">
+      Login
+    </button>
+    <a href="{{resetPasswordPath}}">Forgot password?</a>
+
+
+
+  {{/autoForm}}
+</template>
