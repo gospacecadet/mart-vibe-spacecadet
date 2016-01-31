@@ -4,7 +4,7 @@ Package.describe({
   // Brief, one-line summary of the package.
   summary: 'A Vibe for Mart, built for SpaceCadet.',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/marvinmarnold/mart-vibe-spacecadet',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -19,8 +19,10 @@ Package.onUse(function(api) {
     'underscore',
     'jquery',
     'reactive-var',
-    'accounts-password'
-  ], 'client');
+    'accounts-password',
+    'check',
+    'ejson'
+  ]);
 
   api.use([
     'kadira:blaze-layout@2.3.0',
@@ -34,7 +36,8 @@ Package.onUse(function(api) {
     'lepozepo:accounting@1.0.0',
     'fortawesome:fontawesome@4.5.0',
     'momentjs:moment@2.10.6',
-    'marvin:javascript-load-image@2.1.2'
+    'marvin:javascript-load-image@2.1.2',
+    'altapp:recaptcha@2.0.0'
   ])
 
 
@@ -45,6 +48,10 @@ Package.onUse(function(api) {
   ])
 
   api.use('twbs:bootstrap@4.0.0-alpha.2', 'client');
+
+  // reCAPTCHA
+  api.addFiles(['server/recaptcha.js', 'server/methods.js'], 'server');
+  api.addFiles('lib/recaptcha.js', 'client');
 
   var paths
   ////////////////////////////////////////////////////
@@ -233,8 +240,9 @@ Package.onUse(function(api) {
       'templates/pages/forbidden.html',
       'templates/pages/homepage.html',
       'templates/pages/list-space.html',
-      'templates/pages/not-found.html',
       'templates/pages/loading.html',
+      'templates/pages/not-found.html',
+      'templates/pages/reset-password.html',
       'templates/pages/sxsw.html',
     ], 'client')
 
@@ -355,6 +363,7 @@ Package.onUse(function(api) {
     pre(paths) + 'spaces/manage/manage-space-image.js',
     pre(paths) + 'spaces/new/new-space.js',
     pre(paths) + 'spaces/new/new-space-image.js',
+    pre(paths) + 'pages/reset-password.js',
     pre(paths) + 'properties/new/new-property-image.js',
     pre(paths) + 'properties/manage/manage-property.js',
     pre(paths) + 'properties/manage/manage-property-image.js',

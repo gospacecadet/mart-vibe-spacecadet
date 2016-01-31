@@ -26,6 +26,32 @@ FlowRouter.route('/privacy', {
   }
 });
 
+FlowRouter.route('/reset-password', {
+  name: "resetPassword",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "resetPassword",
+      contentRight: "generalSettingsMenu",
+      style: STYLES.SETTINGS,
+      title: "Reset Password",
+      subtitle: "Request password reset.",
+    });
+  }
+});
+
+FlowRouter.route('/reset-password-link', {
+  name: "resetPasswordLink",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "resetPasswordLink",
+      contentRight: "generalSettingsMenu",
+      style: STYLES.SETTINGS,
+      title: "Reset Password",
+      subtitle: "Reset your password.",
+    });
+  }
+});
+
 FlowRouter.notFound = {
   action: function() {
     BlazeLayout.render("mainLayout", {content: 'notFound'})

@@ -40,9 +40,21 @@
 
 
 <template name="navbarLogin">
+
   <form class="form-inline pull-xs-right" id='navbar-login'>
-    <input class="form-control" name="email" type="email" placeholder="Email">
-    <input class="form-control" name="password" type="password" placeholder="Password">
-    <button class="btn btn-outline-primary" type="submit">Log In</button>
+    <fieldset class="form-group">
+      <input class="form-control" name="email" type="email" placeholder="Email">
+      <br/><small><a href="/">Sign Up!</a></small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <input class="form-control" name="password" type="password" placeholder="Password">
+      <br/><small><a href="{{resetPasswordPath}}">Forgot password?</a></small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <button class="btn btn-outline-primary" type="submit">Log In</button>
+      <br/>&nbsp;
+    </fieldset>
   </form>
 </template>

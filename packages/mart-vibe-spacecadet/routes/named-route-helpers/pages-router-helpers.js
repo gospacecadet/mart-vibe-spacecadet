@@ -1,15 +1,28 @@
-Template.registerHelper("aboutPath", function () {
-  return FlowRouter.path('about')
+var helpers = {
+  aboutPath: function() {
+    return FlowRouter.path('about')
+  },
+  listSpacePath: function() {
+    return FlowRouter.path('listSpace')
+  },
+  privacyPath: function() {
+    return FlowRouter.path('privacy')
+  },
+  termsPath: function() {
+    return FlowRouter.path('terms')
+  },
+  resetPasswordPath: function() {
+    return FlowRouter.path('resetPassword')
+  },
+  resetPasswordLinkPath: function() {
+    return resetPasswordLinkPath()
+  },
+}
+
+_.each(helpers, function(helper, name) {
+  Template.registerHelper(name, helper)
 })
 
-Template.registerHelper("listSpacePath", function () {
-  return FlowRouter.path('listSpace')
-})
-
-Template.registerHelper("privacyPath", function () {
-  return FlowRouter.path('privacy')
-})
-
-Template.registerHelper("termsPath", function () {
-  return FlowRouter.path('terms')
-})
+resetPasswordLinkPath = function() {
+  return FlowRouter.path('resetPasswordLink')
+}
