@@ -406,6 +406,7 @@ Package.onUse(function(api) {
     pre(paths) + 'new-space-edit-price.js',
     pre(paths) + 'new-space.js',
     pre(paths) + 'password-update-form.js',
+    pre(paths) + 'shopper-sign-up.js',
     pre(paths) + 'user-login-form.js',
   ], 'client')
 

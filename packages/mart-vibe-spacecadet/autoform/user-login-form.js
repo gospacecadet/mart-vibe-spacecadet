@@ -7,14 +7,15 @@ var hooksObject = {
 
     $('#loginModal').on('hidden.bs.modal', function (e) {
       Meteor.loginWithPassword(email, password, function(error) {
-        Meteor.setTimeout(function () {
-          if(error) {
+        if(error) {
+          Meteor.setTimeout(function () {
             $("#loginModal").modal('show')
-          } else {
-            sAlert.success("Successfully logged in.")
-          }
-        }, 2 * 1000);
-
+            throwError(error.reason)
+          }, 2 * 1000);
+        } else {
+          sAlert.success("Successfully logged in.")
+        }
+        
         hook.done()
       })
     })

@@ -1,5 +1,5 @@
 <template name="shopperSignUp">
-  <div class="m-b-3 m-t-2">
+  <div class="m-b-2 m-t-2">
     {{#autoForm schema="ShopperSignUpSchema" id="shopper-sign-up-homepage" type="normal"}}
 
     <div class='row m-t-2'>
@@ -19,12 +19,18 @@
           {{> afQuickField name='passwordConfirmation' type='password' class='form-control form-control-lg' placeholder="Password Confirmation" label=false}}
         </div>
       </div>
-      
+
       <p class="text-muted">
         By clicking Sign Up, you agree to our <a href="{{termsPath}}">Terms</a>.
       </p>
 
       <button type="submit" class="btn btn-primary btn-lg btn-block ">Sign Up for Free</button>
+
+      <div class='clearfix p-b-1'>
+
+      </div>
+
+      {{> errors}}
     {{/autoForm}}
   </div>
 </template>
