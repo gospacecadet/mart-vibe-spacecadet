@@ -8,5 +8,8 @@ FlowRouter.route('/transfer-funds', {
       title: "Transfer Funds",
       subtitle: "Transfer funds to landlords.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Transfer Funds"
+  }]
 });

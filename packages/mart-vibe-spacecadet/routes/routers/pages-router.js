@@ -2,28 +2,40 @@ FlowRouter.route('/about', {
   name: "about",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "about"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - About"
+  }]
 });
 
 FlowRouter.route('/list-space', {
   name: "listSpace",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "listSpace"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - List Your Space"
+  }]
 });
 
 FlowRouter.route('/terms', {
   name: "terms",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "terms"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Terms & Conditions"
+  }]
 });
 
 FlowRouter.route('/privacy', {
   name: "privacy",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "privacy"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Privacy Policy"
+  }]
 });
 
 FlowRouter.route('/reset-password', {

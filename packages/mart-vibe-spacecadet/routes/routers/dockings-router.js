@@ -2,7 +2,10 @@ FlowRouter.route('/dock', {
   name: "dock",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "dock"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Dock"
+  }]
 });
 
 FlowRouter.route('/manage', {
@@ -15,7 +18,10 @@ FlowRouter.route('/manage', {
       title: "Docking Management",
       subtitle: "Manage new docking requests, generate reports, and get analysis on how your properties are doing.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Manage Dockings"
+  }]
 });
 
 FlowRouter.route('/docking-history', {
@@ -28,7 +34,10 @@ FlowRouter.route('/docking-history', {
       title: "Docking History",
       subtitle: "Review upcoming dockings and get order history.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Docking History"
+  }]
 });
 
 // FlowRouter.route('/docking-confirmation/:cartIds', {

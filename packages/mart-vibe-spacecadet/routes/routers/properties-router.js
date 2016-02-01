@@ -10,21 +10,30 @@ FlowRouter.route('/new-property', {
       For example, if you are a farmers market, the Property is the entire market. \
       You will be able to add spaces next.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - New Property"
+  }]
 });
 
 FlowRouter.route('/', {
   name: "homepage",
   action: function() {
     BlazeLayout.render("homepageLayout", {content: "homepage"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet"
+  }]
 });
 
 FlowRouter.route('/properties', {
   name: "manageProperties",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "manageProperties"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Manage Properties"
+  }]
 });
 
 FlowRouter.route('/:propertyId/manage', {
@@ -38,7 +47,10 @@ FlowRouter.route('/:propertyId/manage', {
       subtitle: "Review property details. \
       In order to publish your Property to the public you will need to add at least one Space and one image."
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Edit & Publish Property"
+  }]
 });
 
 FlowRouter.route('/:propertyId/new-space', {
@@ -52,14 +64,20 @@ FlowRouter.route('/:propertyId/new-space', {
       subtitle: "Spaces are the units that are available for rent on your property. \
       Be sure to upload at least one image and set at least one price in order to be able to publish the space to the public."
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - New Space"
+  }]
 });
 
 FlowRouter.route('/:propertyId', {
   name: "property",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "property"});
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - View Property"
+  }]
 });
 
 FlowRouter.route('/:propertyId/manage/:spaceId', {
@@ -73,7 +91,10 @@ FlowRouter.route('/:propertyId/manage/:spaceId', {
       subtitle: "Spaces are the units that are available for rent on your property. \
       Be sure to upload at least one image and set at least one price in order to be able to publish the space to the public."
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Edit & Publish Space"
+  }]
 });
 
 FlowRouter.route('/:propertyId/:spaceId', {

@@ -152,6 +152,7 @@ Package.onUse(function(api) {
       pre(paths) + 'messages-router-helpers.js',
       pre(paths) + 'pages-router-helpers.js',
       pre(paths) + 'properties-router-helpers.js',
+      pre(paths) + 'subscriptions-router-helpers.js',
     ], 'client')
 
     // Routers
@@ -164,6 +165,7 @@ Package.onUse(function(api) {
       pre(paths) + 'messages-router.js',
       pre(paths) + 'pages-router.js',
       pre(paths) + 'properties-router.js',
+      pre(paths) + 'subscriptions-router.js',
     ], 'client')
 
   /////////////////////////////////////////////////////////////
@@ -317,6 +319,13 @@ Package.onUse(function(api) {
         pre(paths) + '_space-connection-charge-exp.html',
       ], 'client')
 
+
+    // Subscriptions
+    paths = ['templates', 'subscriptions']
+    api.addFiles([
+      pre(paths) + 'space/subscriptions.html',
+    ], 'client')
+
   ////////////////////////////////////////////////////////////////////////
   // JS
   api.addFiles([
@@ -396,6 +405,7 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'subscriptions/subscriptions.js',
 
 
   ], 'client')

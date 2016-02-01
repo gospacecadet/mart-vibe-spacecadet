@@ -8,5 +8,8 @@ FlowRouter.route('/bank-accounts', {
       title: "Manage Bank Accounts",
       subtitle: "Create and link bank accounts where you wish to receive your funds",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Manage Bank Accounts"
+  }]
 });

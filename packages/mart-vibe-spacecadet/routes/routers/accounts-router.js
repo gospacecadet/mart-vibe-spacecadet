@@ -8,7 +8,10 @@ FlowRouter.route('/security', {
       title: "Security Settings",
       subtitle: "Update your password",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Security Settings"
+  }]
 });
 
 FlowRouter.route('/profile', {
@@ -21,5 +24,8 @@ FlowRouter.route('/profile', {
       title: "My Profile",
       subtitle: "Edit your personal details & email.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Profile"
+  }]
 });

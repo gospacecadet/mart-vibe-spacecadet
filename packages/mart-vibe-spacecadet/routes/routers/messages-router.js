@@ -8,7 +8,10 @@ FlowRouter.route('/inbox', {
       title: "Inbox",
       subtitle: "Send and receive messages.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Inbox"
+  }]
 });
 
 FlowRouter.route('/inbox/:recipientId', {
@@ -21,5 +24,8 @@ FlowRouter.route('/inbox/:recipientId', {
       title: "Inbox",
       subtitle: "Send and receive messages.",
     });
-  }
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Inbox"
+  }]
 });
