@@ -10,7 +10,7 @@ Template.newSpace.onCreated(function() {
 
 Template.newSpaceForbid.onCreated(function() {
   var propertyId = FlowRouter.getParam('propertyId')
-  console.log(propertyId);
+
   var property = Mart.Storefronts.findOne(propertyId);
   var permitted = canManageProperty(property)
   if(!permitted)

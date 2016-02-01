@@ -10,6 +10,7 @@ var hooksObject = {
       } else {
         attachUploadedImages("Spaces", spaceId);
         _.each(prices, function(price) {
+          price.productId = spaceId
           if(price.unit && price.priceInDollars && price.productId) {
             var insertPrice = {
               unit: price.unit,

@@ -11,8 +11,6 @@ _.each(UNITS, function(unit) {
         return p
       })
 
-      console.log('setting prices');
-      console.log(prices);
       NEW_SPACE_PRICES.set(prices)
 
       hook.done()
