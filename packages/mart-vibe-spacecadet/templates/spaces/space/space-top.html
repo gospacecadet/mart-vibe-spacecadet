@@ -18,31 +18,6 @@
   </div>
 </template>
 
-<template name="spaceTopImageAndButtons">
-  <div class="m-y-3">
-    {{#if loggedIn}}
-      {{#autoForm collection="Mart.LineItems" id="insertLineItemForm" type="insert"}}
-        <fieldset>
-          {{> afQuickField name='unit' type='hidden' value=currentUnit}}
-          {{> afQuickField name='quantity' type='hidden' value=currentQuantity}}
-          {{> afQuickField name='startAtDate' type='hidden' value=currentDate}}
-          {{> afQuickField name='startAtHour' type='hidden' value=currentHour}}
-          {{> afQuickField name='startAtMinute' type='hidden' value=currentMinute}}
-
-          {{> afQuickField name='cartId' type='hidden' value="cartId"}}
-          {{> afQuickField name='productId' type='hidden' value=_id}}
-        </fieldset>
-        <button type="submit" class="btn btn-primary btn-block btn-lg btn-wrap">Book this space</button>
-        <button type="button" class="btn btn-gray-light m-t-1 btn-block p-y-1 btn-wrap" data-toggle="modal" data-target="#gridSystemModal">Direct message landlord</button>
-      {{/autoForm}}
-      {{> thread senderId=userId recipientId=propertyOwnerId}}
-    {{else}}
-      <button class="btn btn-primary btn-block btn-lg logged-out btn-wrap">Book this space</button>
-      <button class="btn btn-gray-light m-t-1 btn-block logged-out p-y-1 btn-wrap">Direct message landlord</button>
-    {{/if}}
-  </div>
-
-</template>
 
 <template name="spaceTopName">
   <h4 class="m-t-2">{{propertyName}}</h4>

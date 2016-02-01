@@ -1,9 +1,9 @@
-Template.registerHelper("checkoutPath", function () {
-  return dockPath()
+Template.registerHelper("checkoutPath", function (lineItemId) {
+  return dockPath(lineItemId)
 })
 
-Template.registerHelper("dockPath", function () {
-  return dockPath()
+Template.registerHelper("dockPath", function (lineItemId) {
+  return dockPath(lineItemId)
 })
 
 Template.registerHelper('manageDockingsPath', function() {
@@ -22,6 +22,6 @@ Template.registerHelper('dockingConfirmationPath', function(cartIds) {
   return FlowRouter.path('dockingConfirmation', {cartIds: cartIds})
 })
 
-dockPath = function() {
-  return FlowRouter.path('dock')
+dockPath = function(lineItemId) {
+  return FlowRouter.path('dock', {lineItemId: lineItemId})
 }

@@ -3,9 +3,9 @@
   <div class="white-box p-t-1 p-b-2 p-x-1">
     <h4>Docking details</h4>
 
-    {{#each carts}}
+    {{#with cart}}
       {{> reserveDockingDetailsCart}}
-    {{/each}}
+    {{/with}}
 
     {{> reserveDockingDetailsAddOns}}
     {{> errors}}
@@ -22,9 +22,10 @@
 <template name="reserveDockingDetailsLine">
   <tr>
     <td>{{productNameAtCheckout}}</td>
+    <td>{{dateSlashed startAtDate}}{{#if timeDetails}}<br/>{{timeDetails}}{{/if}}</td>
     <td>{{quantity}} {{unit}}s</td>
-    <td>{{money unitPriceAtCheckout}} / {{unit}}</td>
-    <td><button class="btn btn-outline-danger btn-sm remove-line-item-button">X</button></td>
+    <td>{{money unitPriceAtCheckout}}</td>
+    <!-- <td><button class="btn btn-outline-danger btn-sm remove-line-item-button">X</button></td> -->
   </tr>
 </template>
 
@@ -39,9 +40,10 @@
       <thead>
         <tr>
           <th>Space name</th>
+          <th>When</th>
           <th>Quantity</th>
           <th>Unit Price</th>
-          <th></th>
+          <!-- <th></th> -->
         </tr>
       </thead>
       <tbody>

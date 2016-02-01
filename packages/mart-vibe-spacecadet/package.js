@@ -323,7 +323,7 @@ Package.onUse(function(api) {
     // Subscriptions
     paths = ['templates', 'subscriptions']
     api.addFiles([
-      pre(paths) + 'space/subscriptions.html',
+      pre(paths) + 'subscriptions.html',
     ], 'client')
 
   ////////////////////////////////////////////////////////////////////////
@@ -372,6 +372,7 @@ Package.onUse(function(api) {
   paths = ['events']
   api.addFiles([
     pre(paths) + 'accounts/my-profile-avatar.js',
+    pre(paths) + 'line-items/new-line-item-form.js',
     pre(paths) + 'shared/login-modal.js',
     pre(paths) + 'shared/navbar.js',
     pre(paths) + 'spaces/manage/manage-space.js',

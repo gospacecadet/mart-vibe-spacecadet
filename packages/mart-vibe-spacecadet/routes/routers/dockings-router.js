@@ -1,4 +1,4 @@
-FlowRouter.route('/dock', {
+FlowRouter.route('/dock/:lineItemId', {
   name: "dock",
   action: function() {
     BlazeLayout.render("mainLayout", {content: "dock"});
