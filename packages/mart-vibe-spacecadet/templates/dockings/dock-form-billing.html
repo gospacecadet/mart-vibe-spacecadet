@@ -45,16 +45,16 @@
 
 <template name="reserveDockingFormBillingCards">
   <p class="text-muted lead">
-    Select a saved credit card or pay with a new one
+    Select a saved credit card or add a new one
   </p>
   <form id="creditCardSelection" class="form">
     <div class="row">
-      <div class="radio col-sm-4 col-xs-12">
+      <!-- <div class="radio col-sm-4 col-xs-12">
         <label>
           <input type="radio" name="creditCardRadio" id="add-new-card" checked>
           Pay with new card
         </label>
-      </div>
+      </div> -->
       {{#each creditCards}}
         {{> creditCardRadio}}
       {{/each}}
@@ -63,7 +63,7 @@
 </template>
 
 <template name="creditCardRadio">
-  <div class="radio col-sm-4 col-xs-12">
+  <div class="radio col-sm-6 col-xs-12">
     <label>
       <input type="radio" class="creditCardRadio" name="creditCardRadio" id="{{_id}}">
       {{label}}
