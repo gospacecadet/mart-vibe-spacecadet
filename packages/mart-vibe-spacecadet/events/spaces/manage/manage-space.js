@@ -10,5 +10,15 @@ Template.manageSpace.events({
   "click #save-space": function(event, template) {
      event.preventDefault()
      $("#updateSpaceForm").submit()
+  },
+  'click .unpublish-space-button': function(event, template) {
+    event.preventDefault()
+    var spaceId = template.currentData()._id
+
+    Meteor.call('mart/product/unpublish', spaceId, function(error, spaceId) {
+      if(error)
+        return sAlert.error("Please try again later.")
+
+      sAlert.success("Space unpublished!")    })
   }
 });

@@ -164,8 +164,8 @@ Package.onUse(function(api) {
       pre(paths) + 'bank-accounts-router.js',
       pre(paths) + 'dockings-router.js',
       pre(paths) + 'messages-router.js',
-      pre(paths) + 'pages-router.js',
       pre(paths) + 'subscriptions-router.js',
+      pre(paths) + 'pages-router.js',
       pre(paths) + 'properties-router.js',
     ], 'client')
 

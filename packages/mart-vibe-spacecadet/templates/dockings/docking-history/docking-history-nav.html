@@ -1,16 +1,22 @@
 <template name="dockingHistoryNav">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="{{dockingHistoryActive 'accepted'}}"
-        href="{{dockingHistoryAcceptedPath}}"><h3>Accepted Dockings</h3></a>
-    </li>
-    <li class="nav-item">
-      <a class="{{dockingHistoryActive 'pending'}}"
-        href="{{dockingHistoryPendingPath}}"><h3>Pending Dockings</h3></a>
-    </li>
-    <li class="nav-item">
-      <a class="{{dockingHistoryActive 'rejected'}}"
-        href="{{dockingHistoryRejectedPath}}"><h3>Rejected Dockings</h3></a>
-    </li>
-  </ul>
+  <div class='text-xs-center'>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="{{dockingHistoryActive 'accepted'}}"
+          href="{{dockingHistoryAcceptedPath}}"><h5>Accepted Dockings</h5></a>
+      </li>
+      <li class="nav-item">
+        <a class="{{dockingHistoryActive 'pending'}}"
+          href="{{dockingHistoryPendingPath}}"><h5>Pending Dockings</h5></a>
+      </li>
+      <li class="nav-item">
+        <a class="{{dockingHistoryActive 'rejected'}}"
+          href="{{dockingHistoryRejectedPath}}"><h5>Rejected Dockings</h5></a>
+      </li>
+      <li class="nav-item">
+        <a class="{{dockingHistoryActive 'subscriptions'}}"
+          href="{{subscriptionsPath}}"><h5>Subscriptions</h5></a>
+      </li>
+    </ul>
+  </div>
 </template>

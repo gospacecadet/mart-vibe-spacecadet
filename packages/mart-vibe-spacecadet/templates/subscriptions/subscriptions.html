@@ -1,18 +1,22 @@
 <template name="subscriptions">
+  {{> dockingHistoryNav}}
+
   {{#if Template.subscriptionsReady}}
     {{> subscriptionsForbid}}
-    {{#if subscriptions}}
-      <div class="list-group">
-        {{#each subscriptions}}
-          {{> subscription}}
-        {{/each}}
-      </div>
-    {{else}}
-      <h4>
-        You don't have any subscriptions.
-        All monthly dockings become subscriptions and you can cancel them from this page.
-      </h4>
-    {{/if}}
+    <div class='p-a-3'>
+      {{#if hasSubscriptions}}
+        <div class="list-group">
+          {{#each subscriptions}}
+            {{> subscription}}
+          {{/each}}
+        </div>
+      {{else}}
+        <h4 class='text-xs-center'>
+          You don't have any subscriptions.
+          All monthly dockings become subscriptions and you can cancel them from this page.
+        </h4>
+      {{/if}}
+    </div>
   {{else}}
     {{> loading}}
   {{/if}}
@@ -23,8 +27,21 @@
 </template>
 
 <template name="subscription">
-  <a href="#" class="list-group-item">
-    <h4 class="list-group-item-heading">List group item heading</h4>
-    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-  </a>
+  <div class="list-group-item">
+    <h4 class="list-group-item-heading">
+      {{storefrontName}}
+      {{#if isActive}}
+        <span class="label label-pill label-success">ACTIVE</span>
+      {{else}}
+        <span class="label label-pill label-success">CANCELLED</span>
+      {{/if}}
+    </h4>
+    <h4 class="list-group-item-heading text-muted">{{productName}}</h4>
+    <p class="list-group-item-text">Value: {{money total}}</p>
+    <p class="list-group-item-text">Value: {{dateSlashed startAt}}</p>
+
+    {{#if isActive}}
+      <button class='btn btn-danger cancel-subscription-button m-t-1 m-b-2'>Cancel</button>
+    {{/if}}
+  </div>
 </template>
