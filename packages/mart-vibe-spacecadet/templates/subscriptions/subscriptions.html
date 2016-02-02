@@ -33,7 +33,7 @@
       {{#if isActive}}
         <span class="label label-pill label-success">ACTIVE</span>
       {{else}}
-        <span class="label label-pill label-success">CANCELLED</span>
+        <span class="label label-pill label-danger">CANCELLED</span>
       {{/if}}
     </h4>
     <h4 class="list-group-item-heading text-muted">{{productName}}</h4>
@@ -41,7 +41,7 @@
     <p class="list-group-item-text">Value: {{dateSlashed startAt}}</p>
 
     {{#if isActive}}
-      <button class='btn btn-danger cancel-subscription-button m-t-1 m-b-2'>Cancel</button>
+      <button class='btn btn-danger cancel-subscription-button m-t-1 m-b-2'>Cancel Subscription</button>
     {{/if}}
   </div>
 </template>
