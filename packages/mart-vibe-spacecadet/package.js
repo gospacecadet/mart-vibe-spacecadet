@@ -389,6 +389,7 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property-spaces.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'subscriptions/subscriptions.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

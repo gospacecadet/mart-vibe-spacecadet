@@ -17,24 +17,7 @@
       </button>
 
       {{#if isPublished}}
-      <div class='row m-t-1'>
-        <div class='col-xs-12 col-sm-9 m-t-1'>
-          <button disabled class='btn btn-primary btn-lg btn-block'>
-            <h4><strong>SPACE PUBLISHED</strong></h4>
-            <h6 class='btn-wrap'>
-              This space is published. Make sure that the property it belongs to is also published to start accepting bookings.
-            </h6>
-          </button>
-        </div>
-
-        <div class='col-xs-12 col-sm-3 m-t-1'>
-          <button class="btn btn-danger btn-lg btn-block unpublish-space-button">
-            UNPUBLISH
-          </button>
-        </div>
-      </div>
-
-
+        {{> spacePublishedButtons}}
       {{else}}
         {{#if canPublishSpace}}
           <button id="publish-space" class='btn btn-primary btn-lg btn-block m-t-1'>
@@ -66,4 +49,23 @@
 
 <template name="manageSpaceForbid">
 
+</template>
+
+<template name="spacePublishedButtons">
+  <div class='row m-t-1'>
+    <div class='col-xs-12 col-sm-9 m-t-1'>
+      <button disabled class='btn btn-primary btn-lg btn-block'>
+        <h4><strong>SPACE PUBLISHED</strong></h4>
+        <h6 class='btn-wrap'>
+          This space is published. Make sure that the property it belongs to is also published to start accepting bookings.
+        </h6>
+      </button>
+    </div>
+
+    <div class='col-xs-12 col-sm-3 m-t-1'>
+      <button class="btn btn-danger btn-lg btn-block unpublish-space-button">
+        UNPUBLISH
+      </button>
+    </div>
+  </div>
 </template>
