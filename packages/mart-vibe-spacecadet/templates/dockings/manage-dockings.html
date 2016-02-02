@@ -1,9 +1,12 @@
 <template name="manageDockings">
-  <div class='col-md-8'>
-    {{> manageDockingsApproval}}
+  <div class='row'>
+    <div class='col-md-8 col-xs-12'>
+      {{> manageDockingsApproval}}
+    </div>
+
+    <div class='col-md-4 col-xs-12'>
+      {{> manageDockingsUpcoming}}
+    </div>
   </div>
 
-  <div class='col-md-4'>
-    {{> manageDockingsUpcoming}}
-  </div>
 </template>

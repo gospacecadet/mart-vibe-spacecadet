@@ -1,25 +1,29 @@
-Template.registerHelper("checkoutPath", function (lineItemId) {
-  return dockPath(lineItemId)
-})
+var helpers = {
+  checkoutPath: function(lineItemId) {
+    return dockPath(lineItemId)
+  },
+  dockPath: function(lineItemId) {
+    return dockPath(lineItemId)
+  },
+  manageDockingsPath: function() {
+    return FlowRouter.path('manageDockings')
+  },
+  dockingHistoryPendingPath: function() {
+    return FlowRouter.path('dockingHistoryPending')
+  },
+  dockingHistoryAcceptedPath: function() {
+    return FlowRouter.path('dockingHistoryAccepted')
+  },
+  dockingHistoryRejectedPath: function() {
+    return FlowRouter.path('dockingHistoryRejected')
+  },
+  dockingConfirmationPath: function() {
+    return FlowRouter.path('dockingConfirmation', {cartIds: cartIds})
+  },
+}
 
-Template.registerHelper("dockPath", function (lineItemId) {
-  return dockPath(lineItemId)
-})
-
-Template.registerHelper('manageDockingsPath', function() {
-  return FlowRouter.path('manageDockings')
-})
-
-Template.registerHelper('dockingsPath', function() {
-  return FlowRouter.path('dockingHistory')
-})
-
-Template.registerHelper('dockingHistoryPath', function() {
-  return FlowRouter.path('dockingHistory')
-})
-
-Template.registerHelper('dockingConfirmationPath', function(cartIds) {
-  return FlowRouter.path('dockingConfirmation', {cartIds: cartIds})
+_.each(helpers, function(helper, name) {
+  Template.registerHelper(name, helper)
 })
 
 dockPath = function(lineItemId) {

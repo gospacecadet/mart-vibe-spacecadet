@@ -1,0 +1,16 @@
+<template name="dockingHistoryNav">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="{{dockingHistoryActive 'accepted'}}"
+        href="{{dockingHistoryAcceptedPath}}"><h3>Accepted Dockings</h3></a>
+    </li>
+    <li class="nav-item">
+      <a class="{{dockingHistoryActive 'pending'}}"
+        href="{{dockingHistoryPendingPath}}"><h3>Pending Dockings</h3></a>
+    </li>
+    <li class="nav-item">
+      <a class="{{dockingHistoryActive 'rejected'}}"
+        href="{{dockingHistoryRejectedPath}}"><h3>Rejected Dockings</h3></a>
+    </li>
+  </ul>
+</template>

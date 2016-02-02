@@ -1,3 +1,30 @@
 <template name="subscriptions">
+  {{#if Template.subscriptionsReady}}
+    {{> subscriptionsForbid}}
+    {{#if subscriptions}}
+      <div class="list-group">
+        {{#each subscriptions}}
+          {{> subscription}}
+        {{/each}}
+      </div>
+    {{else}}
+      <h4>
+        You don't have any subscriptions.
+        All monthly dockings become subscriptions and you can cancel them from this page.
+      </h4>
+    {{/if}}
+  {{else}}
+    {{> loading}}
+  {{/if}}
 
+</template>
+
+<template name="subscriptionsForbid">
+</template>
+
+<template name="subscription">
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">List group item heading</h4>
+    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+  </a>
 </template>
