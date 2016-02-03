@@ -30,8 +30,8 @@ Template.spaceBookingForm.events({
         unit: unit,
         quantity: currentQuantity(spaceId),
         startAtDate: currentDate(spaceId),
-        startAtHour: 'required-for-simple-schema',
-        startAtMinute: 'required-for-simple-schema',
+        startAtHour: -1,
+        startAtMinute: -1,
         productId: spaceId,
         cartId: 'required-for-simple-schema'
       }, function(error, lineItemId) {
@@ -44,10 +44,10 @@ Template.spaceBookingForm.events({
     } else if(unit === MONTH) {
       Mart.LineItems.insert({
         unit: unit,
-        quantity: 'required-for-simple-schema',
+        quantity: 1,
         startAtDate: currentDate(spaceId),
-        startAtHour: 'required-for-simple-schema',
-        startAtMinute: 'required-for-simple-schema',
+        startAtHour: -1,
+        startAtMinute: -1,
         productId: spaceId,
         cartId: 'required-for-simple-schema'
       }, function(error, lineItemId) {

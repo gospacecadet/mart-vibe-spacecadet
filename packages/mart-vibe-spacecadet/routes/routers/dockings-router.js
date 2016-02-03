@@ -24,19 +24,51 @@ FlowRouter.route('/manage', {
   }]
 });
 
-FlowRouter.route('/docking-history', {
-  name: "dockingHistory",
+FlowRouter.route('/docking-history-pending', {
+  name: "dockingHistoryPending",
   action: function() {
     BlazeLayout.render("mainLayout", {
-      contentLeft: "dockingHistory",
+      contentLeft: "dockingHistoryPending",
       contentRight: "TODO",
       style: STYLES.SETTINGS,
       title: "Docking History",
-      subtitle: "Review upcoming dockings and get order history.",
+      subtitle: "Review dockings that are awaiting landlord approval.",
     });
   },
   triggersEnter: [function(context, redirect) {
-    document.title = "SpaceCadet - Docking History"
+    document.title = "SpaceCadet - Pending Dockings"
+  }]
+});
+
+FlowRouter.route('/docking-history-accepted', {
+  name: "dockingHistoryAccepted",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "dockingHistoryAccepted",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Docking History - Accepted",
+      subtitle: "Review accepted dockings.",
+    });
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Upcoming Docking History"
+  }]
+});
+
+FlowRouter.route('/docking-history-rejected', {
+  name: "dockingHistoryRejected",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "dockingHistoryRejected",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Docking History - Rejected",
+      subtitle: "View dockings that have been rejected.",
+    });
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Rejected Docking History"
   }]
 });
 

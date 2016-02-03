@@ -51,7 +51,9 @@ Template.manageSpace.onCreated(function() {
 })
 
 Template.manageSpaceForbid.onCreated(function() {
-  var property = Mart.Storefronts.findOne(this.data.storefrontId);
+  var propertyId = FlowRouter.getParam('propertyId')
+  console.log(propertyId);
+  var property = Mart.Storefronts.findOne(propertyId);
   var permitted = canManageProperty(property)
   if(!permitted)
     forbid()

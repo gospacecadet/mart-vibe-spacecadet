@@ -1,5 +1,5 @@
 uploadImageVersions = function(blob, objectCollection, objectId, index, objectExists, callback) {
-  var directiveEndings = ['Original', 'Optimized', 'Thumbnail']
+  var directiveEndings = ['Thumbnail', 'Optimized', 'Original']
   var imageUrls = {}
 
   // TODO possible collisions. Ideally copy images over once a property is created.

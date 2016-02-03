@@ -1,13 +1,11 @@
-Template.spaceTopForUnit.events({
-  "focus .start-date": function(event, template) {
-    var space = this;
-    $(event.target).datepicker({
-      onSelect: function(dateText, inst) {
-        Session.set(spaceDateId(space._id), new Date(dateText))
-      }
-    });
-  },
-});
+Template.spaceTopForUnit.onRendered(function() {
+  var spaceId = Template.currentData()._id
+  $('.start-date').pickadate({
+    onSet: function(context) {
+      Session.set(spaceDateId(spaceId), new Date(context.select))
+    }
+  })
+})
 
 Template.spaceTopForDaily.events({
   "change .daily-num": function(event, template) {

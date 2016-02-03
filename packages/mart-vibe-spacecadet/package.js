@@ -37,7 +37,8 @@ Package.onUse(function(api) {
     'fortawesome:fontawesome@4.5.0',
     'momentjs:moment@2.10.6',
     'marvin:javascript-load-image@2.1.2',
-    'altapp:recaptcha@2.0.0'
+    'altapp:recaptcha@2.0.0',
+    'fermuch:pickadate@1.0.0'
   ])
 
 
@@ -163,9 +164,9 @@ Package.onUse(function(api) {
       pre(paths) + 'bank-accounts-router.js',
       pre(paths) + 'dockings-router.js',
       pre(paths) + 'messages-router.js',
+      pre(paths) + 'subscriptions-router.js',
       pre(paths) + 'pages-router.js',
       pre(paths) + 'properties-router.js',
-      pre(paths) + 'subscriptions-router.js',
     ], 'client')
 
   /////////////////////////////////////////////////////////////
@@ -223,7 +224,10 @@ Package.onUse(function(api) {
       'templates/dockings/dock-form-billing.html',
       'templates/dockings/dock-form-contact.html',
       'templates/dockings/dock-details.html',
-      'templates/dockings/docking-history/docking-history.html',
+      'templates/dockings/docking-history/docking-history-accepted.html',
+      'templates/dockings/docking-history/docking-history-rejected.html',
+      'templates/dockings/docking-history/docking-history-pending.html',
+      'templates/dockings/docking-history/docking-history-nav.html',
       'templates/dockings/docking-history/docking.html',
       'templates/dockings/docking-history/docking-history-details.html',
       'templates/dockings/manage/manage-dockings.html',
@@ -385,6 +389,7 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property-spaces.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'subscriptions/subscriptions.js',
   ], 'client')
 
   ////////////////////////////////////////////////////////////////////////

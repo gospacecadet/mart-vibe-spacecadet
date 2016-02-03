@@ -1,0 +1,35 @@
+<template name="dockingHistoryPending">
+  {{> dockingHistoryNav}}
+
+  {{#if Template.subscriptionsReady}}
+    {{> dockingHistoryPendingForbid}}
+    <h3 class='text-xs-center m-t-2'>Pending Dockings</h3>
+    <div class="col-md-10 col-md-offset-1">
+      <p class='text-xs-center text-muted'>
+        Thank you for submitting your Dockings.
+        Please note that Landlords still need to approve your dockings before it can be confirmed.
+        You will receive an email if they accept or reject your request.
+        Some Landlords may message you with additional questions.
+      </p>
+    </div>
+    <div id="pendingDockingsAccordion" role="tablist"
+      aria-multiselectable="false" class='m-t-2'>
+
+      {{#if notEmpty pendingDockings}}
+        <div class='row'>
+          {{#each pendingDockings}}
+            {{> dockingCollapse docking=(docking "pendingDockingsAccordion")}}
+          {{/each}}
+        </div>
+      {{else}}
+        <h5 class='text-xs-center'>You have no pending Dockings.</h5>
+      {{/if}}
+    </div>
+
+  {{else}}
+    {{> loading}}
+  {{/if}}
+</template>
+
+<template name="dockingHistoryPendingForbid">
+</template>

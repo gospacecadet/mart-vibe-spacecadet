@@ -11,18 +11,8 @@ var helpers = {
   termsPath: function() {
     return FlowRouter.path('terms')
   },
-  resetPasswordPath: function() {
-    return FlowRouter.path('resetPassword')
-  },
-  resetPasswordLinkPath: function() {
-    return resetPasswordLinkPath()
-  },
 }
 
 _.each(helpers, function(helper, name) {
   Template.registerHelper(name, helper)
 })
-
-resetPasswordLinkPath = function() {
-  return FlowRouter.path('resetPasswordLink')
-}

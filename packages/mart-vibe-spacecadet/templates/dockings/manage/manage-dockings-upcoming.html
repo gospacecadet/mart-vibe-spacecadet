@@ -1,5 +1,7 @@
 <template name="manageDockingsUpcoming">
   <div class="manage-dockings-upcoming">
+    
+
     <h4 class='text-xs-center'>Upcoming Dockings</h4>
     <hr>
     {{#each upcomingDockings}}
@@ -12,9 +14,13 @@
   <h5>{{storefrontNameAtCheckout}}</h5>
   <h6 class='text-muted'>
     Renter: {{renterName}}
-    <small>
-      <a href="#">Send a message</a>
-    </small>
+    <small><button type="button" class="btn btn-link" data-toggle="modal"
+      data-target="#threadModal">Send a message</button></small>
+      {{#with renterThread}}
+        {{> threadModal}}
+      {{/with}}
+
+
   </h6>
   <div class='table-responsive'>
     <table class="table table-sm">
