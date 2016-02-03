@@ -2,10 +2,16 @@ Template.navbar.events({
   "click #navbar-toggler": function(event, template) {
     Meteor.setTimeout(function () {
       var mainNavHeight = $("#spacecadet-navabar").height()
+      var secondaryNavHeight = $("#secondary-navbar").height()
       var smNavHeight = $("#navbarUnhide").height()
 
-      var totalHeight = parseInt(mainNavHeight) + parseInt(smNavHeight)
+      var totalHeight = parseInt(mainNavHeight) +
+        parseInt(smNavHeight) 
+        // parseInt(secondaryNavHeight)
+
       totalHeight = totalHeight.toString() + "px"
+
+      console.log(totalHeight);
 
       $("#navbar-sm-padding").css('margin-top', totalHeight)
     }, 650);

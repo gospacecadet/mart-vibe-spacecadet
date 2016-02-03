@@ -256,6 +256,12 @@ Package.onUse(function(api) {
       'templates/pages/sxsw.html',
     ], 'client')
 
+    // SA LaunchPod
+    api.addFiles([
+      'templates/sa-launch-pod/sa-launch-pod.html',
+    ], 'client')
+
+
     // Properties
     paths = ['templates', 'properties']
     api.addFiles([
@@ -444,6 +450,7 @@ Package.onUse(function(api) {
     pre(paths) + 'navbar.scss',
     pre(paths) + 'not-found.scss',
     pre(paths) + 'property.scss',
+    pre(paths) + 'sa-launch-pod.scss',
     pre(paths) + 'space.scss',
     pre(paths) + 'spacecadet.scss',
   ], 'client')

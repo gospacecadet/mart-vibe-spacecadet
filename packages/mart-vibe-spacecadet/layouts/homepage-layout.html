@@ -1,6 +1,7 @@
 <template name="homepageLayout">
   {{> navbar}}
   <div class='clearfix'></div>
+  {{> secondaryNavbar}}
   {{> sAlert}}
   {{#if Template.subscriptionsReady}}
     {{> Template.dynamic template=content}}

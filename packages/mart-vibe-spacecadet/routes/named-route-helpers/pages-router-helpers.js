@@ -11,6 +11,9 @@ var helpers = {
   termsPath: function() {
     return FlowRouter.path('terms')
   },
+  saLaunchPodPath: function() {
+    return FlowRouter.path('saLaunchPod')
+  },
 }
 
 _.each(helpers, function(helper, name) {

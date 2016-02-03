@@ -8,6 +8,16 @@ FlowRouter.route('/about', {
   }]
 });
 
+FlowRouter.route('/sa-launch-pod', {
+  name: "saLaunchPod",
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "saLaunchPod"});
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - The SA LaunchPod"
+  }]
+});
+
 FlowRouter.route('/list-space', {
   name: "listSpace",
   action: function() {

@@ -53,6 +53,14 @@ $padding: 1.02rem;
   color: #fff;
 }
 
-// .bg-inverse > div > hr {
-//   border-color: $teal;
-// }
+.secondary-navbar {
+  width: 100%;
+
+  h3 {
+    color: rgb(131, 208, 195);
+  }
+
+  a {
+    color: #fff;
+  }
+}
