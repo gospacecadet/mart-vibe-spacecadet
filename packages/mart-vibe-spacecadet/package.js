@@ -38,7 +38,8 @@ Package.onUse(function(api) {
     'momentjs:moment@2.10.6',
     'marvin:javascript-load-image@2.1.2',
     'altapp:recaptcha@2.0.0',
-    'fermuch:pickadate@1.0.0'
+    'fermuch:pickadate@1.0.0',
+    'bojicas:howler2@2.0.0_9'
   ])
 
 
@@ -395,6 +396,7 @@ Package.onUse(function(api) {
     pre(paths) + 'properties/manage/manage-property-image.js',
     pre(paths) + 'properties/manage/manage-property-spaces.js',
     pre(paths) + 'properties/manage/manage-property-preview.js',
+    pre(paths) + 'sa-launch-pod/sa-launch-pod.js',
     pre(paths) + 'subscriptions/subscriptions.js',
   ], 'client')
 
