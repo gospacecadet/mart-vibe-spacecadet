@@ -3,10 +3,10 @@ Template.spaceBookingForm.events({
     event.preventDefault();
     var spaceId = template.data._id
     var unit = currentUnit(spaceId)
-    // console.log(currentDate(spaceId));
+
     if(currentDate(spaceId).getTime() < (new Date()).getTime()) {
       throwError("Must choose a date in the future")
-      return
+      return;
     }
 
     if(unit === HOUR) {
@@ -65,12 +65,12 @@ Template.spaceBookingForm.events({
 
 var insertSuccess = function(lineItemId) {
   sAlert.success("Item added to cart.")
-  $(".modal").modal('hide')
   $('.modal').on('hidden.bs.modal', function (e) {
     Meteor.setTimeout(function(spaceId) {
       FlowRouter.go(dockPath(lineItemId))
     }, 10)
   })
+  $(".modal").modal('hide')
 }
 
 var currentUnit = function(spaceId) {
