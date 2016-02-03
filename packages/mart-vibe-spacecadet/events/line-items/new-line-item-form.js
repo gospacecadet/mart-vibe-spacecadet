@@ -3,8 +3,8 @@ Template.spaceBookingForm.events({
     event.preventDefault();
     var spaceId = template.data._id
     var unit = currentUnit(spaceId)
-    console.log(currentDate(spaceId));
-    if(currentDate(spaceId).getTime() < new Date().getTime()) {
+    // console.log(currentDate(spaceId));
+    if(currentDate(spaceId).getTime() < (new Date()).getTime()) {
       throwError("Must choose a date in the future")
       return
     }
