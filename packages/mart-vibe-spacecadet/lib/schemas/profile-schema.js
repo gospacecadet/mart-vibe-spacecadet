@@ -7,11 +7,9 @@ ProfileSchema = new SimpleSchema({
   },
   firstName: {
     type: String,
-    optional: true
   },
   lastName: {
     type: String,
-    optional: true
   },
   phoneNumber: {
     type: String,
