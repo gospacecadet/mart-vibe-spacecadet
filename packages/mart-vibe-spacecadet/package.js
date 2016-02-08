@@ -38,7 +38,8 @@ Package.onUse(function(api) {
     'momentjs:moment@2.10.6',
     'marvin:javascript-load-image@2.1.2',
     'altapp:recaptcha@2.0.0',
-    'fermuch:pickadate@1.0.0'
+    'fermuch:pickadate@1.0.0',
+    'jrudio:videojs@5.4.4'
   ])
 
 

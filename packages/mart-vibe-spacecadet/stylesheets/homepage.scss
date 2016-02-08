@@ -12,3 +12,13 @@
   align-self: flex-end;
 
 }
+
+#spacecadet-video {
+  display: flex;
+  align-items: center;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
