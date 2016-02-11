@@ -39,7 +39,8 @@ Package.onUse(function(api) {
     'marvin:javascript-load-image@2.1.2',
     'altapp:recaptcha@2.0.0',
     'fermuch:pickadate@1.0.0',
-    'jrudio:videojs@5.4.4'
+    'jrudio:videojs@5.4.4',
+    'marvin:mart@0.0.2'
   ])
 
 
@@ -114,6 +115,7 @@ Package.onUse(function(api) {
 
     api.export("CreditCardSchema", "client")
     api.export("DockingSchema", "client")
+    api.export("MerchantProfileSchema", "client")
     api.export("MerchantSignUpSchema", "client")
     api.export("NewBankAccountSchema", "client")
     api.export("NewLineItemSchema", "client")
@@ -202,10 +204,13 @@ Package.onUse(function(api) {
   api.addFiles([
     'templates/accounts/merchant-profile-fields.html',
     'templates/accounts/merchant-sign-up.html',
+    'templates/accounts/merchant-update-profile-form.html',
     'templates/accounts/my-profile.html',
     'templates/accounts/my-profile-avatar.html',
     'templates/accounts/security.html',
+    'templates/accounts/shared-profile-fields.html',
     'templates/accounts/shopper-sign-up.html',
+    'templates/accounts/shopper-update-profile-form.html',
   ], 'client')
 
   // Admin

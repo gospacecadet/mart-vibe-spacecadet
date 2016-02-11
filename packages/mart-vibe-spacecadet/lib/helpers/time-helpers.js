@@ -56,7 +56,7 @@ var helpers = {
   dobYears: function() {
     var now = 2016
     return buildFullArray(now - 121, now - 18)
-  }
+  },
   hourlyNums: function() {
     return [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
   },

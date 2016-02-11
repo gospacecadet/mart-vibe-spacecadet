@@ -1,0 +1,12 @@
+<template name="merchantUpdateProfileForm">
+  {{#autoForm schema="MerchantProfileSchema" id="updateProfileForm"
+    type="normal" resetOnSuccess=false}}
+
+    {{> sharedProfileFields}}
+
+    {{> merchantProfileFields}}
+
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block m-t-3">Update Profile</button>
+  {{/autoForm}}
+</template>

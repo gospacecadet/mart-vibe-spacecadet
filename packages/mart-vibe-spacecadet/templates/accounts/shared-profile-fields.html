@@ -1,3 +1,48 @@
 <template name="sharedProfileFields">
+  {{#if username}}
+    <div class='row'>
+      <div class='col-xs-12 col-md-6 m-b-1'>
+        {{> myProfileAvatar}}
+      </div>
+      <div class='col-xs-12 col-md-6'>
+        <fieldset disabled>
+          {{> afQuickField name='username' value=username class='m-b-0 p-b-0'}}
+        </fieldset>
+      </div>
+    </div>
 
+  {{else}}
+    <div class='row'>
+      <div class='col-xs-12 col-md-6 m-b-1'>
+        {{> myProfileAvatar}}
+      </div>
+      <div class='col-xs-12 col-md-6'>
+        <fieldset class='my-profile-username p-a-1 m-b-2'>
+          {{> afQuickField name='username' value=username}}
+          <span>
+            This will be your permanent username.
+            You will <strong>not be able to reset</strong> it.
+          </span>
+        </fieldset>
+      </div>
+    </div>
+  {{/if}}
+  
+  <div class='row'>
+    <div class='col-sm-6 col-xs-12'>
+      {{> afQuickField name='email' type='email' value=email}}
+    </div>
+    <div class='col-sm-6 col-xs-12'>
+      {{> afQuickField name='phoneNumber' value=phoneNumber}}
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-sm-6 col-xs-12'>
+      {{> afQuickField name='firstName' value=firstName}}
+    </div>
+    <div class='col-sm-6 col-xs-12'>
+      {{> afQuickField name='lastName' value=lastName}}
+    </div>
+  </div>
 </template>
