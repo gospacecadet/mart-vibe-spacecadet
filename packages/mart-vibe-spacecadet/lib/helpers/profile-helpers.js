@@ -41,6 +41,9 @@ var helpers = {
   loggingIn: function() {
     return Meteor.loggingIn() || !Roles.subscription.ready()
   },
+  typesOnGateway: function() {
+    return typesOnGateway()
+  }
 }
 
 _.each(helpers, function(helper, name) {
@@ -49,6 +52,13 @@ _.each(helpers, function(helper, name) {
 
  _avatarUrl = function(userId) {
   return _profileAttr(userId, "avatarUrl") || defaultAvatarUrl()
+}
+
+typesOnGateway = function() {
+  return [
+    Mart.GatewayTypes.Stripe.TYPE_ON_GATEWAY.INDIVIDUAL,
+    Mart.GatewayTypes.Stripe.TYPE_ON_GATEWAY.COMPANY
+  ]
 }
 
 var defaultAvatarUrl = function() {

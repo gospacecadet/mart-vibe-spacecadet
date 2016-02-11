@@ -102,6 +102,7 @@ Package.onUse(function(api) {
       pre(paths) + 'credit-card-schema.js',
       pre(paths) + 'docking-schema.js',
       pre(paths) + 'merchant-sign-up-schema.js',
+      pre(paths) + 'merchant-profile-schema.js',
       pre(paths) + 'new-bank-account-schema.js',
       pre(paths) + 'new-line-item-schema.js',
       pre(paths) + 'password-update-schema.js',
@@ -199,6 +200,7 @@ Package.onUse(function(api) {
 
   // Accounts
   api.addFiles([
+    'templates/accounts/merchant-profile-fields.html',
     'templates/accounts/merchant-sign-up.html',
     'templates/accounts/my-profile.html',
     'templates/accounts/my-profile-avatar.html',
@@ -435,6 +437,7 @@ Package.onUse(function(api) {
     pre(paths) + 'new-space.js',
     pre(paths) + 'password-update-form.js',
     pre(paths) + 'shopper-sign-up.js',
+    pre(paths) + 'update-profile-form.js',
     pre(paths) + 'user-login-form.js',
   ], 'client')
 

@@ -24,6 +24,17 @@ buildArray = function(end) {
   return a
 }
 
+// Builds array [start, ..., end]
+// Inclusive of both start and end
+buildFullArray = function(start, end) {
+  var a = []
+  for(let i = start; i<= end; i++) {
+    a.push(i)
+  }
+
+  return a
+}
+
 SimpleSchema.messages({
   passwordMissmatch: "Passwords do not match"
 })
