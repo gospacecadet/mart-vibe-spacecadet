@@ -50,7 +50,7 @@ Package.onUse(function(api) {
     'juliancwirko:s-alert',
   ])
 
-  api.use('twbs:bootstrap@4.0.0-alpha.2', 'client');
+  api.use('twbs:bootstrap@4.0.0-spacecadet', 'client');
 
   // reCAPTCHA
   api.addFiles(['server/recaptcha.js', 'server/methods.js'], 'server');

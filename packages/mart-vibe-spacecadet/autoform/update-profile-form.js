@@ -20,9 +20,10 @@ var hooksObject = {
       if(error) {
         sAlert.error(error)
       } else {
-        sAlert.success("Profile successfully updated. Will now try to vefify your account through Stripe.")
+        sAlert.success("Profile successfully updated.")
 
         if(Mart.isMerchant()) {
+          sAlert.success("Attempting to vefify your account information with Stripe...")
           Meteor.call("mart/stripe/verify", function(error, result) {
             console.log('mart/stripe/verify');
             console.log(result);
