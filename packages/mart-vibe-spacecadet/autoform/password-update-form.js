@@ -12,5 +12,6 @@ var hooksObject = {
     return false;
   },
 };
+
 AutoForm.addHooks(['passwordUpdateForm'], hooksObject);
 AutoForm.addHooks('passwordUpdateForm', MeteorErrorHook, true);
