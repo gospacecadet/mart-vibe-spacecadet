@@ -32,6 +32,18 @@ var helpers = {
   businessName: function() {
     return profileAttr("businessName")
   },
+  dobDay: function() {
+    return profileAttr("dobDay")
+  },
+  dobMonth: function() {
+    return profileAttr("dobMonth")
+  },
+  dobYear: function() {
+    return profileAttr("dobYear")
+  },
+  typeOnGateway: function() {
+    return profileAttr("typeOnGateway")
+  },
   avatarUrl: function() {
     return _avatarUrl(Meteor.userId())
   },
@@ -43,6 +55,11 @@ var helpers = {
   },
   typesOnGateway: function() {
     return typesOnGateway()
+  },
+  _typesOnGateway() {
+    return _.map(typesOnGateway(), t => {
+      return {label: t, value: t}
+    })
   }
 }
 

@@ -1,7 +1,19 @@
 <template name="merchantProfileFields">
+  
+  <div class='row'>
+    <div class='col-xs-12 col-md-4'>
+      {{> afQuickField name='dobMonth' type='select' options=dobMonths value=dobMonth}}
+    </div>
+
+    <div class='col-xs-12 col-md-4'>
+      {{> afQuickField name='dobDay' type='select' options=dobDays value=dobDay}}
+    </div>
+
+    <div class='col-xs-12 col-md-4'>
+      {{> afQuickField name='dobYear' type='select' options=dobYears value=dobYear}}
+    </div>
+  </div>
+
   {{> afQuickField name='businessName' value=businessName}}
-  {{> afQuickField name='dobDay' type='select' options=dailyNums  value=dobDay}}
-  {{> afQuickField name='dobMonth' type='select' options=monthlyNums value=dobMonth}}
-  {{> afQuickField name='dobYear' type='select' options=dobYears value=dobYear}}
-  {{> afQuickField name='typeOnGateway' type='select' value=typeOnGateway}}
+  {{> afQuickField name='typeOnGateway' type='select' options=_typesOnGateway value=typeOnGateway}}
 </template>

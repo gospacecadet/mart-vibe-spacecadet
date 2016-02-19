@@ -43,19 +43,38 @@ var helpers = {
     return moment(date).format('ll')
   },
   monthlyNums: function() {
-    return [1,2,3,4,5,6,7,8,9,10,11,12]
+    return monthNums
   },
   dailyNums: function() {
-    return [
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-      11,12,13,14,15,16,17,18,19,20,
-      21,22,23,24,25,26,27,28,29,30, 31
-    ]
+    return dayNums
   },
   // Must be 18 to play
-  dobYears: function() {
+  dobYears() {
     var now = 2016
-    return buildFullArray(now - 121, now - 18)
+    return _.map(buildFullArray(now - 121, now - 18), year => {
+      return {value: year, label: year}
+    })
+  },
+  dobMonths() {
+    return [
+      {value: 1, label: "January"},
+      {value: 2, label: "February"},
+      {value: 3, label: "March"},
+      {value: 4, label: "April"},
+      {value: 5, label: "May"},
+      {value: 6, label: "June"},
+      {value: 7, label: "July"},
+      {value: 8, label: "August"},
+      {value: 9, label: "September"},
+      {value: 10, label: "October"},
+      {value: 11, label: "November"},
+      {value: 12, label: "December"},
+    ]
+  },
+  dobDays() {
+    return _.map(dayNums, day => {
+      return {value: day, label: day}
+    })
   },
   hourlyNums: function() {
     return [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
@@ -71,3 +90,10 @@ var helpers = {
 _.each(helpers, function(helper, name) {
   Template.registerHelper(name, helper)
 })
+
+var monthNums = [1,2,3,4,5,6,7,8,9,10,11,12]
+var dayNums = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  11,12,13,14,15,16,17,18,19,20,
+  21,22,23,24,25,26,27,28,29,30, 31
+]

@@ -19,15 +19,19 @@ MerchantProfileSchema = new SimpleSchema({
   },
   dobDay: {
     type: Number,
+    label: "Day of Birth"
   },
   dobMonth: {
     type: Number,
+    label: "Month of Birth"
   },
   dobYear: {
     type: Number,
+    label: "Year of Birth"
   },
   typeOnGateway: {
     type: String,
-    allowedValues: typesOnGateway()
+    allowedValues: typesOnGateway(),
+    label: "Business Type"
   }
 })

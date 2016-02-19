@@ -4,14 +4,8 @@
       {{#if currentUser}}
 
         {{#if isMerchant}}
-          <p>
-            merchant
-          </p>
           {{> merchantUpdateProfileForm}}
         {{else}}
-          <p>
-            shopper
-          </p>
           {{> shopperUpdateProfileForm}}
         {{/if}}
 
