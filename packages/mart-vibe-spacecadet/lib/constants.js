@@ -13,6 +13,27 @@ UNITS = [HOUR, DAY, MONTH]
 // Images
 NUM_IMAGES_ALLOWED = 4
 
+SUPPORTED_LOCATIONS = [
+  {
+    state: "Texas",
+    city: "San Antonio",
+    image: "locations/sanantonio.jpg",
+    text: "San Antonio"
+  },
+  {
+    state: "Texas",
+    city: "Austin",
+    image: "locations/austin.jpg",
+    text: "Austin"
+  },
+  {
+    state: "USA",
+    city: "USA",
+    image: "locations/usa.jpg",
+    text: "Rest of USA"
+  },
+]
+
 US_STATES = {
   "AL": "Alabama",
   "AK": "Alaska",

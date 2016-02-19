@@ -13,3 +13,19 @@ FlowRouter.route('/transfer-funds', {
     document.title = "SpaceCadet - Transfer Funds"
   }]
 });
+
+FlowRouter.route('/reports', {
+  name: "reports",
+  action: function() {
+    BlazeLayout.render("mainLayout", {
+      contentLeft: "reports",
+      contentRight: "TODO",
+      style: STYLES.SETTINGS,
+      title: "Reports",
+      subtitle: "Export CSV of dockings.",
+    });
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - Reports"
+  }]
+});

@@ -1,0 +1,28 @@
+<template name="reports">
+  {{#if Template.subscriptionsReady}}
+    {{> reportsForbid}}
+    <form class='p-y-2' id='report-form'>
+
+      <fieldset class="form-group">
+        <label for="startAnal">Start on (inclusive)</label>
+        <input type="text" name="startAnal" class='pickadate form-control' id='startAnal'>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="endAnal">End on (inclusive)</label>
+        <input type="text" name="endAnal" class='pickadate form-control' id='endAnal'>
+      </fieldset>
+
+      <button type="submit" class='btn btn-block btn-primary'>
+        Generate CSV
+      </button>
+    </form>
+  {{else}}
+    {{> loading}}
+  {{/if}}
+
+</template>
+
+<template name="reportsForbid">
+
+</template>

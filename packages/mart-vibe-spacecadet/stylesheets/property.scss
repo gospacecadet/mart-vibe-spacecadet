@@ -23,3 +23,17 @@
 .manage-properties {
   min-height: 35rem;
 }
+
+.location-filter-div {
+  background-size:   cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #fff;
+  // min-height:
+}
+
+.propertiesLocationFilters {
+  a.location-filter:hover {
+    border-bottom: 2rem solid #F117B4;
+  }
+}

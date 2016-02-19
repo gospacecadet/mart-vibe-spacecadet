@@ -40,7 +40,8 @@ Package.onUse(function(api) {
     'altapp:recaptcha@2.0.0',
     'fermuch:pickadate@1.0.0',
     'jrudio:videojs@5.4.4',
-    'marvin:mart@0.0.2'
+    'marvin:mart@0.0.2',
+    'lfergon:exportcsv@0.0.8'
   ])
 
 
@@ -87,6 +88,7 @@ Package.onUse(function(api) {
       pre(paths) + 'money-helpers.js',
       pre(paths) + 'permission-helpers.js',
       pre(paths) + 'profile-helpers.js',
+      pre(paths) + 'location-helpers.js',
       pre(paths) + 'text-helpers.js',
       pre(paths) + 'time-helpers.js',
     ], 'client')
@@ -215,6 +217,7 @@ Package.onUse(function(api) {
 
   // Admin
   api.addFiles([
+    'templates/admin/reports.html',
     'templates/admin/transfer-funds.html',
   ], 'client')
 
@@ -273,6 +276,8 @@ Package.onUse(function(api) {
     // Properties
     paths = ['templates', 'properties']
     api.addFiles([
+      pre(paths) + 'properties.html',
+      pre(paths) + 'properties-location-filters.html',
       pre(paths) + 'manage/manage-properties.html',
       pre(paths) + 'manage/manage-property.html',
       pre(paths) + 'manage/manage-property-form.html',
@@ -283,7 +288,6 @@ Package.onUse(function(api) {
       pre(paths) + 'new/new-property-image.html',
       pre(paths) + 'new/new-property-images.html',
       pre(paths) + 'new/new-property.html',
-      pre(paths) + 'properties.html',
       pre(paths) + 'property/property.html',
       pre(paths) + 'property/property-details.html',
       pre(paths) + 'property/property-spaces.html',
@@ -366,6 +370,7 @@ Package.onUse(function(api) {
   // Lifecycles
   paths = ['forbiddens']
   api.addFiles([
+    pre(paths) + "admin/reports.js",
     pre(paths) + "bank-accounts/bank-accounts-forbid.js",
     pre(paths) + "dockings/manage-dockings-forbid.js",
     pre(paths) + "properties/manage-properties-forbid.js",
@@ -378,6 +383,7 @@ Package.onUse(function(api) {
   api.addFiles([
     pre(paths) + "hooks.js",
     pre(paths) + "accounts/my-profile-avatar.js",
+    pre(paths) + "admin/reports.js",
     pre(paths) + "properties/new-property.js",
     pre(paths) + "properties/manage-properties.js",
     pre(paths) + "properties/manage-property.js",
@@ -390,6 +396,7 @@ Package.onUse(function(api) {
   paths = ['events']
   api.addFiles([
     pre(paths) + 'accounts/my-profile-avatar.js',
+    pre(paths) + 'admin/reports.js',
     pre(paths) + 'line-items/new-line-item-form.js',
     pre(paths) + 'shared/login-modal.js',
     pre(paths) + 'shared/navbar.js',
@@ -398,6 +405,7 @@ Package.onUse(function(api) {
     pre(paths) + 'spaces/new/new-space.js',
     pre(paths) + 'spaces/new/new-space-image.js',
     pre(paths) + 'pages/reset-password.js',
+    pre(paths) + 'properties/properties-location-filter.js',
     pre(paths) + 'properties/new/new-property-image.js',
     pre(paths) + 'properties/manage/manage-property.js',
     pre(paths) + 'properties/manage/manage-property-image.js',
