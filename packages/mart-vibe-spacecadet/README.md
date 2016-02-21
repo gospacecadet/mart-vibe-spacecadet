@@ -1,6 +1,6 @@
 SpaceCadet Vibe for Mart.
 
-[Live demo](http://spacecadet.meteor.com)
+[Live demo](http://spacecadet.io)
 
 ### Offline change log
 Merchant / nonmerchant profile

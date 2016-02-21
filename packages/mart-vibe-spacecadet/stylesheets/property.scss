@@ -24,12 +24,18 @@
   min-height: 35rem;
 }
 
+.location-filter {
+}
+
 .location-filter-div {
   background-size:   cover;
   background-repeat: no-repeat;
   background-position: center center;
   color: #fff;
-  // min-height:
+  min-height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .propertiesLocationFilters {
