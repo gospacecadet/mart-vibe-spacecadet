@@ -8,8 +8,12 @@ Template.manageSpacePrices.helpers({
       }
 
       var product = Mart.Prices.findOne(selector)
-      if(product)
+      if(product) {
+        if(selector.depositInDollars)
+          selector.depositInDollars = product.depositInCents / 100
+
         selector.priceInDollars = product.priceInCents / 100
+      }
 
       return selector
     })

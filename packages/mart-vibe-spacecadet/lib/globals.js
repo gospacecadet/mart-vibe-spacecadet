@@ -36,5 +36,6 @@ buildFullArray = function(start, end) {
 }
 
 SimpleSchema.messages({
-  passwordMissmatch: "Passwords do not match"
+  passwordMissmatch: "Passwords do not match",
+  invalidTotal: "Amounts do not add up to the total"
 })

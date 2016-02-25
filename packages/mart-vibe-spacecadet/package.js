@@ -451,6 +451,7 @@ Package.onUse(function(api) {
     pre(paths) + 'password-update-form.js',
     pre(paths) + 'shopper-sign-up.js',
     pre(paths) + 'update-profile-form.js',
+    pre(paths) + 'update-space-form.js',
     pre(paths) + 'user-login-form.js',
   ], 'client')
 

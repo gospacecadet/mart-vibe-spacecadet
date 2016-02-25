@@ -3,6 +3,8 @@ MeteorErrorHook = {
     console.log(error);
     if(error && error.reason) {
       sAlert.error(error.reason)
+    } else if(error && error.message) {
+      sAlert.error(error.message)
     }
   }
 }

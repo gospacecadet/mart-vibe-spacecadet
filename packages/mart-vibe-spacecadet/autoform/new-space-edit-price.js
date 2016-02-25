@@ -7,6 +7,7 @@ _.each(UNITS, function(unit) {
       var prices = _.map(NEW_SPACE_PRICES.get(), function(p) {
         if(p.unit === unit) {
           p.priceInDollars = insertDoc.priceInDollars
+          p.depositInDollars = insertDoc.depositInDollars
         }
         return p
       })
@@ -18,5 +19,5 @@ _.each(UNITS, function(unit) {
     },
   };
   AutoForm.addHooks(id, MeteorErrorHook, true);
-  AutoForm.addHooks([id], hooksObject);
+  AutoForm.addHooks(id, hooksObject, true);
 })

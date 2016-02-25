@@ -1,7 +1,8 @@
 <template name="_spacePriceFields">
-  <div class="row m-t-2">
+  <h4 class='m-t-2'><u>{{unit}} pricing</u></h4>
+  <div class="row m-t-1">
     <div class="col-xs-3 col-md-2">
-      <h5 class="text-capitalize p-a-1 label label-pill label-primary">
+      <h5 class="text-capitalize p-a-1 label label-pill label-primary btn-wrap">
         {{unit}} Price
       </h5>
     </div>
@@ -27,5 +28,37 @@
       </button>
     </div>
   </div>
+  {{> _spaceConnectionChargeExp}}
+
+  <div class="row m-t-1">
+    <div class="col-xs-3 col-md-2">
+      <h5 class="text-capitalize p-a-1 label label-pill label-info btn-wrap">
+        {{unit}} deposit
+      </h5>
+    </div>
+    <div class="col-md-6 col-xs-8 col-xs-offset-1">
+      <fieldset>
+        <div class="form-group{{#if afFieldIsInvalid name='depositInDollars'}} has-error{{/if}}">
+          <label class="sr-only" for="depositInDollars">Amount (in USD)</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            {{> afFieldInput name='depositInDollars' class="form-control space-price"
+              type="text" value=depositInDollars placeholder="Set price"}}
+          </div>
+
+          {{#if afFieldIsInvalid name='depositInDollars'}}
+            <span class="help-block">{{afFieldMessage name='depositInDollars'}}</span>
+          {{/if}}
+        </div>
+      </fieldset>
+
+    </div>
+    <div class='col-md-3 col-xs-12'>
+      <button type="submit" class="btn btn-outline-primary btn-sm btn-block btn-wrap">
+        Set {{unit}} deposit
+      </button>
+    </div>
+  </div>
+  <p class='text-muted m-b-2'><small>Deposits will be charged to the buyer on checkout. SpaceCadet will hold this amount in escrow until the docking is completed. This field is optional.</small></p>
   {{> afQuickField name='unit' type='hidden' value=unit}}
 </template>

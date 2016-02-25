@@ -25,6 +25,10 @@
       {{else}}
         <p class="card-text">{{truncateText description 140}}</p>
       {{/if}}
+      {{#if securityDepositInCents}}
+        <h5>Security deposit: +{{money securityDepositInCents}}</h5>
+        <h6 class='text-muted'>applied to month dockings only</h6>
+      {{/if}}
       {{> spaceTopUnitSelection}}
       <hr>
       {{> spaceCardButtons}}

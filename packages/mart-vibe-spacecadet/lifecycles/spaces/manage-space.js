@@ -2,17 +2,26 @@ Template.manageSpaceEditPrice.onCreated(function() {
   var unit = Template.currentData().unit
     var hooksObject = {
       onSubmit: function(insertDoc) {
+        console.log('onSubmit');
         var hook = this
 
-        var price = Mart.Prices.findOne({
+        var price = {
           unit: insertDoc.unit,
           productId: insertDoc.productId,
-        })
+        }
 
-        if(price) {
-          Mart.Prices.update(price._id, {$set: {
-            priceInCents: parseInt(insertDoc.priceInDollars * 100)
-          }}, function(error, priceId) {
+        var existingPrice = Mart.Prices.findOne(price)
+
+        var pricing = {priceInCents: parseInt(insertDoc.priceInDollars * 100)}
+
+        console.log(insertDoc.depositInDollars);
+        if(insertDoc.depositInDollars)
+          _.extend(pricing, {depositInCents: parseInt(insertDoc.depositInDollars * 100)})
+
+        console.log(pricing);
+        if(existingPrice) {
+          console.log('existingPrice');
+          Mart.Prices.update(existingPrice._id, {$set: pricing}, function(error, priceId) {
             if(error) {
               hook.done(error)
             } else {
@@ -21,11 +30,9 @@ Template.manageSpaceEditPrice.onCreated(function() {
             }
           })
         } else {
-          Mart.Prices.insert({
-            unit: insertDoc.unit,
-            productId: insertDoc.productId,
-            priceInCents: parseInt(insertDoc.priceInDollars * 100)
-          }, function(error, priceId) {
+          _.extend(price, pricing)
+
+          Mart.Prices.insert(price, function(error, priceId) {
             if(error) {
               hook.done(error)
             } else {
@@ -37,7 +44,7 @@ Template.manageSpaceEditPrice.onCreated(function() {
         return false
       },
     };
-    AutoForm.addHooks([spaceManagePriceId(unit)], hooksObject);
+    AutoForm.addHooks(spaceManagePriceId(unit), hooksObject, true);
     AutoForm.addHooks(spaceManagePriceId(unit), MeteorErrorHook, true);
 })
 

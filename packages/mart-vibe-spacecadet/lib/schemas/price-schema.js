@@ -6,6 +6,11 @@ PriceSchema = new SimpleSchema({
     type: Number,
     decimal: true
   },
+  depositInDollars: {
+    type: Number,
+    decimal: true,
+    optional: true
+  },
   unit: {
     type: String,
     allowedValues: [HOUR, DAY, MONTH]
