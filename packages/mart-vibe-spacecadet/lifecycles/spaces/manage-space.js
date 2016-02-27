@@ -1,5 +1,4 @@
-Template.manageSpaceEditPrice.onCreated(function() {
-  var unit = Template.currentData().unit
+_.each(UNITS, unit => {
     var hooksObject = {
       onSubmit: function(insertDoc) {
         console.log('onSubmit');

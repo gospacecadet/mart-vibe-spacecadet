@@ -1,22 +1,22 @@
 var hooksObject = {
-  // Called every time an insert or typeless form
-  // is revalidated, which can be often if keyup
-  // validation is used.
-  formToDoc: function(doc) {
-    // console.log('formToDoc');
-    // console.log(doc);
-    doc.securityDepositInCents = parseInt(doc.securityDepositInCents) * 100;
-
-    return doc;
-  },
-  // Called whenever `doc` attribute reactively changes, before values
-  // are set in the form fields.
-  docToForm: function(doc, ss) {
-    // console.log('docToForm');
-    // console.log(doc);
-    doc.securityDepositInCents = parseFloat(doc.securityDepositInCents) / 100;
-    return doc;
-  },
+  // // Called every time an insert or typeless form
+  // // is revalidated, which can be often if keyup
+  // // validation is used.
+  // formToDoc: function(doc) {
+  //   // console.log('formToDoc');
+  //   // console.log(doc);
+  //   doc.securityDepositInCents = parseInt(doc.securityDepositInCents) * 100;
+  //
+  //   return doc;
+  // },
+  // // Called whenever `doc` attribute reactively changes, before values
+  // // are set in the form fields.
+  // docToForm: function(doc, ss) {
+  //   // console.log('docToForm');
+  //   // console.log(doc);
+  //   doc.securityDepositInCents = parseFloat(doc.securityDepositInCents) / 100;
+  //   return doc;
+  // },
   onSubmit: function(insertDoc) {
     var hook = this
 
