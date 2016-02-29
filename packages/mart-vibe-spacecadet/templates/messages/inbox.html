@@ -1,24 +1,28 @@
 <template name="inbox">
   {{#if Template.subscriptionsReady}}
-    {{#if hasThreads}}
-      <div class="row">
-        <div class="col-lg-3 col-sm-4 col-xs-12 bg-gray-lightest p-t-1">
-          {{> threads}}
+    {{#if currentUser}}
+      {{#if hasThreads}}
+        <div class="row">
+          <div class="col-lg-3 col-sm-4 col-xs-12 bg-gray-lightest p-t-1">
+            {{> threads}}
+          </div>
+          <div class='col-lg-9 col-sm-8 col-xs-12 p-t-2'>
+            {{#with currentThread}}
+              <h4 class='text-xs-center m-b-2'>
+                Conversation with {{recipientName}}&nbsp;&nbsp;
+                <img src="{{_avatarUrl recipientId}}" alt="{{recipientName}} Picture" class='img-fluid thread-recipient-img img-circle'/>
+              </h4>
+              {{> thread}}
+              <hr>
+              {{> threadButtons}}
+            {{/with}}
+          </div>
         </div>
-        <div class='col-lg-9 col-sm-8 col-xs-12 p-t-2'>
-          {{#with currentThread}}
-            <h4 class='text-xs-center m-b-2'>
-              Conversation with {{recipientName}}&nbsp;&nbsp;
-              <img src="{{_avatarUrl recipientId}}" alt="{{recipientName}} Picture" class='img-fluid thread-recipient-img img-circle'/>
-            </h4>
-            {{> thread}}
-            <hr>
-            {{> threadButtons}}
-          {{/with}}
-        </div>
-      </div>
+      {{else}}
+        {{> emptyInbox}}
+      {{/if}}
     {{else}}
-      {{> emptyInbox}}
+      {{> userlogin}}
     {{/if}}
   {{else}}
     {{> loading}}
