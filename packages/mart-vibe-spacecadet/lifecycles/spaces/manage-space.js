@@ -21,9 +21,12 @@ _.each(UNITS, unit => {
         if(existingPrice) {
           console.log('existingPrice');
           Mart.Prices.update(existingPrice._id, {$set: pricing}, function(error, priceId) {
+            console.log('tried to update');
             if(error) {
+              console.log('error');
               hook.done(error)
             } else {
+              console.log('success');
               sAlert.success("Price added")
               hook.done()
             }

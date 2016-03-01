@@ -7,14 +7,16 @@ Template.manageSpacePrices.helpers({
         unit: unit,
       }
 
-      var product = Mart.Prices.findOne(selector)
-      if(product) {
-        if(selector.depositInDollars)
-          selector.depositInDollars = product.depositInCents / 100
+      var price = Mart.Prices.findOne(selector)
+      if(price) {
+        if(price.depositInCents)
+          selector.depositInDollars = price.depositInCents / 100
 
-        selector.priceInDollars = product.priceInCents / 100
+        selector.priceInDollars = price.priceInCents / 100
       }
 
+      console.log('should display');
+      console.log(selector);
       return selector
     })
   }

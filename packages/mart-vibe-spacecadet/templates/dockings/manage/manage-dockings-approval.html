@@ -19,7 +19,8 @@
           <h4>{{contactName}} <small class='text-muted'>{{dateAgo submittedAt}}</small></h4>
           <hr>
           <h5>You earn: <strong><span class='text-primary'>{{money merchantCutAtCheckout}}</span></strong></h5>
-          <h5>From total: <span>{{money total}}</span></h5>
+          <h5>From total: <span>{{money subtotal}}</span></h5>
+          <h5 class='text-muted'>Deposit: <span>{{money depositAtCheckout}}</span></h5>
 
           <div class='row'>
             <a data-toggle="collapse" data-parent="#manage-dockings-accordion" class='btn m-t-1 btn-link pull-right'

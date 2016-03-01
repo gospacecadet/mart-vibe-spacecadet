@@ -92,6 +92,8 @@ var currentQuantity = function(spaceId) {
 }
 
 var currentDate = function(spaceId) {
+  console.log('currentDate');
+  console.log(spaceId);
   return Session.get(spaceDateId(spaceId))
 }
 

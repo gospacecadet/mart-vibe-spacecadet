@@ -28,14 +28,21 @@ var hooksObject = {
       } else {
         attachUploadedImages("Spaces", spaceId);
         _.each(prices, function(price) {
+          console.log('actually adding');
+          console.log(price);
           price.productId = spaceId
           if(price.unit && price.priceInDollars && price.productId) {
             var insertPrice = {
               unit: price.unit,
               productId: price.productId,
-              priceInCents: price.priceInDollars*100
+              priceInCents: price.priceInDollars*100,
             }
 
+            if(price.depositInDollars)
+              _.extend(insertPrice, { depositInCents: price.depositInDollars * 100})
+
+            console.log('finally inserting');
+            console.log(insertPrice);
             Mart.Prices.insert(insertPrice)
           }
         })

@@ -12,7 +12,10 @@
         <div class="modal-body m-b-1">
           <h5 class='m-b-2'><strong>Step 1: </strong>Confirm duration</h5>
           {{> spaceTopUnitSelection}}
-
+          {{#if depositInCents}}
+            <h5>Security deposit: +{{money depositInCents}}</h5>
+            <h6 class='text-muted'>Paid at checkout. Reimbursed at end of booking.</h6>
+          {{/if}}
           <h5 class='m-t-2 m-b-2'><strong>Step 2: </strong>Select date &amp; time</h5>
           {{> spaceTopForUnit}}
         </div>
@@ -27,7 +30,7 @@
 
 <template name="spaceBookingForm">
   <form class='new-line-item-form'>
-    
+
     {{> errors}}
 
     <button type="submit" class="btn btn-primary btn-block btn-lg btn-wrap">

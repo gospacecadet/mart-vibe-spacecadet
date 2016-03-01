@@ -17,6 +17,12 @@
           <td colspan="2"><em>Subtotal:</em></td>
           <td><em>{{money subtotalAtCheckout}}</em></td>
         </tr>
+        {{#if deposit}}
+          <tr>
+            <td colspan="2"><em>Deposit:</em></td>
+            <td><em>{{money deposit}}</em></td>
+          </tr>
+        {{/if}}
         <tr>
           <td colspan="2"><em>Service Fee:</em></td>
           <td><em>{{money serviceFeeAtCheckout}}</em></td>

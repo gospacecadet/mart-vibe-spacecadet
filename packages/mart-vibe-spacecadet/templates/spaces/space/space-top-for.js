@@ -1,7 +1,11 @@
 Template.spaceTopForUnit.onRendered(function() {
+  console.log('onRendered')
   var spaceId = Template.currentData()._id
-  $('.start-date').pickadate({
+  console.log(spaceId);
+  $('#start-date-' + spaceId).pickadate({
     onSet: function(context) {
+      console.log('date set');
+      console.log(spaceId);
       Session.set(spaceDateId(spaceId), new Date(context.select))
     }
   })

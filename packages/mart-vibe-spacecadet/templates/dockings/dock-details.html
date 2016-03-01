@@ -5,9 +5,9 @@
 
     {{#with cart}}
       {{> reserveDockingDetailsCart}}
+      {{> reserveDockingDetailsAddOns}}
     {{/with}}
 
-    {{> reserveDockingDetailsAddOns}}
     {{> errors}}
     <button id="dock-now-button" class='btn btn-lg btn-block btn-primary'>Submit Docking</button>
     <p class='text-muted m-t-1'>
@@ -39,7 +39,7 @@
     <table class="table table-sm">
       <thead>
         <tr>
-          <th>Space name</th>
+          <th>What</th>
           <th>When</th>
           <th>Quantity</th>
           <th>Unit Price</th>
@@ -50,7 +50,7 @@
         {{#each lineItems}}
           {{> reserveDockingDetailsLine}}
         {{/each}}
-        <td colspan="4"><em>Property subtotal: {{money subtotal}}*</em></td>
+        <tr><td colspan="4"><em>Property subtotal: {{money subtotal}}*</em></td></tr>
       </tbody>
     </table>
   </div>
@@ -66,6 +66,13 @@
         <td></td>
         <td>{{money cartsSubtotal}}</td>
       </tr>
+      {{#if deposit}}
+        <tr>
+          <td>Deposit</td>
+          <td></td>
+          <td>{{money deposit}}</td>
+        </tr>
+      {{/if}}
       <tr>
         <td>Service Fee</td>
         <td></td>

@@ -8,9 +8,10 @@ _.each(UNITS, function(unit) {
         if(p.unit === unit) {
           p.priceInDollars = insertDoc.priceInDollars
 
-          if(p.depositInDollars)
+          if(insertDoc.depositInDollars)
             p.depositInDollars = insertDoc.depositInDollars
         }
+
         return p
       })
 
