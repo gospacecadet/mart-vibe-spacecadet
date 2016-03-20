@@ -21,6 +21,11 @@
 
 <template name="homepageBody">
   {{#if currentUser}}
+  <div class='row'>
+    <div class="col-md-8 col-xs-12 col-md-offset-2 m-t-2">
+      {{> homepageSignupHype}}
+    </div>
+  </div>
   {{else}}
     {{> homepageSignup}}
     <hr>
