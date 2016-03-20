@@ -1,11 +1,15 @@
 Template.spaceBookingForm.events({
-  "click .new-line-item-form": function(event, template) {
+  "click .submit-new-line": function(event, template) {
     event.preventDefault();
+    event.target.disabled = true;
+
     var spaceId = template.data._id
     var unit = currentUnit(spaceId)
 
     if(currentDate(spaceId).getTime() < (new Date()).getTime()) {
       throwError("Must choose a date in the future")
+      $("#submit-new-line").disabled = false;
+
       return;
     }
 
@@ -20,6 +24,8 @@ Template.spaceBookingForm.events({
         cartId: 'required-for-simple-schema'
       }, function(error, lineItemId) {
         if(error) {
+          event.target.disabled = false;
+
           throwError(error.message)
         } else {
           insertSuccess(lineItemId)
@@ -36,6 +42,8 @@ Template.spaceBookingForm.events({
         cartId: 'required-for-simple-schema'
       }, function(error, lineItemId) {
         if(error) {
+          event.target.disabled = false;
+
           throwError(error.message)
         } else {
           insertSuccess(lineItemId)
@@ -52,6 +60,8 @@ Template.spaceBookingForm.events({
         cartId: 'required-for-simple-schema'
       }, function(error, lineItemId) {
         if(error) {
+          event.target.disabled = false;
+
           throwError(error.message)
         } else {
           insertSuccess(lineItemId)
@@ -92,8 +102,8 @@ var currentQuantity = function(spaceId) {
 }
 
 var currentDate = function(spaceId) {
-  console.log('currentDate');
-  console.log(spaceId);
+  // console.log('currentDate');
+  // console.log(spaceId);
   return Session.get(spaceDateId(spaceId))
 }
 

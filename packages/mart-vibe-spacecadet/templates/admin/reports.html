@@ -13,9 +13,23 @@
         <input type="text" name="endAnal" class='pickadate form-control' id='endAnal'>
       </fieldset>
 
-      <button type="submit" class='btn btn-block btn-primary'>
-        Generate CSV
-      </button>
+      <div class='row'>
+        <div class='col-md-4'>
+          <button type="submit" class='btn btn-block btn-primary export-dockings'>
+            Export Dockings
+          </button>
+        </div>
+        <div class='col-md-4'>
+          <button type="button" class='btn btn-block btn-secondary export-properties'>
+            Export Properties
+          </button>
+        </div>
+        <div class='col-md-4'>
+          <button type="button" class='btn btn-block btn-success export-spaces'>
+            Export Spaces
+          </button>
+        </div>
+      </div>
     </form>
   {{else}}
     {{> loading}}
