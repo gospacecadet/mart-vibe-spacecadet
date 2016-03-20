@@ -79,6 +79,17 @@
       {{money connectionFeeAtCheckout}}
     </div>
   </div>
+  {{#if depositAtCheckout}}
+    <div class="row">
+      <div class="col-xs-4">
+        Deposit
+      </div>
+      <div class="col-xs-7 col-xs-offset-1">
+        {{money depositAtCheckout}}
+      </div>
+    </div>
+  {{/if}}
+
   <div class="row">
     <div class="col-xs-4">
       Service fee
