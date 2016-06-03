@@ -26,7 +26,7 @@ Package.onUse(function(api) {
 
   api.use([
     'kadira:blaze-layout@2.3.0',
-    'kadira:flow-router@2.10.0',
+    'kadira:flow-router@2.10.1',
     'juliancwirko:s-alert@3.1.3',
     'fourseven:scss@3.4.1',
     'aldeed:autoform@5.8.1',
