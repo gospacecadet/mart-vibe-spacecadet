@@ -6,12 +6,12 @@ Template.spaceBookingForm.events({
     var spaceId = template.data._id
     var unit = currentUnit(spaceId)
 
-    if(currentDate(spaceId).getTime() < (new Date()).getTime()) {
-      throwError("Must choose a date in the future")
-      $("#submit-new-line").disabled = false;
-
-      return;
-    }
+    // if(currentDate(spaceId).getTime() < (new Date()).getTime()) {
+    //   throwError("Must choose a date in the future")
+    //   $("#submit-new-line").disabled = false;
+    //
+    //   return;
+    // }
 
     if(unit === HOUR) {
       Mart.LineItems.insert({

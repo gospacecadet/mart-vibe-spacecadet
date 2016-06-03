@@ -36,15 +36,15 @@ var quotes = [
   // "We have no right to prejudice another in his civil enjoyments because he is of another church.",
   // "For to be free is not merely to cast off one’s chains, but to live in a way that respects and enhances the freedom of others.",
   // "You can chain me, you can torture me, you can even destroy this body, but you will never imprison my mind.",
-  "Those who would give up essential liberty to purchase a little temporary safety deserve neither liberty nor safety.",
+  // "Those who would give up essential liberty to purchase a little temporary safety deserve neither liberty nor safety.",
   // "All that is necessary for the triumph of evil is for good men to do nothing.",
   "Never doubt that a small group of thoughtful, committed, citizens can change the world.",
   // "When they came for me, there was no one left to speak out.",
   // "You can’t separate peace from freedom because no one can be at peace unless he has his freedom.",
-  "In the End, we will remember not the words of our enemies, but the silence of our friends.",
+  // "In the End, we will remember not the words of our enemies, but the silence of our friends.",
   // "No one is free when others are oppressed.",
   // "If we don’t believe in freedom of expression for people we despise, we don’t believe in it at all.",
-  "Free speech carries with it some freedom to listen.",
+  // "Free speech carries with it some freedom to listen.",
   "Without a struggle, there can be no progress.",
   "The truth shall make you free."
 ]

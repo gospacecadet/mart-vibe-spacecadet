@@ -37,8 +37,8 @@
       {{/if}}
     </h4>
     <h4 class="list-group-item-heading text-muted">{{productName}}</h4>
-    <p class="list-group-item-text">Value: {{money total}}</p>
-    <p class="list-group-item-text">Value: {{dateSlashed startAt}}</p>
+    <p class="list-group-item-text">Amount: {{money total}}</p>
+    <p class="list-group-item-text">Next charge: {{dateSlashed nextChargeOn}}</p>
 
     {{#if isActive}}
       <button class='btn btn-danger cancel-subscription-button m-t-1 m-b-2'>Cancel Subscription</button>
