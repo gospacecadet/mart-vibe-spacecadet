@@ -4,6 +4,14 @@ Template.reserveDockingDetails.events({
   }
 });
 
+Template.reserveDockingDetails.onRendered(() => {
+  $('.learn-tip').tooltip();
+});
+
+Template.dockingHistoryDetails.onRendered(() => {
+  $('.learn-tip').tooltip();
+});
+
 const RENTING_ON_BEHALF_BIZ = 'renting-on-behalf-biz'
 Template.reserveDockingFormContact.events({
   "click [name=contactRentingOnBehalfBiz]": function(event, template) {

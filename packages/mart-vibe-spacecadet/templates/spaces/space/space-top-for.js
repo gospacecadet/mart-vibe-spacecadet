@@ -11,6 +11,10 @@ Template.spaceTopForUnit.onRendered(function() {
   })
 })
 
+Template.spaceTopForMonthlyReminder.onRendered( () => {
+  $('.learn-tip').tooltip();
+})
+
 Template.spaceTopForDaily.events({
   "change .daily-num": function(event, template) {
     var numDays = $(event.target).val()
