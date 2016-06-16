@@ -61,4 +61,9 @@ DockingSchema = new SimpleSchema({
     type: String,
     label: "ZIP"
   },
+  referer: {
+    type: String,
+    label: "Referer",
+    optional: true
+  }
 })

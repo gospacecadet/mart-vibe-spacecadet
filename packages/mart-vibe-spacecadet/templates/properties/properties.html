@@ -19,7 +19,7 @@
           <div class="card-block">
             <h4 class="card-title">{{name}}</h4>
             <h6 class="card-title text-muted">{{region_ _id}}</h6>
-            <p class="card-text">{{truncateText description 80}}...</p>
+            <p class="card-text">{{#markdown}}{{truncateText description 80}}{{/markdown}}...</p>
             <h1 class='m-t-3 text-xs-right homepage-space-card-price'>
               <small class='text-muted'>starting at</small>
               <span class="label label-primary p-a-1">

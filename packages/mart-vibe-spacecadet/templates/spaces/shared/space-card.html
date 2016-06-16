@@ -46,9 +46,9 @@
 
     <div class="card-block">
       {{#if showSpaceDetails}}
-        <p class="card-text">{{description}}</p>
+        <p class="card-text">{{#markdown}}{{description}}{{/markdown}}</p>
       {{else}}
-        <p class="card-text">{{truncateText description 140}}</p>
+        <p class="card-text">{{#markdown}}{{truncateText description 140}}{{/markdown}}</p>
       {{/if}}
       {{> spaceTopUnitSelection}}
       <hr>
