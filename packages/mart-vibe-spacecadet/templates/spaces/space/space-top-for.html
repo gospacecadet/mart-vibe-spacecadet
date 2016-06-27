@@ -1,7 +1,7 @@
 <template name="spaceTopForUnit">
   <div class='m-t-1'>
     <div class="row">
-      <div class="col-md-10 offset-md-1">
+      <div class="col-xs-10 offset-xs-1">
         <form class="form-inline" id='new-docking-{{_id}}'>
           <div class='row'>
             <div class="form-group">
@@ -55,15 +55,17 @@
 
 <template name="spaceTopForHourly">
   <div class='row m-t-1'>
-    <div class="form-group">
-      <label for="hourly-start-hour-{{_id}}">Start Time</label>
-      <select class="form-control hourly-start-hour" id="hourly-start-hour-{{_id}}" >
-        <option disabled selected>--</option>
-        {{#each hours}}
-          <option value="{{value}}">{{name}}</option>
-        {{/each}}
-      </select>
-    </div>
+      <span>Start Time&nbsp;</span>
+
+      <div class="form-group">
+        <select class="form-control hourly-start-hour" id="hourly-start-hour-{{_id}}" >
+          <option disabled selected>--</option>
+          {{#each hours}}
+            <option value="{{value}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+
     <span class='lead p-x-1'>:</span>
     <div class="form-group">
       <select class="form-control hourly-start-minute" id="hourly-start-minute-{{_id}}">
