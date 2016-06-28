@@ -263,6 +263,8 @@ Package.onUse(function(api) {
       'templates/pages/list-space.html',
       'templates/pages/loading.html',
       'templates/pages/not-found.html',
+      'templates/pages/press.html',
+      'templates/pages/partners.html',
       'templates/pages/reset-password.html',
       'templates/pages/sxsw.html',
     ], 'client')

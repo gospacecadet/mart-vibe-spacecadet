@@ -28,6 +28,26 @@ FlowRouter.route('/list-space', {
   }]
 });
 
+FlowRouter.route('/press', {
+  name: "press",
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "press"});
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - News & Media"
+  }]
+});
+
+FlowRouter.route('/partners', {
+  name: "partners",
+  action: function() {
+    BlazeLayout.render("mainLayout", {content: "partners"});
+  },
+  triggersEnter: [function(context, redirect) {
+    document.title = "SpaceCadet - List Your Space"
+  }]
+});
+
 FlowRouter.route('/terms', {
   name: "terms",
   action: function() {
