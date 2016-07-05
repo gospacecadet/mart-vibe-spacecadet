@@ -1,9 +1,7 @@
 CreditCardSchema = new SimpleSchema({
   number: {
     type: Number,
-    label: "Credit card number",
-    min: 1000000000000000,
-    max: 9999999999999999
+    label: "Credit card number"
   },
   nameOnCard: {
     type: String,
@@ -23,8 +21,6 @@ CreditCardSchema = new SimpleSchema({
   },
   cvc: {
     type: Number,
-    label: "CVC",
-    min: 100,
-    max: 999
+    label: "CVC"
   }
 })
